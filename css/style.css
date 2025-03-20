@@ -1,0 +1,1837 @@
+@charset "utf-8";
+
+/*
+  Global Variables:
+  - Defines commonly used styles as CSS variables for better maintainability.
+  - Allows easy customization of font size, font family, and colors.
+*/
+:root {
+  --font-size-base: 16px; /* Base font size for consistent text scaling */
+  --font-line-height: 1.6; /* Default line spacing for improved readability */
+  --font-family: 'Roboto', sans-serif; /* Primary font used across the site */
+  --font-color: #4F4F4F; /* Default text color */
+}
+
+/*
+  Body Styling:
+  - Ensures a consistent layout by removing default margin and padding.
+  - Applies global font settings.
+  - Enables smooth font rendering across browsers.
+*/
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--font-line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color); /* Background color should be defined in :root */
+  color: var(--text-dark); /* Text color should be defined in :root */
+}
+
+/*
+  Font Face Definitions:
+  - Loads different weights and styles of the 'Roboto' font.
+  - Uses local font files to improve loading speed and reduce external dependencies.
+  - 'font-display: swap' ensures text remains visible while fonts are loading.
+*/
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100; /* Thin */
+  src: url('../fonts/Roboto-Thin.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100; /* Thin Italic */
+  src: url('../fonts/Roboto-ThinItalic.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300; /* Light */
+  src: url('../fonts/Roboto-Light.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300; /* Light Italic */
+  src: url('../fonts/Roboto-LightItalic.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400; /* Regular */
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400; /* Regular Italic */
+  src: url('../fonts/Roboto-Italic.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700; /* Bold */
+  src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700; /* Bold Italic */
+  src: url('../fonts/Roboto-BoldItalic.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900; /* Black */
+  src: url('../fonts/Roboto-Black.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900; /* Black Italic */
+  src: url('../fonts/Roboto-BlackItalic.ttf') format('truetype');
+  font-display: swap;
+}
+
+/*
+  Heading Styles:
+  - Defines font settings for headings, strong text, and emphasized text.
+  - Ensures consistent typography across the site.
+*/
+h1, h2, strong, em, .heading {
+  font-family: var(--font-family), Arial, sans-serif;
+}
+h1 {
+  font-weight: 100; /* Thin weight for main headings */
+  color: var(--primary-color);
+}
+h2 {
+  font-weight: 700; /* Bold weight for subheadings */
+  color: var(--primary-color);
+}
+strong {
+  font-weight: 900; /* Maximum boldness for strong emphasis */
+}
+em {
+  font-style: italic;
+}
+.heading {
+  font-weight: 300;
+  color: var(--primary-color);
+}
+
+/*
+  Link Styling:
+  - Defines default link styles.
+  - Ensures links are visually distinguishable and interactive.
+*/
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--primary-color);
+}
+
+/*
+  Utility Classes:
+  - Provides reusable classes for layout, spacing, and alignment.
+  - Helps maintain a consistent design across the site.
+*/
+*, *::before, *::after {
+  box-sizing: border-box; /* Ensures padding and borders don't affect size calculations */
+}
+.m-auto {
+  margin: 0 auto; /* Centers elements horizontally */
+}
+.p-20 {
+  padding: 20px; /* Provides uniform padding */
+}
+.mb-10 {
+  margin-bottom: 10px; /* Adds spacing below elements */
+}
+.container {
+  max-width: 1200px; /* Restricts content width for better readability */
+  margin: 0 auto; /* Centers container on the page */
+  padding: 20px;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+  Section Wrapper:
+  - Provides consistent spacing and layout control for sections.
+  - Ensures sections have proper margins and padding.
+*/
+.section-wrapper {
+  padding: 0 20px; /* 20px gap on the left and right */
+  margin: 0 auto; /* Center the section within the wrapper */
+  max-width: 1200px; /* Limit the inner content width */
+  box-sizing: border-box; /* Include padding in the overall width calculation */
+}
+/*
+  Section Spacing:
+  - Ensures proper box model behavior by including padding and borders in width calculations.
+*/
+.section-spacing {
+  box-sizing: border-box;
+}
+
+/*
+  Scroll Offset:
+  - Adds spacing above sections so they align properly when navigating via links.
+  - Useful when a fixed navbar is present to prevent content from being hidden under it.
+*/
+.scroll-offset {
+  scroll-margin-top: 45px; /* Adjust this value to match the height of your navbar */
+}
+
+/*
+  Section-Specific Scroll Offsets:
+  - Ensures each section aligns correctly when scrolled into view.
+  - Prevents content from being obscured by a fixed navigation bar.
+*/
+#home, #experience, #results, #expertise, #education, #q-and-a, #testimonials {
+  scroll-margin-top: 45px;
+}
+
+/*
+  Common Styling Utilities:
+  - Rounded Corners: Applies consistent rounded corners to elements.
+  - Box Shadow: Adds a subtle shadow effect for a modern look.
+*/
+.rounded {
+  border-radius: 8px;
+}
+.shadow {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/*
+  Keyframe Animations:
+  - slideInUp: Moves elements from bottom to top while increasing opacity.
+  - slideInRight: Moves elements from right to left while increasing opacity.
+  - fadeIn: Gradually increases opacity to make elements appear smoothly.
+*/
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+  Navbar Styling:
+  - Fixed at the top for easy access to navigation links.
+  - Ensures proper layering with a high z-index.
+  - Provides subtle shadow for depth.
+*/
+.navbar {
+  position: fixed;
+  top: 0;
+  height: 35px;
+  width: 100%;
+  z-index: 1050;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  background-color: #f8f9fa;
+}
+
+/*
+  Navbar Elements:
+  - Toggler: Visible button for mobile navigation.
+  - Brand: Styled text or logo representing the website.
+  - Navigation Links: Arranged in a row with spacing.
+*/
+.navbar-toggler {
+  display: block;
+  margin-right: 10px;
+}
+.navbar-brand {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/*
+  Calendly Link Styling:
+  - Creates a styled button for scheduling appointments.
+  - Uses flexbox for alignment and ensures consistent sizing.
+*/
+.calendly-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 15px;
+  width: 120px;
+  height: 25px;
+  background-color: #633606;
+  color: #FFFFFF !important;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none !important;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+  padding: 0px;
+}
+
+/*
+  Calendly Link Hover Effects:
+  - Changes background color on hover for visual feedback.
+*/
+.calendly-link:hover {
+  background-color: #AC5A03;
+  color: #FFFFFF !important;
+}
+.calendly-link:hover span, .calendly-link:hover small {
+  color: #FFFFFF !important;
+}
+
+/*
+  Social Media Icons:
+  - Aligns social media icons properly with the navbar.
+  - Adds a hover effect to enlarge the icons slightly.
+*/
+.nav-link-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: auto;
+  margin-bottom: 2px;
+}
+.nav-link-container img {
+  transition: transform 0.3s ease;
+  border-radius: 4px;
+}
+.nav-link-container img:hover {
+  transform: scale(1.1);
+}
+
+/*
+  Intro Section:
+  - Provides a visually appealing introduction area.
+  - Uses flexbox for layout control.
+  - Ensures responsiveness with max-width constraints.
+  - Applies background image and effects for a modern look.
+*/
+.intro-section {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin: 40px auto 0px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  background-attachment: fixed;
+  background-image: url(../media/intro-background-architecture.jpg);
+  background-size: cover;
+  background-position: center;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+/*
+  Intro Text Content Block:
+  - Creates a structured container for introductory text.
+  - Uses flexbox for alignment and spacing.
+  - Applies a white background and rounded corners for aesthetics.
+*/
+.intro-text-content-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/*
+  Intro Title and Subtitle:
+  - Defines typography for the main heading (h1) and subheading (h2).
+  - Uses consistent font weights and colors.
+*/
+.intro-title-block h1 {
+  font-size: 32px;
+  color: #8B4100;
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+.intro-subtitle-block h2 {
+  font-size: 24px;
+  color: #4F4F4F;
+  font-weight: 600;
+  margin: 10px 0 20px 0;
+  text-align: left;
+}
+
+/*
+  Intro Main Text Block:
+  - Styles paragraph text in the introduction.
+  - Ensures proper line spacing for readability.
+*/
+.intro-main-text-block p {
+  font-size: 15px;
+  color: #000000;
+  margin: 0 0 13px 0;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/*
+  Centered Intro Text Block:
+  - Used for sections where text needs to be centered.
+*/
+.intro-main-text-block2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.intro-main-text-block2 p {
+  font-size: 20px;
+  max-width: 100%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/*
+  Highlighted Text:
+  - Adds emphasis to words using styling effects.
+  - Includes hover effects to dynamically change content.
+*/
+.highlight-link {
+  font-style: italic;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+  font-style: normal;
+}
+.blue-text {
+  color: #2967b2;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+/*
+  Highlight Link Hover Effect:
+  - Changes text on hover with an animation effect.
+*/
+.highlight-link:hover {
+  visibility: hidden;
+}
+.highlight-link:hover::after {
+  content: "Transforming Business Challenges into Success—Are You In?";
+  font-style: italic;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #2967b2;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  visibility: visible;
+}
+
+/*
+  LinkedIn Connect Button:
+  - Styled button for LinkedIn connection links.
+  - Adds hover and transition effects for interaction.
+*/
+.linkedin-connect-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #2967b2;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.linkedin-connect-button:hover {
+  background-color: #005582;
+  transform: scale(1.05);
+}
+.linkedin-connect-button img {
+  margin-left: 10px;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+.linkedin-connect-button img:hover {
+  transform: rotate(10deg);
+}
+
+/*
+  Blogger Link Button:
+  - Styled button for Blogger links.
+  - Includes hover effects.
+*/
+.blogger-link-button:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+.blogger-link-button img {
+  margin-left: 5px;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+.blogger-link-button img:hover {
+  transform: rotate(10deg);
+}
+
+/*
+  Intro Footer:
+  - Ensures centered text alignment.
+  - Provides a subtle footer for introductory content.
+*/
+.intro-footer-block {
+  margin: 0px 0px -10px 0px;
+  text-align: center;
+  width: 100%;
+}
+.intro-footer-text {
+  font-size: 14px;
+  color: #4F4F4F;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/*
+  Intro Links Block:
+  - Arranges introductory links in a flexbox grid.
+  - Allows responsive wrapping and spacing.
+*/
+.intro-links-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+}
+/*
+  Intro Links:
+  - Styles interactive buttons for the introduction section.
+  - Ensures a uniform size, rounded corners, and hover effects.
+*/
+.intro-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 165px;
+  height: 48px;
+  background-color: #633606;
+  color: #FFFFFF !important;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none !important;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px;
+}
+.intro-links:hover {
+  background-color: #AC5A03;
+}
+
+/*
+  Styling for text within buttons:
+  - Includes text and small subtitles.
+*/
+.intro-links span {
+  font-size: 16px;
+  color: #FFFFFF;
+}
+.intro-links small {
+  font-size: 0.6em;
+  color: #FFFFFF;
+  margin-top: -5px;
+}
+
+/*
+  Profile Picture Section:
+  - Handles layout and animation for a user's profile image.
+*/
+.intro-profile-picture-block {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  height: auto;
+  animation: slideInRight 1.5s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
+}
+.intro-profile-picture-img {
+  border-radius: 8px;
+  width: 100%;
+  max-width: 523px;
+  height: auto;
+}
+
+/*
+  Results Section:
+  - Styles the section where results or accomplishments are displayed.
+  - Removes default text decoration and enhances hover effects.
+*/
+.results-link {
+  text-decoration: none;
+  outline: none;
+}
+.results-link:hover, .results-link:focus {
+  text-decoration: none;
+  outline: none;
+}
+.results-link .results-block:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.03);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/*
+  Results Section Layout:
+  - Uses flexbox for consistent layout and responsiveness.
+  - Ensures the blocks have uniform height and spacing.
+*/
+.results-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+.results-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1 1 calc(33.33% - 30px);
+  height: auto;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin: 15px 0px;
+}
+
+/*
+  Background images for individual result blocks.
+*/
+.results-block-1 {
+  background-image: url(../media/results-background-left.jpg);
+}
+.results-block-2 {
+  background-image: url(../media/results-background-middle.jpg);
+}
+.results-block-3 {
+  background-image: url(../media/results-background-right.jpg);
+}
+
+/*
+  Results Title Styling:
+  - Ensures readable and responsive headings.
+*/
+.results-title {
+  font-size: clamp(24px, 3vw, 56px);
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.results-body {
+  font-size: clamp(16px, 2vw, 24px);
+  line-height: 1.6;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+/*
+  Expertise Section:
+  - Manages layout and styling of the expertise section.
+*/
+.expertise-section {
+  margin: 10px auto 0px auto;
+}
+.expertise-heading-block {
+  text-align: center;
+  margin: 10px 0px 20px;
+}
+.expertise-heading {
+  font-size: 24px;
+  color: #8B4100;
+  font-weight: 600;
+  margin: 0;
+}
+/* Expertise Container */
+.expertise-container {
+  display: flex; /* Enables flexible box layout */
+  flex-wrap: wrap; /* Allows blocks to wrap when needed */
+  justify-content: space-between; /* Evenly spaces blocks */
+  align-items: stretch; /* Ensures all blocks have equal height */
+  gap: 20px; /* Adds spacing between blocks */
+  width: 100%; /* Makes container span full width */
+  max-width: 1200px; /* Restricts max width for better layout */
+  box-sizing: border-box; /* Ensures padding and border are included in size calculations */
+}
+
+/* Expertise Text Block */
+.expertise-text-block {
+  flex: 1 1 48%; /* Each block takes up about half of the row */
+  display: flex; /* Enables flexible positioning */
+  flex-direction: column; /* Aligns content vertically */
+  justify-content: center; /* Centers content within the block */
+  align-items: flex-start; /* Aligns text to the left */
+  padding: 20px; /* Adds inner spacing */
+  background-color: #563624; /* Dark background color for contrast */
+  color: #EBEBEB; /* Light text color for readability */
+  font-family: 'Roboto', sans-serif; /* Ensures consistent font styling */
+  font-size: 26px; /* Sets text size */
+  font-weight: 300; /* Light font for easy readability */
+  list-style-type: circle; /* Applies circular bullet points for lists */
+  text-align: left; /* Aligns text to the left */
+  border-radius: 8px; /* Rounds the corners */
+  min-height: 400px; /* Sets a minimum height for uniformity */
+  box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+/* Expertise List Styling */
+.expertise-list {
+  padding: 0;
+  margin: 0 auto; /* Centers list block horizontally */
+  list-style-position: inside; /* Keeps bullet points inside the text block */
+  text-align: left; /* Aligns text and bullets to the left */
+  max-width: 90%; /* Limits width for better readability */
+}
+
+.expertise-list li {
+  margin-bottom: 10px; /* Adds space between list items */
+}
+
+/* Expertise Image Block */
+.expertise-image-block {
+  flex: 1 1 38%; /* Occupies slightly less space than text block */
+  display: flex; /* Enables flexible positioning */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  background-image: url(../media/expertise-background.jpg); /* Sets background image */
+  background-size: cover; /* Ensures the image fully covers the block */
+  background-repeat: no-repeat; /* Prevents repeating image */
+  background-position: center; /* Centers the image */
+  background-attachment: fixed; /* Keeps background static while scrolling */
+  min-height: 400px; /* Maintains consistent height */
+  border-radius: 8px; /* Rounds the corners */
+  box-sizing: border-box; /* Includes padding and border in size calculation */
+}
+
+/* Experience Section */
+.experience-section {
+  display: flex; /* Enables flexible column layout */
+  flex-direction: column; /* Stacks elements vertically */
+  width: 100%; /* Uses full width */
+  max-width: 1200px; /* Limits maximum width */
+  margin: 0 auto; /* Centers the section */
+  padding: 20px 0px 0px 0px; /* Adds padding to the top */
+  box-sizing: border-box; /* Ensures padding is included in width calculations */
+}
+
+/* Heading Block */
+.experience-heading-block {
+  text-align: center; /* Centers the heading */
+  margin-bottom: 0px;
+}
+
+.experience-heading {
+  font-size: 24px; /* Sets font size */
+  color: #8B4100; /* Sets heading color */
+  font-weight: 600; /* Bold heading for emphasis */
+  margin: 0;
+}
+
+/* Individual Experience Entry */
+.experience-entry {
+  display: flex;
+  flex-direction: column; /* Aligns elements vertically */
+  margin-bottom: 30px; /* Adds space between entries */
+  border-radius: 8px; /* Rounds the corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  background-color: rgba(237, 237, 237, 0.75); /* Light gray background */
+  padding: 20px; /* Adds inner spacing */
+  box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+/* Header (Logo, Date, Titles) */
+.experience-header {
+  display: flex; /* Enables flexible positioning */
+  justify-content: space-between; /* Spaces elements evenly */
+  align-items: center; /* Aligns elements vertically */
+  margin-bottom: 0px;
+}
+
+.experience-logo {
+  position: relative; /* Allows z-index usage */
+  z-index: 10; /* Ensures logo is above other elements */
+  flex-shrink: 0; /* Prevents logo from resizing */
+  text-align: right; /* Aligns logo to the right */
+  margin: 0; /* Removes unwanted margins */
+  background-color: transparent; /* Ensures no background obstruction */
+}
+
+.experience-logo img {
+  max-width: 100px; /* Restricts logo size */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 4px; /* Rounds logo corners */
+  display: block; /* Ensures block display */
+  border: none; /* Removes unwanted borders */
+}
+
+.experience-details {
+  flex: 1;
+  text-align: left; /* Aligns text to the left */
+}
+
+.experience-date {
+  font-size: 18px;
+  color: #4F4F4F;
+  font-weight: 400;
+}
+
+.experience-title {
+  font-size: 16px;
+  color: #8B4100;
+  font-weight: 600;
+}
+
+.experience-title small {
+  display: block;
+  font-style: italic;
+  color: #4F4F4F;
+}
+
+/* Body Content */
+.experience-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4F4F4F;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Divider */
+.experience-divider {
+  border: none;
+  border-top: 1px solid #C9CFFC; /* Adds a thin top border */
+  margin: 10px 0;
+  width: 100%;
+}
+
+/* Experience Entry Container */
+.experience-entry {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Roles Container */
+.experience-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* No gap between roles */
+}
+
+/* Roles Header Styling */
+.experience-roles-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+/* Roles Title Styling */
+.experience-roles-title {
+  font-size: 16px;
+  color: #8B4100;
+  font-weight: 600;
+}
+.experience-roles-title small {
+  display: block;
+  font-style: italic;
+  color: #4F4F4F;
+}
+
+/* Individual Role Styling */
+.experience-role-1 {
+  margin: -23px 0px 0px 0px; /* Remove external spacing */
+}
+.experience-role-2-and-3 {
+  margin: 0px; /* Remove external spacing */
+}
+
+/* Roles Body Content */
+.experience-roles-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4F4F4F;
+  margin-top: 10px;
+  text-align: left;
+}
+.experience-body:last-child {
+  margin-bottom: 0; /* Remove margin for the last role */
+}
+
+/* Education Section */
+.education-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* Education Heading Block */
+.education-heading-block {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Education Heading Styling */
+.education-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #8B4100;
+  margin: 0;
+}
+
+/* Education Content Layout */
+.education-content {
+  display: flex;
+  flex-direction: column; /* Stack blocks vertically */
+  gap: 20px; /* Add space between blocks */
+  width: 100%;
+}
+
+/* Education Block Styling */
+.education-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+}
+
+/* Background Images for Education Blocks */
+.education-block:first-child {
+  background-image: url(../media/education-background-university-of-illinois-springfield.jpg);
+}
+education-block:last-child {
+  background-image: url(../media/education-background-purdue-university-global.jpg);
+}
+
+/* Inner Block Styling for Education Section */
+.education-inner-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(237, 237, 237, 0.75);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Education Title Styling */
+.education-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: #8B4100;
+  margin-bottom: 10px;
+}
+
+/* Education Subtitle Styling */
+.education-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #4F4F4F;
+  margin-bottom: 10px;
+}
+
+/* Education Logo Styling */
+.education-logo img {
+  max-width: 250px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* Meet Tim Section */
+.meet-tim-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Full width for responsiveness */
+  max-width: 1200px; /* Limit the section's width */
+  margin: 0 auto; /* Center the section */
+  padding: 0px; /* Add padding around the section */
+  box-sizing: border-box;
+}
+/* Meet Tim Heading Block */
+.meet-tim-heading-block {
+  text-align: center; /* Center align the heading */
+  margin: 20px; /* Add spacing around the block */
+}
+.meet-tim-heading {
+  font-size: 24px; /* Set font size */
+  font-weight: 600; /* Make text bold */
+  color: #8B4100; /* Dark brown color */
+  margin: 0; /* Remove default margins */
+}
+
+/* Meet Tim Video Block */
+.meet-tim-video-block {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%; /* Full width of the section */
+  max-width: 1200px; /* Limit width for larger screens */
+  margin: 0 auto; /* Center-align the block */
+  aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow for focus */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevent content overflow */
+  background-color: #000; /* Black background for video area */
+}
+
+/* Ensure iframe fully fills its parent container */
+.meet-tim-video-block iframe {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Adjust height automatically */
+  display: block; /* Block display for proper rendering */
+  border: none; /* Remove default iframe border */
+  aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+  border-radius: inherit; /* Match parent border radius */
+}
+
+/* Section Wrapper */
+.section-wrapper {
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Constrain width */
+  margin: 0 auto; /* Center alignment */
+  padding: 0 20px; /* Consistent padding */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Q&A Section */
+.qanda-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the section */
+  padding: 0; /* Remove default padding */
+  gap: 0;
+  box-sizing: border-box;
+}
+
+/* Q&A Heading Block */
+.qanda-heading-block {
+  text-align: center;
+  margin: 20px; /* Add spacing */
+}
+.qanda-heading {
+  font-size: 24px; /* Set font size */
+  font-weight: 600; /* Make bold */
+  color: #8B4100; /* Dark brown color */
+}
+
+/* Q&A Content */
+.qanda-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between items */
+  width: 100%;
+}
+
+/* Individual Q&A Block */
+.qanda-block {
+  background-color: rgba(237, 237, 237, 0.75); /* Light gray background */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Add padding inside the block */
+  text-align: left; /* Align text to the left */
+}
+
+/* Question Styling */
+.qanda-question {
+  font-size: 18px; /* Set font size */
+  font-weight: 900; /* Make text bold */
+  color: #8B4100; /* Dark brown color */
+  margin-bottom: 10px; /* Add spacing below */
+}
+
+/* Answer Styling */
+.qanda-answer {
+  font-size: 16px; /* Set font size */
+  font-weight: 300; /* Lighter font weight */
+  color: #4F4F4F; /* Dark gray color */
+  line-height: 1.6; /* Improve readability */
+  margin: 0;
+}
+
+/* Styling Links Inside Answers */
+.qanda-answer a {
+  color: #8B4100; /* Dark brown color */
+  text-decoration: underline; /* Underline links */
+}
+.qanda-answer a:hover {
+  text-decoration: none; /* Remove underline on hover */
+  color: #633606; /* Darker brown for hover effect */
+}
+
+/* Section Wrapper for Consistency */
+.section-wrapper {
+  padding: 0 20px; /* Add padding */
+  margin: 0 auto;
+  max-width: 1200px; /* Constrain width */
+  box-sizing: border-box;
+}
+
+/* Interests Section */
+.interests-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px; /* Space between elements */
+}
+
+/* Heading Block Styling */
+.interests-heading-block {
+  text-align: center;
+  margin: 20px 0 -5px 0;
+}
+.interests-heading {
+  font-size: 24px; /* Set font size */
+  font-weight: 600; /* Make text bold */
+  color: #8B4100; /* Dark brown color */
+  margin: 0;
+}
+
+/* Interests Content */
+.interests-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px; /* Space between blocks */
+  width: 100%;
+}
+
+/* Individual Interest Blocks */
+.interests-block {
+  flex: 1 1 30%; /* Responsive block sizing */
+  min-width: 300px; /* Ensure minimum block width */
+  max-width: 33%; /* Ensure blocks do not exceed one-third width */
+  height: 300px; /* Fixed height for uniformity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFFFFF; /* White text for visibility */
+  font-size: 24px;
+  text-align: center;
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.interests-section-wrapper {
+  padding: 0 20px; /* 20px gap on the left and right */
+  margin: 0 auto; /* Center the section within the wrapper */
+  max-width: 1200px; /* Limit the inner content width */
+  box-sizing: border-box; /* Include padding in the overall width calculation */
+}
+
+/* Background Images for Interest Blocks */
+.coffee-roasting {
+  background-image: url(../media/interestsandhobbies-roasted_beans_and_espresso.jpg);
+}
+.chocolatiering {
+  background-image: url(../media/interestsandhobbies-chocolate_babka.jpg);
+}
+.pizza-making {
+  background-image: url(../media/interestsandhobbies-neapolitan_pizza.jpg);
+}
+
+/* Section Wrapper for Testimonials */
+.testimonials-section-wrapper {
+  padding: 0 20px; /* Consistent left and right spacing */
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the section */
+  padding: 0px; /* Add padding around the section */
+  gap: 0px;
+  box-sizing: border-box;
+}
+
+/* Testimonials Heading Block */
+.testimonials-heading-block {
+  text-align: center;
+  margin: 0px;
+}
+
+.testimonials-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #8B4100;
+  margin: 20px 0px 15px 0px;
+}
+
+/* Testimonials List Wrapper */
+.testimonials-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align the section content */
+  justify-content: flex-start;
+  background-color: #563624; /* Background color */
+  padding: 40px 40px;
+  text-align: center;
+  width: 100%;
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Testimonials List */
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px; /* Constrain the list width */
+}
+
+/* Testimonial Block */
+.testimonial-block {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center; /* Align content */
+}
+
+/* Testimonial Quote */
+.testimonial-quote {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #EBEBEB; /* Light text color for contrast */
+  margin: 15px 50px 15px;
+}
+
+/* Testimonial Author */
+.testimonial-author {
+  font-weight: 600;
+  font-size: 18px;
+  color: #F5D7C2; /* Contrast color for author text */
+  text-align: center; /* Center-align the author names */
+  margin-top: 10px; /* Add spacing above the author names */
+}
+
+/* Footer Styling */
+.footer-horizontal-rule {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #C9CFFC; /* Thin border for separation */
+  margin: 20px 0;
+}
+
+.footer-disclaimer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #686767; /* Neutral gray */
+  text-align: center;
+  margin: 20px 0;
+}
+
+.footer-disclaimer span {
+  color: #B5B2B2; /* Lighter gray for emphasis */
+}
+
+/* Adjustments for Tablet Screens (768px to 1200px) */
+@media (max-width: 1200px) {
+  .intro-links {
+    width: 140px; /* Shrink buttons for tablet screens */
+    height: 44px; /* Reduce height proportionally */
+    font-size: 14px; /* Adjust font size for smaller buttons */
+  }
+}
+
+/* Medium Screens (769px to 1128px) */
+@media (min-width: 769px) and (max-width: 1128px) {
+  .container {
+    padding: 15px; /* Adjust padding for tablets */
+    width: 90%; /* Adjust width for better fit */
+  }
+
+  .intro-section,
+  .results-section,
+  .testimonials-section,
+  .experience-entry,
+  .education-section,
+  .expertise-section {
+    gap: 15px; /* Reduce spacing for smaller screens */
+  }
+
+  .intro-title,
+  .results-title,
+  .experience-title,
+  .experience-roles-title,
+  .education-title,
+  .expertise-title {
+    font-size: clamp(28px, 2.5vw, 48px); /* Adjust font size */
+  }
+
+  .intro-body,
+  .results-body,
+  .experience-body,
+  .education-body,
+  .expertise-body {
+    font-size: clamp(16px, 2vw, 20px); /* Adjust text size */
+    line-height: 1.6; /* Maintain readability */
+  }
+
+  .intro-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro-profile-picture-block {
+    order: -1; /* Move profile picture above text */
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    animation: slideInRight 1.5s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
+  }
+
+  .intro-profile-picture-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .intro-text-content-block {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .expertise-text-block,
+  .expertise-image-block {
+    min-height: 400px; /* Reduce height for medium screens */
+  }
+
+  .interests-hobbies-section {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    justify-content: space-between;
+    gap: 10px; /* Adjust gap for smaller screens */
+    padding: 0 10px;
+  }
+
+  .interests-block {
+    flex: 1 1 calc(33.33% - 20px); /* Shrink blocks while maintaining proportions */
+    height: 200px; /* Adjust height for smaller screens */
+    min-width: 200px; /* Ensure blocks don't get too small */
+    transition: all 0.3s ease-in-out; /* Smooth shrinking effect */
+  }
+}
+
+/* Small Screens (Max-width: 991px) */
+@media (max-width: 991px) {
+  body {
+    padding-top: 60px; /* Matches navbar height */
+  }
+
+  .navbar {
+    padding: 0 10px;
+    height: 50px; /* Adjusted height */
+  }
+
+  .navbar-toggler {
+    margin-right: 0;
+  }
+
+  .navbar-brand {
+    margin-left: 5px;
+  }
+
+  .nav-link-container {
+    display: flex;
+    gap: 10px; /* Maintain spacing */
+    margin-left: auto;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 60px; /* Adjust for navbar height */
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    z-index: 1040;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown-menu {
+    display: none; /* Hide dropdown menus by default */
+    position: relative;
+    background-color: #fff; /* Match navbar background */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .dropdown-menu.show {
+    display: block; /* Show dropdown menu when toggled */
+  }
+
+  .dropdown-item {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+  }
+
+  .dropdown-item:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Highlight effect */
+    color: #007bff;
+  }
+
+  /* Social Media Icons */
+  .nav-link-container {
+    margin-bottom: 1px; /* Adjust alignment */
+  }
+
+  .testimonial-quote {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #EBEBEB;
+    margin: 15px 0;
+  }
+}
+/* Small Screens (Mobile Devices, up to 768px) */
+@media (max-width: 768px) {
+  /* General Adjustments */
+  #experience,
+  #results,
+  #expertise,
+  #education,
+  #q-and-a,
+  #testimonials,
+  #interests-and-hobbies {
+    scroll-margin-top: 55px; /* Adjust based on navbar height */
+  }
+
+  body {
+    font-size: 14px; /* Reduce font size for smaller screens */
+    line-height: 1.5; /* Adjust line spacing */
+    padding-top: 60px; /* Matches navbar height */
+  }
+
+  .container {
+    padding: 10px; /* Reduce padding */
+    width: 100%; /* Full-width layout */
+  }
+
+  section {
+    margin: 0 15px; /* Add consistent margin */
+  }
+
+  .intro-section,
+  .expertise-section,
+  .experience-entry,
+  .education-section,
+  .results-section,
+  .testimonials-section {
+    flex-direction: column; /* Stack content vertically */
+    gap: 15px; /* Adjust spacing */
+  }
+
+  .intro-block,
+  .results-block,
+  .testimonials-block,
+  .contact-block,
+  .education-block,
+  .expertise-block {
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Add spacing between blocks */
+  }
+
+  .intro-body,
+  .results-body,
+  .experience-body,
+  .education-body {
+    font-size: 16px; /* Adjust text size */
+  }
+
+  .intro-links,
+  .experience-header {
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .intro-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 40px auto 0px;
+  }
+
+  .intro-text-content-block {
+    width: 100%;
+    text-align: center;
+  }
+
+  .intro-main-text-block2 p {
+    font-size: 20px;
+    max-width: 100%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 35px;
+    position: relative;
+  }
+
+  .highlight-link:hover::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: normal;
+    display: block;
+    text-align: center;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .highlight-link:hover {
+    visibility: hidden;
+  }
+
+  .intro-links-block {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .intro-links {
+    width: 100%;
+    max-width: 300px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .intro-link {
+    width: 200px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .intro-profile-picture-block {
+    order: -1;
+    margin-bottom: 20px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: auto;
+    height: auto;
+    animation: slideInUp 1.5s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
+  }
+
+  .animated-image {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .results-section {
+    gap: 0px;
+  }
+
+  .results-block {
+    margin: 15px auto -5px auto;
+  }
+
+  .expertise-container {
+    flex-direction: column;
+    padding: 20px 0px;
+    gap: 10px;
+  }
+
+  .expertise-heading-block {
+    text-align: center;
+    margin: 20px 0px -5px;
+  }
+
+  .expertise-text-block,
+  .expertise-image-block {
+    flex: 1 1 100%;
+    min-height: 300px;
+  }
+
+  .expertise-text-block {
+    font-size: clamp(16px, 4vw, 20px);
+    line-height: 1.6;
+  }
+
+  .experience-heading-block {
+    text-align: center;
+    margin: -20px 0px 0px 0px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .experience-title,
+  .experience-date {
+    margin: 5px 0;
+  }
+
+  .experience-logo {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 10px;
+    order: -1;
+  }
+
+  .experience-logo img {
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .experience-body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4F4F4F;
+    margin-top: -30px;
+    text-align: left;
+  }
+}
+  .experience-entry {
+  flex-direction: column; /* Stack content vertically */
+  padding: 20px; /* Adjust padding for readability */
+  gap: 15px; /* Add spacing between elements */
+  text-align: left; /* Keep text left-aligned */
+  margin-bottom: 0px; /* Reduce the bottom margin between entries */
+}
+
+.experience-roles-header {
+  flex-direction: column; /* Stack date and title below the logo */
+  align-items: flex-start; /* Align text to the left */
+  margin-bottom: 20px;
+}
+
+.experience-roles-title {
+  margin: 7px 0; /* Adjust spacing for better readability */
+}
+
+.experience-role-1 {
+  margin: -45px 0px 0px 0px; /* Remove external spacing */
+}
+
+.education-block {
+  margin-bottom: -10px; /* Reduce the space between the blocks */
+}
+
+.education-heading-block {
+  text-align: center;
+  margin: 20px 0px 0px 0px;
+}
+
+.education-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #8B4100;
+  margin: 20px 0px;
+}
+
+.qanda-heading-block {
+  text-align: center;
+  margin: 15px 0px 8px 0px;
+}
+
+.qanda-heading {
+  margin: 10px 0px 5px 0px !important;
+}
+
+.testimonials-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #8B4100;
+  margin: 12px 0px 0px 0px;
+}
+
+.interests-container {
+  display: flex;
+  flex-direction: column; /* Stack blocks vertically */
+  align-items: center; /* Center-align blocks */
+  width: 100% !important;
+  margin: 0 auto; /* Center the container */
+  padding: 0px !important; /* Add padding to match other sections */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.interests-block {
+  width: 100%; /* Full width */
+  margin: 5px; /* Add vertical spacing and center-align blocks */
+  height: 250px; /* Adjust height for smaller screens */
+  max-width: none; /* Remove constraints */
+  box-sizing: border-box; /* Include padding and borders in size */
+  padding: 0px;
+}
+
+.interests-section-wrapper {
+  padding: 0px; /* Remove padding for a tighter layout */
+  max-width: 1200px; /* Limit the inner content width */
+  box-sizing: border-box; /* Include padding in the overall width calculation */
+}
+
+.contact-section {
+  padding: 0px; /* Ensure consistent padding with other sections */
+  width: 100%; /* Ensure full width */
+  max-width: 1200px; /* Match the maximum width of other sections */
+  margin: 0 auto; /* Center-align the section horizontally */
+  box-sizing: border-box; /* Include padding in the total width calculation */
+}
+
+.qr-code img {
+  width: 80px; /* Adjust QR code size */
+  height: 80px; /* Maintain aspect ratio */
+}
+
+.footer-disclaimer,
+.footer-note {
+  padding: 0 10px; /* Reduce padding for smaller screens */
+  text-align: center; /* Ensure centered alignment */
+  margin: 15px auto; /* Adjust spacing */
+}

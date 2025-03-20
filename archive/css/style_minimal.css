@@ -1,0 +1,54 @@
+
+/* Minimal Adjustments for Responsiveness */
+
+/* Links Container */
+.introBlock1links {
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Horizontal alignment */
+  align-items: center; /* Vertical alignment */
+  gap: 15px; /* Add consistent spacing between blocks */
+  margin: 0 auto; /* Center container within its parent */
+  width: auto; /* Adjust width dynamically */
+}
+
+/* Individual Link Blocks */
+.introBlock1resumelink1b {
+  background-color: #633606; /* Original color */
+  color: #FFFFFF;
+  text-align: center; /* Center text within the block */
+  padding: 10px; /* Add padding for better clickable area */
+  font-size: 16px;
+  border-radius: 0; /* Keep square corners */
+  text-decoration: none; /* No underline */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover Effect */
+.introBlock1resumelink1b:hover {
+  background-color: #AC5A03; /* Hover color */
+}
+
+/* Slide-in Graphic */
+.introBlock2 {
+  height: 100%; /* Match parent height */
+  width: 50%; /* Occupy half the width for proper alignment */
+  background-image: url(../media/slide-in-image.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slideIn 1.5s ease-in forwards;
+  position: relative;
+  display: flex;
+  align-items: center; /* Ensure vertical centering */
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
