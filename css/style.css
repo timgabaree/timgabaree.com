@@ -349,7 +349,7 @@ a:visited {
 */
 .nav-link-container {
   display: flex;
-  gap: 15px;
+  gap: 1px;
   align-items: center;
   margin-left: auto;
   margin-bottom: 2px;
@@ -360,6 +360,12 @@ a:visited {
 }
 .nav-link-container img:hover {
   transform: scale(1.1);
+}
+.nav-link {
+  padding: 0;
+  margin: 4px;
+  display: flex;
+  align-items: center;
 }
 
 /*
@@ -1547,7 +1553,10 @@ education-block:last-child {
     line-height: 1.5; /* Adjust line spacing */
     padding-top: 60px; /* Matches navbar height */
   }
-
+	html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
   .container {
     padding: 10px; /* Reduce padding */
     width: 100%; /* Full-width layout */
