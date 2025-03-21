@@ -1565,6 +1565,13 @@ education-block:last-child {
   section {
     margin: 0 15px; /* Add consistent margin */
   }
+	
+ .nav-link {
+  padding-top: 4px;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+ }
 
   .intro-section,
   .expertise-section,
