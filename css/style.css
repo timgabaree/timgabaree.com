@@ -1025,7 +1025,7 @@ a:visited {
 .education-block:first-child {
   background-image: url(../media/education-background-university-of-illinois-springfield.jpg);
 }
-education-block:last-child {
+.education-block:last-child {
   background-image: url(../media/education-background-purdue-university-global.jpg);
 }
 
@@ -1351,6 +1351,64 @@ education-block:last-child {
   color: #F5D7C2; /* Contrast color for author text */
   text-align: center; /* Center-align the author names */
   margin-top: 10px; /* Add spacing above the author names */
+}
+
+/* Contact Section Container */
+.contact-class {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: row; /* Arrange QR code and contact info side by side */
+  align-items: center; /* Vertically align the content */
+  justify-content: flex-start; /* Align items to the left */
+  max-width: 1200px; /* Constrain overall width */
+  margin: 15px auto; /* Center the section with vertical spacing */
+  padding: 20px; /* Add padding around the section for spacing */
+  text-align: left; /* Align text to the left */
+  background-color: #985834; /* Set the background color for the section */
+  border-radius: 8px; /* Apply rounded corners for visual appeal */
+  gap: 15px; /* Add spacing between QR code and contact info */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-sizing: border-box; /* Include padding in the total width */
+
+}
+/* QR Code Block Styling */
+.qr-code-block {
+  flex: 0 0 auto; /* Prevent resizing of the QR code block */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the QR code horizontally */
+  align-items: center; /* Center the QR code vertically */
+  margin-right: 0px; /* Add space to the right of the QR code block */
+}
+.qr-code-block img {
+  width: 100px; /* Fixed width for the QR code image */
+  height: 100px; /* Fixed height to maintain aspect ratio */
+  border-radius: 8px; /* Apply rounded corners for consistency */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+/* Contact Info Block Styling */
+.contact-block {
+  flex: 1; /* Allow the block to take up the remaining space */
+  max-width: 80%; /* Constrain the width for better alignment */
+  text-align: left; /* Align the text to the left */
+	
+}
+/* Contact Info Styling */
+.contact-content {
+  font-weight: 300; /* Light font weight for readability */
+  font-size: 18px; /* Set the font size */
+  color: #EBEBEB; /* Light text color for contrast */
+  line-height: .7em; /* Improve readability with comfortable spacing */
+  }
+
+/* Contact Links Styling */
+a.contactLink:link, a.contactLink:visited {
+  color: #E8BB64; /* Set a golden color for links */
+  text-decoration: none; /* Remove the underline */
+}
+a.contactLink:hover {
+  color: #152743; /* Darker color for hover state */
+}
+a.contactLink:active {
+  color: #254473; /* Slightly brighter color for active state */
 }
 
 /* Footer Styling */
@@ -1832,17 +1890,43 @@ education-block:last-child {
   box-sizing: border-box; /* Include padding in the overall width calculation */
 }
 
-.contact-section {
-  padding: 0px; /* Ensure consistent padding with other sections */
-  width: 100%; /* Ensure full width */
-  max-width: 1200px; /* Match the maximum width of other sections */
-  margin: 0 auto; /* Center-align the section horizontally */
-  box-sizing: border-box; /* Include padding in the total width calculation */
+.contact-class {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.0rem;
+  }
+
+.qr-code-block img {
+  max-width: 80px;
+  height: 80px;
+  display: block;
 }
 
-.qr-code img {
-  width: 80px; /* Adjust QR code size */
-  height: 80px; /* Maintain aspect ratio */
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-text {
+  text-align: left
+}
+
+.contact-content {
+  line-height: .5em; 
+  }
+
+.contact-content span {
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.contactLink {
+  text-decoration: none;
+  color: inherit;
 }
 
 .footer-disclaimer,
