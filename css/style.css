@@ -1,17 +1,14 @@
 @charset "utf-8";
-
 /*
   Global Variables:
   - Defines commonly used styles as CSS variables for better maintainability.
   - Allows easy customization of font size, font family, and colors.
-*/
-:root {
+*/ :root {
   --font-size-base: 16px; /* Base font size for consistent text scaling */
   --font-line-height: 1.6; /* Default line spacing for improved readability */
   --font-family: 'Roboto', sans-serif; /* Primary font used across the site */
   --font-color: #4F4F4F; /* Default text color */
 }
-
 /*
   Body Styling:
   - Ensures a consistent layout by removing default margin and padding.
@@ -29,7 +26,6 @@ body {
   background-color: var(--background-color); /* Background color should be defined in :root */
   color: var(--text-dark); /* Text color should be defined in :root */
 }
-
 /*
   Font Face Definitions:
   - Loads different weights and styles of the 'Roboto' font.
@@ -106,7 +102,6 @@ body {
   src: url('../fonts/Roboto-BlackItalic.ttf') format('truetype');
   font-display: swap;
 }
-
 /*
   Heading Styles:
   - Defines font settings for headings, strong text, and emphasized text.
@@ -133,7 +128,6 @@ em {
   font-weight: 300;
   color: var(--primary-color);
 }
-
 /*
   Link Styling:
   - Defines default link styles.
@@ -150,7 +144,6 @@ a:hover {
 a:visited {
   color: var(--primary-color);
 }
-
 /*
   Utility Classes:
   - Provides reusable classes for layout, spacing, and alignment.
@@ -178,7 +171,6 @@ a:visited {
   justify-content: center;
   align-items: center;
 }
-
 /*
   Section Wrapper:
   - Provides consistent spacing and layout control for sections.
@@ -197,7 +189,6 @@ a:visited {
 .section-spacing {
   box-sizing: border-box;
 }
-
 /*
   Scroll Offset:
   - Adds spacing above sections so they align properly when navigating via links.
@@ -206,7 +197,6 @@ a:visited {
 .scroll-offset {
   scroll-margin-top: 45px; /* Adjust this value to match the height of your navbar */
 }
-
 /*
   Section-Specific Scroll Offsets:
   - Ensures each section aligns correctly when scrolled into view.
@@ -215,7 +205,6 @@ a:visited {
 #home, #experience, #results, #expertise, #education, #q-and-a, #testimonials {
   scroll-margin-top: 45px;
 }
-
 /*
   Common Styling Utilities:
   - Rounded Corners: Applies consistent rounded corners to elements.
@@ -227,7 +216,6 @@ a:visited {
 .shadow {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.06);
 }
-
 /*
   Keyframe Animations:
   - slideInUp: Moves elements from bottom to top while increasing opacity.
@@ -262,7 +250,6 @@ a:visited {
     opacity: 1;
   }
 }
-
 /*
   Navbar Styling:
   - Fixed at the top for easy access to navigation links.
@@ -282,7 +269,6 @@ a:visited {
   padding: 0px 20px;
   background-color: #f8f9fa;
 }
-
 /*
   Navbar Elements:
   - Toggler: Visible button for mobile navigation.
@@ -304,7 +290,6 @@ a:visited {
   align-items: center;
   gap: 20px;
 }
-
 /*
   Calendly Link Styling:
   - Creates a styled button for scheduling appointments.
@@ -329,7 +314,6 @@ a:visited {
   border-radius: 4px;
   padding: 0px;
 }
-
 /*
   Calendly Link Hover Effects:
   - Changes background color on hover for visual feedback.
@@ -341,7 +325,6 @@ a:visited {
 .calendly-link:hover span, .calendly-link:hover small {
   color: #FFFFFF !important;
 }
-
 /*
   Social Media Icons:
   - Aligns social media icons properly with the navbar.
@@ -367,7 +350,6 @@ a:visited {
   display: flex;
   align-items: center;
 }
-
 /*
   Intro Section:
   - Provides a visually appealing introduction area.
@@ -414,7 +396,6 @@ a:visited {
   box-sizing: border-box;
   width: 100%;
 }
-
 /*
   Intro Title and Subtitle:
   - Defines typography for the main heading (h1) and subheading (h2).
@@ -434,7 +415,6 @@ a:visited {
   margin: 10px 0 20px 0;
   text-align: left;
 }
-
 /*
   Intro Main Text Block:
   - Styles paragraph text in the introduction.
@@ -447,7 +427,6 @@ a:visited {
   line-height: 1.8;
   text-align: left;
 }
-
 /*
   Centered Intro Text Block:
   - Used for sections where text needs to be centered.
@@ -469,7 +448,6 @@ a:visited {
   margin-bottom: 10px;
   position: relative;
 }
-
 /*
   Highlighted Text:
   - Adds emphasis to words using styling effects.
@@ -487,7 +465,6 @@ a:visited {
   font-style: italic;
   transition: color 0.3s ease;
 }
-
 /*
   Highlight Link Hover Effect:
   - Changes text on hover with an animation effect.
@@ -507,7 +484,6 @@ a:visited {
   transition: all 0.3s ease;
   visibility: visible;
 }
-
 /*
   LinkedIn Connect Button:
   - Styled button for LinkedIn connection links.
@@ -530,6 +506,8 @@ a:visited {
 .linkedin-connect-button:hover {
   background-color: #005582;
   transform: scale(1.05);
+  text-decoration: none;
+  color: #ffffff;
 }
 .linkedin-connect-button img {
   margin-left: 10px;
@@ -539,7 +517,6 @@ a:visited {
 .linkedin-connect-button img:hover {
   transform: rotate(10deg);
 }
-
 /*
   Blogger Link Button:
   - Styled button for Blogger links.
@@ -558,7 +535,6 @@ a:visited {
 .blogger-link-button img:hover {
   transform: rotate(10deg);
 }
-
 /*
   Intro Footer:
   - Ensures centered text alignment.
@@ -575,7 +551,6 @@ a:visited {
   margin: 0;
   line-height: 1.5;
 }
-
 /*
   Intro Links Block:
   - Arranges introductory links in a flexbox grid.
@@ -616,7 +591,6 @@ a:visited {
 .intro-links:hover {
   background-color: #AC5A03;
 }
-
 /*
   Styling for text within buttons:
   - Includes text and small subtitles.
@@ -630,7 +604,6 @@ a:visited {
   color: #FFFFFF;
   margin-top: -5px;
 }
-
 /*
   Profile Picture Section:
   - Handles layout and animation for a user's profile image.
@@ -641,8 +614,10 @@ a:visited {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: auto;
-  height: auto;
+  width: 300px; /* Same width as the image */
+  height: 400px; /* Same height as the image */
+  min-width: 300px; /* Prevent collapse on mobile */
+  min-height: 400px;
   animation: slideInRight 1.5s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
 }
 .intro-profile-picture-img {
@@ -650,8 +625,25 @@ a:visited {
   width: 100%;
   max-width: 523px;
   height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease-in-out;
 }
-
+.main-img {
+  z-index: 1;
+  opacity: 1;
+}
+.hover-img {
+  z-index: 2;
+  opacity: 0;
+}
+.intro-profile-picture-block:hover .hover-img {
+  opacity: 1;
+}
+.intro-profile-picture-block:hover .main-img {
+  opacity: 0;
+}
 /*
   Results Section:
   - Styles the section where results or accomplishments are displayed.
@@ -670,7 +662,6 @@ a:visited {
   transform: scale(1.03);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
-
 /*
   Results Section Layout:
   - Uses flexbox for consistent layout and responsiveness.
@@ -702,7 +693,6 @@ a:visited {
   border-radius: 8px;
   margin: 15px 0px;
 }
-
 /*
   Background images for individual result blocks.
 */
@@ -715,7 +705,6 @@ a:visited {
 .results-block-3 {
   background-image: url(../media/results-background-right.jpg);
 }
-
 /*
   Results Title Styling:
   - Ensures readable and responsive headings.
@@ -734,7 +723,6 @@ a:visited {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   padding: 10px;
 }
-
 /*
   Expertise Section:
   - Manages layout and styling of the expertise section.
@@ -763,7 +751,6 @@ a:visited {
   max-width: 1200px; /* Restricts max width for better layout */
   box-sizing: border-box; /* Ensures padding and border are included in size calculations */
 }
-
 /* Expertise Text Block */
 .expertise-text-block {
   flex: 1 1 48%; /* Each block takes up about half of the row */
@@ -783,7 +770,6 @@ a:visited {
   min-height: 400px; /* Sets a minimum height for uniformity */
   box-sizing: border-box; /* Includes padding in width calculation */
 }
-
 /* Expertise List Styling */
 .expertise-list {
   padding: 0;
@@ -792,11 +778,9 @@ a:visited {
   text-align: left; /* Aligns text and bullets to the left */
   max-width: 90%; /* Limits width for better readability */
 }
-
 .expertise-list li {
   margin-bottom: 10px; /* Adds space between list items */
 }
-
 /* Expertise Image Block */
 .expertise-image-block {
   flex: 1 1 38%; /* Occupies slightly less space than text block */
@@ -812,7 +796,6 @@ a:visited {
   border-radius: 8px; /* Rounds the corners */
   box-sizing: border-box; /* Includes padding and border in size calculation */
 }
-
 /* Experience Section */
 .experience-section {
   display: flex; /* Enables flexible column layout */
@@ -823,20 +806,17 @@ a:visited {
   padding: 20px 0px 0px 0px; /* Adds padding to the top */
   box-sizing: border-box; /* Ensures padding is included in width calculations */
 }
-
 /* Heading Block */
 .experience-heading-block {
   text-align: center; /* Centers the heading */
   margin-bottom: 0px;
 }
-
 .experience-heading {
   font-size: 24px; /* Sets font size */
   color: #8B4100; /* Sets heading color */
   font-weight: 600; /* Bold heading for emphasis */
   margin: 0;
 }
-
 /* Individual Experience Entry */
 .experience-entry {
   display: flex;
@@ -848,7 +828,6 @@ a:visited {
   padding: 20px; /* Adds inner spacing */
   box-sizing: border-box; /* Includes padding in width calculation */
 }
-
 /* Header (Logo, Date, Titles) */
 .experience-header {
   display: flex; /* Enables flexible positioning */
@@ -856,7 +835,6 @@ a:visited {
   align-items: center; /* Aligns elements vertically */
   margin-bottom: 0px;
 }
-
 .experience-logo {
   position: relative; /* Allows z-index usage */
   z-index: 10; /* Ensures logo is above other elements */
@@ -865,7 +843,6 @@ a:visited {
   margin: 0; /* Removes unwanted margins */
   background-color: transparent; /* Ensures no background obstruction */
 }
-
 .experience-logo img {
   max-width: 100px; /* Restricts logo size */
   height: auto; /* Maintains aspect ratio */
@@ -873,30 +850,25 @@ a:visited {
   display: block; /* Ensures block display */
   border: none; /* Removes unwanted borders */
 }
-
 .experience-details {
   flex: 1;
   text-align: left; /* Aligns text to the left */
 }
-
 .experience-date {
   font-size: 18px;
   color: #4F4F4F;
   font-weight: 400;
 }
-
 .experience-title {
   font-size: 16px;
   color: #8B4100;
   font-weight: 600;
 }
-
 .experience-title small {
   display: block;
   font-style: italic;
   color: #4F4F4F;
 }
-
 /* Body Content */
 .experience-body {
   font-size: 16px;
@@ -905,7 +877,6 @@ a:visited {
   margin-top: 10px;
   text-align: left;
 }
-
 /* Divider */
 .experience-divider {
   border: none;
@@ -913,7 +884,6 @@ a:visited {
   margin: 10px 0;
   width: 100%;
 }
-
 /* Experience Entry Container */
 .experience-entry {
   display: flex;
@@ -925,22 +895,19 @@ a:visited {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
-
 /* Roles Container */
 .experience-roles {
   display: flex;
   flex-direction: column;
   gap: 0; /* No gap between roles */
 }
-
 /* Roles Header Styling */
 .experience-roles-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
-
 /* Roles Title Styling */
 .experience-roles-title {
   font-size: 16px;
@@ -952,7 +919,6 @@ a:visited {
   font-style: italic;
   color: #4F4F4F;
 }
-
 /* Individual Role Styling */
 .experience-role-1 {
   margin: -23px 0px 0px 0px; /* Remove external spacing */
@@ -960,7 +926,6 @@ a:visited {
 .experience-role-2-and-3 {
   margin: 0px; /* Remove external spacing */
 }
-
 /* Roles Body Content */
 .experience-roles-body {
   font-size: 16px;
@@ -972,7 +937,6 @@ a:visited {
 .experience-body:last-child {
   margin-bottom: 0; /* Remove margin for the last role */
 }
-
 /* Education Section */
 .education-section {
   display: flex;
@@ -984,13 +948,11 @@ a:visited {
   padding: 0px;
   box-sizing: border-box;
 }
-
 /* Education Heading Block */
 .education-heading-block {
   text-align: center;
   margin-bottom: 20px;
 }
-
 /* Education Heading Styling */
 .education-heading {
   font-size: 24px;
@@ -998,7 +960,6 @@ a:visited {
   color: #8B4100;
   margin: 0;
 }
-
 /* Education Content Layout */
 .education-content {
   display: flex;
@@ -1006,7 +967,6 @@ a:visited {
   gap: 20px; /* Add space between blocks */
   width: 100%;
 }
-
 /* Education Block Styling */
 .education-block {
   display: flex;
@@ -1020,7 +980,6 @@ a:visited {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   min-height: 400px;
 }
-
 /* Background Images for Education Blocks */
 .education-block:first-child {
   background-image: url(../media/education-background-university-of-illinois-springfield.jpg);
@@ -1028,7 +987,6 @@ a:visited {
 .education-block:last-child {
   background-image: url(../media/education-background-purdue-university-global.jpg);
 }
-
 /* Inner Block Styling for Education Section */
 .education-inner-block {
   display: flex;
@@ -1041,7 +999,6 @@ a:visited {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-
 /* Education Title Styling */
 .education-title {
   font-size: 22px;
@@ -1049,7 +1006,6 @@ a:visited {
   color: #8B4100;
   margin-bottom: 10px;
 }
-
 /* Education Subtitle Styling */
 .education-subtitle {
   font-size: 18px;
@@ -1057,7 +1013,6 @@ a:visited {
   color: #4F4F4F;
   margin-bottom: 10px;
 }
-
 /* Education Logo Styling */
 .education-logo img {
   max-width: 250px;
@@ -1065,7 +1020,6 @@ a:visited {
   margin-top: 10px;
   border-radius: 8px;
 }
-
 /* Meet Tim Section */
 .meet-tim-section {
   display: flex;
@@ -1089,7 +1043,6 @@ a:visited {
   color: #8B4100; /* Dark brown color */
   margin: 0; /* Remove default margins */
 }
-
 /* Meet Tim Video Block */
 .meet-tim-video-block {
   display: flex; /* Use flexbox for layout */
@@ -1104,7 +1057,6 @@ a:visited {
   overflow: hidden; /* Prevent content overflow */
   background-color: #000; /* Black background for video area */
 }
-
 /* Ensure iframe fully fills its parent container */
 .meet-tim-video-block iframe {
   width: 100%; /* Full width of the container */
@@ -1114,7 +1066,6 @@ a:visited {
   aspect-ratio: 16 / 9; /* Maintain aspect ratio */
   border-radius: inherit; /* Match parent border radius */
 }
-
 /* Section Wrapper */
 .section-wrapper {
   width: 100%; /* Full width */
@@ -1123,7 +1074,6 @@ a:visited {
   padding: 0 20px; /* Consistent padding */
   box-sizing: border-box; /* Include padding in width */
 }
-
 /* Q&A Section */
 .qanda-section {
   display: flex;
@@ -1136,7 +1086,6 @@ a:visited {
   gap: 0;
   box-sizing: border-box;
 }
-
 /* Q&A Heading Block */
 .qanda-heading-block {
   text-align: center;
@@ -1147,7 +1096,6 @@ a:visited {
   font-weight: 600; /* Make bold */
   color: #8B4100; /* Dark brown color */
 }
-
 /* Q&A Content */
 .qanda-content {
   display: flex;
@@ -1155,7 +1103,6 @@ a:visited {
   gap: 20px; /* Space between items */
   width: 100%;
 }
-
 /* Individual Q&A Block */
 .qanda-block {
   background-color: rgba(237, 237, 237, 0.75); /* Light gray background */
@@ -1165,7 +1112,6 @@ a:visited {
   padding: 20px; /* Add padding inside the block */
   text-align: left; /* Align text to the left */
 }
-
 /* Question Styling */
 .qanda-question {
   font-size: 18px; /* Set font size */
@@ -1173,7 +1119,6 @@ a:visited {
   color: #8B4100; /* Dark brown color */
   margin-bottom: 10px; /* Add spacing below */
 }
-
 /* Answer Styling */
 .qanda-answer {
   font-size: 16px; /* Set font size */
@@ -1182,7 +1127,6 @@ a:visited {
   line-height: 1.6; /* Improve readability */
   margin: 0;
 }
-
 /* Styling Links Inside Answers */
 .qanda-answer a {
   color: #8B4100; /* Dark brown color */
@@ -1192,15 +1136,13 @@ a:visited {
   text-decoration: none; /* Remove underline on hover */
   color: #633606; /* Darker brown for hover effect */
 }
-
 /* Section Wrapper for Consistency */
 .section-wrapper {
-  padding: 0 20px; /* Add padding */
+  padding: 0px 0px; /* Add padding */
   margin: 0 auto;
   max-width: 1200px; /* Constrain width */
   box-sizing: border-box;
 }
-
 /* Interests Section */
 .interests-section {
   display: flex;
@@ -1210,7 +1152,6 @@ a:visited {
   text-align: center;
   gap: 20px; /* Space between elements */
 }
-
 /* Heading Block Styling */
 .interests-heading-block {
   text-align: center;
@@ -1222,42 +1163,51 @@ a:visited {
   color: #8B4100; /* Dark brown color */
   margin: 0;
 }
-
 /* Interests Content */
 .interests-content {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  gap: 20px; /* Space between blocks */
+  justify-content: center; /* fixes the wide spacing issue */
+  flex-wrap: wrap; /* allow wrapping */
+  gap: 20px; /* space between blocks */
   width: 100%;
 }
-
 /* Individual Interest Blocks */
 .interests-block {
-  flex: 1 1 30%; /* Responsive block sizing */
-  min-width: 300px; /* Ensure minimum block width */
-  max-width: 33%; /* Ensure blocks do not exceed one-third width */
-  height: 300px; /* Fixed height for uniformity */
+  position: relative; /* so the caption can be absolutely positioned inside */
+  flex: 1 1 50%;
+  min-width: 225px;
+  max-width: 49%;
+  height: 300px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: stretch;
   background-size: cover;
-  background-position: center;
+  background-position: top-center;
   background-repeat: no-repeat;
-  color: #FFFFFF; /* White text for visibility */
-  font-size: 24px;
+  color: #FFFFFF;
+  font-size: 22px;
   text-align: center;
-  border-radius: 8px; /* Smooth rounded corners */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-
+.interest-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: #FFFFFF;
+  padding: 0 10px;
+  pointer-events: none; /* optional: lets clicks go through to the block */
+}
 .interests-section-wrapper {
   padding: 0 20px; /* 20px gap on the left and right */
   margin: 0 auto; /* Center the section within the wrapper */
   max-width: 1200px; /* Limit the inner content width */
   box-sizing: border-box; /* Include padding in the overall width calculation */
 }
-
 /* Background Images for Interest Blocks */
 .coffee-roasting {
   background-image: url(../media/interestsandhobbies-roasted_beans_and_espresso.jpg);
@@ -1268,7 +1218,9 @@ a:visited {
 .pizza-making {
   background-image: url(../media/interestsandhobbies-neapolitan_pizza.jpg);
 }
-
+.geeking-out {
+  background-image: url(../media/TimGeekingOut6.png);
+}
 /* Section Wrapper for Testimonials */
 .testimonials-section-wrapper {
   padding: 0 20px; /* Consistent left and right spacing */
@@ -1276,7 +1228,6 @@ a:visited {
   max-width: 1200px;
   box-sizing: border-box;
 }
-
 /* Testimonials Section */
 .testimonials-section {
   display: flex;
@@ -1289,20 +1240,17 @@ a:visited {
   gap: 0px;
   box-sizing: border-box;
 }
-
 /* Testimonials Heading Block */
 .testimonials-heading-block {
   text-align: center;
   margin: 0px;
 }
-
 .testimonials-heading {
   font-size: 24px;
   font-weight: 600;
   color: #8B4100;
   margin: 20px 0px 15px 0px;
 }
-
 /* Testimonials List Wrapper */
 .testimonials-list-wrapper {
   display: flex;
@@ -1316,7 +1264,6 @@ a:visited {
   border-radius: 8px; /* Smooth rounded corners */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
-
 /* Testimonials List */
 .testimonials-list {
   display: flex;
@@ -1325,7 +1272,6 @@ a:visited {
   width: 100%;
   max-width: 1100px; /* Constrain the list width */
 }
-
 /* Testimonial Block */
 .testimonial-block {
   background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
@@ -1334,7 +1280,6 @@ a:visited {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-align: center; /* Align content */
 }
-
 /* Testimonial Quote */
 .testimonial-quote {
   font-weight: 300;
@@ -1343,7 +1288,6 @@ a:visited {
   color: #EBEBEB; /* Light text color for contrast */
   margin: 15px 50px 15px;
 }
-
 /* Testimonial Author */
 .testimonial-author {
   font-weight: 600;
@@ -1352,7 +1296,6 @@ a:visited {
   text-align: center; /* Center-align the author names */
   margin-top: 10px; /* Add spacing above the author names */
 }
-
 /* Contact Section Container */
 .contact-class {
   display: flex; /* Use flexbox for layout */
@@ -1368,7 +1311,6 @@ a:visited {
   gap: 15px; /* Add spacing between QR code and contact info */
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   box-sizing: border-box; /* Include padding in the total width */
-
 }
 /* QR Code Block Styling */
 .qr-code-block {
@@ -1389,7 +1331,6 @@ a:visited {
   flex: 1; /* Allow the block to take up the remaining space */
   max-width: 80%; /* Constrain the width for better alignment */
   text-align: left; /* Align the text to the left */
-	
 }
 /* Contact Info Styling */
 .contact-content {
@@ -1397,8 +1338,7 @@ a:visited {
   font-size: 18px; /* Set the font size */
   color: #EBEBEB; /* Light text color for contrast */
   line-height: .7em; /* Improve readability with comfortable spacing */
-  }
-
+}
 /* Contact Links Styling */
 a.contactLink:link, a.contactLink:visited {
   color: #E8BB64; /* Set a golden color for links */
@@ -1410,7 +1350,6 @@ a.contactLink:hover {
 a.contactLink:active {
   color: #254473; /* Slightly brighter color for active state */
 }
-
 /* Footer Styling */
 .footer-horizontal-rule {
   width: 100%;
@@ -1418,7 +1357,6 @@ a.contactLink:active {
   border-top: 1px solid #C9CFFC; /* Thin border for separation */
   margin: 20px 0;
 }
-
 .footer-disclaimer {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -1426,11 +1364,9 @@ a.contactLink:active {
   text-align: center;
   margin: 20px 0;
 }
-
 .footer-disclaimer span {
   color: #B5B2B2; /* Lighter gray for emphasis */
 }
-
 /* Adjustments for Tablet Screens (768px to 1200px) */
 @media (max-width: 1200px) {
   .intro-links {
@@ -1439,46 +1375,26 @@ a.contactLink:active {
     font-size: 14px; /* Adjust font size for smaller buttons */
   }
 }
-
 /* Medium Screens (769px to 1128px) */
 @media (min-width: 769px) and (max-width: 1128px) {
   .container {
     padding: 15px; /* Adjust padding for tablets */
     width: 90%; /* Adjust width for better fit */
   }
-
-  .intro-section,
-  .results-section,
-  .testimonials-section,
-  .experience-entry,
-  .education-section,
-  .expertise-section {
+  .intro-section, .results-section, .testimonials-section, .experience-entry, .education-section, .expertise-section {
     gap: 15px; /* Reduce spacing for smaller screens */
   }
-
-  .intro-title,
-  .results-title,
-  .experience-title,
-  .experience-roles-title,
-  .education-title,
-  .expertise-title {
+  .intro-title, .results-title, .experience-title, .experience-roles-title, .education-title, .expertise-title {
     font-size: clamp(28px, 2.5vw, 48px); /* Adjust font size */
   }
-
-  .intro-body,
-  .results-body,
-  .experience-body,
-  .education-body,
-  .expertise-body {
+  .intro-body, .results-body, .experience-body, .education-body, .expertise-body {
     font-size: clamp(16px, 2vw, 20px); /* Adjust text size */
     line-height: 1.6; /* Maintain readability */
   }
-
   .intro-section {
     flex-direction: column;
     align-items: center;
   }
-
   .intro-profile-picture-block {
     order: -1; /* Move profile picture above text */
     width: 100%;
@@ -1486,23 +1402,18 @@ a.contactLink:active {
     margin-bottom: 20px;
     animation: slideInRight 1.5s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
   }
-
   .intro-profile-picture-img {
     width: 100%;
     height: auto;
     border-radius: 8px;
   }
-
   .intro-text-content-block {
     text-align: center;
     padding: 20px;
   }
-
-  .expertise-text-block,
-  .expertise-image-block {
+  .expertise-text-block, .expertise-image-block {
     min-height: 400px; /* Reduce height for medium screens */
   }
-
   .interests-hobbies-section {
     display: flex;
     flex-wrap: nowrap; /* Prevent wrapping to a new line */
@@ -1510,40 +1421,33 @@ a.contactLink:active {
     gap: 10px; /* Adjust gap for smaller screens */
     padding: 0 10px;
   }
-
   .interests-block {
-    flex: 1 1 calc(33.33% - 20px); /* Shrink blocks while maintaining proportions */
+    flex: 1 1 calc(25% - 20px); /* Shrink blocks while maintaining proportions */
     height: 200px; /* Adjust height for smaller screens */
     min-width: 200px; /* Ensure blocks don't get too small */
     transition: all 0.3s ease-in-out; /* Smooth shrinking effect */
   }
 }
-
 /* Small Screens (Max-width: 991px) */
 @media (max-width: 991px) {
   body {
     padding-top: 60px; /* Matches navbar height */
   }
-
   .navbar {
     padding: 0 10px;
     height: 50px; /* Adjusted height */
   }
-
   .navbar-toggler {
     margin-right: 0;
   }
-
   .navbar-brand {
     margin-left: 5px;
   }
-
   .nav-link-container {
     display: flex;
     gap: 10px; /* Maintain spacing */
     margin-left: auto;
   }
-
   .navbar-collapse {
     position: absolute;
     top: 60px; /* Adjust for navbar height */
@@ -1553,7 +1457,6 @@ a.contactLink:active {
     z-index: 1040;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
-
   .dropdown-menu {
     display: none; /* Hide dropdown menus by default */
     position: relative;
@@ -1563,28 +1466,23 @@ a.contactLink:active {
     margin-top: 10px;
     padding: 10px;
   }
-
   .dropdown-menu.show {
     display: block; /* Show dropdown menu when toggled */
   }
-
   .dropdown-item {
     padding: 10px 15px;
     font-size: 16px;
     color: #333;
     text-align: left;
   }
-
   .dropdown-item:hover {
     background-color: rgba(0, 123, 255, 0.1); /* Highlight effect */
     color: #007bff;
   }
-
   /* Social Media Icons */
   .nav-link-container {
     margin-bottom: 1px; /* Adjust alignment */
   }
-
   .testimonial-quote {
     font-weight: 300;
     font-size: 16px;
@@ -1596,85 +1494,55 @@ a.contactLink:active {
 /* Small Screens (Mobile Devices, up to 768px) */
 @media (max-width: 768px) {
   /* General Adjustments */
-  #experience,
-  #results,
-  #expertise,
-  #education,
-  #q-and-a,
-  #testimonials,
-  #interests-and-hobbies {
+  #experience, #results, #expertise, #education, #q-and-a, #testimonials, #interests-and-hobbies {
     scroll-margin-top: 55px; /* Adjust based on navbar height */
   }
-
   body {
     font-size: 14px; /* Reduce font size for smaller screens */
     line-height: 1.5; /* Adjust line spacing */
     padding-top: 60px; /* Matches navbar height */
   }
-	html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
   .container {
     padding: 10px; /* Reduce padding */
     width: 100%; /* Full-width layout */
   }
-
   section {
     margin: 0 15px; /* Add consistent margin */
   }
-	
- .nav-link {
-  padding-top: 6px;
-  margin: 4px;
-  display: flex;
-  align-items: center;
- }
-
-  .intro-section,
-  .expertise-section,
-  .experience-entry,
-  .education-section,
-  .results-section,
-  .testimonials-section {
+  .nav-link {
+    padding-top: 6px;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+  }
+  .intro-section, .expertise-section, .experience-entry, .education-section, .results-section, .testimonials-section {
     flex-direction: column; /* Stack content vertically */
     gap: 15px; /* Adjust spacing */
   }
-
-  .intro-block,
-  .results-block,
-  .testimonials-block,
-  .contact-block,
-  .education-block,
-  .expertise-block {
+  .intro-block, .results-block, .testimonials-block, .contact-block, .education-block, .expertise-block {
     width: 100%; /* Full width */
     margin-bottom: 20px; /* Add spacing between blocks */
   }
-
-  .intro-body,
-  .results-body,
-  .experience-body,
-  .education-body {
+  .intro-body, .results-body, .experience-body, .education-body {
     font-size: 16px; /* Adjust text size */
   }
-
-  .intro-links,
-  .experience-header {
+  .intro-links, .experience-header {
     flex-direction: column; /* Stack content vertically */
   }
-
   .intro-section {
     flex-direction: column;
     align-items: center;
     padding: 20px;
     margin: 40px auto 0px;
   }
-
   .intro-text-content-block {
     width: 100%;
     text-align: center;
   }
-
   .intro-main-text-block2 p {
     font-size: 20px;
     max-width: 100%;
@@ -1686,7 +1554,6 @@ a.contactLink:active {
     margin-bottom: 35px;
     position: relative;
   }
-
   .highlight-link:hover::after {
     position: absolute;
     top: 0;
@@ -1698,11 +1565,9 @@ a.contactLink:active {
     margin-bottom: 0;
     width: 100%;
   }
-
   .highlight-link:hover {
     visibility: hidden;
   }
-
   .intro-links-block {
     flex-direction: column;
     justify-content: center;
@@ -1710,20 +1575,17 @@ a.contactLink:active {
     align-items: center;
     margin-top: 20px;
   }
-
   .intro-links {
     width: 100%;
     max-width: 300px;
     height: 48px;
     font-size: 16px;
   }
-
   .intro-link {
     width: 200px;
     height: 60px;
     font-size: 18px;
   }
-
   .intro-profile-picture-block {
     order: -1;
     margin-bottom: 20px;
@@ -1732,77 +1594,74 @@ a.contactLink:active {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: auto;
+    width: 100%;
+    max-width: 300px; /* Same as image width */
     height: auto;
+    min-height: 400px; /* Prevent collapse */
     animation: slideInUp 1.5s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
   }
-
+  .intro-profile-picture-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
   .animated-image {
     width: 80%;
     max-width: 300px;
     height: auto;
     border-radius: 8px;
   }
-
   .results-section {
     gap: 0px;
   }
-
   .results-block {
     margin: 15px auto -5px auto;
   }
-
   .expertise-container {
     flex-direction: column;
     padding: 20px 0px;
     gap: 10px;
   }
-
   .expertise-heading-block {
     text-align: center;
     margin: 20px 0px -5px;
   }
-
-  .expertise-text-block,
-  .expertise-image-block {
+  .expertise-text-block, .expertise-image-block {
     flex: 1 1 100%;
     min-height: 300px;
   }
-
   .expertise-text-block {
     font-size: clamp(16px, 4vw, 20px);
     line-height: 1.6;
   }
-
   .experience-heading-block {
     text-align: center;
     margin: -20px 0px 0px 0px;
   }
-
   .experience-header {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
   }
-
-  .experience-title,
-  .experience-date {
+  .experience-roles-header {
+    flex-direction: column; /* Stack date and title below the logo */
+    align-items: flex-start; /* Align text to the left */
+    margin-bottom: 20px;
+  }
+  .experience-title, .experience-date {
     margin: 5px 0;
   }
-
   .experience-logo {
     width: 100%;
     text-align: center;
     margin: 0 auto 10px;
     order: -1;
   }
-
   .experience-logo img {
     width: 120px;
     height: auto;
     margin: 0 auto;
   }
-
   .experience-body {
     font-size: 16px;
     line-height: 1.6;
@@ -1810,86 +1669,63 @@ a.contactLink:active {
     margin-top: -30px;
     text-align: left;
   }
+  .interests-container {
+    display: flex;
+    flex-direction: column; /* Stack blocks vertically */
+    align-items: center; /* Center-align blocks */
+    width: 100% !important;
+    margin: 0 auto; /* Center the container */
+    padding: 0px !important; /* Add padding to match other sections */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  .interests-block {
+    width: 100%; /* Full width */
+    margin: 5px; /* Add vertical spacing and center-align blocks */
+    height: 250px; /* Adjust height for smaller screens */
+    max-width: none; /* Remove constraints */
+    box-sizing: border-box; /* Include padding and borders in size */
+    padding: 0px;
+  }
 }
-  .experience-entry {
+.experience-entry {
   flex-direction: column; /* Stack content vertically */
   padding: 20px; /* Adjust padding for readability */
   gap: 15px; /* Add spacing between elements */
   text-align: left; /* Keep text left-aligned */
   margin-bottom: 0px; /* Reduce the bottom margin between entries */
 }
-
-.experience-roles-header {
-  flex-direction: column; /* Stack date and title below the logo */
-  align-items: flex-start; /* Align text to the left */
-  margin-bottom: 20px;
-}
-
 .experience-roles-title {
   margin: 7px 0; /* Adjust spacing for better readability */
 }
-
 .experience-role-1 {
   margin: -45px 0px 0px 0px; /* Remove external spacing */
 }
-
 .education-block {
   margin-bottom: -10px; /* Reduce the space between the blocks */
 }
-
 .education-heading-block {
   text-align: center;
   margin: 20px 0px 0px 0px;
 }
-
 .education-heading {
   font-size: 24px;
   font-weight: 600;
   color: #8B4100;
   margin: 20px 0px;
 }
-
 .qanda-heading-block {
   text-align: center;
   margin: 15px 0px 8px 0px;
 }
-
 .qanda-heading {
   margin: 10px 0px 5px 0px !important;
 }
-
 .testimonials-heading {
   font-size: 24px;
   font-weight: 600;
   color: #8B4100;
   margin: 12px 0px 0px 0px;
 }
-
-.interests-container {
-  display: flex;
-  flex-direction: column; /* Stack blocks vertically */
-  align-items: center; /* Center-align blocks */
-  width: 100% !important;
-  margin: 0 auto; /* Center the container */
-  padding: 0px !important; /* Add padding to match other sections */
-  box-sizing: border-box; /* Include padding in width calculation */
-}
-
-.interests-block {
-  width: 100%; /* Full width */
-  margin: 5px; /* Add vertical spacing and center-align blocks */
-  height: 250px; /* Adjust height for smaller screens */
-  max-width: none; /* Remove constraints */
-  box-sizing: border-box; /* Include padding and borders in size */
-  padding: 0px;
-}
-
-.interests-section-wrapper {
-  padding: 0px; /* Remove padding for a tighter layout */
-  max-width: 1200px; /* Limit the inner content width */
-  box-sizing: border-box; /* Include padding in the overall width calculation */
-}
-
 .contact-class {
   display: flex;
   flex-wrap: wrap;
@@ -1897,40 +1733,32 @@ a.contactLink:active {
   align-items: center;
   gap: 2rem;
   margin-top: 1.0rem;
-  }
-
+}
 .qr-code-block img {
   max-width: 80px;
   height: 80px;
   display: block;
 }
-
 .contact-block {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .contact-text {
   text-align: left
 }
-
 .contact-content {
-  line-height: .5em; 
-  }
-
+  line-height: .5em;
+}
 .contact-content span {
   display: block;
   margin-top: 0.2rem;
 }
-
 .contactLink {
   text-decoration: none;
   color: inherit;
 }
-
-.footer-disclaimer,
-.footer-note {
+.footer-disclaimer, .footer-note {
   padding: 0 10px; /* Reduce padding for smaller screens */
   text-align: center; /* Ensure centered alignment */
   margin: 15px auto; /* Adjust spacing */
