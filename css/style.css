@@ -1322,6 +1322,11 @@ a:visited {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   box-sizing: border-box; /* Include padding in the total width */
 }
+.contact-content span {
+  display: block;
+  line-height: 1.0; /* increases spacing between lines */
+  margin-bottom: 0px; /* optional: adds a little more breathing room */
+}
 /* QR Code Block Styling */
 .qr-code-block {
   flex: 0 0 auto; /* Prevent resizing of the QR code block */
