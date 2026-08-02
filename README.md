@@ -1,67 +1,176 @@
 # TimGabaree.com
 
-This is the source code for [TimGabaree.com](https://timgabaree.com), a personal website showcasing executive IT leadership, expertise, experience, and professional insights.
+This repository contains the source code for **https://timgabaree.com**, the professional website of Tim Gabaree, a Portfolio CIO and technology executive focused on technology value creation, enterprise performance, governance, and operating model transformation.
+
+---
 
 ## Project Overview
-TimGabaree.com is a professional portfolio and personal branding site. It includes:
-- Executive bio and resume
-- IT leadership expertise and experience
-- Testimonials and professional insights
-- Contact information with a vCard QR code
-- Blog links and social media integration
 
-## Tech Stack
-The website is built using:
-- **HTML5 & CSS3** (Bootstrap 4.4.1)
-- **JavaScript** (for interactivity)
-- **Google Tag Manager & Analytics** (for tracking)
-- **Git & GitHub** (for version control and deployment management)
-- **Dreamweaver** (as the primary development tool)
+TimGabaree.com serves as a professional executive website and personal brand platform. It includes:
 
-## Getting Started
-To work with this project locally:
+- Executive profile and biography
+- Professional résumé and executive documents
+- Board and advisory information
+- Leadership philosophy and experience
+- Contact page with secure contact form
+- Downloadable vCard
+- Calendly scheduling integration
+- Professional blog and social media links
+- Structured data (Schema.org) for search engines
+- SEO-optimized metadata throughout the site
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/timgabaree/timgabaree.com.git
-   cd timgabaree.com
-   ```
+---
 
-2. **Set up Dreamweaver (if using):**
-   - Open Dreamweaver.
-   - Associate the site with this local Git repository.
-   - Configure the local and remote server settings if needed.
+## Technology Stack
 
-3. **Make changes and commit:**
-   ```sh
-   git add .
-   git commit -m "Your commit message here"
-   ```
+The site is built using:
 
-4. **Push changes to GitHub:**
-   ```sh
-   git push -u timgabareecom main
-   ```
+- PHP 8+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Schema.org JSON-LD
+- Google Tag Manager
+- Google Analytics
+- Dreamweaver (primary development environment)
+- Git & GitHub (source control)
+
+---
+
+## Architecture
+
+The site uses a modular PHP architecture with reusable components.
+
+```
+/
+├── index.php
+├── about.php
+├── hello.php
+├── privacy.php
+├── thank-you.php
+├── hello-submit.php
+│
+├── includes/
+│   ├── bootstrap.php
+│   ├── config.php
+│   ├── head.php
+│   ├── header.php
+│   ├── footer.php
+│   ├── schema-*.php
+│   └── ...
+│
+├── css/
+├── fonts/
+├── media/
+└── sitemap.xml
+```
+
+Common page elements such as metadata, structured data, navigation, footer content, configuration values, and reusable helper functions are centralized under the **/includes** directory.
+
+Direct browser access to the **/includes** directory is disabled.
+
+---
+
+## Features
+
+- Responsive design
+- Reusable page templates
+- Centralized site configuration
+- Shared metadata and Open Graph handling
+- Modular Schema.org generation
+- Secure contact form
+  - Honeypot spam protection
+  - Request size limits
+  - Rate limiting
+  - Origin validation
+  - Server-side validation
+  - Header injection protection
+- Google Tag Manager integration
+- SEO optimization
+- Accessibility-focused markup
+
+---
+
+## Local Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/timgabaree/timgabaree.com.git
+cd timgabaree.com
+```
+
+If using Dreamweaver:
+
+1. Open Dreamweaver.
+2. Define the local site.
+3. Configure the testing server if needed.
+4. Configure the remote FTP/SFTP connection.
+
+---
 
 ## Git Workflow
-- **Pull before pushing:** Ensure your local branch is up-to-date with the remote repository.
-  ```sh
-  git pull --rebase timgabareecom main
-  ```
-- **Check status:** Before committing, check which files have changed.
-  ```sh
-  git status
-  ```
-- **Branching (if needed):**
-  ```sh
-  git checkout -b feature-branch
-  ```
+
+Check status:
+
+```bash
+git status
+```
+
+Stage changes:
+
+```bash
+git add .
+```
+
+Commit:
+
+```bash
+git commit -m "Describe your changes"
+```
+
+Pull latest changes:
+
+```bash
+git pull --rebase origin main
+```
+
+Push changes:
+
+```bash
+git push origin main
+```
+
+Feature branches (optional):
+
+```bash
+git checkout -b feature/my-feature
+```
+
+---
 
 ## Deployment
-The site is deployed via GitHub and hosted on a private web server.
+
+Production hosting is provided through GoDaddy.
+
+GitHub serves as the source-control repository.
+
+Deployment is performed after testing using the configured hosting workflow.
+
+---
 
 ## Contact
-For any inquiries or suggestions, reach out via [TimGabaree.com](https://timgabaree.com).
+
+For professional inquiries, visit:
+
+**https://timgabaree.com/hello.php**
+
+---
 
 ## License
-This project is private and not open-source. Unauthorized use, duplication, or distribution is prohibited.
+
+Copyright © 2023–2026 Tim Gabaree
+
+All Rights Reserved.
+
+This repository contains proprietary source code and content. No portion of this project may be copied, redistributed, modified, or reused without prior written permission from Tim Gabaree.
