@@ -1,15 +1,26 @@
 BEGIN:VCARD
-VERSION:2.1
+VERSION:3.0
+
 N:Gabaree;Tim;;;
 FN:Tim Gabaree
-TEL;CELL;PREF:571-762-3769
-TEL;CELL:773-609-0697
-EMAIL;PREF;HOME:timgabaree@gmail.com
-EMAIL;WORK:tim@timgabaree.com
-ORG:
-TITLE:Technology Leadership & Strategic Operations
-URL:https://www.linkedIn.com/in/tim-gabaree
+
+ORG:Tim Gabaree
+TITLE:Portfolio CIO | Technology Value Creation | Enterprise Performance
+
+ADR;TYPE=WORK:;;;;Chicago;IL;;
+
+TEL;TYPE=CELL;PREF:571-762-3769
+TEL;TYPE=CELL:773-609-0697
+
+EMAIL;TYPE=HOME;PREF:timgabaree@gmail.com
+EMAIL;TYPE=WORK:tim@timgabaree.com
+EMAIL;TYPE=WORK:tim@rgesol.com
+
 URL:https://timgabaree.com
+URL:https://www.linkedin.com/in/timgabaree
+
+NOTE:Portfolio CIO helping organizations accelerate value through technology, governance, cybersecurity, and operational transformation.
+
 PHOTO;ENCODING=BASE64;JPEG:/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEU
  AAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAA
  AAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

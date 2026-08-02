@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://timgabaree.com/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/timgabaree_profile5_900x1200.webp</image:loc>
+      <image:title>Tim Gabaree</image:title>
+      <image:caption>Portrait of Portfolio CIO and technology executive Tim Gabaree.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/TimInTheMorning1a.webp</image:loc>
+      <image:title>Tim Gabaree enjoying morning coffee</image:title>
+      <image:caption>Tim Gabaree enjoying a morning espresso.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/intro-background-architecture3.webp</image:loc>
+      <image:title>Modern architectural background</image:title>
+      <image:caption>Modern architecture used as the visual background for Tim Gabaree's executive profile.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/results-background-left1.webp</image:loc>
+      <image:title>Operating results background</image:title>
+      <image:caption>Visual background supporting selected operating and leadership results.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/results-background-middle1.webp</image:loc>
+      <image:title>Technology value creation results background</image:title>
+      <image:caption>Visual background supporting technology value creation and enterprise performance results.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/results-background-right1.webp</image:loc>
+      <image:title>Mission-critical program results background</image:title>
+      <image:caption>Visual background supporting mission-critical program delivery results.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/expertise-background4.webp</image:loc>
+      <image:title>Technology and operations expertise</image:title>
+      <image:caption>Visual representing technology leadership, enterprise infrastructure, cloud operations, governance, and transformation expertise.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/education-background-university-of-illinois-springfield.webp</image:loc>
+      <image:title>University of Illinois Springfield education background</image:title>
+      <image:caption>University of Illinois Springfield background for Tim Gabaree's Master of Business Administration.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/education-logo-university-of-illinois-springfield.webp</image:loc>
+      <image:title>University of Illinois Springfield logo</image:title>
+      <image:caption>University of Illinois Springfield, where Tim Gabaree earned his Master of Business Administration.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/education-background-purdue-university-global.webp</image:loc>
+      <image:title>Purdue University Global education background</image:title>
+      <image:caption>Purdue University Global background for Tim Gabaree's Bachelor of Science in Analytics.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/education-logo-purdue-university-global.webp</image:loc>
+      <image:title>Purdue University Global logo</image:title>
+      <image:caption>Purdue University Global, where Tim Gabaree earned his Bachelor of Science in Analytics.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/interestsandhobbies-roasted_beans_and_espresso.webp</image:loc>
+      <image:title>Coffee roasting and espresso</image:title>
+      <image:caption>Freshly roasted coffee beans and espresso representing Tim Gabaree's interest in coffee roasting.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/interestsandhobbies-chocolate_babka.webp</image:loc>
+      <image:title>Chocolate babka</image:title>
+      <image:caption>Chocolate babka representing Tim Gabaree's interest in baking and chocolatiering.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/interestsandhobbies-neapolitan_pizza.webp</image:loc>
+      <image:title>Neapolitan pizza</image:title>
+      <image:caption>Neapolitan-style pizza representing Tim Gabaree's interest in pizza making.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/TimGeekingOut6.webp</image:loc>
+      <image:title>Tim Gabaree exploring emerging technology</image:title>
+      <image:caption>Tim Gabaree engaging with artificial intelligence and emerging technology.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/timgabaree-qr-code.webp</image:loc>
+      <image:title>QR code for Tim Gabaree's contact page</image:title>
+      <image:caption>QR code providing quick access to Tim Gabaree's executive contact page.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://timgabaree.com/about.php</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/GabareeFamily1.webp</image:loc>
+      <image:title>Tim Gabaree with Carrie, Clint, and Finn</image:title>
+      <image:caption>Tim Gabaree with Carrie, Clint, and Finn in Halloween costumes.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/LadyLibertyFinnClintCarrieTim.webp</image:loc>
+      <image:title>Tim Gabaree and family at the Statue of Liberty</image:title>
+      <image:caption>Tim Gabaree with Carrie, Clint, and Finn at the Statue of Liberty.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/FinnClintWorkingHardMessage.webp</image:loc>
+      <image:title>Clint and Finn at Ellis Island</image:title>
+      <image:caption>Clint and Finn viewing an exhibit about hard work at Ellis Island.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/FamilyMtVernon.webp</image:loc>
+      <image:title>Tim Gabaree and family at Mount Vernon</image:title>
+      <image:caption>Tim Gabaree with Carrie, Clint, and Finn at George Washington's Mount Vernon.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/intro-background-architecture3.webp</image:loc>
+      <image:title>Modern architectural background</image:title>
+      <image:caption>Modern architecture used as the visual background for Tim Gabaree's about page.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://timgabaree.com/hello.php</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/timgabaree_profile5_900x1200.webp</image:loc>
+      <image:title>Tim Gabaree, Portfolio CIO and technology executive</image:title>
+      <image:caption>Tim Gabaree on his executive contact and professional resources page.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/timgabaree-qr-code.webp</image:loc>
+      <image:title>QR code for Tim Gabaree's contact page</image:title>
+      <image:caption>QR code linking to Tim Gabaree's executive contact page.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/intro-background-architecture3.webp</image:loc>
+      <image:title>Modern architectural background</image:title>
+      <image:caption>Modern architecture used as the visual background for Tim Gabaree's executive contact page.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://timgabaree.com/privacy.php</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <image:image>
+      <image:loc>https://timgabaree.com/media/intro-background-architecture3.webp</image:loc>
+      <image:title>Privacy Policy | Tim Gabaree</image:title>
+      <image:caption>Privacy Policy for the professional website of technology executive Tim Gabaree.</image:caption>
+    </image:image>
+  </url>
+</urlset>
