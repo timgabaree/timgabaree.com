@@ -300,17 +300,6 @@ require __DIR__ . '/includes/components/component-header.php';
 </section>
 <!-- End Personal Interests Section -->
 
-  <!-- Return to Main Page -->
-  <div class="about-return">
-
-    <a
-      class="primary-cta-button"
-      href="/">
-      Return to Main Page
-    </a>
-
-  </div>
-  <!-- End Return to Main Page -->
   <!-- Contact Section -->
   <section
     class="about-contact"
@@ -369,6 +358,18 @@ require __DIR__ . '/includes/components/component-header.php';
   </section>
   <!-- End Contact Section -->
 
+  <!-- Return to Main Page -->
+  <div class="about-return">
+
+    <a
+      class="primary-cta-button"
+      href="/">
+      Return to Main Page
+    </a>
+
+  </div>
+  <!-- End Return to Main Page -->
+	
 </main>
 
 <?php

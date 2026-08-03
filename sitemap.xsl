@@ -183,15 +183,6 @@
             font-size: clamp(1rem, 2vw, 1.18rem);
           }
 
-          .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 1rem;
-            margin-top: 1rem;
-          }
-
           /* =====================================================
              Buttons
           ===================================================== */
@@ -224,11 +215,6 @@
             border-color: rgba(255, 255, 255, 0.30);
             text-decoration: none;
             transform: translateY(-2px);
-          }
-
-          .button-secondary,
-          .button-secondary:visited {
-            background: rgba(255, 255, 255, 0.06);
           }
 
           /* =====================================================
@@ -277,7 +263,7 @@
           ===================================================== */
 
           .content {
-            padding: 54px 0 78px;
+            padding: 54px 0 32px;
           }
 
           .section-heading {
@@ -492,6 +478,28 @@
             padding: 0 26px 26px;
             color: var(--muted);
           }
+			
+		  /* =====================================================
+			 Return Navigation
+		  ===================================================== */
+
+		  .return-navigation {
+			display: flex;
+			justify-content: center;
+			width: min(
+			  calc(100% - 32px),
+			  var(--content-width)
+			);
+			margin: 0 auto;
+			padding: 0 0 32px;
+		  }
+
+		  .return-navigation .button,
+		  .return-navigation .button:visited {
+			flex: 0 0 auto;
+			width: auto;
+			max-width: 100%;
+		  }
 
           /* =====================================================
              Footer
@@ -548,10 +556,6 @@
               margin-top: 10px;
             }
 
-            .hero-actions {
-              justify-content: center;
-              gap: 0.75rem;
-            }
           }
 
           /* =====================================================
@@ -587,15 +591,6 @@
                 calc(100% - 22px),
                 var(--content-width)
               );
-            }
-
-            .hero-actions {
-              display: grid;
-              grid-template-columns: 1fr;
-            }
-
-            .hero-actions .button {
-              width: 100%;
             }
 
             .page-card-inner,
@@ -664,23 +659,7 @@
               on timgabaree.com. This XML sitemap also helps search engines
               discover and understand the site’s content.
             </p>
-
-            <div class="hero-actions">
-
-              <a
-                  class="button"
-                  href="/">
-                Return to Home
-              </a>
-
-              <a
-                  class="button button-secondary"
-                  href="/contact">
-                Connect with Tim
-              </a>
-
-            </div>
-
+            
           </div>
 
         </header>
@@ -858,21 +837,7 @@
 
                       <summary>
 
-                        <span>
-
-                          View
-
-                          <xsl:text> </xsl:text>
-
-                          <xsl:value-of select="count(image:image)"/>
-
-                          <xsl:text> indexed image</xsl:text>
-
-                          <xsl:if test="count(image:image) != 1">
-                            <xsl:text>s</xsl:text>
-                          </xsl:if>
-
-                        </span>
+                        <span>View <xsl:value-of select="count(image:image)"/> indexed image<xsl:if test="count(image:image) != 1">s</xsl:if></span>
 
                       </summary>
 
@@ -941,9 +906,23 @@
             </xsl:for-each>
 
           </div>
-
+			
         </main>
         <!-- End Main Content -->
+
+        <!-- Return Navigation -->
+        <nav
+            class="return-navigation"
+            aria-label="Return navigation">
+
+          <a
+              class="button"
+              href="/">
+            Return to Main Page
+          </a>
+
+        </nav>
+        <!-- End Return Navigation -->
 
         <!-- Footer -->
         <footer class="site-footer">

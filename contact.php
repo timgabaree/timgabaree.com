@@ -674,17 +674,16 @@ require __DIR__ . '/includes/components/component-header.php';
       Looking for Carrie Gabaree, museum curator and public historian?
       <br>
 
-      Visit her
+      Visit 
 
       <a
         href="https://carriegabaree.com/"
         target="_blank"
         rel="noopener noreferrer">
-        website
+        carriegabaree.com
         <span class="visually-hidden">
-          — opens in a new tab
-        </span>
-      </a>.
+          — opens in a new tab</span>
+		</a>
     </p>
 
   </section>
