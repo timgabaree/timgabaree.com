@@ -5,7 +5,7 @@ $page = 'privacy';
 $bodyClass = 'privacy-body';
 $pageTitle = 'Privacy Policy | Tim Gabaree';
 $metaDescription = 'Privacy Policy for timgabaree.com explaining what information may be collected, how it is used, and the privacy choices available to website visitors.';
-$canonicalUrl = SITE_URL . '/privacy.php';
+$canonicalUrl = SITE_URL . '/privacy';
 $ogType = 'website';
 $ogTitle = 'Privacy Policy | Tim Gabaree';
 $ogDescription = 'Privacy Policy for timgabaree.com explaining how information may be collected, used, retained, and protected.';
@@ -13,9 +13,9 @@ $twitterDescription = 'Privacy Policy for timgabaree.com explaining how visitor 
 $preloadImage = '/media/intro-background-architecture3.webp';
 $privacyModifiedIso = '2026-07-31';
 $privacyModifiedDisplay = 'July 31, 2026';
-require __DIR__ . '/includes/schema-privacy.php';
-require __DIR__ . '/includes/head.php';
-require __DIR__ . '/includes/header.php';
+require __DIR__ . '/includes/schema/schema-privacy.php';
+require __DIR__ . '/includes/components/component-head.php';
+require __DIR__ . '/includes/components/component-header.php';
 ?>
 <!-- Main -->
 <main class="privacy-page">

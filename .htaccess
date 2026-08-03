@@ -1,0 +1,71 @@
+# ----------------------------------------------------------------------
+# Canonical Redirects and Extensionless PHP URLs
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Disable Apache content negotiation so explicit rewrite rules control
+  # extensionless URLs.
+  Options -MultiViews
+
+  # --------------------------------------------------
+  # Special Host Redirects
+  # --------------------------------------------------
+
+  # Current destination until hello.php is renamed to contact.php
+  RewriteCond %{HTTP_HOST} ^hello\.timgabaree\.com$ [NC]
+  RewriteRule ^ https://timgabaree.com/hello [R=301,L,NE]
+
+  # --------------------------------------------------
+  # Force HTTPS and Non-WWW
+  # --------------------------------------------------
+
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} ^www\.timgabaree\.com$ [NC]
+  RewriteRule ^ https://timgabaree.com%{REQUEST_URI} [R=301,L,NE]
+
+  # --------------------------------------------------
+  # Legacy HTML URLs
+  # --------------------------------------------------
+
+  # Example:
+  # /about.html -> /about
+  #
+  # THE_REQUEST ensures this applies only when the visitor explicitly
+  # requested the .html URL.
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]) [NC]
+  RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
+
+  # --------------------------------------------------
+  # Remove Public PHP Extensions
+  # --------------------------------------------------
+
+  # /index.php -> /
+  RewriteCond %{THE_REQUEST} \s/+index\.php(?:[\s?]) [NC]
+  RewriteRule ^index\.php$ / [R=301,L,NE]
+
+  # Example:
+  # /about.php -> /about
+  #
+  # THE_REQUEST prevents a redirect loop after Apache internally maps
+  # /about to /about.php.
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[\s?]) [NC]
+  RewriteRule ^(.+)\.php$ /$1 [R=301,L,NE]
+
+  # --------------------------------------------------
+  # Internally Resolve Extensionless PHP URLs
+  # --------------------------------------------------
+
+  # Example:
+  # /about internally loads /about.php
+  #
+  # Existing files and directories remain untouched.
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+
+RewriteRule ^(.+?)/?$ $1.php [END]
+</IfModule>

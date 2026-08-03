@@ -11,6 +11,6 @@ declare(strict_types=1);
 |
 */
 
-const CSS_VERSION     = '20260802.24';
+const CSS_VERSION     = '20260803.0e';
 const JS_VERSION      = '20260801.01';
 const FAVICON_VERSION = '20260712.01';
