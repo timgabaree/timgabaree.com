@@ -1,0 +1,107 @@
+<?php
+
+declare(strict_types=1);
+
+require_once dirname(__DIR__) . '/bootstrap.php';
+
+if (!isset($pageTitle)) {
+    $pageTitle = 'About ' . SITE_NAME;
+}
+if (!isset($metaDescription)) {
+    $metaDescription = '';
+}
+if (!isset($canonicalUrl)) {
+    $canonicalUrl = SITE_URL . '/about.php';
+}
+if (!isset($profileImage)) {
+    $profileImage =
+        SITE_URL . '/media/profile-pic-tim-gabaree-900x1200.webp';
+}
+if (!isset($aboutImage)) {
+    $aboutImage =
+        SITE_URL . '/media/about-gabaree-family-800x600.webp';
+}
+$schema = [
+    '@context' => 'https://schema.org',
+    '@graph' => [
+        [
+            '@type' => 'WebSite',
+            '@id' => SITE_URL . '/#website',
+            'url' => SITE_URL . '/',
+            'name' => SITE_NAME,
+            'description' => 'The professional website of Portfolio CIO and technology executive Tim Gabaree.',
+            'inLanguage' => 'en-US',
+        ],
+        [
+            '@type' => 'ImageObject',
+            '@id' => SITE_URL . '/#primaryimage',
+            'url' => $profileImage,
+            'contentUrl' => $profileImage,
+            'width' => 900,
+            'height' => 1200,
+            'encodingFormat' => 'image/webp',
+            'caption' => 'Tim Gabaree, Portfolio CIO and technology executive',
+        ],
+        [
+            '@type' => 'ImageObject',
+            '@id' => $canonicalUrl . '#primaryimage',
+            'url' => $aboutImage,
+            'contentUrl' => $aboutImage,
+            'width' => 800,
+            'height' => 600,
+            'encodingFormat' => 'image/webp',
+            'caption' => 'Tim Gabaree with his family',
+            'representativeOfPage' => true,
+        ],
+        [
+            '@type' => 'ProfilePage',
+            '@id' => $canonicalUrl . '#webpage',
+            'url' => $canonicalUrl,
+            'name' => $pageTitle,
+            'description' => 'About Tim Gabaree, Portfolio CIO, technology executive, board advisor, veteran, husband, father, and lifelong learner.',
+            'isPartOf' => [
+                '@id' => SITE_URL . '/#website',
+            ],
+            'primaryImageOfPage' => [
+                '@id' => $canonicalUrl . '#primaryimage',
+            ],
+            'mainEntity' => [
+                '@id' => SITE_URL . '/#person',
+            ],
+            'about' => [
+                '@id' => SITE_URL . '/#person',
+            ],
+            'inLanguage' => 'en-US',
+        ],
+        [
+            '@type' => 'Person',
+            '@id' => SITE_URL . '/#person',
+            'name' => SITE_NAME,
+            'givenName' => 'Tim',
+            'familyName' => 'Gabaree',
+            'url' => SITE_URL . '/',
+            'image' => [
+                '@id' => SITE_URL . '/#primaryimage',
+            ],
+            'jobTitle' => 'Portfolio CIO',
+            'description' => 'Portfolio CIO and technology executive focused on technology value creation, governance, operating model transformation, and enterprise performance.',
+            'email' => 'mailto:' . SITE_EMAIL,
+            'telephone' => SITE_PHONE,
+            'sameAs' => SITE_SOCIAL_PROFILES,
+            'spouse' => [
+                '@type' => 'Person',
+                '@id' => 'https://carriegabaree.com/#person',
+                'name' => 'Carrie Gabaree',
+                'url' => 'https://carriegabaree.com/',
+                'sameAs' => [
+                    'https://www.linkedin.com/in/carriegabaree',
+                ],
+            ],
+            'affiliation' => [
+                '@type' => 'Organization',
+                'name' => 'RGE Solutions LLC',
+                'url' => 'https://rgesol.com/',
+            ],
+        ],
+    ],
+];
