@@ -82,7 +82,6 @@ The site is intentionally lightweight and framework-free.
 ├── contact.php
 ├── thank-you.php
 ├── privacy.php
-├── hello.php
 ├── contact-submit.php
 │
 ├── css/
