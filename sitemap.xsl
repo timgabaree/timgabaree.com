@@ -647,11 +647,11 @@
           <div class="site-shell hero-inner">
 
             <p class="eyebrow">
-              Website Index
+              XML Sitemap
             </p>
 
             <h1>
-              Tim Gabaree Sitemap
+              TimGabaree.com Sitemap
             </h1>
 
             <p class="hero-copy">
