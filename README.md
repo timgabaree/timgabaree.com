@@ -1,97 +1,202 @@
 # TimGabaree.com
 
-This repository contains the source code for **https://timgabaree.com**, the professional website of Tim Gabaree, a Portfolio CIO and technology executive focused on technology value creation, enterprise performance, governance, and operating model transformation.
+Official source code for **https://timgabaree.com**, the executive website of **Tim Gabaree**—a Portfolio CIO and technology executive specializing in technology value creation, enterprise performance, governance, AI strategy, and operating model transformation.
 
 ---
 
-## Project Overview
+# Overview
 
-TimGabaree.com serves as a professional executive website and personal brand platform. It includes:
+TimGabaree.com is a professionally designed executive website that serves as a central destination for Tim Gabaree's executive profile, leadership experience, advisory work, publications, and professional contact information.
 
-- Executive profile and biography
-- Professional résumé and executive documents
-- Board and advisory information
-- Leadership philosophy and experience
-- Contact page with secure contact form
+The site is designed to support executive networking, board opportunities, executive recruiting, consulting engagements, and professional speaking while emphasizing performance, accessibility, maintainability, and search engine optimization.
+
+---
+
+# Site Features
+
+The website includes:
+
+- Executive profile and professional biography
+- Leadership philosophy
+- Executive résumé
+- Board résumé and board biography
+- Executive biography
+- Professional experience and measurable results
+- Technology expertise
+- Education and certifications
+- Leadership Q&A
+- Professional testimonials
+- Personal interests
+- Executive contact page
+- Secure contact form
+- Thank-you page with conversion tracking
 - Downloadable vCard
 - Calendly scheduling integration
-- Professional blog and social media links
-- Structured data (Schema.org) for search engines
-- SEO-optimized metadata throughout the site
+- QR code mobile access
+- Privacy Policy
+- Structured data (Schema.org)
+- XML sitemap
+- Accessibility enhancements
+- SEO optimization
 
 ---
 
-## Technology Stack
+# Technology Stack
 
-The site is built using:
+The site is intentionally lightweight and framework-free.
+
+## Backend
 
 - PHP 8+
+- Modular PHP architecture
+- Shared configuration and helper libraries
+
+## Frontend
+
 - HTML5
 - CSS3
 - Vanilla JavaScript
-- Schema.org JSON-LD
+
+## Integrations
+
 - Google Tag Manager
-- Google Analytics
-- Dreamweaver (primary development environment)
-- Git & GitHub (source control)
+- Google Analytics 4
+- Calendly
+- DocSend
+- LinkedIn
+
+## Development
+
+- Adobe Dreamweaver
+- Git
+- GitHub
 
 ---
 
-## Architecture
-
-The site uses a modular PHP architecture with reusable components.
+# Project Structure
 
 ```
 /
 ├── index.php
 ├── about.php
-├── hello.php
-├── privacy.php
+├── contact.php
 ├── thank-you.php
-├── hello-submit.php
-│
-├── includes/
-│   ├── bootstrap.php
-│   ├── config.php
-│   ├── head.php
-│   ├── header.php
-│   ├── footer.php
-│   ├── schema-*.php
-│   └── ...
+├── privacy.php
+├── hello.php
+├── contact-submit.php
 │
 ├── css/
 ├── fonts/
+├── js/
 ├── media/
-└── sitemap.xml
+├── includes/
+│   ├── bootstrap.php
+│   ├── config/
+│   ├── components/
+│   ├── forms/
+│   ├── helpers/
+│   ├── schema/
+│   ├── security/
+│   └── ...
+│
+├── sitemap.xml
+├── robots.txt
+└── README.md
 ```
 
-Common page elements such as metadata, structured data, navigation, footer content, configuration values, and reusable helper functions are centralized under the **/includes** directory.
+---
 
-Direct browser access to the **/includes** directory is disabled.
+# Architecture
+
+The website follows a modular PHP architecture built around reusable components.
+
+Common functionality is centralized to minimize duplication and simplify maintenance.
+
+Shared components include:
+
+- Site configuration
+- Metadata generation
+- Navigation
+- Footer
+- Structured data
+- Security utilities
+- Form processing
+- Helper functions
+
+The `/includes` directory is protected from direct web access.
 
 ---
 
-## Features
+# Contact Form Security
 
-- Responsive design
-- Reusable page templates
-- Centralized site configuration
-- Shared metadata and Open Graph handling
-- Modular Schema.org generation
-- Secure contact form
-  - Honeypot spam protection
-  - Request size limits
-  - Rate limiting
-  - Origin validation
-  - Server-side validation
-  - Header injection protection
-- Google Tag Manager integration
-- SEO optimization
-- Accessibility-focused markup
+The executive contact form includes multiple layers of protection.
+
+### Security Features
+
+- CSRF protection
+- Honeypot spam detection
+- Origin validation
+- Rate limiting
+- Request size limits
+- Server-side validation
+- Email validation
+- Header injection protection
+- Output escaping
+- Input sanitization
 
 ---
 
-## Local Development
+# Search Engine Optimization
+
+The site is optimized for search engines through:
+
+- Semantic HTML
+- Schema.org JSON-LD
+- Open Graph metadata
+- X (Twitter) Cards
+- Canonical URLs
+- XML sitemap
+- Optimized metadata
+- Optimized image assets
+- Clean URL structure
+
+---
+
+# Accessibility
+
+Accessibility is incorporated throughout the project.
+
+Features include:
+
+- Semantic HTML
+- ARIA landmarks
+- Accessible navigation
+- Screen-reader support
+- Keyboard accessibility
+- Focus indicators
+- Reduced-motion support
+- Proper heading hierarchy
+- Descriptive image alt text
+
+---
+
+# Performance
+
+The site emphasizes fast loading and minimal dependencies.
+
+Optimizations include:
+
+- Framework-free architecture
+- Local font hosting
+- Modern WebP images
+- Deferred JavaScript
+- Shared reusable components
+- Lightweight CSS
+- Minimal HTTP requests
+
+---
+
+# Development
 
 Clone the repository:
 
@@ -100,16 +205,7 @@ git clone https://github.com/timgabaree/timgabaree.com.git
 cd timgabaree.com
 ```
 
-If using Dreamweaver:
-
-1. Open Dreamweaver.
-2. Define the local site.
-3. Configure the testing server if needed.
-4. Configure the remote FTP/SFTP connection.
-
----
-
-## Git Workflow
+### Typical Git Workflow
 
 Check status:
 
@@ -117,7 +213,7 @@ Check status:
 git status
 ```
 
-Stage changes:
+Stage files:
 
 ```bash
 git add .
@@ -129,7 +225,7 @@ Commit:
 git commit -m "Describe your changes"
 ```
 
-Pull latest changes:
+Update local branch:
 
 ```bash
 git pull --rebase origin main
@@ -141,7 +237,7 @@ Push changes:
 git push origin main
 ```
 
-Feature branches (optional):
+Create a feature branch (optional):
 
 ```bash
 git checkout -b feature/my-feature
@@ -149,28 +245,34 @@ git checkout -b feature/my-feature
 
 ---
 
-## Deployment
+# Deployment
 
-Production hosting is provided through GoDaddy.
+Production hosting is provided by GoDaddy.
 
-GitHub serves as the source-control repository.
+Source control is maintained through GitHub.
 
-Deployment is performed after testing using the configured hosting workflow.
-
----
-
-## Contact
-
-For professional inquiries, visit:
-
-**https://timgabaree.com/hello.php**
+Deployment is performed after testing in the local development environment.
 
 ---
 
-## License
+# Contact
+
+Professional inquiries:
+
+**https://timgabaree.com/contact**
+
+Executive profile:
+
+**https://timgabaree.com**
+
+---
+
+# License
 
 Copyright © 2023–2026 Tim Gabaree
 
 All Rights Reserved.
 
-This repository contains proprietary source code and content. No portion of this project may be copied, redistributed, modified, or reused without prior written permission from Tim Gabaree.
+This repository contains proprietary source code, designs, written content, graphics, and other intellectual property owned by Tim Gabaree.
+
+No portion of this project may be copied, redistributed, modified, republished, or reused without prior written permission.
