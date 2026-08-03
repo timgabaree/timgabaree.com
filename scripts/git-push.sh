@@ -2,12 +2,12 @@
 
 set -u
 
-
 BRANCH="main"
+REMOTE="timgabareecom"
 
 cd "$(dirname "$0")/.." || {
-    echo "Unable to locate repository."
-    exit 1
+  echo "Unable to locate repository."
+  exit 1
 }
 
 echo
@@ -37,7 +37,7 @@ git add -A
 echo
 echo "Files to be committed:"
 echo "----------------------"
-git diff --cached --stat
+git --no-pager diff --cached --stat
 echo
 
 read -r -p "Commit and push these changes? [y/N] " CONFIRMATION
@@ -59,7 +59,8 @@ fi
 
 echo
 echo "Pulling any remote updates..."
-if ! git pull --rebase timgabareecom "$BRANCH"; then
+
+if ! git pull --rebase "$REMOTE" "$BRANCH"; then
   echo
   echo "The pull/rebase could not be completed."
   echo "Resolve any conflicts, then run the script again."
@@ -68,10 +69,18 @@ fi
 
 echo
 echo "Pushing to GitHub..."
-if ! git push timgabareecom "$BRANCH"; then
+
+if ! git push "$REMOTE" "$BRANCH"; then
   echo "Push failed."
   exit 1
 fi
 
 echo
 echo "Successfully committed and pushed to GitHub."
+
+echo "Branch: $(git branch --show-current)"
+echo
+
+echo
+echo "Latest commit:"
+git --no-pager log -1 --oneline
