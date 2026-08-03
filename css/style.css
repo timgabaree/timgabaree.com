@@ -1,40 +1,39 @@
 @charset "UTF-8";
 
 /* =====================================================
-   Design Tokens
-===================================================== */ :root {
-  --font-size-base: 16px;
+   1. Design Tokens
+===================================================== */
+
+:root {
+--font-size-base: 16px;
   --font-line-height: 1.6;
   --font-family: "Roboto", Arial, Helvetica, sans-serif;
   --background-color: #F4F5F8;
   --surface-color: #FFFFFF;
   --surface-muted: #E8EAF4;
-  --surface-card: rgba(244, 245, 250, .94);
+  --surface-card: rgba(244, 245, 250, 0.94);
   --text-dark: #1F222A;
   --text-muted: #555B66;
   --text-light: #F0F1F5;
   --primary-color: #1F222A;
-  --secondary-color: #3F4450;
   --brand-blue: #394C78;
   --brand-blue-hover: #4B6294;
   --accent-color: var(--brand-blue);
   --accent-hover: var(--brand-blue-hover);
   --border-color: #D7D9E2;
   --white: #FFFFFF;
-  --black: #000000;
   --shadow-soft: rgba(31, 34, 42, 0.14);
   --shadow-medium: rgba(31, 34, 42, 0.22);
   --overlay-dark: rgba(20, 20, 24, 0.60);
-  --overlay-card: rgba(60, 79, 125, .62);
+  --overlay-card: rgba(60, 79, 125, 0.62);
   --overlay-white: rgba(255, 255, 255, 0.10);
   --radius-standard: 8px;
   --section-gap: 20px;
   --card-gap: 10px;
-  --testimonial-card: #555A71;
 }
 
 /* =====================================================
-   Fonts
+   2. Fonts
 ===================================================== */
 
 @font-face {
@@ -54,7 +53,7 @@
 }
 
 /* =====================================================
-   Base
+   3. Base and Typography
 ===================================================== */
 
 html, body {
@@ -114,7 +113,7 @@ a:hover {
 }
 
 /* =====================================================
-   Layout
+   4. Layout and Utilities
 ===================================================== */
 
 .section-wrapper {
@@ -123,8 +122,25 @@ a:hover {
   padding: 0 20px;
   box-sizing: border-box;
 }
+.scroll-offset,
 
-.scroll-offset, #home, #experience, #results, #expertise, #education, #q-and-a, #testimonials, #board, #interests-and-hobbies {
+#home,
+
+#experience,
+
+#results,
+
+#expertise,
+
+#education,
+
+#q-and-a,
+
+#testimonials,
+
+#board,
+
+#interests-and-hobbies {
   scroll-margin-top: 55px;
 }
 
@@ -141,45 +157,7 @@ a:hover {
 }
 
 /* =====================================================
-   Animations
-===================================================== */
-
-@keyframes slideInUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-/* =====================================================
-   Navbar
+   5. Navigation
 ===================================================== */
 
 .navbar {
@@ -351,7 +329,7 @@ a:hover {
 }
 
 /* =====================================================
-   Buttons and Links
+   6. Shared Buttons and Links
 ===================================================== */
 
 .calendly-link, .intro-links {
@@ -389,7 +367,7 @@ a:hover {
 }
 
 .intro-main-text-block .intro-cta-text {
-  padding-top: .5rem;
+  padding-top: 0.5rem;
 }
 
 .primary-cta-button, .primary-cta-button:visited {
@@ -399,7 +377,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   margin-top: 0.75rem;
-  padding: 4px 24px;
+  padding: 4px 24px 0px;
   background: var(--brand-blue);
   color: var(--white) !important;
   text-decoration: none;
@@ -407,8 +385,8 @@ a:hover {
   border-radius: 999px;
   font-size: 19px;
   font-weight: 700;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
-  transition: background-color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .primary-cta-button:hover, .primary-cta-button:focus {
@@ -417,19 +395,37 @@ a:hover {
   color: var(--white) !important;
   text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, .22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
 }
 
 /* =====================================================
-   Shared Section Headings
+   7. Shared Section Headings
 ===================================================== */
+.expertise-heading-block,
 
-.expertise-heading-block, .experience-heading-block, .education-heading-block, .qanda-heading-block, .interests-heading-block, .testimonials-heading-block {
+.experience-heading-block,
+
+.education-heading-block,
+
+.qanda-heading-block,
+
+.interests-heading-block,
+
+.testimonials-heading-block {
   text-align: center;
   margin: 24px 0 20px;
 }
+.expertise-heading,
 
-.expertise-heading, .experience-heading, .education-heading, .qanda-heading, .interests-heading, .testimonials-heading {
+.experience-heading,
+
+.education-heading,
+
+.qanda-heading,
+
+.interests-heading,
+
+.testimonials-heading {
   margin: 0;
   font-size: 24px;
   font-weight: 600;
@@ -437,7 +433,7 @@ a:hover {
 }
 
 /* =====================================================
-   Intro
+   8. Home: Introduction
 ===================================================== */
 
 .intro-section {
@@ -602,7 +598,7 @@ a:hover {
 }
 
 /* =====================================================
-   Results Carousel
+   9. Home: Results Carousel
 ===================================================== */
 
 .results-carousel-section {
@@ -817,7 +813,7 @@ a:hover {
 }
 
 /* =====================================================
-   Expertise
+   10. Home: Expertise
 ===================================================== */
 
 .expertise-container {
@@ -872,7 +868,7 @@ a:hover {
 }
 
 /* =====================================================
-   Experience and Board
+   11. Home: Experience and Board
 ===================================================== */
 
 .experience-section {
@@ -929,7 +925,7 @@ a:hover {
 }
 
 /* =====================================================
-   Education
+   12. Home: Education
 ===================================================== */
 
 .education-section {
@@ -998,7 +994,7 @@ a:hover {
 }
 
 /* =====================================================
-   Leadership Perspective
+   13. Home: Leadership Perspective
 ===================================================== */
 
 .qanda-section {
@@ -1046,7 +1042,7 @@ a:hover {
 }
 
 /* =====================================================
-   Testimonials
+   14. Home: Testimonials
 ===================================================== */
 
 .testimonials-section {
@@ -1104,7 +1100,208 @@ a:hover {
 }
 
 /* =====================================================
-   About Page: Personal Interests
+   15. Home: Page Navigation
+===================================================== */
+
+.home-navigation {
+  max-width: 1200px;
+  margin: 24px auto 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.home-navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.home-navigation-button, .home-navigation-button:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 22px;
+  border-radius: var(--radius-standard);
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.home-navigation-button:hover, .home-navigation-button:focus {
+  background: var(--surface-muted);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.home-navigation-button-primary, .home-navigation-button-primary:visited {
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+  color: var(--white);
+}
+
+.home-navigation-button-primary:hover, .home-navigation-button-primary:focus {
+  background: var(--brand-blue-hover);
+  border-color: var(--brand-blue-hover);
+  color: var(--white);
+}
+
+/* =====================================================
+   16. About Page
+===================================================== */
+
+.about-page {
+  background-image: url("../media/background-pic-architecture-1920x942.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 40px 20px;
+}
+
+.about-card, .about-gallery figure, .contact-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-standard);
+  box-shadow: 0 2px 5px var(--shadow-soft);
+}
+
+.about-card {
+  max-width: 980px;
+  margin: 0 auto 28px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.about-featured-photo, .about-gallery figure {
+  margin: 0;
+}
+
+.about-featured-photo img, .about-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-standard);
+}
+
+.about-featured-photo figcaption, .about-gallery figcaption {
+  margin-top: 10px;
+  font-style: italic;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.about-author h1 {
+  margin: 0 0 16px;
+  color: var(--primary-color);
+  font-size: 34px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.about-author p {
+  margin: 0 0 14px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.about-author p:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   17. About: Gallery and Headings
+===================================================== */
+
+.about-gallery-section, .about-interests-section {
+  max-width: 980px;
+  margin: 0 auto 28px;
+}
+
+.about-section-heading-block, .about-interests-heading-block {
+  margin: 24px 0 20px;
+  text-align: center;
+}
+
+.about-section-heading, .about-interests-heading {
+  margin: 0;
+  color: var(--accent-color);
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.about-gallery {
+  max-width: 980px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--card-gap);
+  align-items: stretch;
+}
+
+.about-gallery figure {
+  margin: 0;
+  padding: 18px;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-standard);
+  box-shadow: 0 2px 5px var(--shadow-soft);
+}
+
+.about-gallery .gallery-large {
+  grid-row: span 2;
+}
+
+.about-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-standard);
+}
+
+.about-contact {
+  max-width: 980px;
+  margin: 0 auto 30px;
+}
+
+.about-contact .contact-class {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: var(--brand-blue);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-standard);
+  box-shadow: 0 2px 5px var(--shadow-soft);
+}
+
+.about-contact h2 {
+  margin: 0 0 18px;
+  color: var(--text-light);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.about-return {
+  text-align: center;
+  margin: 28px 0 0px;
+}
+
+/* =====================================================
+   18. About: Personal Interests
 ===================================================== */
 
 .about-interests-section {
@@ -1187,7 +1384,7 @@ a:hover {
 }
 
 /* =====================================================
-   Contact
+   19. Shared Contact Strip
 ===================================================== */
 
 .executive-contact-section {
@@ -1261,31 +1458,7 @@ a.contactLink:hover {
 }
 
 /* =====================================================
-   Footer
-===================================================== */
-
-.footer-horizontal-rule {
-  width: 100%;
-  margin: 5px 0;
-  border: none;
-  border-top: 1px solid var(--border-color);
-}
-
-.footer-disclaimer {
-  margin: -10px 0 15px;
-  font-size: 14px;
-  color: var(--text-muted);
-  text-align: center;
-  padding-top: 0;
-}
-
-.trust-seal {
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* =====================================================
-   Contact / Executive Contact Page
+   20. Executive Contact Page
 ===================================================== */
 
 .contact-body {
@@ -1364,8 +1537,14 @@ a.contactLink:hover {
 .contact-headline {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
+  max-width: 760px;
+  margin: 0 0 18px;
+  color: var(--accent-color);
+  font-size: clamp(18px, 2.25vw, 25px);
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .contact-headline-item + .contact-headline-item::before {
@@ -1558,7 +1737,7 @@ button.contact-action {
   width: 180px;
   height: 180px;
   border-radius: 12px;
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
 }
 
 .contact-qr-section img:hover {
@@ -1584,7 +1763,7 @@ button.contact-action {
 }
 
 /* =====================================================
-   contact Page Contact Form
+   21. Contact Form
 ===================================================== */
 
 .contact-conversation-section {
@@ -1596,7 +1775,7 @@ button.contact-action {
   width: 100%;
   padding: clamp(28px, 5vw, 48px);
   color: var(--text-dark);
-  background-color: rgba(255, 255, 255, .96);
+  background-color: rgba(255, 255, 255, 0.96);
   border: 1px solid var(--border-color);
   border-radius: 14px;
   box-shadow: 0 4px 12px var(--shadow-soft);
@@ -1672,7 +1851,7 @@ button.contact-action {
   font: inherit;
   font-size: 16px;
   line-height: 1.4;
-  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .contact-form-field input, .contact-form-field select {
@@ -1685,15 +1864,21 @@ button.contact-action {
   padding: 14px;
   resize: vertical;
 }
+.contact-form-field input:hover,
 
-.contact-form-field input:hover, .contact-form-field select:hover, .contact-form-field textarea:hover {
+.contact-form-field select:hover,
+
+.contact-form-field textarea:hover {
   border-color: var(--brand-blue);
 }
+.contact-form-field input:focus,
 
-.contact-form-field input:focus, .contact-form-field select:focus, .contact-form-field textarea:focus {
+.contact-form-field select:focus,
+
+.contact-form-field textarea:focus {
   outline: none;
   border-color: var(--brand-blue);
-  box-shadow: 0 0 0 4px rgba(57, 76, 120, .15);
+  box-shadow: 0 0 0 4px rgba(57, 76, 120, 0.15);
 }
 
 .contact-form-field textarea::placeholder {
@@ -1721,7 +1906,7 @@ button.contact-action {
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .contact-form-button:hover, .contact-form-button:focus {
@@ -1743,7 +1928,7 @@ button.contact-action {
   color: var(--brand-blue);
   font-weight: 700;
   text-decoration: none;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
 
 .contact-form-note a:hover, .contact-form-note a:focus-visible {
@@ -1758,12 +1943,12 @@ button.contact-action {
 }
 
 /* =====================================================
-   contact Page Thank You
+   22. Thank-You Page
 ===================================================== */
 
 .contact-thank-you-section {
   width: 100%;
-  padding: 48x 0 40px;
+  padding: 24px 0 40px;
 }
 
 .contact-thank-you-card {
@@ -1773,7 +1958,7 @@ button.contact-action {
   padding: clamp(36px, 6vw, 64px);
   color: var(--text-dark);
   text-align: center;
-  background-color: rgba(255, 255, 255, .96);
+  background-color: rgba(255, 255, 255, 0.96);
   border: 1px solid var(--border-color);
   border-radius: 16px;
   box-shadow: 0 14px 38px var(--shadow-medium);
@@ -1829,7 +2014,7 @@ button.contact-action {
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
-  transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .contact-thank-you-button:hover, .contact-thank-you-button:focus {
@@ -1912,7 +2097,7 @@ button.contact-action {
 }
 
 /* =====================================================
-   Privacy Policy
+   23. Privacy Policy
 ===================================================== */
 
 .privacy-page {
@@ -1980,208 +2165,69 @@ button.contact-action {
 }
 
 /* =====================================================
-   Home Navigation Buttons
+   24. Footer
 ===================================================== */
 
-.home-navigation {
-  max-width: 1200px;
-  margin: 24px auto 12px;
-  padding-top: 20px;
+.footer-horizontal-rule {
+  width: 100%;
+  margin: 5px 0;
+  border: none;
   border-top: 1px solid var(--border-color);
 }
 
-.home-navigation-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.home-navigation-button, .home-navigation-button:visited {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 10px 22px;
-  border-radius: var(--radius-standard);
-  background: var(--surface-color);
-  border: 1px solid var(--border-color);
-  color: var(--text-dark);
-  font-weight: 700;
-  text-decoration: none;
-  transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
-}
-
-.home-navigation-button:hover, .home-navigation-button:focus {
-  background: var(--surface-muted);
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-  text-decoration: none;
-  transform: translateY(-1px);
-}
-
-.home-navigation-button-primary, .home-navigation-button-primary:visited {
-  background: var(--brand-blue);
-  border-color: var(--brand-blue);
-  color: var(--white);
-}
-
-.home-navigation-button-primary:hover, .home-navigation-button-primary:focus {
-  background: var(--brand-blue-hover);
-  border-color: var(--brand-blue-hover);
-  color: var(--white);
-}
-
-/* =====================================================
-   About Page
-===================================================== */
-
-.about-page {
-  background-image: url("../media/background-pic-architecture-1920x942.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 40px 20px;
-}
-
-.about-card, .about-gallery figure, .contact-card {
-  background-color: var(--surface-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-standard);
-  box-shadow: 0 2px 5px var(--shadow-soft);
-}
-
-.about-card {
-  max-width: 980px;
-  margin: 0 auto 28px;
-  padding: 24px;
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 28px;
-  align-items: start;
-}
-
-.about-featured-photo, .about-gallery figure {
-  margin: 0;
-}
-
-.about-featured-photo img, .about-gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-standard);
-}
-
-.about-featured-photo figcaption, .about-gallery figcaption {
-  margin-top: 10px;
-  font-style: italic;
-  text-align: center;
-  color: var(--text-muted);
+.footer-disclaimer {
+  margin: -10px 0 15px;
   font-size: 14px;
-  line-height: 1.4;
-}
-
-.about-author h1 {
-  margin: 0 0 16px;
-  color: var(--primary-color);
-  font-size: 34px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.about-author p {
-  margin: 0 0 14px;
   color: var(--text-muted);
-  font-size: 16px;
-  line-height: 1.65;
+  text-align: center;
+  padding-top: 0;
 }
 
-.about-author p:last-child {
-  margin-bottom: 0;
+.trust-seal {
+  text-align: center;
+  margin-top: 10px;
 }
 
 /* =====================================================
-   About Page Section Headings
+   25. Animations
 ===================================================== */
 
-.about-gallery-section, .about-interests-section {
-  max-width: 980px;
-  margin: 0 auto 28px;
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.about-section-heading-block, .about-interests-heading-block {
-  margin: 24px 0 20px;
-  text-align: center;
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.about-section-heading, .about-interests-heading {
-  margin: 0;
-  color: var(--accent-color);
-  font-size: 24px;
-  font-weight: 600;
-  text-align: center;
-}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 
-.about-gallery {
-  max-width: 980px;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: var(--card-gap);
-  align-items: stretch;
-}
-
-.about-gallery figure {
-  margin: 0;
-  padding: 18px;
-  background-color: var(--surface-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-standard);
-  box-shadow: 0 2px 5px var(--shadow-soft);
-}
-
-.about-gallery .gallery-large {
-  grid-row: span 2;
-}
-
-.about-gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-standard);
-}
-
-.about-contact {
-  max-width: 980px;
-  margin: 0 auto 30px;
-}
-
-.about-contact .contact-class {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background-color: var(--brand-blue);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-standard);
-  box-shadow: 0 2px 5px var(--shadow-soft);
-}
-
-.about-contact h2 {
-  margin: 0 0 18px;
-  color: var(--text-light);
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.about-return {
-  text-align: center;
-  margin: 28px 0 20px;
+  to {
+    opacity: 1;
+  }
 }
 
 /* =====================================================
-   Responsive Design
+   26. Responsive Design
 ===================================================== */
 
 @media (max-width: 1200px) {
@@ -2394,8 +2440,15 @@ button.contact-action {
   .nav-link {
     padding-top: 6px;
   }
+.intro-section,
 
-  .intro-section, .expertise-section, .experience-entry, .education-section, .testimonials-section {
+  .expertise-section,
+
+  .experience-entry,
+
+  .education-section,
+
+  .testimonials-section {
     flex-direction: column;
     gap: 15px;
   }
@@ -2499,8 +2552,17 @@ button.contact-action {
     margin: 5px;
     padding: 0;
   }
+.expertise-heading-block,
 
-  .expertise-heading-block, .experience-heading-block, .education-heading-block, .qanda-heading-block, .interests-heading-block, .testimonials-heading-block {
+  .experience-heading-block,
+
+  .education-heading-block,
+
+  .qanda-heading-block,
+
+  .interests-heading-block,
+
+  .testimonials-heading-block {
     margin: 18px 0;
   }
 
@@ -2610,16 +2672,13 @@ button.contact-action {
     font-size: 11px;
   }
 
-  .contact-content {
+  .contact-content,
+  .executive-contact-content {
     text-align: center;
   }
 
-  .contact-content h1 {
+  .executive-contact-content h1 {
     font-size: clamp(36px, 12vw, 50px);
-  }
-
-  .contact-headline span[aria-hidden="true"]::before {
-    content: "";
   }
 
   .contact-summary {
