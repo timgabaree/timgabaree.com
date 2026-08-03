@@ -276,7 +276,7 @@ require __DIR__ . '/includes/header.php';
 </address>
       <p>
         You may also submit a message through the
-        <a href="/hello.php">contact page</a>.
+        <a href="/contact">contact page</a>.
       </p>
     </section>
     <!-- End Contact -->
@@ -290,4 +290,4 @@ require __DIR__ . '/includes/header.php';
     <!-- End Return -->
   </div>
 </main>
-<?php require __DIR__ . '/includes/footer.php'; ?>
+<?php require __DIR__ . '/includes/components/component-footer.php'; ?>
