@@ -518,7 +518,7 @@ a:hover {
 
 .intro-links-heading {
   margin: 0 0 12px;
-  color: var(--text-dark);
+  color: var(--accent-color);
   font-size: 18px;
   font-weight: 700;
   text-transform: none;
