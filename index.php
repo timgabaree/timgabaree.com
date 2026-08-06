@@ -120,101 +120,106 @@ require __DIR__ . '/includes/components/component-header.php';
 
         </div>
 
-        <section
-          class="intro-links-block"
-          aria-labelledby="executive-documents-title">
+       <section
+  class="intro-links-block"
+  aria-labelledby="executive-documents-title">
 
-          <h2
-            id="executive-documents-title"
-            class="intro-links-heading">
-            Resources
-          </h2>
+  <h2
+    id="executive-documents-title"
+    class="intro-links-heading">
+    Executive Portfolio
+  </h2>
 
-          <ul class="intro-links-list">
+  <p class="intro-links-description">
+    Executive and board materials highlighting my leadership experience,
+    governance philosophy, and enterprise technology strategy.
+  </p>
 
-            <li>
-              <a
-                href="<?= e(DOCSEND_EXECUTIVE_PROFILE) ?>"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="intro-links">
+  <ul class="intro-links-list">
 
-                Executive Profile
+    <li>
+      <a
+        href="<?= e(DOCSEND_EXECUTIVE_PROFILE) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="intro-links">
 
-                <span class="visually-hidden">
-                  — opens in a new tab
-                </span>
+        Executive Profile
 
-              </a>
-            </li>
+        <span class="visually-hidden">
+          — opens in a new tab
+        </span>
 
-            <li>
-              <a
-                href="<?= e(DOCSEND_RESUME) ?>"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="intro-links">
+      </a>
+    </li>
 
-                Résumé
+    <li>
+      <a
+        href="<?= e(DOCSEND_RESUME) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="intro-links">
 
-                <span class="visually-hidden">
-                  — opens in a new tab
-                </span>
+        Executive Résumé
 
-              </a>
-            </li>
+        <span class="visually-hidden">
+          — opens in a new tab
+        </span>
 
-            <li>
-              <a
-                href="<?= e(DOCSEND_EXECUTIVE_BIO) ?>"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="intro-links">
+      </a>
+    </li>
 
-                Executive Bio
+    <li>
+      <a
+        href="<?= e(DOCSEND_EXECUTIVE_BIO) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="intro-links">
 
-                <span class="visually-hidden">
-                  — opens in a new tab
-                </span>
+        Executive Biography
 
-              </a>
-            </li>
+        <span class="visually-hidden">
+          — opens in a new tab
+        </span>
 
-            <li>
-              <a
-                href="<?= e(DOCSEND_BOARD_RESUME) ?>"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="intro-links">
+      </a>
+    </li>
 
-                Board Résumé
+    <li>
+      <a
+        href="<?= e(DOCSEND_BOARD_RESUME) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="intro-links">
 
-                <span class="visually-hidden">
-                  — opens in a new tab
-                </span>
+        Board Résumé
 
-              </a>
-            </li>
+        <span class="visually-hidden">
+          — opens in a new tab
+        </span>
 
-            <li>
-              <a
-                href="<?= e(DOCSEND_BOARD_BIO) ?>"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="intro-links">
+      </a>
+    </li>
 
-                Board Bio
+    <li>
+      <a
+        href="<?= e(DOCSEND_BOARD_BIO) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="intro-links">
 
-                <span class="visually-hidden">
-                  — opens in a new tab
-                </span>
+        Board Biography
 
-              </a>
-            </li>
+        <span class="visually-hidden">
+          — opens in a new tab
+        </span>
 
-          </ul>
+      </a>
+    </li>
 
-        </section>
+  </ul>
+
+</section>
 
       </div>
 

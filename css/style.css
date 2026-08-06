@@ -510,18 +510,24 @@ a:hover {
   margin-top: 12px;
 }
 
+.intro-links-heading {
+  margin: 0 0 0px;
+  color: var(--accent-color);
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.intro-links-description {
+    margin: 0 0 0.85rem;
+    color: var(--text-secondary);
+    max-width: 60ch;
+}
+
 .intro-links-block {
   width: 100%;
   margin: 25px 0 0;
   text-align: center;
-}
-
-.intro-links-heading {
-  margin: 0 0 12px;
-  color: var(--accent-color);
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: none;
 }
 
 .intro-links-list {
@@ -1674,10 +1680,21 @@ button.contact-action {
   box-shadow: 0 4px 12px var(--shadow-soft);
 }
 
-.contact-resources h2 {
-  margin: 0 0 20px;
-  color: var(--primary-color);
-  font-size: clamp(24px, 3vw, 34px);
+.contact-resources-heading {
+  margin: 0 0 4px;
+  color: var(--accent-color);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.contact-resources-description {
+  margin: 0 auto 12px;
+  max-width: 60ch;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
 }
 
 .contact-resource-grid {
@@ -1790,7 +1807,7 @@ button.contact-action {
 .contact-conversation-intro h2 {
   margin: 0 0 14px;
   color: var(--primary-color);
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(24px, 4vw, 42px);
   line-height: 1.1;
 }
 
@@ -2049,7 +2066,7 @@ button.contact-action {
 .contact-thank-you-contact h2 {
   margin: 0 0 18px;
   color: var(--primary-color);
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.35;
   text-align: center;
 }
@@ -2738,7 +2755,7 @@ button.contact-action {
   }
 
   .contact-conversation-intro h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .contact-conversation-intro p:last-child {
@@ -2825,11 +2842,11 @@ button.contact-action {
   }
 
   .privacy-card h1 {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .privacy-card h2 {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 

@@ -301,93 +301,98 @@ require __DIR__ . '/includes/components/component-header.php';
   </section>
   <!-- End Executive Contact Section -->
 
-  <!-- Executive Resources Section -->
-  <section
-    class="contact-resources"
-    aria-labelledby="contact-resources-title">
+  <!-- Executive Portfolio Section -->
+<section
+  class="contact-resources"
+  aria-labelledby="contact-resources-title">
 
-    <h2
-      id="contact-resources-title"
-      class="contact-eyebrow">
-      Resources
-    </h2>
+  <h2
+    id="contact-resources-title"
+    class="contact-resources-heading">
+    Executive Portfolio
+  </h2>
 
-    <div class="contact-resource-grid">
+  <p class="contact-resources-description">
+    Executive and board materials highlighting my leadership experience,
+    governance philosophy, and enterprise technology strategy.
+  </p>
 
-      <a
-        href="<?= e(DOCSEND_EXECUTIVE_PROFILE) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-resource-link">
+  <div class="contact-resource-grid">
 
-        Executive Profile
+    <a
+      href="<?= e(DOCSEND_EXECUTIVE_PROFILE) ?>"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact-resource-link">
 
-        <span class="visually-hidden">
-          — opens in a new tab
-        </span>
+      Executive Profile
 
-      </a>
+      <span class="visually-hidden">
+        — opens in a new tab
+      </span>
 
-      <a
-        href="<?= e(DOCSEND_RESUME) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-resource-link">
+    </a>
 
-        Résumé
+    <a
+      href="<?= e(DOCSEND_RESUME) ?>"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact-resource-link">
 
-        <span class="visually-hidden">
-          — opens in a new tab
-        </span>
+      Executive Résumé
 
-      </a>
+      <span class="visually-hidden">
+        — opens in a new tab
+      </span>
 
-      <a
-        href="<?= e(DOCSEND_EXECUTIVE_BIO) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-resource-link">
+    </a>
 
-        Executive Bio
+    <a
+      href="<?= e(DOCSEND_EXECUTIVE_BIO) ?>"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact-resource-link">
 
-        <span class="visually-hidden">
-          — opens in a new tab
-        </span>
+      Executive Biography
 
-      </a>
+      <span class="visually-hidden">
+        — opens in a new tab
+      </span>
 
-      <a
-        href="<?= e(DOCSEND_BOARD_RESUME) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-resource-link">
+    </a>
 
-        Board Résumé
+    <a
+      href="<?= e(DOCSEND_BOARD_RESUME) ?>"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact-resource-link">
 
-        <span class="visually-hidden">
-          — opens in a new tab
-        </span>
+      Board Résumé
 
-      </a>
+      <span class="visually-hidden">
+        — opens in a new tab
+      </span>
 
-      <a
-        href="<?= e(DOCSEND_BOARD_BIO) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="contact-resource-link">
+    </a>
 
-        Board Bio
+    <a
+      href="<?= e(DOCSEND_BOARD_BIO) ?>"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact-resource-link">
 
-        <span class="visually-hidden">
-          — opens in a new tab
-        </span>
+      Board Biography
 
-      </a>
+      <span class="visually-hidden">
+        — opens in a new tab
+      </span>
 
-    </div>
+    </a>
 
-  </section>
-  <!-- End Executive Resources Section -->
+  </div>
+
+</section>
+<!-- End Executive Portfolio Section -->
 
   <?php if ($formStatusMessage !== ''): ?>
 
