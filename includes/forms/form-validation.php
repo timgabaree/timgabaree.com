@@ -9,33 +9,11 @@ require_once dirname(__DIR__) . '/bootstrap.php';
 | Contact Form Validation
 |--------------------------------------------------------------------------
 |
-| Provides input retrieval, sanitization, request checks, and contact-form
+| Provides input sanitization, request checks, and contact-form
 | validation. This file does not send mail, manage redirects, or record
 | submission rate limits.
 |
 */
-
-/*
-|--------------------------------------------------------------------------
-| Input Retrieval
-|--------------------------------------------------------------------------
-*/
-
-/*
- * Return only scalar string POST values.
- *
- * This prevents unexpected array submissions such as:
- *
- * name[]=value
- */
-function postString(string $field): string
-{
-    $value = $_POST[$field] ?? '';
-
-    return is_string($value)
-        ? $value
-        : '';
-}
 
 /*
 |--------------------------------------------------------------------------
@@ -169,68 +147,6 @@ function sanitizeLogValue(
     );
 }
 
-/*
-|--------------------------------------------------------------------------
-| Request Validation
-|--------------------------------------------------------------------------
-*/
-
-/*
- * Origin and Referer are secondary signals.
- *
- * Their absence does not cause rejection because browsers and privacy
- * tools may omit them. When either header is present, its hostname must
- * match an allowed site hostname.
- */
-function requestAppearsSameSite(): bool
-{
-    $allowedHosts = [
-        'timgabaree.com',
-        'www.timgabaree.com',
-    ];
-
-    $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-
-    if (is_string($origin) && $origin !== '') {
-        $originHost = parse_url(
-            $origin,
-            PHP_URL_HOST
-        );
-
-        if (
-            !is_string($originHost) ||
-            !in_array(
-                strtolower($originHost),
-                $allowedHosts,
-                true
-            )
-        ) {
-            return false;
-        }
-    }
-
-    $referer = $_SERVER['HTTP_REFERER'] ?? '';
-
-    if (is_string($referer) && $referer !== '') {
-        $refererHost = parse_url(
-            $referer,
-            PHP_URL_HOST
-        );
-
-        if (
-            !is_string($refererHost) ||
-            !in_array(
-                strtolower($refererHost),
-                $allowedHosts,
-                true
-            )
-        ) {
-            return false;
-        }
-    }
-
-    return true;
-}
 
 /*
 |--------------------------------------------------------------------------
