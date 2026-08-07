@@ -2689,23 +2689,11 @@ button.contact-action {
     line-height: 1.6;
   }
 
-  .interests-block {
-    width: 100%;
-    max-width: none;
-    height: 250px;
-    margin: 5px;
-    padding: 0;
-  }
-.expertise-heading-block,
-
+  .expertise-heading-block,
   .experience-heading-block,
-
   .education-heading-block,
-
   .qanda-heading-block,
-
   .interests-heading-block,
-
   .testimonials-heading-block {
     margin: 18px 0;
   }
