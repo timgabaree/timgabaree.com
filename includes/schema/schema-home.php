@@ -2,135 +2,295 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/bootstrap.php';
+/*
+|--------------------------------------------------------------------------
+| Home Page Structured Data
+|--------------------------------------------------------------------------
+|
+| Builds the Schema.org graph for the Tim Gabaree home page.
+|
+| The graph is rendered by:
+|
+| /includes/schema/schema.php
+|
+*/
 
-if (!isset($profileImage)) {
-    $profileImage =
-        SITE_URL . '/media/profile-pic-tim-gabaree-900x1200.webp';
-}
+/*
+|--------------------------------------------------------------------------
+| Website
+|--------------------------------------------------------------------------
+*/
 
-$schema = [
-  '@context' => 'https://schema.org',
-  '@graph' => [
-    [
-      '@type' => 'WebSite',
-      '@id' => SITE_URL . '/#website',
-      'url' => SITE_URL . '/',
-      'name' => SITE_NAME,
-      'description' =>
-        'The professional website of Portfolio CIO and technology executive Tim Gabaree.',
-      'inLanguage' => 'en-US',
-    ],
-    [
-      '@type' => 'ImageObject',
-      '@id' => SITE_URL . '/#primaryimage',
-      'url' => $profileImage,
-      'contentUrl' => $profileImage,
-      'width' => 900,
-      'height' => 1200,
-      'encodingFormat' => 'image/webp',
-      'caption' =>
+$websiteSchema = [
+    '@type' =>
+        'WebSite',
+
+    '@id' =>
+        SITE_WEBSITE_ID,
+
+    'url' =>
+        SITE_HOME_URL,
+
+    'name' =>
+        SITE_NAME,
+
+    'description' =>
+        SITE_DESCRIPTION,
+
+    'inLanguage' =>
+        SITE_LANGUAGE,
+];
+
+/*
+|--------------------------------------------------------------------------
+| Primary Image
+|--------------------------------------------------------------------------
+*/
+
+$primaryImageSchema = [
+    '@type' =>
+        'ImageObject',
+
+    '@id' =>
+        SITE_PRIMARY_IMAGE_ID,
+
+    'url' =>
+        SITE_PRIMARY_IMAGE,
+
+    'contentUrl' =>
+        SITE_PRIMARY_IMAGE,
+
+    'width' =>
+        SITE_PRIMARY_IMAGE_WIDTH,
+
+    'height' =>
+        SITE_PRIMARY_IMAGE_HEIGHT,
+
+    'encodingFormat' =>
+        'image/webp',
+
+    'caption' =>
         'Tim Gabaree, Portfolio CIO and technology executive',
-      'representativeOfPage' => true,
+
+    'representativeOfPage' =>
+        true,
+];
+
+/*
+|--------------------------------------------------------------------------
+| Home Profile Page
+|--------------------------------------------------------------------------
+*/
+
+$profilePageSchema = [
+    '@type' =>
+        'ProfilePage',
+
+    '@id' =>
+        SITE_HOME_URL .
+        '#webpage',
+
+    'url' =>
+        SITE_HOME_URL,
+
+    'name' =>
+        $pageTitle,
+
+    'description' =>
+        $metaDescription,
+
+    'inLanguage' =>
+        SITE_LANGUAGE,
+
+    'datePublished' =>
+        $pageDatePublished,
+
+    'dateModified' =>
+        $pageDateModified,
+
+    'isPartOf' => [
+        '@id' =>
+            SITE_WEBSITE_ID,
     ],
-    [
-      '@type' => 'ProfilePage',
-      '@id' => SITE_URL . '/#webpage',
-      'url' => SITE_URL . '/',
-      'name' => $pageTitle,
-      'description' => $metaDescription,
-      'isPartOf' => [
-        '@id' => SITE_URL . '/#website',
-      ],
-      'primaryImageOfPage' => [
-        '@id' => SITE_URL . '/#primaryimage',
-      ],
-      'mainEntity' => [
-        '@id' => SITE_URL . '/#person',
-      ],
-      'about' => [
-        '@id' => SITE_URL . '/#person',
-      ],
-      'inLanguage' => 'en-US',
+
+    'primaryImageOfPage' => [
+        '@id' =>
+            SITE_PRIMARY_IMAGE_ID,
     ],
-    [
-      '@type' => 'Person',
-      '@id' => SITE_URL . '/#person',
-      'name' => SITE_NAME,
-      'givenName' => 'Tim',
-      'familyName' => 'Gabaree',
-      'url' => SITE_URL . '/',
-      'image' => [
-        '@id' => SITE_URL . '/#primaryimage',
-      ],
-      'jobTitle' => 'Portfolio CIO',
-      'description' =>
+
+    'mainEntity' => [
+        '@id' =>
+            SITE_PERSON_ID,
+    ],
+
+    'about' => [
+        '@id' =>
+            SITE_PERSON_ID,
+    ],
+];
+
+/*
+|--------------------------------------------------------------------------
+| Person
+|--------------------------------------------------------------------------
+*/
+
+$personSchema = [
+    '@type' =>
+        'Person',
+
+    '@id' =>
+        SITE_PERSON_ID,
+
+    'name' =>
+        SITE_NAME,
+
+    'givenName' =>
+        'Tim',
+
+    'familyName' =>
+        'Gabaree',
+
+    'url' =>
+        SITE_HOME_URL,
+
+    'image' => [
+        '@id' =>
+            SITE_PRIMARY_IMAGE_ID,
+    ],
+
+    'jobTitle' =>
+        'Portfolio CIO',
+
+    'description' =>
         'Portfolio CIO and technology executive focused on technology value creation, governance, operating model transformation, and enterprise performance.',
-      'email' => 'mailto:' . SITE_EMAIL,
-      'telephone' => SITE_PHONE,
-      'sameAs' => SITE_SOCIAL_PROFILES,
-      'spouse' => [
-        '@type' => 'Person',
-        '@id' => 'https://carriegabaree.com/#person',
-        'name' => 'Carrie Gabaree',
-        'url' => 'https://carriegabaree.com/',
+
+    'email' =>
+        'mailto:' .
+        SITE_EMAIL,
+
+    'telephone' =>
+        SITE_PHONE,
+
+    'sameAs' =>
+        SITE_SOCIAL_PROFILES,
+
+    'spouse' => [
+        '@type' =>
+            'Person',
+
+        '@id' =>
+            'https://carriegabaree.com/#person',
+
+        'name' =>
+            'Carrie Gabaree',
+
+        'url' =>
+            'https://carriegabaree.com/',
+
         'sameAs' => [
-          'https://www.linkedin.com/in/carriegabaree',
+            'https://www.linkedin.com/in/carriegabaree',
         ],
-      ],
-      'affiliation' => [
-        '@type' => 'Organization',
-        'name' => 'RGE Solutions LLC',
-        'url' => 'https://rgesol.com/',
-      ],
-      'memberOf' => [
+    ],
+
+    'affiliation' => [
+        '@type' =>
+            'Organization',
+
+        'name' =>
+            'RGE Solutions LLC',
+
+        'url' =>
+            'https://rgesol.com/',
+    ],
+
+    'memberOf' => [
         [
-          '@type' => 'Organization',
-          'name' => 'Private Directors Association',
+            '@type' =>
+                'Organization',
+
+            'name' =>
+                'Private Directors Association',
         ],
+
         [
-          '@type' => 'Organization',
-          'name' => 'IEEE',
+            '@type' =>
+                'Organization',
+
+            'name' =>
+                'IEEE',
         ],
+
         [
-          '@type' => 'Organization',
-          'name' => 'ISC2',
+            '@type' =>
+                'Organization',
+
+            'name' =>
+                'ISC2',
         ],
+
         [
-          '@type' => 'Organization',
-          'name' => 'Project Management Institute',
+            '@type' =>
+                'Organization',
+
+            'name' =>
+                'Project Management Institute',
         ],
-      ],
-      'alumniOf' => [
+    ],
+
+    'alumniOf' => [
         [
-          '@type' => 'CollegeOrUniversity',
-          'name' => 'Purdue University Global',
+            '@type' =>
+                'CollegeOrUniversity',
+
+            'name' =>
+                'Purdue University Global',
         ],
+
         [
-          '@type' => 'CollegeOrUniversity',
-          'name' => 'University of Illinois Springfield',
+            '@type' =>
+                'CollegeOrUniversity',
+
+            'name' =>
+                'University of Illinois Springfield',
         ],
-      ],
-      'hasCredential' => [
+    ],
+
+    'hasCredential' => [
         [
-          '@type' => 'EducationalOccupationalCredential',
-          'name' => 'Master of Business Administration',
+            '@type' =>
+                'EducationalOccupationalCredential',
+
+            'name' =>
+                'Master of Business Administration',
         ],
+
         [
-          '@type' => 'EducationalOccupationalCredential',
-          'name' =>
-            'Certified Information Systems Security Professional',
+            '@type' =>
+                'EducationalOccupationalCredential',
+
+            'name' =>
+                'Certified Information Systems Security Professional',
         ],
+
         [
-          '@type' => 'EducationalOccupationalCredential',
-          'name' => 'Project Management Professional',
+            '@type' =>
+                'EducationalOccupationalCredential',
+
+            'name' =>
+                'Project Management Professional',
         ],
+
         [
-          '@type' => 'EducationalOccupationalCredential',
-          'name' => 'Wharton Corporate Governance Certificate',
+            '@type' =>
+                'EducationalOccupationalCredential',
+
+            'name' =>
+                'Wharton Corporate Governance Certificate',
         ],
-      ],
-      'knowsAbout' => [
+    ],
+
+    'knowsAbout' => [
         'Technology Value Creation',
         'Enterprise Performance',
         'Technology Governance',
@@ -149,13 +309,28 @@ $schema = [
         'Digital Transformation',
         'Technology Strategy',
         'Enterprise Architecture',
-      ],
-      'knowsLanguage' => [
-        'English',
-      ],
-      'mainEntityOfPage' => [
-        '@id' => SITE_URL . '/#webpage',
-      ],
     ],
-  ],
+
+    'knowsLanguage' => [
+        'English',
+    ],
+
+    'mainEntityOfPage' => [
+        '@id' =>
+            SITE_HOME_URL .
+            '#webpage',
+    ],
+];
+
+/*
+|--------------------------------------------------------------------------
+| Schema Graph
+|--------------------------------------------------------------------------
+*/
+
+$schemaGraph = [
+    $websiteSchema,
+    $primaryImageSchema,
+    $profilePageSchema,
+    $personSchema,
 ];

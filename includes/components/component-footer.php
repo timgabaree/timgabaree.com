@@ -2,18 +2,55 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/bootstrap.php';
+/*
+|--------------------------------------------------------------------------
+| Site Footer
+|--------------------------------------------------------------------------
+|
+| Shared footer navigation, copyright information, JavaScript, and
+| document closing elements for all public pages.
+|
+| Public pages must load bootstrap.php before requiring this component.
+|
+*/
 
-if (!isset($footerLinks) || !is_array($footerLinks)) {
+/*
+|--------------------------------------------------------------------------
+| Footer Navigation
+|--------------------------------------------------------------------------
+|
+| Individual pages may override $footerLinks before requiring this
+| component.
+|
+*/
+
+if (
+    !isset($footerLinks) ||
+    !is_array($footerLinks)
+) {
     $footerLinks = [
-        'Home'           => '/',
-        'Privacy Policy' => '/privacy.php',
-        'Sitemap'        => '/sitemap.xml',
+        'Home' =>
+            SITE_HOME_PATH,
+
+        'Privacy Policy' =>
+            SITE_PRIVACY_PATH,
+
+        'Sitemap' =>
+            SITE_SITEMAP_PATH,
     ];
 }
 
-if (isset($page) && $page === 'home') {
-    unset($footerLinks['Home']);
+/*
+ * The Home link is unnecessary when the visitor is already on the
+ * homepage.
+ */
+if (
+    isset($page) &&
+    $page === 'home'
+) {
+    unset(
+        $footerLinks['Home']
+    );
 }
 
 ?>
@@ -26,17 +63,25 @@ if (isset($page) && $page === 'home') {
   <p>
 
     <?php
+
     $footerItems = [];
 
-    foreach ($footerLinks as $label => $url) {
-        $footerItems[] = sprintf(
-            '<a href="%s">%s</a>',
-            e($url),
-            e($label)
-        );
+    foreach (
+        $footerLinks as $label => $url
+    ) {
+        $footerItems[] =
+            sprintf(
+                '<a href="%s">%s</a>',
+                e($url),
+                e($label)
+            );
     }
 
-    echo implode(' &nbsp;|&nbsp; ', $footerItems);
+    echo implode(
+        ' &nbsp;|&nbsp; ',
+        $footerItems
+    );
+
     ?>
 
   </p>
@@ -51,93 +96,15 @@ if (isset($page) && $page === 'home') {
 <!-- End Footer -->
 
 <!-- JavaScript -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const toggler = document.querySelector(".navbar-toggler");
-  const nav = document.querySelector("#navbarNav");
-  const dropdownButtons =
-    document.querySelectorAll(".dropdown-toggle");
-
-  if (!toggler || !nav) {
-    return;
-  }
-
-  toggler.addEventListener("click", function () {
-    const expanded =
-      toggler.getAttribute("aria-expanded") === "true";
-
-    toggler.setAttribute(
-      "aria-expanded",
-      String(!expanded)
-    );
-
-    nav.classList.toggle("show");
-  });
-
-  dropdownButtons.forEach(function (button) {
-    button.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      const expanded =
-        button.getAttribute("aria-expanded") === "true";
-
-      dropdownButtons.forEach(function (otherButton) {
-        if (otherButton !== button) {
-          otherButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-          otherButton.nextElementSibling.classList.remove("show");
-        }
-      });
-
-      button.setAttribute(
-        "aria-expanded",
-        String(!expanded)
-      );
-
-      button.nextElementSibling.classList.toggle("show");
-    });
-  });
-
-  document
-    .querySelectorAll(".navbar a")
-    .forEach(function (link) {
-      link.addEventListener("click", function () {
-        nav.classList.remove("show");
-
-        toggler.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        dropdownButtons.forEach(function (button) {
-          button.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-          button.nextElementSibling.classList.remove("show");
-        });
-      });
-    });
-
-  document.addEventListener("click", function (event) {
-    if (!event.target.closest(".dropdown")) {
-      dropdownButtons.forEach(function (button) {
-        button.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        button.nextElementSibling.classList.remove("show");
-      });
-    }
-  });
-});
-</script>
+<script
+  src="<?= e(
+      asset(
+          '/js/main.js',
+          VERSION_JS
+      )
+  ) ?>"
+  defer
+></script>
 <!-- End JavaScript -->
 
 </body>

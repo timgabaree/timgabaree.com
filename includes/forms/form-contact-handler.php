@@ -2,6 +2,24 @@
 
 declare(strict_types=1);
 
+/*
+|--------------------------------------------------------------------------
+| Tim Gabaree Contact Form Handler
+|--------------------------------------------------------------------------
+|
+| Protected handler:
+|
+| /includes/forms/form-contact-handler.php
+|
+| Public endpoint:
+|
+| /contact-submit
+|
+| This file coordinates request validation, CSRF protection, rate
+| limiting, form validation, mail delivery, and redirects.
+|
+*/
+
 require_once dirname(__DIR__) .
     '/bootstrap.php';
 
@@ -14,28 +32,9 @@ require_once __DIR__ .
 require_once __DIR__ .
     '/form-mail.php';
 
-require_once dirname(__DIR__) .
-    '/security/security-csrf.php';
-
-require_once dirname(__DIR__) .
-    '/security/security-rate-limit.php';
-
 /*
 |--------------------------------------------------------------------------
-| Tim Gabaree Contact Form Handler
-|--------------------------------------------------------------------------
-|
-| Protected handler:
-| /includes/forms/form-contact-handler.php
-|
-| Public endpoint:
-| /contact-submit.php
-|
-*/
-
-/*
-|--------------------------------------------------------------------------
-| Security-Related Response Headers
+| Response Headers
 |--------------------------------------------------------------------------
 */
 
@@ -43,8 +42,13 @@ header(
     'Cache-Control: no-store, no-cache, must-revalidate, max-age=0'
 );
 
-header('Pragma: no-cache');
-header('X-Content-Type-Options: nosniff');
+header(
+    'Pragma: no-cache'
+);
+
+header(
+    'X-Content-Type-Options: nosniff'
+);
 
 /*
 |--------------------------------------------------------------------------
@@ -56,47 +60,20 @@ $recipientEmail =
     SITE_FORM_EMAIL;
 
 $senderEmail =
-    SITE_FORM_EMAIL;
+    SITE_FORM_SENDER_EMAIL;
 
 $senderName =
-    SITE_NAME . ' Website';
+    SITE_FORM_SENDER_NAME;
 
 $contactUrl =
-    '/contact.php';
+    SITE_CONTACT_PATH;
 
 $thankYouUrl =
-    '/thank-you.php';
+    SITE_THANK_YOU_PATH;
 
 $thankYouConversionUrl =
-    '/thank-you.php?submitted=1';
-
-/* Approximately 50 KB */
-$maximumRequestBytes =
-    51200;
-
-/* Minimum time between submissions in the same session */
-$minimumSecondsBetweenSubmissions =
-    15;
-
-$rateLimitAction =
-    'contact_form_submission';
-
-/*
-|--------------------------------------------------------------------------
-| Redirect Helper
-|--------------------------------------------------------------------------
-*/
-
-function redirectTo(string $location): void
-{
-    header(
-        'Location: ' . $location,
-        true,
-        303
-    );
-
-    exit;
-}
+    SITE_THANK_YOU_PATH .
+    '?submitted=1';
 
 /*
 |--------------------------------------------------------------------------
@@ -104,90 +81,119 @@ function redirectTo(string $location): void
 |--------------------------------------------------------------------------
 */
 
-$requestMethod =
-    $_SERVER['REQUEST_METHOD'] ?? '';
-
-if ($requestMethod !== 'POST') {
-    redirectTo($contactUrl);
+if (
+    requestMethod() !== 'POST'
+) {
+    redirectTo(
+        $contactUrl
+    );
 }
 
 /*
 |--------------------------------------------------------------------------
-| Basic Same-Site Request Check
+| Same-Site Request Check
 |--------------------------------------------------------------------------
+|
+| This is supplemental protection. CSRF validation remains the primary
+| request-authenticity control.
+|
 */
 
-if (!requestAppearsSameSite()) {
+if (
+    !requestAppearsSameSite()
+) {
     error_log(
         'Tim Gabaree contact form: rejected cross-site submission.'
     );
 
     redirectTo(
-        $contactUrl . '?status=invalid'
+        $contactUrl .
+        '?status=' .
+        CONTACT_STATUS_INVALID
     );
 }
 
 /*
 |--------------------------------------------------------------------------
-| Request-Size Protection
+| Request Size
 |--------------------------------------------------------------------------
 */
 
 $contentLength =
-    isset($_SERVER['CONTENT_LENGTH'])
-        ? (int) $_SERVER['CONTENT_LENGTH']
-        : 0;
+    $_SERVER['CONTENT_LENGTH'] ??
+    0;
+
+if (
+    is_string($contentLength) ||
+    is_int($contentLength) ||
+    is_float($contentLength)
+) {
+    $contentLength =
+        (int) $contentLength;
+} else {
+    $contentLength =
+        0;
+}
 
 if (
     $contentLength < 0 ||
-    $contentLength > $maximumRequestBytes
+    $contentLength >
+        CONTACT_FORM_MAX_REQUEST_BYTES
 ) {
     redirectTo(
-        $contactUrl . '?status=invalid'
+        $contactUrl .
+        '?status=' .
+        CONTACT_STATUS_INVALID
     );
 }
 
 /*
 |--------------------------------------------------------------------------
-| Session-Based Rate Limiting
+| Rate Limiting
 |--------------------------------------------------------------------------
 */
 
 if (
     !rateLimitAllows(
-        $rateLimitAction,
-        $minimumSecondsBetweenSubmissions
+        CONTACT_FORM_RATE_LIMIT_ACTION,
+        CONTACT_FORM_MINIMUM_SECONDS_BETWEEN_SUBMISSIONS
     )
 ) {
     redirectTo(
-        $contactUrl . '?status=rate-limited'
+        $contactUrl .
+        '?status=' .
+        CONTACT_STATUS_RATE_LIMITED
     );
 }
 
 /*
 |--------------------------------------------------------------------------
-| Honeypot Spam Protection
+| Honeypot
 |--------------------------------------------------------------------------
+|
+| Legitimate visitors should leave this hidden field empty.
+|
+| Treat a populated honeypot as a successful submission from the
+| visitor's perspective without sending mail.
+|
 */
 
 $honeypot =
-    trim(
-        postString('website')
+    normalizeSingleLineInput(
+        postString(
+            'website'
+        )
     );
 
 if ($honeypot !== '') {
-    /*
-     * Quietly appear successful so automated submissions do not learn
-     * that the honeypot caught them.
-     *
-     * The ordinary thank-you URL is used so a false analytics conversion
-     * is not recorded.
-     */
+
     rateLimitRecord(
-        $rateLimitAction
+        CONTACT_FORM_RATE_LIMIT_ACTION
     );
 
-    redirectTo($thankYouUrl);
+    redirectTo(
+        $thankYouUrl
+    );
 }
 
 /*
@@ -197,7 +203,9 @@ if ($honeypot !== '') {
 */
 
 $submittedCsrfToken =
-    postString('csrf_token');
+    postString(
+        'csrf_token'
+    );
 
 if (
     !csrfIsValid(
@@ -209,13 +217,15 @@ if (
     );
 
     redirectTo(
-        $contactUrl . '?status=security-error'
+        $contactUrl .
+        '?status=' .
+        CONTACT_STATUS_SECURITY_ERROR
     );
 }
 
 /*
 |--------------------------------------------------------------------------
-| Validate Contact Form
+| Validate Form Data
 |--------------------------------------------------------------------------
 */
 
@@ -225,29 +235,45 @@ $validationResult =
     );
 
 $isValid =
-    $validationResult['is_valid'] ?? false;
+    $validationResult['is_valid'] ??
+    false;
 
 if ($isValid !== true) {
-    $status =
-        $validationResult['status'] ?? 'invalid';
 
-    if (!is_string($status) || $status === '') {
-        $status = 'invalid';
+    $status =
+        $validationResult['status'] ??
+        CONTACT_STATUS_INVALID;
+
+    if (
+        !is_string($status) ||
+        $status === ''
+    ) {
+        $status =
+            CONTACT_STATUS_INVALID;
     }
 
     redirectTo(
         $contactUrl .
         '?status=' .
-        rawurlencode($status)
+        rawurlencode(
+            $status
+        )
     );
 }
 
 $formData =
-    $validationResult['data'] ?? [];
+    $validationResult['data'] ??
+    [];
 
-if (!is_array($formData)) {
+if (
+    !is_array(
+        $formData
+    )
+) {
     redirectTo(
-        $contactUrl . '?status=invalid'
+        $contactUrl .
+        '?status=' .
+        CONTACT_STATUS_INVALID
     );
 }
 
@@ -269,13 +295,15 @@ if (
     );
 
     redirectTo(
-        $contactUrl . '?status=send-error'
+        $contactUrl .
+        '?status=' .
+        CONTACT_STATUS_SEND_ERROR
     );
 }
 
 /*
 |--------------------------------------------------------------------------
-| Send Contact Email
+| Send Mail
 |--------------------------------------------------------------------------
 */
 
@@ -288,14 +316,23 @@ $mailSent =
     );
 
 if ($mailSent) {
+
     /*
-     * Record the successful request and invalidate the used CSRF token.
+     * Record the successful submission and invalidate the CSRF token
+     * that was just used.
      */
+
     rateLimitRecord(
-        $rateLimitAction
+        CONTACT_FORM_RATE_LIMIT_ACTION
     );
 
     csrfRotateToken();
+
+    /*
+     * The submitted flag allows analytics to distinguish a genuine
+     * contact-form conversion from a visitor opening the thank-you URL
+     * directly.
+     */
 
     redirectTo(
         $thankYouConversionUrl
@@ -306,9 +343,6 @@ if ($mailSent) {
 |--------------------------------------------------------------------------
 | Mail Failure
 |--------------------------------------------------------------------------
-|
-| Do not reveal PHP or mail-server details to visitors.
-|
 */
 
 error_log(
@@ -316,5 +350,7 @@ error_log(
 );
 
 redirectTo(
-    $contactUrl . '?status=send-error'
+    $contactUrl .
+    '?status=' .
+    CONTACT_STATUS_SEND_ERROR
 );

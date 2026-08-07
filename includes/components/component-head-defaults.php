@@ -2,114 +2,148 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/bootstrap.php';
-
 /*
 |--------------------------------------------------------------------------
-| Page Metadata Defaults
+| Head Defaults
 |--------------------------------------------------------------------------
 |
-| Individual pages may define these variables before loading
-| component-head.php. These defaults are used only when a page has
-| not supplied a value.
+| Establishes default metadata values for public pages.
+|
+| A page may override any value before requiring component-head.php.
 |
 */
 
-if (!isset($pageTitle)) {
-    $pageTitle = SITE_NAME;
-}
-
-if (!isset($metaDescription)) {
-    $metaDescription = '';
-}
-
-if (!isset($canonicalUrl)) {
-    $canonicalUrl = SITE_URL . '/';
-}
-
-if (!isset($robots)) {
-    $robots =
-        'index, follow, max-image-preview:large, ' .
-        'max-snippet:-1, max-video-preview:-1';
-}
-
 /*
 |--------------------------------------------------------------------------
-| Open Graph Defaults
+| Page Identity
 |--------------------------------------------------------------------------
 */
 
-if (!isset($ogLocale)) {
-    $ogLocale = 'en_US';
-}
+$page =
+    $page ??
+    '';
 
-if (!isset($ogType)) {
-    $ogType = 'website';
-}
-
-if (!isset($ogTitle)) {
-    $ogTitle = $pageTitle;
-}
-
-if (!isset($ogDescription)) {
-    $ogDescription = $metaDescription;
-}
-
-if (!isset($ogImage)) {
-    $ogImage =
-        SITE_URL .
-        '/media/profile-pic-tim-gabaree-900x1200.webp';
-}
-
-if (!isset($ogImageType)) {
-    $ogImageType = 'image/webp';
-}
-
-if (!isset($ogImageWidth)) {
-    $ogImageWidth = 900;
-}
-
-if (!isset($ogImageHeight)) {
-    $ogImageHeight = 1200;
-}
-
-if (!isset($ogImageAlt)) {
-    $ogImageAlt =
-        'Tim Gabaree, Portfolio CIO and technology executive';
-}
+$bodyClass =
+    $bodyClass ??
+    '';
 
 /*
 |--------------------------------------------------------------------------
-| X / Twitter Defaults
+| Page Dates
 |--------------------------------------------------------------------------
+|
+| Dates are controlled centrally through PAGE_METADATA in version.php.
+|
 */
 
-if (!isset($twitterCard)) {
-    $twitterCard = 'summary';
-}
+$pageDatePublished =
+    $pageDatePublished ??
+    pagePublished(
+        (string) $page
+    );
 
-if (!isset($twitterTitle)) {
-    $twitterTitle = $ogTitle;
-}
-
-if (!isset($twitterDescription)) {
-    $twitterDescription = $ogDescription;
-}
-
-if (!isset($twitterImage)) {
-    $twitterImage = $ogImage;
-}
-
-if (!isset($twitterImageAlt)) {
-    $twitterImageAlt = $ogImageAlt;
-}
+$pageDateModified =
+    $pageDateModified ??
+    pageModified(
+        (string) $page
+    );
 
 /*
 |--------------------------------------------------------------------------
-| Performance Defaults
+| Core Page Metadata
 |--------------------------------------------------------------------------
 */
 
-if (!isset($preloadImage)) {
-    $preloadImage = null;
-}
+$pageTitle =
+    $pageTitle ??
+    SITE_NAME;
+
+$metaDescription =
+    $metaDescription ??
+    SITE_DESCRIPTION;
+
+$robots =
+    $robots ??
+    'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
+$canonicalUrl =
+    $canonicalUrl ??
+    SITE_HOME_URL;
+
+/*
+|--------------------------------------------------------------------------
+| Open Graph
+|--------------------------------------------------------------------------
+*/
+
+$ogLocale =
+    $ogLocale ??
+    SITE_LOCALE;
+
+$ogType =
+    $ogType ??
+    'website';
+
+$ogTitle =
+    $ogTitle ??
+    $pageTitle;
+
+$ogDescription =
+    $ogDescription ??
+    $metaDescription;
+
+$ogImage =
+    $ogImage ??
+    SITE_PRIMARY_IMAGE;
+
+$ogImageType =
+    $ogImageType ??
+    'image/webp';
+
+$ogImageWidth =
+    $ogImageWidth ??
+    SITE_PRIMARY_IMAGE_WIDTH;
+
+$ogImageHeight =
+    $ogImageHeight ??
+    SITE_PRIMARY_IMAGE_HEIGHT;
+
+$ogImageAlt =
+    $ogImageAlt ??
+    'Tim Gabaree, Portfolio CIO and technology executive';
+
+/*
+|--------------------------------------------------------------------------
+| X / Twitter
+|--------------------------------------------------------------------------
+*/
+
+$twitterCard =
+    $twitterCard ??
+    'summary';
+
+$twitterTitle =
+    $twitterTitle ??
+    $ogTitle;
+
+$twitterDescription =
+    $twitterDescription ??
+    $ogDescription;
+
+$twitterImage =
+    $twitterImage ??
+    $ogImage;
+
+$twitterImageAlt =
+    $twitterImageAlt ??
+    $ogImageAlt;
+
+/*
+|--------------------------------------------------------------------------
+| Performance
+|--------------------------------------------------------------------------
+*/
+
+$preloadImage =
+    $preloadImage ??
+    '';

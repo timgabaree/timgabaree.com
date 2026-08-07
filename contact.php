@@ -402,7 +402,7 @@ require __DIR__ . '/includes/components/component-header.php';
     class="contact-form-status"
     role="alert">
 
-    <p>
+    <p class="contact-form-status-message">
       <?= e($formStatusMessage) ?>
     </p>
 

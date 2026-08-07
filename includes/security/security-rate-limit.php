@@ -7,11 +7,11 @@ declare(strict_types=1);
 | Session-Based Rate Limiting
 |--------------------------------------------------------------------------
 |
-| Provides a reusable minimum-time interval between actions within the
-| visitor's current PHP session.
+| Provides lightweight rate limiting for public forms.
 |
-| This is a useful anti-abuse layer, but it is not a replacement for
-| server-level or IP-based rate limiting.
+| During the framework transition, this file can safely initialize the
+| session itself. Once bootstrap.php starts the session globally, the
+| session initialization function simply returns.
 |
 */
 
@@ -23,15 +23,33 @@ declare(strict_types=1);
 
 function rateLimitStartSession(): void
 {
-    if (session_status() === PHP_SESSION_ACTIVE) {
+    if (
+        session_status() ===
+        PHP_SESSION_ACTIVE
+    ) {
         return;
     }
 
+    session_set_cookie_params([
+        'lifetime' =>
+            0,
+
+        'path' =>
+            '/',
+
+        'secure' =>
+            SESSION_COOKIE_SECURE,
+
+        'httponly' =>
+            SESSION_COOKIE_HTTP_ONLY,
+
+        'samesite' =>
+            SESSION_COOKIE_SAME_SITE,
+    ]);
+
     session_start([
-        'cookie_httponly' => true,
-        'cookie_secure' => true,
-        'cookie_samesite' => 'Lax',
-        'use_strict_mode' => true,
+        'use_strict_mode' =>
+            true,
     ]);
 }
 
@@ -41,23 +59,75 @@ function rateLimitStartSession(): void
 |--------------------------------------------------------------------------
 */
 
-function rateLimitSessionKey(string $action): string
-{
+/**
+ * Return the session key used for a rate-limited action.
+ */
+function rateLimitSessionKey(
+    string $action
+): string {
     $normalizedAction =
         preg_replace(
             '/[^a-z0-9_-]+/i',
             '_',
-            trim($action)
-        ) ?? '';
-
-    if ($normalizedAction === '') {
-        throw new InvalidArgumentException(
-            'Rate-limit action name cannot be empty.'
+            strtolower(
+                trim($action)
+            )
         );
+
+    if (
+        !is_string($normalizedAction) ||
+        $normalizedAction === ''
+    ) {
+        $normalizedAction =
+            'default';
     }
 
-    return 'rate_limit_' .
-        strtolower($normalizedAction);
+    return SESSION_RATE_LIMIT_KEY .
+        ':' .
+        $normalizedAction;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Last Recorded Action
+|--------------------------------------------------------------------------
+*/
+
+/**
+ * Return the timestamp of the last recorded action.
+ */
+function rateLimitLastTimestamp(
+    string $action
+): ?int {
+    rateLimitStartSession();
+
+    $sessionKey =
+        rateLimitSessionKey(
+            $action
+        );
+
+    if (
+        !isset($_SESSION[$sessionKey])
+    ) {
+        return null;
+    }
+
+    $timestamp =
+        $_SESSION[$sessionKey];
+
+    if (
+        is_int($timestamp)
+    ) {
+        return $timestamp;
+    }
+
+    if (
+        is_numeric($timestamp)
+    ) {
+        return (int) $timestamp;
+    }
+
+    return null;
 }
 
 /*
@@ -66,36 +136,80 @@ function rateLimitSessionKey(string $action): string
 |--------------------------------------------------------------------------
 */
 
+/**
+ * Determine whether the action may proceed.
+ */
 function rateLimitAllows(
     string $action,
     int $minimumSeconds
 ): bool {
     rateLimitStartSession();
 
-    if ($minimumSeconds < 0) {
-        throw new InvalidArgumentException(
-            'Rate-limit interval cannot be negative.'
+    if (
+        $minimumSeconds <= 0
+    ) {
+        return true;
+    }
+
+    $lastTimestamp =
+        rateLimitLastTimestamp(
+            $action
         );
-    }
 
-    $sessionKey =
-        rateLimitSessionKey($action);
-
-    $lastActionTime =
-        $_SESSION[$sessionKey] ?? 0;
-
-    if (!is_int($lastActionTime)) {
-        $lastActionTime =
-            (int) $lastActionTime;
-    }
-
-    if ($lastActionTime <= 0) {
+    if (
+        $lastTimestamp === null
+    ) {
         return true;
     }
 
     return (
-        time() - $lastActionTime
-    ) >= $minimumSeconds;
+        time() -
+        $lastTimestamp
+    ) >=
+        $minimumSeconds;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Remaining Wait Time
+|--------------------------------------------------------------------------
+*/
+
+/**
+ * Return the number of seconds remaining before the action is allowed.
+ */
+function rateLimitSecondsRemaining(
+    string $action,
+    int $minimumSeconds
+): int {
+    rateLimitStartSession();
+
+    if (
+        $minimumSeconds <= 0
+    ) {
+        return 0;
+    }
+
+    $lastTimestamp =
+        rateLimitLastTimestamp(
+            $action
+        );
+
+    if (
+        $lastTimestamp === null
+    ) {
+        return 0;
+    }
+
+    $elapsedSeconds =
+        time() -
+        $lastTimestamp;
+
+    return max(
+        0,
+        $minimumSeconds -
+        $elapsedSeconds
+    );
 }
 
 /*
@@ -104,17 +218,22 @@ function rateLimitAllows(
 |--------------------------------------------------------------------------
 */
 
+/**
+ * Record that a rate-limited action occurred.
+ */
 function rateLimitRecord(
     string $action,
     ?int $timestamp = null
 ): void {
     rateLimitStartSession();
 
-    $sessionKey =
-        rateLimitSessionKey($action);
-
-    $_SESSION[$sessionKey] =
-        $timestamp ?? time();
+    $_SESSION[
+        rateLimitSessionKey(
+            $action
+        )
+    ] =
+        $timestamp ??
+        time();
 }
 
 /*
@@ -123,14 +242,19 @@ function rateLimitRecord(
 |--------------------------------------------------------------------------
 */
 
-function rateLimitClear(string $action): void
-{
+/**
+ * Clear a recorded rate-limit timestamp.
+ */
+function rateLimitClear(
+    string $action
+): void {
     rateLimitStartSession();
 
-    $sessionKey =
-        rateLimitSessionKey($action);
-
     unset(
-        $_SESSION[$sessionKey]
+        $_SESSION[
+            rateLimitSessionKey(
+                $action
+            )
+        ]
     );
 }

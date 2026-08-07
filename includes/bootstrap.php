@@ -4,13 +4,140 @@ declare(strict_types=1);
 
 /*
 |--------------------------------------------------------------------------
-| Bootstrap
+| Application Bootstrap
 |--------------------------------------------------------------------------
 |
-| Loads all core application files.
+| Loads and initializes the shared Tim Gabaree website framework.
+|
+| Every public PHP page should require this file before producing any
+| HTML output.
 |
 */
 
-require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/version.php';
-require_once __DIR__ . '/functions.php';
+/*
+|--------------------------------------------------------------------------
+| Load Core Configuration
+|--------------------------------------------------------------------------
+|
+| Load order matters:
+|
+| 1. config.php defines site-specific values.
+| 2. constants.php defines application-level values.
+| 3. version.php defines cache-busting versions.
+| 4. functions.php defines shared helper functions.
+|
+*/
+
+require_once __DIR__ .
+    '/config.php';
+
+require_once __DIR__ .
+    '/constants.php';
+
+require_once __DIR__ .
+    '/version.php';
+
+require_once __DIR__ .
+    '/functions.php';
+
+/*
+|--------------------------------------------------------------------------
+| Error Reporting
+|--------------------------------------------------------------------------
+|
+| Log all PHP errors in every environment.
+| Display them only when application debugging is enabled.
+|
+*/
+
+error_reporting(
+    E_ALL
+);
+
+ini_set(
+    'display_errors',
+    APP_DEBUG
+        ? '1'
+        : '0'
+);
+
+ini_set(
+    'log_errors',
+    '1'
+);
+
+/*
+|--------------------------------------------------------------------------
+| Timezone
+|--------------------------------------------------------------------------
+*/
+
+date_default_timezone_set(
+    SITE_TIMEZONE
+);
+
+/*
+|--------------------------------------------------------------------------
+| Character Encoding
+|--------------------------------------------------------------------------
+*/
+
+if (
+    function_exists(
+        'mb_internal_encoding'
+    )
+) {
+    mb_internal_encoding(
+        APP_CHARSET
+    );
+}
+
+/*
+|--------------------------------------------------------------------------
+| Session Configuration
+|--------------------------------------------------------------------------
+|
+| Sessions support CSRF protection and session-based rate limiting.
+|
+| Cookie parameters must be configured before the session starts.
+|
+*/
+
+if (
+    session_status() ===
+    PHP_SESSION_NONE
+) {
+    session_set_cookie_params([
+        'lifetime' =>
+            0,
+
+        'path' =>
+            '/',
+
+        'secure' =>
+            SESSION_COOKIE_SECURE,
+
+        'httponly' =>
+            SESSION_COOKIE_HTTP_ONLY,
+
+        'samesite' =>
+            SESSION_COOKIE_SAME_SITE,
+    ]);
+
+    session_start([
+        'use_strict_mode' =>
+            true,
+    ]);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Security Services
+|--------------------------------------------------------------------------
+*/
+
+require_once __DIR__ .
+    '/security/security-csrf.php';
+
+require_once __DIR__ .
+    '/security/security-rate-limit.php';

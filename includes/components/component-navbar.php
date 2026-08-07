@@ -2,17 +2,40 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/bootstrap.php';
+/*
+|--------------------------------------------------------------------------
+| Primary Navigation
+|--------------------------------------------------------------------------
+|
+| Shared navigation for all public pages.
+|
+| Tim Gabaree's navigation includes:
+|
+| - homepage section links;
+| - Operating Leadership dropdown;
+| - About dropdown;
+| - Contact / Connect;
+| - external social-profile links.
+|
+| The CSS classes and element IDs in this component are also used by
+| main.js for responsive navigation and dropdown behavior.
+|
+*/
 
-$currentPage = isset($page) && is_string($page)
-    ? $page
-    : '';
+$currentPage =
+    isset($page) &&
+    is_string($page)
+        ? $page
+        : '';
 
-$isHomePage = $currentPage === 'home';
+$isHomePage =
+    $currentPage ===
+    'home';
 
-$homePrefix = $isHomePage
-    ? ''
-    : '/';
+$homePrefix =
+    $isHomePage
+        ? ''
+        : '/';
 
 ?>
 
@@ -21,6 +44,7 @@ $homePrefix = $isHomePage
   class="navbar"
   aria-label="Primary navigation">
 
+  <!-- Mobile Navigation Toggle -->
   <button
     class="navbar-toggler"
     type="button"
@@ -35,23 +59,34 @@ $homePrefix = $isHomePage
 
   </button>
 
+  <!-- Site Brand -->
   <a
     class="navbar-brand"
-    href="<?= e($isHomePage ? '#home' : '/#home') ?>">
+    href="<?= e(
+        $isHomePage
+            ? '#home'
+            : '/#home'
+    ) ?>">
     <?= e(SITE_NAME) ?>
   </a>
 
+  <!-- Primary Navigation -->
   <div
     class="navbar-collapse"
     id="navbarNav">
 
     <ul class="navbar-nav">
 
+      <!-- Home -->
       <li class="nav-item">
 
         <a
           class="nav-link"
-          href="<?= e($isHomePage ? '#home' : '/#home') ?>"
+          href="<?= e(
+              $isHomePage
+                  ? '#home'
+                  : '/#home'
+          ) ?>"
           <?php if ($isHomePage): ?>
           aria-current="page"
           <?php endif; ?>>
@@ -60,6 +95,7 @@ $homePrefix = $isHomePage
 
       </li>
 
+      <!-- Operating Leadership -->
       <li class="nav-item dropdown">
 
         <button
@@ -77,31 +113,46 @@ $homePrefix = $isHomePage
 
           <a
             class="dropdown-item"
-            href="<?= e($homePrefix . '#experience') ?>">
+            href="<?= e(
+                $homePrefix .
+                '#experience'
+            ) ?>">
             Operating Results
           </a>
 
           <a
             class="dropdown-item"
-            href="<?= e($homePrefix . '#board') ?>">
+            href="<?= e(
+                $homePrefix .
+                '#board'
+            ) ?>">
             Board and Advisory
           </a>
 
           <a
             class="dropdown-item"
-            href="<?= e($homePrefix . '#results') ?>">
+            href="<?= e(
+                $homePrefix .
+                '#results'
+            ) ?>">
             Strategic Impact
           </a>
 
           <a
             class="dropdown-item"
-            href="<?= e($homePrefix . '#expertise') ?>">
+            href="<?= e(
+                $homePrefix .
+                '#expertise'
+            ) ?>">
             Expertise
           </a>
 
           <a
             class="dropdown-item"
-            href="<?= e($homePrefix . '#education') ?>">
+            href="<?= e(
+                $homePrefix .
+                '#education'
+            ) ?>">
             Education
           </a>
 
@@ -109,6 +160,7 @@ $homePrefix = $isHomePage
 
       </li>
 
+      <!-- About -->
       <li class="nav-item dropdown">
 
         <button
@@ -126,7 +178,7 @@ $homePrefix = $isHomePage
 
           <a
             class="dropdown-item"
-            href="/about.php"
+            href="<?= e(SITE_ABOUT_PATH) ?>"
             <?php if ($currentPage === 'about'): ?>
             aria-current="page"
             <?php endif; ?>>
@@ -135,25 +187,32 @@ $homePrefix = $isHomePage
 
           <a
             class="dropdown-item"
-            href="<?= e($homePrefix . '#q-and-a') ?>">
+            href="<?= e(
+                $homePrefix .
+                '#q-and-a'
+            ) ?>">
             Leadership Perspective
           </a>
 
           <a
             class="dropdown-item"
-            href="<?= e($homePrefix . '#testimonials') ?>">
+            href="<?= e(
+                $homePrefix .
+                '#testimonials'
+            ) ?>">
             Testimonials
           </a>
 
-         </div>
+        </div>
 
       </li>
 
+      <!-- Contact -->
       <li class="nav-item">
 
         <a
           class="nav-link"
-          href="/contact.php"
+          href="<?= e(SITE_CONTACT_PATH) ?>"
           <?php if ($currentPage === 'contact'): ?>
           aria-current="page"
           <?php endif; ?>>
@@ -166,10 +225,12 @@ $homePrefix = $isHomePage
 
   </div>
 
+  <!-- Social Profiles -->
   <div
     class="nav-link-container"
     aria-label="Tim Gabaree social profiles">
 
+    <!-- Blog -->
     <a
       class="nav-link"
       href="<?= e(SITE_BLOGSPOT) ?>"
@@ -186,6 +247,7 @@ $homePrefix = $isHomePage
 
     </a>
 
+    <!-- LinkedIn -->
     <a
       class="nav-link"
       href="<?= e(SITE_LINKEDIN) ?>"
@@ -202,6 +264,7 @@ $homePrefix = $isHomePage
 
     </a>
 
+    <!-- GitHub -->
     <a
       class="nav-link"
       href="<?= e(SITE_GITHUB) ?>"

@@ -2,20 +2,36 @@
 # Canonical Redirects and Extensionless PHP URLs
 # ----------------------------------------------------------------------
 
+Options -MultiViews
+
 <IfModule mod_rewrite.c>
+
   RewriteEngine On
 
-  # Disable Apache content negotiation so explicit rewrite rules control
-  # extensionless URLs.
-  Options -MultiViews
+  # --------------------------------------------------
+  # Exclude Hosted Child Domains
+  # --------------------------------------------------
+  #
+  # The RGE document root also contains other hosted domains.
+  # Stop RGE-specific rewrite processing when the request host
+  # is not timgabaree.com or www.timgabaree.com.
+  #
+
+  RewriteCond %{HTTP_HOST} !^(?:www\.)?timgabaree\.com$ [NC]
+  RewriteRule ^ - [L]
 
   # --------------------------------------------------
-  # Special Host Redirects
+  # Preserve Custom Error Handlers
   # --------------------------------------------------
 
-  # Current destination until hello.php is renamed to contact.php
-  RewriteCond %{HTTP_HOST} ^hello\.timgabaree\.com$ [NC]
-  RewriteRule ^ https://timgabaree.com/hello [R=301,L,NE]
+  RewriteRule ^errors/(403|404|500)\.php$ - [END]
+
+  # --------------------------------------------------
+  # Branded 403 for Protected Application Files
+  # --------------------------------------------------
+
+  RewriteCond %{THE_REQUEST} \s/+includes(?:/|%2F) [NC]
+  RewriteRule ^includes(?:/.*)?$ /errors/403.php [END]
 
   # --------------------------------------------------
   # Force HTTPS and Non-WWW
@@ -29,11 +45,6 @@
   # Legacy HTML URLs
   # --------------------------------------------------
 
-  # Example:
-  # /about.html -> /about
-  #
-  # THE_REQUEST ensures this applies only when the visitor explicitly
-  # requested the .html URL.
   RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]) [NC]
   RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
 
@@ -41,31 +52,36 @@
   # Remove Public PHP Extensions
   # --------------------------------------------------
 
-  # /index.php -> /
   RewriteCond %{THE_REQUEST} \s/+index\.php(?:[\s?]) [NC]
   RewriteRule ^index\.php$ / [R=301,L,NE]
 
-  # Example:
-  # /about.php -> /about
-  #
-  # THE_REQUEST prevents a redirect loop after Apache internally maps
-  # /about to /about.php.
   RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[\s?]) [NC]
+  RewriteCond %{REQUEST_URI} !^/errors/(403|404|500)\.php$ [NC]
   RewriteRule ^(.+)\.php$ /$1 [R=301,L,NE]
 
   # --------------------------------------------------
   # Internally Resolve Extensionless PHP URLs
   # --------------------------------------------------
 
-  # Example:
-  # /about internally loads /about.php
-  #
-  # Existing files and directories remain untouched.
-RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.php -f
+  RewriteRule ^(.+?)/?$ $1.php [L]
 
-RewriteCond %{REQUEST_FILENAME} !-d
+  # --------------------------------------------------
+  # Branded 404 Catch-All
+  # --------------------------------------------------
 
-RewriteCond %{REQUEST_FILENAME}.php -f
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ errors/404.php [L]
 
-RewriteRule ^(.+?)/?$ $1.php [END]
 </IfModule>
+
+# ----------------------------------------------------------------------
+# Custom Error Documents
+# ----------------------------------------------------------------------
+
+ErrorDocument 403 /errors/403.php
+ErrorDocument 404 /errors/404.php
+ErrorDocument 500 /errors/500.php
