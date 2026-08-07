@@ -1959,6 +1959,14 @@ button.contact-action {
   border-radius: 2px;
 }
 
+.contact-form-status-message {
+  margin: 24px auto 24px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 /* =====================================================
    22. Thank-You Page
 ===================================================== */
