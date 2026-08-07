@@ -2,141 +2,65 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/bootstrap.php';
-
 /*
 |--------------------------------------------------------------------------
 | Contact Form Validation
 |--------------------------------------------------------------------------
 |
-| Provides input sanitization, request checks, and contact-form
-| validation. This file does not send mail, manage redirects, or record
-| submission rate limits.
+| Validates and normalizes submitted contact-form data.
+|
+| Shared input normalization, email validation, length checking, and
+| header-injection protection are provided by functions.php.
+|
+| This file contains only validation behavior specific to the contact
+| form, plus request-metadata sanitization used by the mail service.
 |
 */
 
 /*
 |--------------------------------------------------------------------------
-| Input Cleaning
+| Request-Metadata Sanitization
 |--------------------------------------------------------------------------
+|
+| Normalize values such as IP addresses and User-Agent strings before
+| including them in logs or contact-form email messages.
+|
 */
-
-function cleanSingleLine(string $value): string
-{
-    $value = strip_tags($value);
-
-    /*
-     * Convert line breaks and tabs into spaces.
-     */
-    $value =
-        preg_replace(
-            '/[\r\n\t]+/u',
-            ' ',
-            $value
-        ) ?? '';
-
-    /*
-     * Collapse repeated ordinary spaces.
-     */
-    $value =
-        preg_replace(
-            '/[ ]{2,}/u',
-            ' ',
-            $value
-        ) ?? '';
-
-    return trim($value);
-}
-
-function cleanMultiline(string $value): string
-{
-    $value = strip_tags($value);
-
-    /*
-     * Normalize line endings.
-     */
-    $value = str_replace(
-        ["\r\n", "\r"],
-        "\n",
-        $value
-    );
-
-    /*
-     * Remove control characters while preserving tabs
-     * and line breaks.
-     */
-    $value =
-        preg_replace(
-            '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u',
-            '',
-            $value
-        ) ?? '';
-
-    /*
-     * Remove trailing spaces from each line.
-     */
-    $value =
-        preg_replace(
-            '/[ \t]+$/m',
-            '',
-            $value
-        ) ?? '';
-
-    /*
-     * Limit excessive blank lines.
-     */
-    $value =
-        preg_replace(
-            "/\n{4,}/",
-            "\n\n\n",
-            $value
-        ) ?? '';
-
-    return trim($value);
-}
-
-/*
-|--------------------------------------------------------------------------
-| General Validation Helpers
-|--------------------------------------------------------------------------
-*/
-
-function hasHeaderInjection(string $value): bool
-{
-    return preg_match(
-        '/[\r\n]/',
-        $value
-    ) === 1;
-}
-
-function safeLength(string $value): int
-{
-    if (function_exists('mb_strlen')) {
-        return mb_strlen(
-            $value,
-            'UTF-8'
-        );
-    }
-
-    return strlen($value);
-}
 
 function sanitizeLogValue(
     string $value,
     int $maximumLength
 ): string {
-    $value = cleanSingleLine($value);
+    $value =
+        normalizeSingleLineInput(
+            $value
+        );
 
-    if (safeLength($value) <= $maximumLength) {
+    if (
+        $maximumLength <= 0
+    ) {
+        return '';
+    }
+
+    if (
+        !textExceedsLength(
+            $value,
+            $maximumLength
+        )
+    ) {
         return $value;
     }
 
-    if (function_exists('mb_substr')) {
+    if (
+        function_exists(
+            'mb_substr'
+        )
+    ) {
         return mb_substr(
             $value,
             0,
             $maximumLength,
-            'UTF-8'
+            APP_CHARSET
         );
     }
 
@@ -146,7 +70,6 @@ function sanitizeLogValue(
         $maximumLength
     );
 }
-
 
 /*
 |--------------------------------------------------------------------------
@@ -161,92 +84,194 @@ function sanitizeLogValue(
 |     'data'      => array
 | ]
 |
-| The status value corresponds to the query parameter used when sending
-| the visitor back to contact.php.
+| Status values are defined centrally in constants.php.
 |
 */
 
-function validateContactForm(array $contactTopics): array
-{
-    $name = cleanSingleLine(
-        postString('name')
-    );
+/**
+ * Validate and normalize a contact-form submission.
+ *
+ * @param array<string, string> $contactTopics
+ *
+ * @return array{
+ *     is_valid: bool,
+ *     status: string,
+ *     data: array<string, string>
+ * }
+ */
+function validateContactForm(
+    array $contactTopics
+): array {
+    $name =
+        normalizeSingleLineInput(
+            postString(
+                'name'
+            )
+        );
 
-    $organization = cleanSingleLine(
-        postString('organization')
-    );
+    $organization =
+        normalizeSingleLineInput(
+            postString(
+                'organization'
+            )
+        );
 
-    $emailRaw = trim(
-        postString('email')
-    );
+    $email =
+        normalizeSingleLineInput(
+            postString(
+                'email'
+            )
+        );
 
-    $phone = cleanSingleLine(
-        postString('phone')
-    );
+    $phone =
+        normalizeSingleLineInput(
+            postString(
+                'phone'
+            )
+        );
 
-    $topic = cleanSingleLine(
-        postString('topic')
-    );
+    $topic =
+        normalizeSingleLineInput(
+            postString(
+                'topic'
+            )
+        );
 
-    $message = cleanMultiline(
-        postString('message')
-    );
+    $message =
+        normalizeMultilineInput(
+            postString(
+                'message'
+            )
+        );
 
     /*
-     * Validate required values.
-     */
+    |--------------------------------------------------------------------------
+    | Required Fields
+    |--------------------------------------------------------------------------
+    */
+
     if (
         $name === '' ||
-        $emailRaw === '' ||
+        $email === '' ||
         $topic === '' ||
         $message === ''
     ) {
         return [
-            'is_valid' => false,
-            'status' => 'missing',
-            'data' => [],
+            'is_valid' =>
+                false,
+
+            'status' =>
+                CONTACT_STATUS_MISSING,
+
+            'data' =>
+                [],
         ];
     }
 
     /*
-     * Enforce reasonable maximum lengths.
-     */
+    |--------------------------------------------------------------------------
+    | Field Lengths
+    |--------------------------------------------------------------------------
+    */
+
     if (
-        safeLength($name) > 100 ||
-        safeLength($organization) > 150 ||
-        safeLength($emailRaw) > 254 ||
-        safeLength($phone) > 40 ||
-        safeLength($topic) > 75 ||
-        safeLength($message) > 5000
+        textExceedsLength(
+            $name,
+            CONTACT_FORM_NAME_MAX_LENGTH
+        ) ||
+        textExceedsLength(
+            $organization,
+            CONTACT_FORM_ORGANIZATION_MAX_LENGTH
+        ) ||
+        textExceedsLength(
+            $email,
+            CONTACT_FORM_EMAIL_MAX_LENGTH
+        ) ||
+        textExceedsLength(
+            $phone,
+            CONTACT_FORM_PHONE_MAX_LENGTH
+        ) ||
+        textExceedsLength(
+            $message,
+            CONTACT_FORM_MESSAGE_MAX_LENGTH
+        )
     ) {
         return [
-            'is_valid' => false,
-            'status' => 'invalid',
-            'data' => [],
+            'is_valid' =>
+                false,
+
+            'status' =>
+                CONTACT_STATUS_INVALID,
+
+            'data' =>
+                [],
         ];
     }
 
     /*
-     * Validate the visitor's email address.
-     */
+    |--------------------------------------------------------------------------
+    | Email Address
+    |--------------------------------------------------------------------------
+    */
+
     if (
-        hasHeaderInjection($emailRaw) ||
-        filter_var(
-            $emailRaw,
-            FILTER_VALIDATE_EMAIL
-        ) === false
+        !emailIsValid(
+            $email
+        )
     ) {
         return [
-            'is_valid' => false,
-            'status' => 'invalid-email',
-            'data' => [],
+            'is_valid' =>
+                false,
+
+            'status' =>
+                CONTACT_STATUS_INVALID_EMAIL,
+
+            'data' =>
+                [],
         ];
     }
 
     /*
-     * Validate the selected topic against the controlled
-     * server-side topic map.
-     */
+    |--------------------------------------------------------------------------
+    | Header-Injection Protection
+    |--------------------------------------------------------------------------
+    */
+
+    if (
+        containsHeaderInjection(
+            $name
+        ) ||
+        containsHeaderInjection(
+            $organization
+        ) ||
+        containsHeaderInjection(
+            $email
+        ) ||
+        containsHeaderInjection(
+            $phone
+        ) ||
+        containsHeaderInjection(
+            $topic
+        )
+    ) {
+        return [
+            'is_valid' =>
+                false,
+
+            'status' =>
+                CONTACT_STATUS_INVALID,
+
+            'data' =>
+                [],
+        ];
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Topic Allowlist
+    |--------------------------------------------------------------------------
+    */
+
     if (
         !array_key_exists(
             $topic,
@@ -254,33 +279,72 @@ function validateContactForm(array $contactTopics): array
         )
     ) {
         return [
-            'is_valid' => false,
-            'status' => 'invalid',
-            'data' => [],
+            'is_valid' =>
+                false,
+
+            'status' =>
+                CONTACT_STATUS_INVALID,
+
+            'data' =>
+                [],
         ];
     }
 
-    $topicLabel = $contactTopics[$topic];
+    $topicLabel =
+        $contactTopics[$topic];
 
-    if (!is_string($topicLabel)) {
+    if (
+        !is_string(
+            $topicLabel
+        ) ||
+        $topicLabel === ''
+    ) {
         return [
-            'is_valid' => false,
-            'status' => 'invalid',
-            'data' => [],
+            'is_valid' =>
+                false,
+
+            'status' =>
+                CONTACT_STATUS_INVALID,
+
+            'data' =>
+                [],
         ];
     }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Validated Data
+    |--------------------------------------------------------------------------
+    */
 
     return [
-        'is_valid' => true,
-        'status' => '',
+        'is_valid' =>
+            true,
+
+        'status' =>
+            '',
+
         'data' => [
-            'name' => $name,
-            'organization' => $organization,
-            'email' => $emailRaw,
-            'phone' => $phone,
-            'topic' => $topic,
-            'topic_label' => $topicLabel,
-            'message' => $message,
+            'name' =>
+                $name,
+
+            'organization' =>
+                $organization,
+
+            'email' =>
+                $email,
+
+            'phone' =>
+                $phone,
+
+            'topic' =>
+                $topic,
+
+            'topic_label' =>
+                $topicLabel,
+
+            'message' =>
+                $message,
         ],
     ];
 }

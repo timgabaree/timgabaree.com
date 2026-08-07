@@ -1,0 +1,17 @@
+# ----------------------------------------------------------------------
+# Tim Gabaree Custom Error Pages
+# ----------------------------------------------------------------------
+
+Options -Indexes
+
+<IfModule mod_authz_core.c>
+
+  <FilesMatch "^(403|404|500)\.php$">
+    Require all granted
+  </FilesMatch>
+
+  <FilesMatch "^(error_log|.*\.log)$">
+    Require all denied
+  </FilesMatch>
+
+</IfModule>

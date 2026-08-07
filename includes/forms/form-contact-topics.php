@@ -1,21 +1,41 @@
 <?php
-declare (strict_types=1);
+
+declare(strict_types=1);
+
 /*
 |--------------------------------------------------------------------------
 | Contact Form Topics
 |--------------------------------------------------------------------------
 |
-| The array key is the submitted form value.
-| The array value is the visitor-facing and email-facing label.
+| Central list of accepted contact-form topics.
+|
+| The array keys are submitted form values. The array values are the
+| visitor-facing labels shown in the contact form and email message.
 |
 */
+
 $contactTopics = [
-    'executive-leadership' => 'Executive Leadership Opportunity',
-    'board-advisory' =>  'Board or Advisory Opportunity',
-    'private-equity-portfolio' => 'Private Equity or Portfolio Leadership',
-    'speaking-media' => 'Speaking or Media Inquiry',
-    'professional-networking' => 'Professional Networking',
-    'privacy-request' => 'Privacy or Personal Data Request',
-    'rge-solutions' => 'RGE Solutions Inquiry',
-    'other' => 'Other',
+    'executive-leadership' =>
+        'Executive Leadership Opportunity',
+
+    'board-advisory' =>
+        'Board or Advisory Opportunity',
+
+    'private-equity-portfolio' =>
+        'Private Equity or Portfolio Leadership',
+
+    'speaking-media' =>
+        'Speaking or Media Inquiry',
+
+    'professional-networking' =>
+        'Professional Networking',
+
+    'privacy-request' =>
+        'Privacy or Personal Data Request',
+
+    'rge-solutions' =>
+        'RGE Solutions Inquiry',
+
+    'other' =>
+        'Other',
 ];

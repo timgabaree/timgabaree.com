@@ -2,18 +2,55 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/bootstrap.php';
+/*
+|--------------------------------------------------------------------------
+| Site Footer
+|--------------------------------------------------------------------------
+|
+| Shared footer navigation, copyright information, JavaScript, and
+| document closing elements for all public pages.
+|
+| Public pages must load bootstrap.php before requiring this component.
+|
+*/
 
-if (!isset($footerLinks) || !is_array($footerLinks)) {
+/*
+|--------------------------------------------------------------------------
+| Footer Navigation
+|--------------------------------------------------------------------------
+|
+| Individual pages may override $footerLinks before requiring this
+| component.
+|
+*/
+
+if (
+    !isset($footerLinks) ||
+    !is_array($footerLinks)
+) {
     $footerLinks = [
-        'Home'           => '/',
-        'Privacy Policy' => '/privacy.php',
-        'Sitemap'        => '/sitemap.xml',
+        'Home' =>
+            SITE_HOME_PATH,
+
+        'Privacy Policy' =>
+            SITE_PRIVACY_PATH,
+
+        'Sitemap' =>
+            SITE_SITEMAP_PATH,
     ];
 }
 
-if (isset($page) && $page === 'home') {
-    unset($footerLinks['Home']);
+/*
+ * The Home link is unnecessary when the visitor is already on the
+ * homepage.
+ */
+if (
+    isset($page) &&
+    $page === 'home'
+) {
+    unset(
+        $footerLinks['Home']
+    );
 }
 
 ?>
@@ -26,17 +63,25 @@ if (isset($page) && $page === 'home') {
   <p>
 
     <?php
+
     $footerItems = [];
 
-    foreach ($footerLinks as $label => $url) {
-        $footerItems[] = sprintf(
-            '<a href="%s">%s</a>',
-            e($url),
-            e($label)
-        );
+    foreach (
+        $footerLinks as $label => $url
+    ) {
+        $footerItems[] =
+            sprintf(
+                '<a href="%s">%s</a>',
+                e($url),
+                e($label)
+            );
     }
 
-    echo implode(' &nbsp;|&nbsp; ', $footerItems);
+    echo implode(
+        ' &nbsp;|&nbsp; ',
+        $footerItems
+    );
+
     ?>
 
   </p>
@@ -52,7 +97,12 @@ if (isset($page) && $page === 'home') {
 
 <!-- JavaScript -->
 <script
-  src="<?= e(asset('/js/main.js', JS_VERSION)) ?>"
+  src="<?= e(
+      asset(
+          '/js/main.js',
+          VERSION_JS
+      )
+  ) ?>"
   defer
 ></script>
 <!-- End JavaScript -->

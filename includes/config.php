@@ -27,8 +27,8 @@ const SITE_FORM_EMAIL        = 'webform@timgabaree.com';
 |--------------------------------------------------------------------------
 */
 
-const COPYRIGHT_START_YEAR   = '2023';
-const COPYRIGHT_YEAR         = '2026';
+const COPYRIGHT_START_YEAR   = 2023;
+const COPYRIGHT_YEAR         = 2026;
 const COPYRIGHT_NAME         = 'Tim Gabaree';
 
 /*

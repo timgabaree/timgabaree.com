@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta
     http-equiv="refresh"
-    content="0; url=/errors/404">
+    content="0; url=/errors/403">
 
-  <title>Page Not Found</title>
+  <title>Access Denied</title>
 
   <link
     rel="canonical"
-    href="/errors/404">
+    href="/errors/403">
 </head>
 
 <body>
 
   <p>
-    <a href="/errors/404">
+    <a href="/errors/403">
       Continue
     </a>
   </p>

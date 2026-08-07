@@ -737,24 +737,3 @@ function arrayIsAssociative(
             count($array) - 1
         );
 }
-
-/*
-|--------------------------------------------------------------------------
-| Legacy JSON-LD Compatibility
-|--------------------------------------------------------------------------
-|
-| Retained temporarily for existing Tim Gabaree schema components.
-|
-*/
-
-function jsonLd(
-    mixed $value
-): string {
-    if (!is_array($value)) {
-        return '{}';
-    }
-
-    return jsonForHtml(
-        $value
-    );
-}

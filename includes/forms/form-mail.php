@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/bootstrap.php';
-require_once __DIR__ . '/form-validation.php';
-
 /*
 |--------------------------------------------------------------------------
 | Contact Form Mail Service
@@ -12,8 +9,8 @@ require_once __DIR__ . '/form-validation.php';
 |
 | Builds and sends the plain-text contact-form email.
 |
-| This file does not access POST data, redirect visitors, validate request
-| methods, or manage submission rate limits.
+| Request validation, POST handling, CSRF protection, and rate limiting
+| are handled elsewhere.
 |
 */
 
@@ -23,14 +20,22 @@ require_once __DIR__ . '/form-validation.php';
 |--------------------------------------------------------------------------
 */
 
-function encodeMailHeader(string $value): string
-{
-    if (function_exists('mb_encode_mimeheader')) {
+/**
+ * Encode a mail-header value when multibyte support is available.
+ */
+function encodeMailHeader(
+    string $value
+): string {
+    if (
+        function_exists(
+            'mb_encode_mimeheader'
+        )
+    ) {
         return mb_encode_mimeheader(
             $value,
-            'UTF-8',
+            APP_CHARSET,
             'B',
-            "\r\n"
+            MAIL_LINE_ENDING
         );
     }
 
@@ -43,33 +48,55 @@ function encodeMailHeader(string $value): string
 |--------------------------------------------------------------------------
 */
 
+/**
+ * Determine whether the configured recipient and sender values are safe
+ * for use in mail headers.
+ */
 function contactMailConfigurationIsValid(
     string $recipientEmail,
     string $senderEmail,
     string $senderName
 ): bool {
+    $recipientEmail =
+        trim($recipientEmail);
+
+    $senderEmail =
+        trim($senderEmail);
+
+    $senderName =
+        normalizeSingleLineInput(
+            $senderName
+        );
+
     if (
-        filter_var(
-            $recipientEmail,
-            FILTER_VALIDATE_EMAIL
-        ) === false
+        $recipientEmail === '' ||
+        $senderEmail === '' ||
+        $senderName === ''
     ) {
         return false;
     }
 
     if (
-        filter_var(
-            $senderEmail,
-            FILTER_VALIDATE_EMAIL
-        ) === false
+        !emailIsValid(
+            $recipientEmail
+        ) ||
+        !emailIsValid(
+            $senderEmail
+        )
     ) {
         return false;
     }
 
     if (
-        hasHeaderInjection($recipientEmail) ||
-        hasHeaderInjection($senderEmail) ||
-        hasHeaderInjection($senderName)
+        containsHeaderInjection(
+            $recipientEmail
+        ) ||
+        containsHeaderInjection(
+            $senderEmail
+        ) ||
+        containsHeaderInjection(
+            $senderName
+        )
     ) {
         return false;
     }
@@ -83,11 +110,26 @@ function contactMailConfigurationIsValid(
 |--------------------------------------------------------------------------
 */
 
+/**
+ * Build the contact-form email subject.
+ */
 function buildContactMailSubject(
     string $topicLabel
 ): string {
+    $topicLabel =
+        normalizeSingleLineInput(
+            $topicLabel
+        );
+
+    if ($topicLabel === '') {
+        $topicLabel =
+            'Website Inquiry';
+    }
+
     return encodeMailHeader(
-        'TimGabaree.com: ' . $topicLabel
+        MAIL_SUBJECT_PREFIX .
+        ' ' .
+        $topicLabel
     );
 }
 
@@ -97,59 +139,145 @@ function buildContactMailSubject(
 |--------------------------------------------------------------------------
 */
 
-function buildContactMailBody(array $formData): string
-{
-    $submittedAt = date(
-        'F j, Y \a\t g:i:s A T'
-    );
-
-    $visitorIp = sanitizeLogValue(
-        (string) (
-            $_SERVER['REMOTE_ADDR'] ??
-            'Unavailable'
-        ),
-        45
-    );
-
-    $userAgent = sanitizeLogValue(
-        (string) (
-            $_SERVER['HTTP_USER_AGENT'] ??
-            'Unavailable'
-        ),
-        500
-    );
+/**
+ * Build the plain-text contact-form email body.
+ *
+ * @param array<string, string> $formData
+ */
+function buildContactMailBody(
+    array $formData
+): string {
+    $name =
+        $formData['name'] ??
+        '';
 
     $organization =
-        $formData['organization'] !== ''
-            ? $formData['organization']
-            : 'Not provided';
+        $formData['organization'] ??
+        '';
+
+    $email =
+        $formData['email'] ??
+        '';
 
     $phone =
-        $formData['phone'] !== ''
-            ? $formData['phone']
-            : 'Not provided';
+        $formData['phone'] ??
+        '';
 
-    $bodyLines = [
-        'A new inquiry was submitted through timgabaree.com.',
+    $topicLabel =
+        $formData['topic_label'] ??
+        '';
+
+    $message =
+        $formData['message'] ??
+        '';
+
+    $remoteAddress =
+        $_SERVER['REMOTE_ADDR'] ??
+        'Unavailable';
+
+    $userAgent =
+        $_SERVER['HTTP_USER_AGENT'] ??
+        'Unavailable';
+
+    if (!is_string($remoteAddress)) {
+        $remoteAddress =
+            'Unavailable';
+    }
+
+    if (!is_string($userAgent)) {
+        $userAgent =
+            'Unavailable';
+    }
+
+    /*
+     * sanitizeLogValue() remains in form-validation.php for now and
+     * removes unsafe control characters from request metadata.
+     */
+    $remoteAddress =
+        sanitizeLogValue(
+            $remoteAddress,
+            45
+        );
+
+    $userAgent =
+        sanitizeLogValue(
+            $userAgent,
+            500
+        );
+
+    $lines = [
+        SITE_NAME .
+            ' Website Contact Form',
+
+        str_repeat(
+            '=',
+            48
+        ),
+
         '',
-        'Name: ' . $formData['name'],
-        'Organization: ' . $organization,
-        'Email: ' . $formData['email'],
-        'Phone: ' . $phone,
-        'Topic: ' . $formData['topic_label'],
+
+        'Name:',
+        $name,
+
         '',
+
+        'Organization:',
+        $organization !== ''
+            ? $organization
+            : 'Not provided',
+
+        '',
+
+        'Email:',
+        $email,
+
+        '',
+
+        'Phone:',
+        $phone !== ''
+            ? $phone
+            : 'Not provided',
+
+        '',
+
+        'Topic:',
+        $topicLabel,
+
+        '',
+
         'Message:',
-        $formData['message'],
+        $message,
+
         '',
-        'Submission details:',
-        'Submitted: ' . $submittedAt,
-        'Visitor IP: ' . $visitorIp,
-        'User Agent: ' . $userAgent,
+
+        str_repeat(
+            '-',
+            48
+        ),
+
+        '',
+
+        'Submitted:',
+        date(
+            APP_DATETIME_FORMAT
+        ) .
+            ' ' .
+            date('T'),
+
+        '',
+
+        'IP Address:',
+        $remoteAddress,
+
+        '',
+
+        'User Agent:',
+        $userAgent,
     ];
 
     return implode(
-        "\r\n",
-        $bodyLines
+        MAIL_LINE_ENDING,
+        $lines
     );
 }
 
@@ -159,27 +287,81 @@ function buildContactMailBody(array $formData): string
 |--------------------------------------------------------------------------
 */
 
+/**
+ * Build the mail headers.
+ *
+ * @param array<string, string> $formData
+ *
+ * @return array<int, string>
+ */
 function buildContactMailHeaders(
+    array $formData,
     string $senderEmail,
-    string $senderName,
-    string $replyToEmail
+    string $senderName
 ): array {
-    $encodedSenderName = encodeMailHeader(
-        $senderName
-    );
+    $replyToEmail =
+        $formData['email'] ??
+        '';
 
-    return [
+    $replyToName =
+        $formData['name'] ??
+        '';
+
+    $senderName =
+        normalizeSingleLineInput(
+            $senderName
+        );
+
+    $headers = [
+        'MIME-Version: 1.0',
+
+        'Content-Type: text/plain; charset=' .
+            APP_CHARSET,
+
+        'Content-Transfer-Encoding: 8bit',
+
         'From: ' .
-            $encodedSenderName .
+            encodeMailHeader(
+                $senderName
+            ) .
             ' <' .
             $senderEmail .
             '>',
-        'Reply-To: ' . $replyToEmail,
-        'MIME-Version: 1.0',
-        'Content-Type: text/plain; charset=UTF-8',
-        'Content-Transfer-Encoding: 8bit',
-        'X-Mailer: TimGabaree.com Contact Form',
+
+        'X-Mailer: ' .
+            SITE_NAME .
+            ' Contact Form',
     ];
+
+    if (
+        is_string($replyToEmail) &&
+        is_string($replyToName) &&
+        emailIsValid(
+            $replyToEmail
+        ) &&
+        !containsHeaderInjection(
+            $replyToEmail
+        ) &&
+        !containsHeaderInjection(
+            $replyToName
+        )
+    ) {
+        $replyToName =
+            normalizeSingleLineInput(
+                $replyToName
+            );
+
+        $headers[] =
+            'Reply-To: ' .
+            encodeMailHeader(
+                $replyToName
+            ) .
+            ' <' .
+            $replyToEmail .
+            '>';
+    }
+
+    return $headers;
 }
 
 /*
@@ -188,6 +370,11 @@ function buildContactMailHeaders(
 |--------------------------------------------------------------------------
 */
 
+/**
+ * Send a validated contact-form submission.
+ *
+ * @param array<string, string> $formData
+ */
 function sendContactMail(
     array $formData,
     string $recipientEmail,
@@ -202,32 +389,46 @@ function sendContactMail(
         )
     ) {
         error_log(
-            'Tim Gabaree contact form: invalid mail configuration.'
+            SITE_NAME .
+            ' contact form: invalid mail configuration.'
         );
 
         return false;
     }
 
-    $subject = buildContactMailSubject(
-        $formData['topic_label']
-    );
+    $topicLabel =
+        $formData['topic_label'] ??
+        'Website Inquiry';
 
-    $body = buildContactMailBody(
-        $formData
-    );
+    $subject =
+        buildContactMailSubject(
+            is_string($topicLabel)
+                ? $topicLabel
+                : 'Website Inquiry'
+        );
 
-    $headers = buildContactMailHeaders(
-        $senderEmail,
-        $senderName,
-        $formData['email']
-    );
+    $body =
+        buildContactMailBody(
+            $formData
+        );
 
+    $headers =
+        buildContactMailHeaders(
+            $formData,
+            $senderEmail,
+            $senderName
+        );
+
+    /*
+     * Keep the current four-argument mail() behavior while the existing
+     * GoDaddy mail transport is known to be working correctly.
+     */
     return mail(
         $recipientEmail,
         $subject,
         $body,
         implode(
-            "\r\n",
+            MAIL_LINE_ENDING,
             $headers
         )
     );

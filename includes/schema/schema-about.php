@@ -2,106 +2,242 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__) . '/bootstrap.php';
+/*
+|--------------------------------------------------------------------------
+| About Page Structured Data
+|--------------------------------------------------------------------------
+|
+| Builds the Schema.org graph for the Tim Gabaree About page.
+|
+| The graph is rendered by:
+|
+| /includes/schema/schema.php
+|
+*/
 
-if (!isset($pageTitle)) {
-    $pageTitle = 'About ' . SITE_NAME;
-}
-if (!isset($metaDescription)) {
-    $metaDescription = '';
-}
-if (!isset($canonicalUrl)) {
-    $canonicalUrl = SITE_URL . '/about.php';
-}
-if (!isset($profileImage)) {
-    $profileImage =
-        SITE_URL . '/media/profile-pic-tim-gabaree-900x1200.webp';
-}
-if (!isset($aboutImage)) {
-    $aboutImage =
-        SITE_URL . '/media/about-gabaree-family-800x600.webp';
-}
-$schema = [
-    '@context' => 'https://schema.org',
-    '@graph' => [
-        [
-            '@type' => 'WebSite',
-            '@id' => SITE_URL . '/#website',
-            'url' => SITE_URL . '/',
-            'name' => SITE_NAME,
-            'description' => 'The professional website of Portfolio CIO and technology executive Tim Gabaree.',
-            'inLanguage' => 'en-US',
-        ],
-        [
-            '@type' => 'ImageObject',
-            '@id' => SITE_URL . '/#primaryimage',
-            'url' => $profileImage,
-            'contentUrl' => $profileImage,
-            'width' => 900,
-            'height' => 1200,
-            'encodingFormat' => 'image/webp',
-            'caption' => 'Tim Gabaree, Portfolio CIO and technology executive',
-        ],
-        [
-            '@type' => 'ImageObject',
-            '@id' => $canonicalUrl . '#primaryimage',
-            'url' => $aboutImage,
-            'contentUrl' => $aboutImage,
-            'width' => 800,
-            'height' => 600,
-            'encodingFormat' => 'image/webp',
-            'caption' => 'Tim Gabaree with his family',
-            'representativeOfPage' => true,
-        ],
-        [
-            '@type' => 'ProfilePage',
-            '@id' => $canonicalUrl . '#webpage',
-            'url' => $canonicalUrl,
-            'name' => $pageTitle,
-            'description' => 'About Tim Gabaree, Portfolio CIO, technology executive, board advisor, veteran, husband, father, and lifelong learner.',
-            'isPartOf' => [
-                '@id' => SITE_URL . '/#website',
-            ],
-            'primaryImageOfPage' => [
-                '@id' => $canonicalUrl . '#primaryimage',
-            ],
-            'mainEntity' => [
-                '@id' => SITE_URL . '/#person',
-            ],
-            'about' => [
-                '@id' => SITE_URL . '/#person',
-            ],
-            'inLanguage' => 'en-US',
-        ],
-        [
-            '@type' => 'Person',
-            '@id' => SITE_URL . '/#person',
-            'name' => SITE_NAME,
-            'givenName' => 'Tim',
-            'familyName' => 'Gabaree',
-            'url' => SITE_URL . '/',
-            'image' => [
-                '@id' => SITE_URL . '/#primaryimage',
-            ],
-            'jobTitle' => 'Portfolio CIO',
-            'description' => 'Portfolio CIO and technology executive focused on technology value creation, governance, operating model transformation, and enterprise performance.',
-            'email' => 'mailto:' . SITE_EMAIL,
-            'telephone' => SITE_PHONE,
-            'sameAs' => SITE_SOCIAL_PROFILES,
-            'spouse' => [
-                '@type' => 'Person',
-                '@id' => 'https://carriegabaree.com/#person',
-                'name' => 'Carrie Gabaree',
-                'url' => 'https://carriegabaree.com/',
-                'sameAs' => [
-                    'https://www.linkedin.com/in/carriegabaree',
-                ],
-            ],
-            'affiliation' => [
-                '@type' => 'Organization',
-                'name' => 'RGE Solutions LLC',
-                'url' => 'https://rgesol.com/',
-            ],
+/*
+|--------------------------------------------------------------------------
+| About Page Image
+|--------------------------------------------------------------------------
+*/
+
+$aboutImage =
+    SITE_URL .
+    '/media/about-gabaree-family-800x600.webp';
+
+$aboutImageId =
+    SITE_ABOUT_URL .
+    '#primaryimage';
+
+/*
+|--------------------------------------------------------------------------
+| Website
+|--------------------------------------------------------------------------
+*/
+
+$websiteSchema = [
+    '@type' =>
+        'WebSite',
+
+    '@id' =>
+        SITE_WEBSITE_ID,
+
+    'url' =>
+        SITE_HOME_URL,
+
+    'name' =>
+        SITE_NAME,
+
+    'description' =>
+        SITE_DESCRIPTION,
+
+    'inLanguage' =>
+        SITE_LANGUAGE,
+];
+
+/*
+|--------------------------------------------------------------------------
+| About Page Image
+|--------------------------------------------------------------------------
+*/
+
+$aboutImageSchema = [
+    '@type' =>
+        'ImageObject',
+
+    '@id' =>
+        $aboutImageId,
+
+    'url' =>
+        $aboutImage,
+
+    'contentUrl' =>
+        $aboutImage,
+
+    'width' =>
+        800,
+
+    'height' =>
+        600,
+
+    'encodingFormat' =>
+        'image/webp',
+
+    'caption' =>
+        'Tim Gabaree with his family',
+
+    'representativeOfPage' =>
+        true,
+];
+
+/*
+|--------------------------------------------------------------------------
+| About Page
+|--------------------------------------------------------------------------
+*/
+
+$aboutPageSchema = [
+    '@type' =>
+        'ProfilePage',
+
+    '@id' =>
+        SITE_ABOUT_URL .
+        '#webpage',
+
+    'url' =>
+        SITE_ABOUT_URL,
+
+    'name' =>
+        $pageTitle,
+
+    'description' =>
+        $metaDescription,
+
+    'inLanguage' =>
+        SITE_LANGUAGE,
+
+    'datePublished' =>
+        $pageDatePublished,
+
+    'dateModified' =>
+        $pageDateModified,
+
+    'isPartOf' => [
+        '@id' =>
+            SITE_WEBSITE_ID,
+    ],
+
+    'primaryImageOfPage' => [
+        '@id' =>
+            $aboutImageId,
+    ],
+
+    'mainEntity' => [
+        '@id' =>
+            SITE_PERSON_ID,
+    ],
+
+    'about' => [
+        '@id' =>
+            SITE_PERSON_ID,
+    ],
+];
+
+/*
+|--------------------------------------------------------------------------
+| Person
+|--------------------------------------------------------------------------
+|
+| This page references the same canonical person entity used throughout
+| the site rather than creating a separate Tim Gabaree identity.
+|
+*/
+
+$personSchema = [
+    '@type' =>
+        'Person',
+
+    '@id' =>
+        SITE_PERSON_ID,
+
+    'name' =>
+        SITE_NAME,
+
+    'givenName' =>
+        'Tim',
+
+    'familyName' =>
+        'Gabaree',
+
+    'url' =>
+        SITE_HOME_URL,
+
+    'image' => [
+        '@id' =>
+            SITE_PRIMARY_IMAGE_ID,
+    ],
+
+    'jobTitle' =>
+        'Portfolio CIO',
+
+    'description' =>
+        'Portfolio CIO and technology executive focused on technology value creation, governance, operating model transformation, and enterprise performance.',
+
+    'email' =>
+        'mailto:' .
+        SITE_EMAIL,
+
+    'telephone' =>
+        SITE_PHONE,
+
+    'sameAs' =>
+        SITE_SOCIAL_PROFILES,
+
+    'spouse' => [
+        '@type' =>
+            'Person',
+
+        '@id' =>
+            'https://carriegabaree.com/#person',
+
+        'name' =>
+            'Carrie Gabaree',
+
+        'url' =>
+            'https://carriegabaree.com/',
+
+        'sameAs' => [
+            'https://www.linkedin.com/in/carriegabaree',
         ],
     ],
+
+    'affiliation' => [
+        '@type' =>
+            'Organization',
+
+        'name' =>
+            'RGE Solutions LLC',
+
+        'url' =>
+            'https://rgesol.com/',
+    ],
+
+    'mainEntityOfPage' => [
+        '@id' =>
+            SITE_ABOUT_URL .
+            '#webpage',
+    ],
+];
+
+/*
+|--------------------------------------------------------------------------
+| Schema Graph
+|--------------------------------------------------------------------------
+*/
+
+$schemaGraph = [
+    $websiteSchema,
+    $aboutImageSchema,
+    $aboutPageSchema,
+    $personSchema,
 ];

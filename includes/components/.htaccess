@@ -1,5 +1,5 @@
-<IfModule mod_authz_core.c>
-    <FilesMatch "\.php$">
-        Require all denied
-    </FilesMatch>
-</IfModule>
+# ----------------------------------------------------------------------
+# Protect PHP Files in /includes
+# ----------------------------------------------------------------------
+
+Options -Indexes
