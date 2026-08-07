@@ -114,7 +114,7 @@ require __DIR__ . '/includes/components/component-header.php';
 
           <a
             class="primary-cta-button"
-            href="/contact.php">
+            href="<?= e(SITE_CONTACT_PATH) ?>"
             Continue the Conversation
           </a>
 
@@ -925,7 +925,7 @@ require __DIR__ . '/includes/components/component-header.php';
         <div class="qr-code-block">
 
           <a
-            href="/contact.php"
+            href="<?= e(SITE_CONTACT_PATH) ?>"
             aria-label="Open Tim Gabaree’s contact page">
 
             <img

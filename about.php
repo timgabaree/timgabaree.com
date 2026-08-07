@@ -19,7 +19,7 @@ $metaDescription =
     'About Tim Gabaree, Portfolio CIO and technology executive focused on governance, technology value creation, operating model transformation, and enterprise performance.';
 
 $canonicalUrl =
-    SITE_URL . '/about.php';
+    SITE_ABOUT_URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -314,7 +314,7 @@ require __DIR__ . '/includes/components/component-header.php';
       <div class="qr-code-block">
 
         <a
-          href="/contact.php"
+          href="<?= e(SITE_CONTACT_PATH) ?>"
           aria-label="Open Tim Gabaree’s contact page">
 
           <img
