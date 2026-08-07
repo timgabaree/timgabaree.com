@@ -2758,12 +2758,6 @@ button.contact-action {
     text-align: center;
   }
 
-  .executive-contact-content {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
   .executive-contact-content span {
     display: block;
     width: 100%;
@@ -2780,10 +2774,7 @@ button.contact-action {
   }
 
   .executive-contact-page {
-    max-width: 1200px;
-    min-height: calc(100vh - 120px);
-    margin: 0 auto;
-    padding: 12px 14px 12px;
+    padding: 12px 14px;
   }
 
   .executive-contact-card {
@@ -2902,11 +2893,6 @@ button.contact-action {
     text-align: center;
   }
 
-  .contact-thank-you-section {
-    width: 100%;
-    padding: 24px 0 40px;
-  }
-
   .contact-thank-you-card {
     padding: 34px 20px;
     border-radius: 12px;
@@ -2938,8 +2924,6 @@ button.contact-action {
   }
 
   .contact-thank-you-contact {
-    width: fit-content;
-    max-width: 100%;
     padding: 20px 22px;
   }
 
