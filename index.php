@@ -114,7 +114,8 @@ require __DIR__ . '/includes/components/component-header.php';
 
           <a
             class="primary-cta-button"
-            href="<?= e(SITE_CONTACT_PATH) ?>"
+            href="<?= e(SITE_CONTACT_PATH) ?>">
+
             Continue the Conversation
           </a>
 

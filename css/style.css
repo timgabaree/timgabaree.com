@@ -5,7 +5,7 @@
 ===================================================== */
 
 :root {
---font-size-base: 16px;
+  --font-size-base: 16px;
   --font-line-height: 1.6;
   --font-family: "Roboto", Arial, Helvetica, sans-serif;
   --background-color: #F4F5F8;
@@ -14,6 +14,7 @@
   --surface-card: rgba(244, 245, 250, 0.94);
   --text-dark: #1F222A;
   --text-muted: #555B66;
+  --text-secondary: var(--text-muted);
   --text-light: #F0F1F5;
   --primary-color: #1F222A;
   --brand-blue: #394C78;
@@ -377,7 +378,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   margin-top: 0.75rem;
-  padding: 4px 24px 0px;
+  padding: 4px 24px 0;
   background: var(--brand-blue);
   color: var(--white) !important;
   text-decoration: none;
@@ -511,7 +512,7 @@ a:hover {
 }
 
 .intro-links-heading {
-  margin: 0 0 0px;
+  margin: 0;
   color: var(--accent-color);
   font-size: 24px;
   font-weight: 700;
@@ -1303,29 +1304,12 @@ a:hover {
 
 .about-return {
   text-align: center;
-  margin: 28px 0 0px;
+  margin: 28px 0 0;
 }
 
 /* =====================================================
    18. About: Personal Interests
 ===================================================== */
-
-.about-interests-section {
-  max-width: 980px;
-  margin: 0 auto 28px;
-}
-
-.about-interests-heading-block {
-  margin: 24px 0 20px;
-  text-align: center;
-}
-
-.about-interests-heading {
-  margin: 0;
-  color: var(--accent-color);
-  font-size: 24px;
-  font-weight: 600;
-}
 
 .interests-section {
   display: flex;
@@ -3017,6 +3001,18 @@ button.contact-action {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .intro-profile-picture-block {
+    animation: none;
+  }
+
+  .intro-profile-picture-img,
+  .nav-link-container img,
+  .contact-action,
+  .contact-resource-link,
+  .contact-qr-section img {
+    transition: none;
+  }
+
   .results-slide {
     animation: none;
     opacity: 0;
