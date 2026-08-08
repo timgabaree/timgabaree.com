@@ -139,80 +139,42 @@ $aboutPageSchema = [
 |
 */
 
-$personSchema = [
+$personSchema =
+    buildPersonSchema();
+
+$personSchema['spouse'] = [
     '@type' =>
         'Person',
 
     '@id' =>
-        SITE_PERSON_ID,
+        'https://carriegabaree.com/#person',
 
     'name' =>
-        SITE_NAME,
-
-    'givenName' =>
-        'Tim',
-
-    'familyName' =>
-        'Gabaree',
+        'Carrie Gabaree',
 
     'url' =>
-        SITE_HOME_URL,
+        'https://carriegabaree.com/',
 
-    'image' => [
-        '@id' =>
-            SITE_PRIMARY_IMAGE_ID,
+    'sameAs' => [
+        'https://www.linkedin.com/in/carriegabaree',
     ],
+];
 
-    'jobTitle' =>
-        'Portfolio CIO',
+$personSchema['affiliation'] = [
+    '@type' =>
+        'Organization',
 
-    'description' =>
-        'Portfolio CIO and technology executive focused on technology value creation, governance, operating model transformation, and enterprise performance.',
+    'name' =>
+        'RGE Solutions LLC',
 
-    'email' =>
-        'mailto:' .
-        SITE_EMAIL,
+    'url' =>
+        'https://rgesol.com/',
+];
 
-    'telephone' =>
-        SITE_PHONE,
-
-    'sameAs' =>
-        SITE_SOCIAL_PROFILES,
-
-    'spouse' => [
-        '@type' =>
-            'Person',
-
-        '@id' =>
-            'https://carriegabaree.com/#person',
-
-        'name' =>
-            'Carrie Gabaree',
-
-        'url' =>
-            'https://carriegabaree.com/',
-
-        'sameAs' => [
-            'https://www.linkedin.com/in/carriegabaree',
-        ],
-    ],
-
-    'affiliation' => [
-        '@type' =>
-            'Organization',
-
-        'name' =>
-            'RGE Solutions LLC',
-
-        'url' =>
-            'https://rgesol.com/',
-    ],
-
-    'mainEntityOfPage' => [
-        '@id' =>
-            SITE_ABOUT_URL .
-            '#webpage',
-    ],
+$personSchema['mainEntityOfPage'] = [
+    '@id' =>
+        SITE_ABOUT_URL .
+        '#webpage',
 ];
 
 /*

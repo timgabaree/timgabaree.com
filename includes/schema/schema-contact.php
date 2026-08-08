@@ -95,62 +95,24 @@ $contactPageSchema = [
 |--------------------------------------------------------------------------
 */
 
-$personSchema = [
-    '@type' =>
-        'Person',
+$personSchema =
+    buildPersonSchema();
 
-    '@id' =>
-        SITE_PERSON_ID,
+$personSchema['affiliation'] = [
+    '@type' =>
+        'Organization',
 
     'name' =>
-        SITE_NAME,
-
-    'givenName' =>
-        'Tim',
-
-    'familyName' =>
-        'Gabaree',
+        'RGE Solutions LLC',
 
     'url' =>
-        SITE_HOME_URL,
+        'https://rgesol.com/',
+];
 
-    'image' => [
-        '@id' =>
-            SITE_PRIMARY_IMAGE_ID,
-    ],
-
-    'jobTitle' =>
-        'Portfolio CIO',
-
-    'description' =>
-        'Portfolio CIO and technology executive focused on technology value creation, governance, operating model transformation, and enterprise performance.',
-
-    'email' =>
-        'mailto:' .
-        SITE_EMAIL,
-
-    'telephone' =>
-        SITE_PHONE,
-
-    'sameAs' =>
-        SITE_SOCIAL_PROFILES,
-
-    'affiliation' => [
-        '@type' =>
-            'Organization',
-
-        'name' =>
-            'RGE Solutions LLC',
-
-        'url' =>
-            'https://rgesol.com/',
-    ],
-
-    'mainEntityOfPage' => [
-        '@id' =>
-            SITE_CONTACT_URL .
-            '#webpage',
-    ],
+$personSchema['mainEntityOfPage'] = [
+    '@id' =>
+        SITE_CONTACT_URL .
+        '#webpage',
 ];
 
 /*

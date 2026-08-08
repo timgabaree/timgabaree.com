@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ .
-    '/schema-entities.php';
-
 /*
 |--------------------------------------------------------------------------
 | Privacy Page Structured Data
@@ -17,6 +14,9 @@ require_once __DIR__ .
 | /includes/schema/schema.php
 |
 */
+
+require_once __DIR__ .
+    '/schema-entities.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -76,32 +76,8 @@ $privacyPageSchema = [
 |--------------------------------------------------------------------------
 */
 
-$personSchema = [
-    '@type' =>
-        'Person',
-
-    '@id' =>
-        SITE_PERSON_ID,
-
-    'name' =>
-        SITE_NAME,
-
-    'url' =>
-        SITE_HOME_URL,
-
-    'jobTitle' =>
-        'Portfolio CIO',
-
-    'email' =>
-        'mailto:' .
-        SITE_EMAIL,
-
-    'telephone' =>
-        SITE_PHONE,
-
-    'sameAs' =>
-        SITE_SOCIAL_PROFILES,
-];
+$personSchema =
+    buildPersonSchema();
 
 /*
 |--------------------------------------------------------------------------

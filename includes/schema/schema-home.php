@@ -95,191 +95,153 @@ $profilePageSchema = [
 |--------------------------------------------------------------------------
 */
 
-$personSchema = [
+$personSchema =
+    buildPersonSchema();
+
+$personSchema['spouse'] = [
     '@type' =>
         'Person',
 
     '@id' =>
-        SITE_PERSON_ID,
+        'https://carriegabaree.com/#person',
 
     'name' =>
-        SITE_NAME,
-
-    'givenName' =>
-        'Tim',
-
-    'familyName' =>
-        'Gabaree',
+        'Carrie Gabaree',
 
     'url' =>
-        SITE_HOME_URL,
+        'https://carriegabaree.com/',
 
-    'image' => [
-        '@id' =>
-            SITE_PRIMARY_IMAGE_ID,
+    'sameAs' => [
+        'https://www.linkedin.com/in/carriegabaree',
     ],
+];
 
-    'jobTitle' =>
-        'Portfolio CIO',
+$personSchema['affiliation'] = [
+    '@type' =>
+        'Organization',
 
-    'description' =>
-        'Portfolio CIO and technology executive focused on technology value creation, governance, operating model transformation, and enterprise performance.',
+    'name' =>
+        'RGE Solutions LLC',
 
-    'email' =>
-        'mailto:' .
-        SITE_EMAIL,
+    'url' =>
+        'https://rgesol.com/',
+];
 
-    'telephone' =>
-        SITE_PHONE,
-
-    'sameAs' =>
-        SITE_SOCIAL_PROFILES,
-
-    'spouse' => [
-        '@type' =>
-            'Person',
-
-        '@id' =>
-            'https://carriegabaree.com/#person',
-
-        'name' =>
-            'Carrie Gabaree',
-
-        'url' =>
-            'https://carriegabaree.com/',
-
-        'sameAs' => [
-            'https://www.linkedin.com/in/carriegabaree',
-        ],
-    ],
-
-    'affiliation' => [
+$personSchema['memberOf'] = [
+    [
         '@type' =>
             'Organization',
 
         'name' =>
-            'RGE Solutions LLC',
-
-        'url' =>
-            'https://rgesol.com/',
+            'Private Directors Association',
     ],
 
-    'memberOf' => [
-        [
-            '@type' =>
-                'Organization',
+    [
+        '@type' =>
+            'Organization',
 
-            'name' =>
-                'Private Directors Association',
-        ],
-
-        [
-            '@type' =>
-                'Organization',
-
-            'name' =>
-                'IEEE',
-        ],
-
-        [
-            '@type' =>
-                'Organization',
-
-            'name' =>
-                'ISC2',
-        ],
-
-        [
-            '@type' =>
-                'Organization',
-
-            'name' =>
-                'Project Management Institute',
-        ],
+        'name' =>
+            'IEEE',
     ],
 
-    'alumniOf' => [
-        [
-            '@type' =>
-                'CollegeOrUniversity',
+    [
+        '@type' =>
+            'Organization',
 
-            'name' =>
-                'Purdue University Global',
-        ],
-
-        [
-            '@type' =>
-                'CollegeOrUniversity',
-
-            'name' =>
-                'University of Illinois Springfield',
-        ],
+        'name' =>
+            'ISC2',
     ],
 
-    'hasCredential' => [
-        [
-            '@type' =>
-                'EducationalOccupationalCredential',
+    [
+        '@type' =>
+            'Organization',
 
-            'name' =>
-                'Master of Business Administration',
-        ],
+        'name' =>
+            'Project Management Institute',
+    ],
+];
 
-        [
-            '@type' =>
-                'EducationalOccupationalCredential',
+$personSchema['alumniOf'] = [
+    [
+        '@type' =>
+            'CollegeOrUniversity',
 
-            'name' =>
-                'Certified Information Systems Security Professional',
-        ],
-
-        [
-            '@type' =>
-                'EducationalOccupationalCredential',
-
-            'name' =>
-                'Project Management Professional',
-        ],
-
-        [
-            '@type' =>
-                'EducationalOccupationalCredential',
-
-            'name' =>
-                'Wharton Corporate Governance Certificate',
-        ],
+        'name' =>
+            'Purdue University Global',
     ],
 
-    'knowsAbout' => [
-        'Technology Value Creation',
-        'Enterprise Performance',
-        'Technology Governance',
-        'Corporate Governance',
-        'Operating Model Transformation',
-        'Technology Advisory',
-        'Private Equity Portfolio Operations',
-        'Post-Acquisition Integration',
-        'Cybersecurity',
-        'Enterprise Infrastructure',
-        'Cloud Computing',
-        'Artificial Intelligence',
-        'AI Strategy',
-        'Vendor Rationalization',
-        'Program Recovery',
-        'Digital Transformation',
-        'Technology Strategy',
-        'Enterprise Architecture',
+    [
+        '@type' =>
+            'CollegeOrUniversity',
+
+        'name' =>
+            'University of Illinois Springfield',
+    ],
+];
+
+$personSchema['hasCredential'] = [
+    [
+        '@type' =>
+            'EducationalOccupationalCredential',
+
+        'name' =>
+            'Master of Business Administration',
     ],
 
-    'knowsLanguage' => [
-        'English',
+    [
+        '@type' =>
+            'EducationalOccupationalCredential',
+
+        'name' =>
+            'Certified Information Systems Security Professional',
     ],
 
-    'mainEntityOfPage' => [
-        '@id' =>
-            SITE_HOME_URL .
-            '#webpage',
+    [
+        '@type' =>
+            'EducationalOccupationalCredential',
+
+        'name' =>
+            'Project Management Professional',
     ],
+
+    [
+        '@type' =>
+            'EducationalOccupationalCredential',
+
+        'name' =>
+            'Wharton Corporate Governance Certificate',
+    ],
+];
+
+$personSchema['knowsAbout'] = [
+    'Technology Value Creation',
+    'Enterprise Performance',
+    'Technology Governance',
+    'Corporate Governance',
+    'Operating Model Transformation',
+    'Technology Advisory',
+    'Private Equity Portfolio Operations',
+    'Post-Acquisition Integration',
+    'Cybersecurity',
+    'Enterprise Infrastructure',
+    'Cloud Computing',
+    'Artificial Intelligence',
+    'AI Strategy',
+    'Vendor Rationalization',
+    'Program Recovery',
+    'Digital Transformation',
+    'Technology Strategy',
+    'Enterprise Architecture',
+];
+
+$personSchema['knowsLanguage'] = [
+    'English',
+];
+
+$personSchema['mainEntityOfPage'] = [
+    '@id' =>
+        SITE_HOME_URL .
+        '#webpage',
 ];
 
 /*

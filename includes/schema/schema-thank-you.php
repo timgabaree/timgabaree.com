@@ -87,46 +87,8 @@ $thankYouPageSchema = [
 |--------------------------------------------------------------------------
 */
 
-$personSchema = [
-    '@type' =>
-        'Person',
-
-    '@id' =>
-        SITE_PERSON_ID,
-
-    'name' =>
-        SITE_NAME,
-
-    'givenName' =>
-        'Tim',
-
-    'familyName' =>
-        'Gabaree',
-
-    'url' =>
-        SITE_HOME_URL,
-
-    'image' => [
-        '@id' =>
-            SITE_PRIMARY_IMAGE_ID,
-    ],
-
-    'jobTitle' =>
-        'Portfolio CIO',
-
-    'description' =>
-        'Portfolio CIO and technology executive focused on technology value creation, governance, operating model transformation, and enterprise performance.',
-
-    'email' =>
-        'mailto:' .
-        SITE_EMAIL,
-
-    'telephone' =>
-        SITE_PHONE,
-
-    'sameAs' =>
-        SITE_SOCIAL_PROFILES,
-];
+$personSchema =
+    buildPersonSchema();
 
 /*
 |--------------------------------------------------------------------------
