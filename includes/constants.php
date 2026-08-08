@@ -21,9 +21,6 @@ declare(strict_types=1);
 |--------------------------------------------------------------------------
 */
 
-const APP_ENV =
-    'production';
-
 const APP_DEBUG =
     false;
 
@@ -41,9 +38,6 @@ const APP_CHARSET =
 | Date and Time
 |--------------------------------------------------------------------------
 */
-
-const APP_DATE_FORMAT =
-    'F j, Y';
 
 const APP_DATETIME_FORMAT =
     'F j, Y \a\t g:i a';
@@ -159,38 +153,20 @@ const MAIL_SUBJECT_PREFIX =
 const SCHEMA_CONTEXT =
     'https://schema.org';
 
-const SCHEMA_LANGUAGE =
-    SITE_LANGUAGE;
-
 /*
 |--------------------------------------------------------------------------
 | HTTP Response Codes
 |--------------------------------------------------------------------------
 */
 
-const HTTP_STATUS_OK =
-    200;
-
 const HTTP_STATUS_SEE_OTHER =
     303;
-
-const HTTP_STATUS_BAD_REQUEST =
-    400;
 
 const HTTP_STATUS_FORBIDDEN =
     403;
 
 const HTTP_STATUS_NOT_FOUND =
     404;
-
-const HTTP_STATUS_METHOD_NOT_ALLOWED =
-    405;
-
-const HTTP_STATUS_REQUEST_TOO_LARGE =
-    413;
-
-const HTTP_STATUS_TOO_MANY_REQUESTS =
-    429;
 
 const HTTP_STATUS_INTERNAL_SERVER_ERROR =
     500;
