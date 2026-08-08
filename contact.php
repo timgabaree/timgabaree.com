@@ -5,8 +5,6 @@ declare(strict_types=1);
 require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ .
     '/includes/forms/form-contact-topics.php';
-require_once __DIR__ .
-    '/includes/security/security-csrf.php';
 
 /*
 |--------------------------------------------------------------------------
