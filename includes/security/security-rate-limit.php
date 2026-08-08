@@ -9,49 +9,10 @@ declare(strict_types=1);
 |
 | Provides lightweight rate limiting for public forms.
 |
-| During the framework transition, this file can safely initialize the
-| session itself. Once bootstrap.php starts the session globally, the
-| session initialization function simply returns.
+| Sessions are initialized centrally by bootstrap.php before this module
+| is loaded.
 |
 */
-
-/*
-|--------------------------------------------------------------------------
-| Secure Session Initialization
-|--------------------------------------------------------------------------
-*/
-
-function rateLimitStartSession(): void
-{
-    if (
-        session_status() ===
-        PHP_SESSION_ACTIVE
-    ) {
-        return;
-    }
-
-    session_set_cookie_params([
-        'lifetime' =>
-            0,
-
-        'path' =>
-            '/',
-
-        'secure' =>
-            SESSION_COOKIE_SECURE,
-
-        'httponly' =>
-            SESSION_COOKIE_HTTP_ONLY,
-
-        'samesite' =>
-            SESSION_COOKIE_SAME_SITE,
-    ]);
-
-    session_start([
-        'use_strict_mode' =>
-            true,
-    ]);
-}
 
 /*
 |--------------------------------------------------------------------------
@@ -99,8 +60,6 @@ function rateLimitSessionKey(
 function rateLimitLastTimestamp(
     string $action
 ): ?int {
-    rateLimitStartSession();
-
     $sessionKey =
         rateLimitSessionKey(
             $action
@@ -143,7 +102,6 @@ function rateLimitAllows(
     string $action,
     int $minimumSeconds
 ): bool {
-    rateLimitStartSession();
 
     if (
         $minimumSeconds <= 0
@@ -182,7 +140,6 @@ function rateLimitSecondsRemaining(
     string $action,
     int $minimumSeconds
 ): int {
-    rateLimitStartSession();
 
     if (
         $minimumSeconds <= 0
@@ -225,7 +182,6 @@ function rateLimitRecord(
     string $action,
     ?int $timestamp = null
 ): void {
-    rateLimitStartSession();
 
     $_SESSION[
         rateLimitSessionKey(
@@ -248,7 +204,6 @@ function rateLimitRecord(
 function rateLimitClear(
     string $action
 ): void {
-    rateLimitStartSession();
 
     unset(
         $_SESSION[

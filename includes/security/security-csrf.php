@@ -9,49 +9,10 @@ declare(strict_types=1);
 |
 | Generates, stores, validates, and rotates CSRF tokens for public forms.
 |
-| During the framework transition, this file can safely initialize the
-| session itself. Once bootstrap.php starts the session globally, the
-| session initialization function simply returns without changing it.
+| Sessions are initialized centrally by bootstrap.php before this module
+| is loaded.
 |
 */
-
-/*
-|--------------------------------------------------------------------------
-| Secure Session Initialization
-|--------------------------------------------------------------------------
-*/
-
-function csrfStartSession(): void
-{
-    if (
-        session_status() ===
-        PHP_SESSION_ACTIVE
-    ) {
-        return;
-    }
-
-    session_set_cookie_params([
-        'lifetime' =>
-            0,
-
-        'path' =>
-            '/',
-
-        'secure' =>
-            SESSION_COOKIE_SECURE,
-
-        'httponly' =>
-            SESSION_COOKIE_HTTP_ONLY,
-
-        'samesite' =>
-            SESSION_COOKIE_SAME_SITE,
-    ]);
-
-    session_start([
-        'use_strict_mode' =>
-            true,
-    ]);
-}
 
 /*
 |--------------------------------------------------------------------------
@@ -66,8 +27,6 @@ function csrfStartSession(): void
  */
 function csrfToken(): string
 {
-    csrfStartSession();
-
     $existingToken =
         $_SESSION[
             SESSION_CSRF_TOKEN_KEY
@@ -140,8 +99,6 @@ function csrfField(): string
 function csrfIsValid(
     ?string $submittedToken
 ): bool {
-    csrfStartSession();
-
     $storedToken =
         $_SESSION[
             SESSION_CSRF_TOKEN_KEY
@@ -228,8 +185,6 @@ function validateCsrfRequest(): void
  */
 function csrfRotateToken(): void
 {
-    csrfStartSession();
-
     unset(
         $_SESSION[
             SESSION_CSRF_TOKEN_KEY
