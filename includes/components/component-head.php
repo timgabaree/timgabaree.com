@@ -15,6 +15,7 @@ declare(strict_types=1);
 | $metaDescription
 | $canonicalUrl
 | $robots
+| $ogLocale
 | $ogType
 | $ogTitle
 | $ogDescription
@@ -23,7 +24,11 @@ declare(strict_types=1);
 | $ogImageWidth
 | $ogImageHeight
 | $ogImageAlt
+| $twitterCard
+| $twitterTitle
 | $twitterDescription
+| $twitterImage
+| $twitterImageAlt
 | $preloadImage
 |
 */
