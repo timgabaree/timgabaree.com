@@ -111,16 +111,11 @@ $errorBreadcrumbSchema = [
 
 /*
 |--------------------------------------------------------------------------
-| Structured Data Document
+| Schema Graph
 |--------------------------------------------------------------------------
 */
 
-$schema = [
-    '@context' =>
-        SCHEMA_CONTEXT,
-
-    '@graph' => [
-        $errorPageSchema,
-        $errorBreadcrumbSchema,
-    ],
+$schemaGraph = [
+    $errorPageSchema,
+    $errorBreadcrumbSchema,
 ];
