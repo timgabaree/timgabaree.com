@@ -7,7 +7,7 @@ declare(strict_types=1);
 | Analytics: Document Head
 |--------------------------------------------------------------------------
 |
-| Loads Google Tag Manager or Google Analytics when a valid measurement
+| Loads Google Tag Manager or Google Analytics when the corresponding
 | identifier is configured in config.php.
 |
 | Leave the corresponding configuration value empty to disable it.
@@ -21,7 +21,6 @@ declare(strict_types=1);
 */
 
 if (
-    defined('GOOGLE_TAG_MANAGER_ID') &&
     GOOGLE_TAG_MANAGER_ID !== ''
 ):
 ?>
@@ -95,12 +94,8 @@ endif;
 */
 
 if (
-    defined('GOOGLE_ANALYTICS_ID') &&
     GOOGLE_ANALYTICS_ID !== '' &&
-    (
-        !defined('GOOGLE_TAG_MANAGER_ID') ||
-        GOOGLE_TAG_MANAGER_ID === ''
-    )
+    GOOGLE_TAG_MANAGER_ID === ''
 ):
 ?>
 

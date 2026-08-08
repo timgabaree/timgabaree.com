@@ -13,7 +13,6 @@ declare(strict_types=1);
 */
 
 if (
-    !defined('GOOGLE_TAG_MANAGER_ID') ||
     GOOGLE_TAG_MANAGER_ID === ''
 ) {
     return;
