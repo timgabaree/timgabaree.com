@@ -10,8 +10,19 @@ declare(strict_types=1);
 | Opens the document body and loads the shared analytics and navigation
 | components.
 |
-| component-head.php and bootstrap.php must already be loaded by the
-| public page before this component is required.
+| Optional variable:
+|
+| $bodyClass
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Component Requirements
+|--------------------------------------------------------------------------
+|
+| bootstrap.php and component-head.php must already be loaded by the
+| calling page.
 |
 */
 

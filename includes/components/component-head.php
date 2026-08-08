@@ -9,12 +9,35 @@ declare(strict_types=1);
 |
 | Shared document head for all public pages.
 |
-| Page-specific metadata variables should be assigned before requiring
-| this component.
+| Optional page-specific variables:
 |
-| Public pages are responsible for loading bootstrap.php before any HTML
-| output. This component loads only the shared metadata defaults and the
-| resources required within the document head.
+| $pageTitle
+| $metaDescription
+| $canonicalUrl
+| $robots
+| $ogType
+| $ogTitle
+| $ogDescription
+| $ogImage
+| $ogImageType
+| $ogImageWidth
+| $ogImageHeight
+| $ogImageAlt
+| $twitterDescription
+| $preloadImage
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Component Requirements
+|--------------------------------------------------------------------------
+|
+| bootstrap.php must already be loaded by the calling page.
+|
+| Page-specific values should be assigned before requiring this component.
+| Missing optional metadata values are normalized by
+| component-head-defaults.php.
 |
 */
 

@@ -10,7 +10,19 @@ declare(strict_types=1);
 | Shared footer navigation, copyright information, JavaScript, and
 | document closing elements for all public pages.
 |
-| Public pages must load bootstrap.php before requiring this component.
+| Optional variables:
+|
+| $footerLinks
+| $page
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| Component Requirements
+|--------------------------------------------------------------------------
+|
+| bootstrap.php must already be loaded by the calling page.
 |
 */
 
