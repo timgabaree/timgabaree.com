@@ -42,7 +42,7 @@ $ogDescription =
 */
 
 $preloadImage =
-    '/media/background-pic-architecture-1920x942.webp';
+    SITE_BACKGROUND_IMAGE_PATH;
 
 /*
 |--------------------------------------------------------------------------
@@ -228,10 +228,10 @@ require __DIR__ . '/includes/components/component-header.php';
 
         <img
           class="intro-profile-picture-img main-img"
-          src="/media/profile-pic-tim-gabaree-900x1200.webp"
+          src="<?= e(SITE_PROFILE_IMAGE_PATH) ?>"
           alt="Tim Gabaree"
-          width="900"
-          height="1200"
+          width="<?= e((string) SITE_PROFILE_IMAGE_WIDTH) ?>"
+          height="<?= e((string) SITE_PROFILE_IMAGE_HEIGHT) ?>"
           loading="eager"
           fetchpriority="high"
           decoding="async">
@@ -517,8 +517,7 @@ require __DIR__ . '/includes/components/component-header.php';
       ],
   ];
 
-  require __DIR__ .
-      '/includes/components/component-section-card.php';
+  require __DIR__ . '/includes/components/component-section-card.php';
 
   unset(
       $sectionId,
@@ -562,8 +561,7 @@ require __DIR__ . '/includes/components/component-header.php';
       ],
   ];
 
-  require __DIR__ .
-      '/includes/components/component-section-card.php';
+  require __DIR__ . '/includes/components/component-section-card.php';
 
   unset(
       $sectionId,
@@ -647,8 +645,7 @@ require __DIR__ . '/includes/components/component-header.php';
           $educationLogoHeight =
               $educationItem['logo_height'];
 
-          require __DIR__ .
-              '/includes/components/component-education-card.php';
+          require __DIR__ . '/includes/components/component-education-card.php';
       }
 
       unset(
@@ -853,8 +850,7 @@ require __DIR__ . '/includes/components/component-header.php';
             $testimonialOrganization =
                 $testimonial['organization'];
 
-            require __DIR__ .
-                '/includes/components/component-testimonial-card.php';
+            require __DIR__ . '/includes/components/component-testimonial-card.php';
         }
 
         unset(
@@ -930,10 +926,10 @@ require __DIR__ . '/includes/components/component-header.php';
             aria-label="Open Tim Gabaree’s contact page">
 
             <img
-              src="/media/qr-code-tim-gabaree-500x500.webp"
+              src="<?= e(SITE_QR_CODE_PATH) ?>"
               alt="QR code to Tim Gabaree’s contact page"
-              width="500"
-              height="500"
+              width="<?= e((string) SITE_QR_CODE_WIDTH) ?>"
+              height="<?= e((string) SITE_QR_CODE_HEIGHT) ?>"
               loading="lazy"
               decoding="async">
 
@@ -1011,7 +1007,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <?php
 
-require __DIR__ .
-    '/includes/components/component-footer.php';
+require __DIR__ . '/includes/components/component-footer.php';
 
 ?>

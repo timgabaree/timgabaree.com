@@ -192,12 +192,18 @@ const SITE_THANK_YOU_URL =
 |--------------------------------------------------------------------------
 */
 
-const SITE_PROFILE_IMAGE =
-    SITE_URL .
-    '/media/profile-pic-tim-gabaree-900x1200.webp';
+/*
+|--------------------------------------------------------------------------
+| Profile Image
+|--------------------------------------------------------------------------
+*/
 
 const SITE_PROFILE_IMAGE_PATH =
     '/media/profile-pic-tim-gabaree-900x1200.webp';
+
+const SITE_PROFILE_IMAGE =
+    SITE_URL .
+    SITE_PROFILE_IMAGE_PATH;
 
 const SITE_PROFILE_IMAGE_WIDTH =
     900;
@@ -205,12 +211,18 @@ const SITE_PROFILE_IMAGE_WIDTH =
 const SITE_PROFILE_IMAGE_HEIGHT =
     1200;
 
-const SITE_PROFILE_SQUARE_IMAGE =
-    SITE_URL .
-    '/media/profile-pic-tim-gabaree-200x200.png';
+/*
+|--------------------------------------------------------------------------
+| Square Profile Image
+|--------------------------------------------------------------------------
+*/
 
 const SITE_PROFILE_SQUARE_IMAGE_PATH =
     '/media/profile-pic-tim-gabaree-200x200.png';
+
+const SITE_PROFILE_SQUARE_IMAGE =
+    SITE_URL .
+    SITE_PROFILE_SQUARE_IMAGE_PATH;
 
 const SITE_PROFILE_SQUARE_IMAGE_WIDTH =
     200;
@@ -218,25 +230,84 @@ const SITE_PROFILE_SQUARE_IMAGE_WIDTH =
 const SITE_PROFILE_SQUARE_IMAGE_HEIGHT =
     200;
 
-const SITE_PRIMARY_IMAGE =
-    SITE_URL .
-    '/media/profile-pic-tim-gabaree-900x1200.webp';
+/*
+|--------------------------------------------------------------------------
+| Primary Site Image
+|--------------------------------------------------------------------------
+|
+| The canonical profile portrait is also the site's default primary
+| image for metadata and structured data.
+|
+*/
 
 const SITE_PRIMARY_IMAGE_PATH =
-    '/media/profile-pic-tim-gabaree-900x1200.webp';
+    SITE_PROFILE_IMAGE_PATH;
+
+const SITE_PRIMARY_IMAGE =
+    SITE_PROFILE_IMAGE;
 
 const SITE_PRIMARY_IMAGE_WIDTH =
-    900;
+    SITE_PROFILE_IMAGE_WIDTH;
 
 const SITE_PRIMARY_IMAGE_HEIGHT =
-    1200;
+    SITE_PROFILE_IMAGE_HEIGHT;
 
-const SITE_QR_CODE =
+/*
+|--------------------------------------------------------------------------
+| About Page Image
+|--------------------------------------------------------------------------
+*/
+
+const SITE_ABOUT_IMAGE_PATH =
+    '/media/about-gabaree-family-800x600.webp';
+
+const SITE_ABOUT_IMAGE =
     SITE_URL .
-    '/media/qr-code-tim-gabaree-500x500.webp';
+    SITE_ABOUT_IMAGE_PATH;
+
+const SITE_ABOUT_IMAGE_WIDTH =
+    800;
+
+const SITE_ABOUT_IMAGE_HEIGHT =
+    600;
+
+/*
+|--------------------------------------------------------------------------
+| Background Image
+|--------------------------------------------------------------------------
+*/
+
+const SITE_BACKGROUND_IMAGE_PATH =
+    '/media/background-pic-architecture-1920x942.webp';
+
+const SITE_BACKGROUND_IMAGE =
+    SITE_URL .
+    SITE_BACKGROUND_IMAGE_PATH;
+
+const SITE_BACKGROUND_IMAGE_WIDTH =
+    1920;
+
+const SITE_BACKGROUND_IMAGE_HEIGHT =
+    942;
+
+/*
+|--------------------------------------------------------------------------
+| QR Code
+|--------------------------------------------------------------------------
+*/
 
 const SITE_QR_CODE_PATH =
     '/media/qr-code-tim-gabaree-500x500.webp';
+
+const SITE_QR_CODE =
+    SITE_URL .
+    SITE_QR_CODE_PATH;
+
+const SITE_QR_CODE_WIDTH =
+    500;
+
+const SITE_QR_CODE_HEIGHT =
+    500;
 
 /*
 |--------------------------------------------------------------------------

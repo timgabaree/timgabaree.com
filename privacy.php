@@ -50,7 +50,7 @@ $twitterDescription =
 */
 
 $preloadImage =
-    '/media/background-pic-architecture-1920x942.webp';
+    SITE_BACKGROUND_IMAGE_PATH;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,7 +79,6 @@ require __DIR__ . '/includes/schema/schema-privacy.php';
 */
 
 require __DIR__ . '/includes/components/component-head.php';
-
 require __DIR__ . '/includes/components/component-header.php';
 
 ?>
@@ -463,4 +462,5 @@ require __DIR__ . '/includes/components/component-header.php';
 <?php
 
 require __DIR__ . '/includes/components/component-footer.php';
+
 ?>

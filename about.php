@@ -28,7 +28,7 @@ $canonicalUrl =
 */
 
 $aboutImage =
-    SITE_URL . '/media/about-gabaree-family-800x600.webp';
+    SITE_ABOUT_IMAGE;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,10 +51,10 @@ $ogImageType =
     'image/webp';
 
 $ogImageWidth =
-    800;
+    SITE_ABOUT_IMAGE_WIDTH;
 
 $ogImageHeight =
-    600;
+    SITE_ABOUT_IMAGE_HEIGHT;
 
 $ogImageAlt =
     'Tim Gabaree with his family';
@@ -71,6 +71,12 @@ $twitterCard =
 $twitterDescription =
     'Technology executive, board advisor, veteran, husband, father, and lifelong learner.';
 
+$twitterImage =
+    SITE_ABOUT_IMAGE;
+
+$twitterImageAlt =
+    $ogImageAlt;
+
 /*
 |--------------------------------------------------------------------------
 | Performance
@@ -78,7 +84,7 @@ $twitterDescription =
 */
 
 $preloadImage =
-    '/media/about-gabaree-family-800x600.webp';
+    SITE_ABOUT_IMAGE_PATH;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,10 +112,10 @@ require __DIR__ . '/includes/components/component-header.php';
       <figure class="about-featured-photo">
 
         <img
-          src="/media/about-gabaree-family-800x600.webp"
+          src="<?= e(SITE_ABOUT_IMAGE_PATH) ?>"
           alt="Tim Gabaree with Carrie, Clint, and Finn in Halloween costumes"
-          width="800"
-          height="600"
+          width="<?= e((string) SITE_ABOUT_IMAGE_WIDTH) ?>"
+          height="<?= e((string) SITE_ABOUT_IMAGE_HEIGHT) ?>"
           loading="eager"
           fetchpriority="high"
           decoding="async">
@@ -318,10 +324,10 @@ require __DIR__ . '/includes/components/component-header.php';
           aria-label="Open Tim Gabaree’s contact page">
 
           <img
-            src="/media/qr-code-tim-gabaree-500x500.webp"
+            src="<?= e(SITE_QR_CODE_PATH) ?>"
             alt="QR code to Tim Gabaree’s contact page"
-            width="500"
-            height="500"
+            width="<?= e((string) SITE_QR_CODE_WIDTH) ?>"
+            height="<?= e((string) SITE_QR_CODE_HEIGHT) ?>"
             loading="lazy"
             decoding="async">
 
@@ -374,7 +380,6 @@ require __DIR__ . '/includes/components/component-header.php';
 
 <?php
 
-require __DIR__ .
-    '/includes/components/component-footer.php';
+require __DIR__ . '/includes/components/component-footer.php';
 
 ?>

@@ -25,8 +25,7 @@ require_once __DIR__ .
 */
 
 $aboutImage =
-    SITE_URL .
-    '/media/about-gabaree-family-800x600.webp';
+    SITE_ABOUT_IMAGE;
 
 $aboutImageId =
     SITE_ABOUT_URL .
@@ -61,10 +60,10 @@ $aboutImageSchema = [
         $aboutImage,
 
     'width' =>
-        800,
+        SITE_ABOUT_IMAGE_WIDTH,
 
     'height' =>
-        600,
+        SITE_ABOUT_IMAGE_HEIGHT,
 
     'encodingFormat' =>
         'image/webp',

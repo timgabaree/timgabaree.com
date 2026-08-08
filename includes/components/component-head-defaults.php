@@ -132,7 +132,7 @@ $twitterDescription =
 
 $twitterImage =
     $twitterImage ??
-    $ogImage;
+    SITE_PROFILE_SQUARE_IMAGE;
 
 $twitterImageAlt =
     $twitterImageAlt ??

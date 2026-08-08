@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/includes/bootstrap.php';
-require_once __DIR__ .
-    '/includes/forms/form-contact-topics.php';
+require_once __DIR__ . '/includes/forms/form-contact-topics.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +11,8 @@ require_once __DIR__ .
 |--------------------------------------------------------------------------
 */
 
-$page = 'contact';
+$page =
+    'contact';
 
 $bodyClass =
     'contact-body';
@@ -57,7 +57,7 @@ $twitterDescription =
 */
 
 $preloadImage =
-    '/media/profile-pic-tim-gabaree-900x1200.webp';
+    SITE_PROFILE_IMAGE_PATH;
 
 /*
 |--------------------------------------------------------------------------
@@ -128,11 +128,11 @@ require __DIR__ . '/includes/components/component-header.php';
       <div class="contact-profile">
 
         <img
-          src="/media/profile-pic-tim-gabaree-900x1200.webp"
+          src="<?= e(SITE_PROFILE_IMAGE_PATH) ?>"
           alt="Tim Gabaree"
           class="contact-profile-image"
-          width="900"
-          height="1200"
+          width="<?= e((string) SITE_PROFILE_IMAGE_WIDTH) ?>"
+          height="<?= e((string) SITE_PROFILE_IMAGE_HEIGHT) ?>"
           loading="eager"
           fetchpriority="high"
           decoding="async">
@@ -650,10 +650,10 @@ require __DIR__ . '/includes/components/component-header.php';
       aria-label="Open Tim Gabaree’s contact page">
 
       <img
-        src="/media/qr-code-tim-gabaree-500x500.webp"
+        src="<?= e(SITE_QR_CODE_PATH) ?>"
         alt="QR code to Tim Gabaree’s contact page"
-        width="500"
-        height="500"
+        width="<?= e((string) SITE_QR_CODE_WIDTH) ?>"
+        height="<?= e((string) SITE_QR_CODE_HEIGHT) ?>"
         loading="lazy"
         decoding="async">
 
@@ -797,7 +797,6 @@ function openCalendly() {
 
 <?php
 
-require __DIR__ .
-    '/includes/components/component-footer.php';
+require __DIR__ . '/includes/components/component-footer.php';
 
 ?>
