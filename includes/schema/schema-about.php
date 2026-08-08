@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ .
+    '/schema-entities.php';
+
 /*
 |--------------------------------------------------------------------------
 | About Page Structured Data
@@ -35,25 +38,8 @@ $aboutImageId =
 |--------------------------------------------------------------------------
 */
 
-$websiteSchema = [
-    '@type' =>
-        'WebSite',
-
-    '@id' =>
-        SITE_WEBSITE_ID,
-
-    'url' =>
-        SITE_HOME_URL,
-
-    'name' =>
-        SITE_NAME,
-
-    'description' =>
-        SITE_DESCRIPTION,
-
-    'inLanguage' =>
-        SITE_LANGUAGE,
-];
+$websiteSchema =
+    buildWebsiteSchema();
 
 /*
 |--------------------------------------------------------------------------
