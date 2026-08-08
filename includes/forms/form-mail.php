@@ -377,6 +377,17 @@ function sendContactMail(
     string $senderEmail,
     string $senderName
 ): bool {
+    $recipientEmail =
+        trim($recipientEmail);
+
+    $senderEmail =
+        trim($senderEmail);
+
+    $senderName =
+        normalizeSingleLineInput(
+            $senderName
+        );
+
     if (
         !contactMailConfigurationIsValid(
             $recipientEmail,
