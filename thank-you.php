@@ -25,7 +25,7 @@ $robots =
     'noindex, follow';
 
 $canonicalUrl =
-    SITE_URL . '/thank-you';
+    SITE_THANK_YOU_URL;
 
 /*
 |--------------------------------------------------------------------------

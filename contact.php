@@ -26,7 +26,7 @@ $metaDescription =
     'Connect with Tim Gabaree, Portfolio CIO and technology executive focused on technology value creation, governance, and enterprise performance.';
 
 $canonicalUrl =
-    SITE_URL . '/contact';
+    SITE_CONTACT_URL;
 
 /*
 |--------------------------------------------------------------------------

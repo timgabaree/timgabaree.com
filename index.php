@@ -19,7 +19,7 @@ $metaDescription =
     'Tim Gabaree is a Portfolio CIO and technology executive helping organizations improve performance through technology value creation, governance, operating model transformation, and enterprise leadership.';
 
 $canonicalUrl =
-    SITE_URL . '/';
+    SITE_HOME_URL;
 
 /*
 |--------------------------------------------------------------------------
