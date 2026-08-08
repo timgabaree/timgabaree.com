@@ -99,6 +99,10 @@
     <image:image>
       <image:loc>https://timgabaree.com/media/qr-code-tim-gabaree-500x500.webp</image:loc>
     </image:image>
+	 
+	<image:image>
+    <image:loc>https://timgabaree.com/media/background-pic-architecture-1920x942.webp</image:loc>
+    </image:image>
   </url>
 
   <!-- Contact -->
@@ -113,12 +117,20 @@
     <image:image>
       <image:loc>https://timgabaree.com/media/qr-code-tim-gabaree-500x500.webp</image:loc>
     </image:image>
+	  
+	<image:image>
+    <image:loc>https://timgabaree.com/media/background-pic-architecture-1920x942.webp</image:loc>
+    </image:image>
   </url>
 
   <!-- Privacy Policy -->
   <url>
     <loc>https://timgabaree.com/privacy</loc>
     <lastmod>2026-08-07</lastmod>
+	  
+	<image:image>
+    <image:loc>https://timgabaree.com/media/background-pic-architecture-1920x942.webp</image:loc>
+    </image:image>
   </url>
 
 </urlset>
