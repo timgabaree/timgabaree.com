@@ -189,16 +189,16 @@ function buildContactMailBody(
             'Unavailable';
     }
 
-    $remoteAddress =
+	$remoteAddress =
         sanitizeLogValue(
             $remoteAddress,
-            45
+            CONTACT_FORM_REMOTE_ADDRESS_MAX_LENGTH
         );
 
-    $userAgent =
+$userAgent =
         sanitizeLogValue(
             $userAgent,
-            500
+            CONTACT_FORM_USER_AGENT_MAX_LENGTH
         );
 
     $lines = [

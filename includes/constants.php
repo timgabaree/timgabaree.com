@@ -78,6 +78,12 @@ const CONTACT_FORM_PHONE_MAX_LENGTH =
 const CONTACT_FORM_MESSAGE_MAX_LENGTH =
     5000;
 
+const CONTACT_FORM_REMOTE_ADDRESS_MAX_LENGTH =
+    45;
+
+const CONTACT_FORM_USER_AGENT_MAX_LENGTH =
+    500;
+
 /*
 |--------------------------------------------------------------------------
 | Contact Form Status Values
