@@ -279,30 +279,6 @@ if (
 
 /*
 |--------------------------------------------------------------------------
-| Validate Mail Configuration
-|--------------------------------------------------------------------------
-*/
-
-if (
-    !contactMailConfigurationIsValid(
-        $recipientEmail,
-        $senderEmail,
-        $senderName
-    )
-) {
-    error_log(
-        'Tim Gabaree contact form: invalid mail configuration.'
-    );
-
-    redirectTo(
-        $contactUrl .
-        '?status=' .
-        CONTACT_STATUS_SEND_ERROR
-    );
-}
-
-/*
-|--------------------------------------------------------------------------
 | Send Mail
 |--------------------------------------------------------------------------
 */

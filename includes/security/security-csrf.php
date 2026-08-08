@@ -121,58 +121,6 @@ function csrfIsValid(
 
 /*
 |--------------------------------------------------------------------------
-| Validate Current POST Request
-|--------------------------------------------------------------------------
-*/
-
-/**
- * Validate the current POST request.
- *
- * The same-site check is supplemental. CSRF-token validation remains the
- * primary protection.
- */
-function validateCsrfRequest(): void
-{
-    if (
-        requestMethod() !== 'POST'
-    ) {
-        return;
-    }
-
-    if (
-        !requestAppearsSameSite()
-    ) {
-        http_response_code(
-            HTTP_STATUS_BAD_REQUEST
-        );
-
-        exit(
-            'Invalid request origin.'
-        );
-    }
-
-    $submittedToken =
-        postString(
-            'csrf_token'
-        );
-
-    if (
-        !csrfIsValid(
-            $submittedToken
-        )
-    ) {
-        http_response_code(
-            HTTP_STATUS_BAD_REQUEST
-        );
-
-        exit(
-            'Invalid security token.'
-        );
-    }
-}
-
-/*
-|--------------------------------------------------------------------------
 | Rotate CSRF Token
 |--------------------------------------------------------------------------
 */
