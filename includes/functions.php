@@ -75,49 +75,6 @@ function asset(
         rawurlencode($version);
 }
 
-/**
- * Convert a local site path into an absolute URL.
- */
-function absoluteUrl(
-    string $path = '/'
-): string {
-    $path =
-        trim($path);
-
-    if (
-        $path === '' ||
-        $path === '/'
-    ) {
-        return rtrim(
-            SITE_URL,
-            '/'
-        ) . '/';
-    }
-
-    if (
-        str_starts_with(
-            $path,
-            'https://'
-        ) ||
-        str_starts_with(
-            $path,
-            'http://'
-        )
-    ) {
-        return $path;
-    }
-
-    return rtrim(
-        SITE_URL,
-        '/'
-    ) .
-        '/' .
-        ltrim(
-            $path,
-            '/'
-        );
-}
-
 /*
 |--------------------------------------------------------------------------
 | Page Metadata
@@ -377,48 +334,6 @@ function requestMethod(): string
 }
 
 /**
- * Determine whether the current request uses HTTPS.
- */
-function requestIsHttps(): bool
-{
-    $https =
-        $_SERVER['HTTPS'] ??
-        '';
-
-    if (
-        is_string($https) &&
-        $https !== '' &&
-        strtolower($https) !== 'off'
-    ) {
-        return true;
-    }
-
-    $forwardedProto =
-        $_SERVER['HTTP_X_FORWARDED_PROTO'] ??
-        '';
-
-    return is_string($forwardedProto) &&
-        strtolower($forwardedProto) ===
-            'https';
-}
-
-/**
- * Return the current request host.
- */
-function requestHost(): string
-{
-    $host =
-        $_SERVER['HTTP_HOST'] ??
-        '';
-
-    return is_string($host)
-        ? strtolower(
-            trim($host)
-        )
-        : '';
-}
-
-/**
  * Determine whether the request appears to originate from this site.
  *
  * This is a supplemental check and does not replace CSRF validation.
@@ -508,24 +423,6 @@ function postString(
 
     return trim(
         $_POST[$key]
-    );
-}
-
-/**
- * Return a GET field as a trimmed string.
- */
-function queryString(
-    string $key
-): string {
-    if (
-        !isset($_GET[$key]) ||
-        !is_string($_GET[$key])
-    ) {
-        return '';
-    }
-
-    return trim(
-        $_GET[$key]
     );
 }
 
@@ -765,29 +662,4 @@ function jsonForHtml(
         JSON_HEX_QUOT |
         JSON_THROW_ON_ERROR
     );
-}
-
-/*
-|--------------------------------------------------------------------------
-| Arrays
-|--------------------------------------------------------------------------
-*/
-
-/**
- * Determine whether an array is associative.
- *
- * @param array<mixed> $array
- */
-function arrayIsAssociative(
-    array $array
-): bool {
-    if ($array === []) {
-        return false;
-    }
-
-    return array_keys($array) !==
-        range(
-            0,
-            count($array) - 1
-        );
 }
