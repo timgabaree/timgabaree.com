@@ -117,24 +117,12 @@ const DOCSEND_BOARD_BIO =
 
 /*
 |--------------------------------------------------------------------------
-| Site Identity
-|--------------------------------------------------------------------------
-*/
-
-const SITE_LEGAL_NAME =
-    'Tim Gabaree';
-
-/*
-|--------------------------------------------------------------------------
 | Site Description
 |--------------------------------------------------------------------------
 */
 
 const SITE_DESCRIPTION =
     'Executive technology leadership, enterprise transformation, infrastructure modernization, cybersecurity, AI enablement, and technology value creation.';
-
-const SITE_SHORT_DESCRIPTION =
-    'Executive technology leadership and technology value creation.';
 
 /*
 |--------------------------------------------------------------------------
@@ -147,15 +135,6 @@ const SITE_FORM_SENDER_EMAIL =
 
 const SITE_FORM_SENDER_NAME =
     'Tim Gabaree Website';
-
-/*
-|--------------------------------------------------------------------------
-| Display Contact Information
-|--------------------------------------------------------------------------
-*/
-
-const SITE_PHONE_DISPLAY =
-    '571.762.3769';
 
 /*
 |--------------------------------------------------------------------------
@@ -172,23 +151,14 @@ const SITE_ABOUT_PATH =
 const SITE_CONTACT_PATH =
     '/contact';
 
-const SITE_CONTACT_SUBMIT_PATH =
-    '/contact-submit';
-
 const SITE_PRIVACY_PATH =
     '/privacy';
 
 const SITE_THANK_YOU_PATH =
     '/thank-you';
 
-const SITE_ROBOTS_PATH =
-    '/robots.txt';
-
 const SITE_SITEMAP_PATH =
     '/sitemap.xml';
-
-const SITE_VCARD_PATH =
-    '/timgabaree.vcf';
 
 /*
 |--------------------------------------------------------------------------
@@ -208,10 +178,6 @@ const SITE_CONTACT_URL =
     SITE_URL .
     SITE_CONTACT_PATH;
 
-const SITE_CONTACT_SUBMIT_URL =
-    SITE_URL .
-    SITE_CONTACT_SUBMIT_PATH;
-
 const SITE_PRIVACY_URL =
     SITE_URL .
     SITE_PRIVACY_PATH;
@@ -219,18 +185,6 @@ const SITE_PRIVACY_URL =
 const SITE_THANK_YOU_URL =
     SITE_URL .
     SITE_THANK_YOU_PATH;
-
-const SITE_ROBOTS_URL =
-    SITE_URL .
-    SITE_ROBOTS_PATH;
-
-const SITE_SITEMAP_URL =
-    SITE_URL .
-    SITE_SITEMAP_PATH;
-
-const SITE_VCARD_URL =
-    SITE_URL .
-    SITE_VCARD_PATH;
 
 /*
 |--------------------------------------------------------------------------
