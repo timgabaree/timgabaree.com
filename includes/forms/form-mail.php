@@ -189,10 +189,6 @@ function buildContactMailBody(
             'Unavailable';
     }
 
-    /*
-     * sanitizeLogValue() remains in form-validation.php for now and
-     * removes unsafe control characters from request metadata.
-     */
     $remoteAddress =
         sanitizeLogValue(
             $remoteAddress,

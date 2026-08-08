@@ -607,6 +607,60 @@ function normalizeMultilineInput(
 
 /*
 |--------------------------------------------------------------------------
+| Log Value Sanitization
+|--------------------------------------------------------------------------
+*/
+
+/**
+ * Normalize and truncate a value before including it in logs or
+ * diagnostic messages.
+ */
+function sanitizeLogValue(
+    string $value,
+    int $maximumLength
+): string {
+    $value =
+        normalizeSingleLineInput(
+            $value
+        );
+
+    if (
+        $maximumLength <= 0
+    ) {
+        return '';
+    }
+
+    if (
+        !textExceedsLength(
+            $value,
+            $maximumLength
+        )
+    ) {
+        return $value;
+    }
+
+    if (
+        function_exists(
+            'mb_substr'
+        )
+    ) {
+        return mb_substr(
+            $value,
+            0,
+            $maximumLength,
+            APP_CHARSET
+        );
+    }
+
+    return substr(
+        $value,
+        0,
+        $maximumLength
+    );
+}
+
+/*
+|--------------------------------------------------------------------------
 | Validation Helpers
 |--------------------------------------------------------------------------
 */

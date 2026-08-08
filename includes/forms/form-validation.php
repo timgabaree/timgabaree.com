@@ -13,63 +13,9 @@ declare(strict_types=1);
 | header-injection protection are provided by functions.php.
 |
 | This file contains only validation behavior specific to the contact
-| form, plus request-metadata sanitization used by the mail service.
+| form.
 |
 */
-
-/*
-|--------------------------------------------------------------------------
-| Request-Metadata Sanitization
-|--------------------------------------------------------------------------
-|
-| Normalize values such as IP addresses and User-Agent strings before
-| including them in logs or contact-form email messages.
-|
-*/
-
-function sanitizeLogValue(
-    string $value,
-    int $maximumLength
-): string {
-    $value =
-        normalizeSingleLineInput(
-            $value
-        );
-
-    if (
-        $maximumLength <= 0
-    ) {
-        return '';
-    }
-
-    if (
-        !textExceedsLength(
-            $value,
-            $maximumLength
-        )
-    ) {
-        return $value;
-    }
-
-    if (
-        function_exists(
-            'mb_substr'
-        )
-    ) {
-        return mb_substr(
-            $value,
-            0,
-            $maximumLength,
-            APP_CHARSET
-        );
-    }
-
-    return substr(
-        $value,
-        0,
-        $maximumLength
-    );
-}
 
 /*
 |--------------------------------------------------------------------------
