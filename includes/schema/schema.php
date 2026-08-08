@@ -7,92 +7,75 @@ declare(strict_types=1);
 | Structured Data Renderer
 |--------------------------------------------------------------------------
 |
-| Outputs the page-specific Schema.org structured data prepared by the
-| corresponding schema file.
+| Outputs the page-specific Schema.org graph prepared by the corresponding
+| schema file.
 |
-| During the framework transition, this renderer supports both:
-|
-| - $schemaGraph  — preferred framework format;
-| - $schema       — legacy Tim Gabaree schema format.
-|
-| Page-specific schema files should not output JSON-LD directly.
+| Each page schema file must assign an array to $schemaGraph before this
+| renderer is required by component-head.php.
 |
 */
 
 /*
 |--------------------------------------------------------------------------
-| Preferred Schema Graph
+| Validate Schema Graph
 |--------------------------------------------------------------------------
 */
 
 if (
-    isset($schemaGraph) &&
-    is_array($schemaGraph) &&
-    $schemaGraph !== []
+    !isset($schemaGraph) ||
+    !is_array($schemaGraph) ||
+    $schemaGraph === []
 ) {
-    /*
-     * Remove empty or invalid graph entries.
-     */
-    $schemaGraph =
-        array_values(
-            array_filter(
-                $schemaGraph,
-                static function (
-                    mixed $schemaItem
-                ): bool {
-                    return is_array($schemaItem) &&
-                        $schemaItem !== [];
-                }
-            )
-        );
+    return;
+}
 
-    if ($schemaGraph === []) {
-        return;
-    }
+/*
+|--------------------------------------------------------------------------
+| Remove Empty Graph Entries
+|--------------------------------------------------------------------------
+*/
 
-    $structuredData = [
-        '@context' =>
-            SCHEMA_CONTEXT,
-
-        '@graph' =>
+$schemaGraph =
+    array_values(
+        array_filter(
             $schemaGraph,
-    ];
+            static function (
+                mixed $schemaItem
+            ): bool {
+                return is_array($schemaItem) &&
+                    $schemaItem !== [];
+            }
+        )
+    );
 
-    ?>
-
-<!-- Structured Data -->
-<script type="application/ld+json">
-<?= jsonForHtml($structuredData) ?>
-</script>
-<!-- End Structured Data -->
-
-    <?php
-
+if ($schemaGraph === []) {
     return;
 }
 
 /*
 |--------------------------------------------------------------------------
-| Legacy Schema Document
+| Build JSON-LD Document
 |--------------------------------------------------------------------------
-|
-| Existing Tim Gabaree schema files currently build the complete JSON-LD
-| document in $schema. Retain support while those files are normalized.
-|
 */
 
-if (
-    !isset($schema) ||
-    !is_array($schema) ||
-    $schema === []
-) {
-    return;
-}
+$structuredData = [
+    '@context' =>
+        SCHEMA_CONTEXT,
+
+    '@graph' =>
+        $schemaGraph,
+];
+
+/*
+|--------------------------------------------------------------------------
+| Render JSON-LD
+|--------------------------------------------------------------------------
+*/
 
 ?>
 
 <!-- Structured Data -->
 <script type="application/ld+json">
-<?= jsonForHtml($schema) ?>
+<?= jsonForHtml($structuredData) ?>
 </script>
 <!-- End Structured Data -->
