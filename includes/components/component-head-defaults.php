@@ -72,6 +72,21 @@ $canonicalUrl =
 
 /*
 |--------------------------------------------------------------------------
+| Page Image
+|--------------------------------------------------------------------------
+*/
+
+$pageImageKey =
+    $pageImageKey ??
+    'profile';
+
+$pageImage =
+    getSiteImage(
+        $pageImageKey
+    );
+
+/*
+|--------------------------------------------------------------------------
 | Open Graph
 |--------------------------------------------------------------------------
 */
@@ -94,23 +109,38 @@ $ogDescription =
 
 $ogImage =
     $ogImage ??
-    SITE_PRIMARY_IMAGE;
+    (
+        $pageImage['url'] ??
+        ''
+    );
 
 $ogImageType =
     $ogImageType ??
-    'image/webp';
+    (
+        $pageImage['type'] ??
+        ''
+    );
 
 $ogImageWidth =
     $ogImageWidth ??
-    SITE_PRIMARY_IMAGE_WIDTH;
+    (
+        $pageImage['width'] ??
+        0
+    );
 
 $ogImageHeight =
     $ogImageHeight ??
-    SITE_PRIMARY_IMAGE_HEIGHT;
+    (
+        $pageImage['height'] ??
+        0
+    );
 
 $ogImageAlt =
     $ogImageAlt ??
-    'Tim Gabaree, Portfolio CIO and technology executive';
+    (
+        $pageImage['alt'] ??
+        ''
+    );
 
 /*
 |--------------------------------------------------------------------------
@@ -132,7 +162,7 @@ $twitterDescription =
 
 $twitterImage =
     $twitterImage ??
-    SITE_PROFILE_SQUARE_IMAGE;
+    $ogImage;
 
 $twitterImageAlt =
     $twitterImageAlt ??
@@ -140,10 +170,24 @@ $twitterImageAlt =
 
 /*
 |--------------------------------------------------------------------------
-| Performance
+| Page Images
 |--------------------------------------------------------------------------
 */
 
+$preloadImageKey =
+    $preloadImageKey ??
+    '';
+
+$preloadImageData =
+    $preloadImageKey !== ''
+        ? getSiteImage(
+            $preloadImageKey
+        )
+        : [];
+
 $preloadImage =
     $preloadImage ??
-    '';
+    (
+        $preloadImageData['path'] ??
+        ''
+    );

@@ -37,12 +37,15 @@ $ogDescription =
 
 /*
 |--------------------------------------------------------------------------
-| Performance
+| Page Images
 |--------------------------------------------------------------------------
 */
 
-$preloadImage =
-    SITE_BACKGROUND_IMAGE_PATH;
+$pageImageKey =
+    'profile';
+
+$preloadImageKey =
+    'background';
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +70,13 @@ require __DIR__ . '/includes/components/component-header.php';
     <div
       id="intro"
       class="intro-section">
+		<?= siteImage(
+        'background',
+    [
+        'class' =>
+            'section-background-image',
+    ]
+) ?>
 
       <div class="intro-text-content-block">
 
@@ -226,25 +236,21 @@ require __DIR__ . '/includes/components/component-header.php';
 
       <div class="intro-profile-picture-block">
 
-        <img
-          class="intro-profile-picture-img main-img"
-          src="<?= e(SITE_PROFILE_IMAGE_PATH) ?>"
-          alt="Tim Gabaree"
-          width="<?= e((string) SITE_PROFILE_IMAGE_WIDTH) ?>"
-          height="<?= e((string) SITE_PROFILE_IMAGE_HEIGHT) ?>"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async">
+        <?= siteImage(
+    'profile',
+    [
+        'class' =>
+            'intro-profile-picture-img main-img',
+    ]
+) ?>
 
-        <img
-          class="intro-profile-picture-img hover-img"
-          src="/media/profile-pic-tim-gabaree-in-the-morning-400x534.webp"
-          alt=""
-          width="400"
-          height="534"
-          loading="lazy"
-          decoding="async"
-          aria-hidden="true">
+        <?= siteImage(
+    'profile_hover',
+    [
+        'class' =>
+            'intro-profile-picture-img hover-img',
+    ]
+) ?>
 
       </div>
 
@@ -281,6 +287,14 @@ require __DIR__ . '/includes/components/component-header.php';
 
         <div class="results-slide slide-1">
 
+  <?= siteImage(
+      'results_left',
+      [
+          'class' =>
+              'results-slide-image',
+      ]
+  ) ?>
+
           <p class="results-kicker">
             Operating Result
           </p>
@@ -300,6 +314,14 @@ require __DIR__ . '/includes/components/component-header.php';
         </div>
 
         <div class="results-slide slide-2">
+
+  <?= siteImage(
+      'results_middle',
+      [
+          'class' =>
+              'results-slide-image',
+      ]
+  ) ?>
 
           <p class="results-kicker">
             Operating Result
@@ -321,6 +343,14 @@ require __DIR__ . '/includes/components/component-header.php';
 
         <div class="results-slide slide-3">
 
+  <?= siteImage(
+      'results_right',
+      [
+          'class' =>
+              'results-slide-image',
+      ]
+  ) ?>
+
           <p class="results-kicker">
             Operating Result
           </p>
@@ -341,6 +371,14 @@ require __DIR__ . '/includes/components/component-header.php';
 
         <div class="results-slide slide-4">
 
+  <?= siteImage(
+      'results_left',
+      [
+          'class' =>
+              'results-slide-image',
+      ]
+  ) ?>
+
           <p class="results-kicker">
             Leadership Result
           </p>
@@ -360,6 +398,14 @@ require __DIR__ . '/includes/components/component-header.php';
         </div>
 
         <div class="results-slide slide-5">
+
+  <?= siteImage(
+      'results_middle',
+      [
+          'class' =>
+              'results-slide-image',
+      ]
+  ) ?>
 
           <p class="results-kicker">
             Positioning
@@ -444,9 +490,18 @@ require __DIR__ . '/includes/components/component-header.php';
 
         <!-- Decorative image supporting the expertise section -->
         <div
-          class="expertise-image-block"
-          aria-hidden="true">
-        </div>
+  class="expertise-image-block"
+  aria-hidden="true">
+
+  <?= siteImage(
+    'expertise',
+    [
+        'class' =>
+            'expertise-image',
+    ]
+) ?>
+
+</div>
 
       </div>
 
@@ -593,73 +648,75 @@ require __DIR__ . '/includes/components/component-header.php';
 
     <div class="education-content">
 
-      <?php
+<?php
 
-      $educationItems = [
-          [
-              'degree' =>
-                  'Master of Business Administration',
-              'institution' =>
-                  'University of Illinois Springfield',
-              'url' =>
-                  'https://www.uis.edu/',
-              'logo' =>
-                  '/media/education-logo-university-of-illinois-springfield-500x250.webp',
-              'logo_width' =>
-                  500,
-              'logo_height' =>
-                  250,
-          ],
-          [
-              'degree' =>
-                  'Bachelor of Science in Analytics',
-              'institution' =>
-                  'Purdue University Global',
-              'url' =>
-                  'https://www.purdueglobal.edu/',
-              'logo' =>
-                  '/media/education-logo-purdue-university-global-500x137.webp',
-              'logo_width' =>
-                  500,
-              'logo_height' =>
-                  137,
-          ],
-      ];
+$educationItems = [
+    [
+        'degree' =>
+            'Master of Business Administration',
 
-      foreach ($educationItems as $educationItem) {
-          $educationDegree =
-              $educationItem['degree'];
+        'institution' =>
+            'University of Illinois Springfield',
 
-          $educationInstitution =
-              $educationItem['institution'];
+        'url' =>
+            'https://www.uis.edu/',
 
-          $educationUrl =
-              $educationItem['url'];
+        'logo_image' =>
+            'education_uis_logo',
 
-          $educationLogo =
-              $educationItem['logo'];
+        'background_image' =>
+            'education_uis_background',
+    ],
 
-          $educationLogoWidth =
-              $educationItem['logo_width'];
+    [
+        'degree' =>
+            'Bachelor of Science in Analytics',
 
-          $educationLogoHeight =
-              $educationItem['logo_height'];
+        'institution' =>
+            'Purdue University Global',
 
-          require __DIR__ . '/includes/components/component-education-card.php';
-      }
+        'url' =>
+            'https://www.purdueglobal.edu/',
 
-      unset(
-          $educationItems,
-          $educationItem,
-          $educationDegree,
-          $educationInstitution,
-          $educationUrl,
-          $educationLogo,
-          $educationLogoWidth,
-          $educationLogoHeight
-      );
+        'logo_image' =>
+            'education_purdue_logo',
 
-      ?>
+        'background_image' =>
+            'education_purdue_background',
+    ],
+];
+
+foreach ($educationItems as $educationItem) {
+    $educationDegree =
+        $educationItem['degree'];
+
+    $educationInstitution =
+        $educationItem['institution'];
+
+    $educationUrl =
+        $educationItem['url'];
+
+    $educationBackgroundImage =
+        $educationItem['background_image'];
+
+    $educationLogoImage =
+        $educationItem['logo_image'];
+
+    require __DIR__ .
+        '/includes/components/component-education-card.php';
+}
+
+unset(
+    $educationItems,
+    $educationItem,
+    $educationDegree,
+    $educationInstitution,
+    $educationUrl,
+    $educationBackgroundImage,
+    $educationLogoImage
+);
+
+?>
 
     </div>
 
@@ -925,13 +982,7 @@ require __DIR__ . '/includes/components/component-header.php';
             href="<?= e(SITE_CONTACT_PATH) ?>"
             aria-label="Open Tim Gabaree’s contact page">
 
-            <img
-              src="<?= e(SITE_QR_CODE_PATH) ?>"
-              alt="QR code to Tim Gabaree’s contact page"
-              width="<?= e((string) SITE_QR_CODE_WIDTH) ?>"
-              height="<?= e((string) SITE_QR_CODE_HEIGHT) ?>"
-              loading="lazy"
-              decoding="async">
+            <?= siteImage('qr_code') ?>
 
           </a>
 

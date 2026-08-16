@@ -51,27 +51,38 @@ function buildWebsiteSchema(): array
 function buildPrimaryImageSchema(
     bool $representativeOfPage = true
 ): array {
-    $schema = [
-        '@type' =>
-            'ImageObject',
 
-        '@id' =>
-            SITE_PRIMARY_IMAGE_ID,
+        $image =
+        getSiteImage(
+            'profile'
+        );
 
-        'url' =>
-            SITE_PRIMARY_IMAGE,
+        $schema = [
+            '@type' =>
+                'ImageObject',
+
+            '@id' =>
+                SITE_PRIMARY_IMAGE_ID,
+
+            'url' =>
+        $image['url'] ??
+        '',
 
         'contentUrl' =>
-            SITE_PRIMARY_IMAGE,
+            $image['url'] ??
+            '',
 
         'width' =>
-            SITE_PRIMARY_IMAGE_WIDTH,
+            $image['width'] ??
+            0,
 
         'height' =>
-            SITE_PRIMARY_IMAGE_HEIGHT,
+            $image['height'] ??
+            0,
 
         'encodingFormat' =>
-            'image/webp',
+            $image['type'] ??
+            '',
 
         'caption' =>
             'Tim Gabaree, Portfolio CIO and technology executive',

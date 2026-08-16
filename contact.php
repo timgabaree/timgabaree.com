@@ -28,6 +28,18 @@ $canonicalUrl =
 
 /*
 |--------------------------------------------------------------------------
+| Page Images
+|--------------------------------------------------------------------------
+*/
+
+$pageImageKey =
+    'profile';
+
+$preloadImageKey =
+    'profile';
+
+/*
+|--------------------------------------------------------------------------
 | Open Graph
 |--------------------------------------------------------------------------
 */
@@ -49,15 +61,6 @@ $ogDescription =
 
 $twitterDescription =
     'Portfolio CIO | Technology Value Creation | Enterprise Performance';
-
-/*
-|--------------------------------------------------------------------------
-| Performance
-|--------------------------------------------------------------------------
-*/
-
-$preloadImage =
-    SITE_PROFILE_IMAGE_PATH;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,6 +121,14 @@ require __DIR__ . '/includes/components/component-header.php';
   id="main-content"
   class="executive-contact-page">
 
+<?= siteImage(
+    'background',
+    [
+        'class' =>
+            'contact-background-image',
+    ]
+) ?>
+
 <!-- Executive Contact Section -->
 <section
   class="executive-contact-section"
@@ -127,15 +138,13 @@ require __DIR__ . '/includes/components/component-header.php';
 
       <div class="contact-profile">
 
-        <img
-          src="<?= e(SITE_PROFILE_IMAGE_PATH) ?>"
-          alt="Tim Gabaree"
-          class="contact-profile-image"
-          width="<?= e((string) SITE_PROFILE_IMAGE_WIDTH) ?>"
-          height="<?= e((string) SITE_PROFILE_IMAGE_HEIGHT) ?>"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async">
+        <?= siteImage(
+    'profile',
+    [
+        'class' =>
+            'contact-profile-image',
+    ]
+) ?>
 
         <p class="contact-location">
           Chicago
@@ -649,13 +658,7 @@ require __DIR__ . '/includes/components/component-header.php';
       href="/contact"
       aria-label="Open Tim Gabaree’s contact page">
 
-      <img
-        src="<?= e(SITE_QR_CODE_PATH) ?>"
-        alt="QR code to Tim Gabaree’s contact page"
-        width="<?= e((string) SITE_QR_CODE_WIDTH) ?>"
-        height="<?= e((string) SITE_QR_CODE_HEIGHT) ?>"
-        loading="lazy"
-        decoding="async">
+      <?= siteImage('qr_code') ?>
 
     </a>
 

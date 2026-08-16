@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ .
-    '/schema-entities.php';
+require_once __DIR__ . '/schema-entities.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +23,14 @@ require_once __DIR__ .
 |--------------------------------------------------------------------------
 */
 
+$aboutImageData =
+    getSiteImage(
+        'about_family'
+    );
+
 $aboutImage =
-    SITE_ABOUT_IMAGE;
+    $aboutImageData['url'] ??
+    '';
 
 $aboutImageId =
     SITE_ABOUT_URL .
@@ -60,13 +65,16 @@ $aboutImageSchema = [
         $aboutImage,
 
     'width' =>
-        SITE_ABOUT_IMAGE_WIDTH,
+        $aboutImageData['width'] ??
+        0,
 
     'height' =>
-        SITE_ABOUT_IMAGE_HEIGHT,
+        $aboutImageData['height'] ??
+        0,
 
     'encodingFormat' =>
-        'image/webp',
+        $aboutImageData['type'] ??
+        '',
 
     'caption' =>
         'Tim Gabaree with his family',

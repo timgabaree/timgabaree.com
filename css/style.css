@@ -378,7 +378,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   margin-top: 0.75rem;
-  padding: 4px 24px 0;
+  padding: 4px 24px;
   background: var(--brand-blue);
   color: var(--white) !important;
   text-decoration: none;
@@ -450,11 +450,21 @@ a:hover {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-standard);
-  background-image: url("../media/background-pic-architecture-1920x942.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   box-shadow: 0 4px 6px var(--shadow-soft);
+}
+
+.section-background-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.intro-section > :not(.section-background-image) {
+  position: relative;
+  z-index: 1;
 }
 
 .intro-text-content-block {
@@ -634,10 +644,18 @@ a:hover {
   padding: clamp(28px, 5vw, 60px);
   text-align: center;
   color: var(--white);
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
   opacity: 0;
   animation: resultsFade 30s infinite;
+}
+
+.results-slide-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .results-slide::before {
@@ -645,36 +663,32 @@ a:hover {
   position: absolute;
   inset: 0;
   background: var(--overlay-card);
-  z-index: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.results-slide > * {
+.results-slide p {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .slide-1 {
-  background-image: url("../media/results-background-left-850x1050.webp");
   animation-delay: 0s;
 }
 
 .slide-2 {
-  background-image: url("../media/results-background-middle-850x1050.webp");
   animation-delay: 5s;
 }
 
 .slide-3 {
-  background-image: url("../media/results-background-right-850x1050.webp");
   animation-delay: 10s;
 }
 
 .slide-4 {
-  background-image: url("../media/results-background-left-850x1050.webp");
   animation-delay: 15s;
 }
 
 .slide-5 {
-  background-image: url("../media/results-background-middle-850x1050.webp");
   animation: resultsFadeFinal 30s infinite;
   animation-delay: 20s;
 }
@@ -862,16 +876,18 @@ a:hover {
 
 .expertise-image-block {
   flex: 1 1 38%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   min-height: 400px;
+  overflow: hidden;
   border-radius: var(--radius-standard);
-  background-image: url("../media/expertise-background-650x752.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+}
+
+.expertise-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* =====================================================
@@ -956,24 +972,24 @@ a:hover {
 }
 
 .education-block {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 400px;
   padding: 20px;
+  overflow: hidden;
   border-radius: var(--radius-standard);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   box-shadow: 0 2px 5px var(--shadow-soft);
 }
 
-.education-block:first-child {
-  background-image: url("../media/education-background-university-of-illinois-springfield-1200x313.webp");
-}
-
-.education-block:last-child {
-  background-image: url("../media/education-background-purdue-university-global-1200x444.webp");
+.education-background-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .education-inner-block {
@@ -986,6 +1002,8 @@ a:hover {
   background-color: var(--surface-card);
   border-radius: var(--radius-standard);
   box-shadow: 0 1px 3px var(--shadow-soft);
+  position: relative;
+  z-index: 1;
 }
 
 .education-title {
@@ -1163,12 +1181,29 @@ a:hover {
    16. About Page
 ===================================================== */
 
-.about-page {
-  background-image: url("../media/background-pic-architecture-1920x942.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+.about-page,
+.privacy-page {
+  position: relative;
+  isolation: isolate;
   padding: 40px 20px;
+}
+
+.page-background-image {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-page > :not(.page-background-image),
+.privacy-page > :not(.page-background-image) {
+  position: relative;
+  z-index: 1;
 }
 
 .about-card, .about-gallery figure, .contact-card {
@@ -1357,20 +1392,23 @@ a:hover {
   pointer-events: none;
 }
 
-.coffee-roasting {
-  background-image: url("../media/interests-and-hobbies-roasted-beans-and-espresso800x602.webp");
+.interests-block {
+  position: relative;
+  overflow: hidden;
 }
 
-.chocolatiering {
-  background-image: url("../media/interests-and-hobbies-chocolate-babka-800x602.webp");
+.interests-block-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
-.pizza-making {
-  background-image: url("../media/interests-and-hobbies-neapolitan-pizza-800x602.webp");
-}
-
-.geeking-out {
-  background-image: url("../media/profile-pic-tim-gabaree-geeking-out-800x533.webp");
+.interest-caption {
+  position: relative;
+  z-index: 1;
 }
 
 /* =====================================================
@@ -1453,10 +1491,25 @@ a.contactLink:hover {
 
 .contact-body {
   min-height: 100vh;
-  background: linear-gradient(rgba(244, 245, 248, 0.94), rgba(244, 245, 248, 0.94)), url("../media/background-pic-architecture-1920x942.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  position: relative;
+}
+
+.contact-background-image {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.contact-body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(244, 245, 248, 0.94);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .executive-contact-page {
@@ -2244,14 +2297,6 @@ button.contact-action {
    23. Privacy Policy
 ===================================================== */
 
-.privacy-page {
-  background-image: url("../media/background-pic-architecture-1920x942.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 40px 20px;
-}
-
 .privacy-container {
   max-width: 920px;
   margin: 0 auto;
@@ -2308,6 +2353,46 @@ button.contact-action {
   text-align: center;
 }
 
+.privacy-contents-list {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.privacy-contents-list li + li {
+  margin-top: 10px;
+}
+
+.privacy-contents-list a,
+.privacy-contents-list a:visited {
+  color: var(--brand-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.privacy-contents-list a:hover,
+.privacy-contents-list a:focus-visible {
+  color: var(--brand-blue-hover);
+  text-decoration: underline;
+}
+
+.privacy-return-to-contents {
+  margin: 28px 0 0;
+  text-align: center;
+}
+
+.privacy-return-to-contents a,
+.privacy-return-to-contents a:visited {
+  color: var(--brand-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.privacy-return-to-contents a:hover,
+.privacy-return-to-contents a:focus-visible {
+  color: var(--brand-blue-hover);
+  text-decoration: underline;
+}
+
 /* =====================================================
    24. Footer
 ===================================================== */
@@ -2320,11 +2405,13 @@ button.contact-action {
 }
 
 .footer-disclaimer {
+  position: relative;
+  z-index: 2;
   margin: -10px 0 15px;
+  padding-top: 0;
   font-size: 14px;
   color: var(--text-muted);
   text-align: center;
-  padding-top: 0;
 }
 
 .trust-seal {
@@ -2536,7 +2623,6 @@ button.contact-action {
 @media (max-width: 800px) {
   .about-page {
     padding: 28px 14px;
-    background-attachment: scroll;
   }
 
   .about-card, .about-gallery {

@@ -77,6 +77,215 @@ function asset(
 
 /*
 |--------------------------------------------------------------------------
+| Site Images
+|--------------------------------------------------------------------------
+*/
+
+/**
+ * Return a managed site image definition.
+ *
+ * @return array<string, mixed>
+ */
+function getSiteImage(
+    string $key
+): array {
+    $image =
+        SITE_IMAGES[$key] ??
+        [];
+
+    if (
+        !is_array($image) ||
+        $image === []
+    ) {
+        return [];
+    }
+
+    $path =
+        $image['path'] ??
+        '';
+
+    if (!is_string($path)) {
+        $path =
+            '';
+    }
+
+    $image['path'] =
+        $path;
+
+    $image['url'] =
+        $path !== ''
+            ? SITE_URL . $path
+            : '';
+
+    return $image;
+}
+
+/**
+ * Render a managed site image.
+ *
+ * Page-specific values may override registry defaults.
+ *
+ * @param array<string, mixed> $overrides
+ */
+function siteImage(
+    string $key,
+    array $overrides = []
+): string {
+    $image =
+        getSiteImage(
+            $key
+        );
+
+    if ($image === []) {
+        return '';
+    }
+
+    $image =
+        array_merge(
+            $image,
+            $overrides
+        );
+
+    $path =
+        $image['path'] ??
+        '';
+
+    $alt =
+        $image['alt'] ??
+        '';
+
+    $width =
+        $image['width'] ??
+        0;
+
+    $height =
+        $image['height'] ??
+        0;
+
+    $loading =
+        $image['loading'] ??
+        'lazy';
+
+    $fetchPriority =
+        $image['fetchpriority'] ??
+        '';
+
+    $decoding =
+        $image['decoding'] ??
+        'async';
+
+    $class =
+        $image['class'] ??
+        '';
+
+	$extraAttributes =
+        $image['attributes'] ??
+        [];
+
+    if (
+        !is_string($path) ||
+        $path === ''
+    ) {
+        return '';
+    }
+
+    $attributes = [
+        'src="' .
+            e($path) .
+            '"',
+
+        'alt="' .
+            e(
+                is_string($alt)
+                    ? $alt
+                    : ''
+            ) .
+            '"',
+
+        'width="' .
+            e(
+                (string) $width
+            ) .
+            '"',
+
+        'height="' .
+            e(
+                (string) $height
+            ) .
+            '"',
+    ];
+
+    if (
+        is_string($class) &&
+        $class !== ''
+    ) {
+        $attributes[] =
+            'class="' .
+            e($class) .
+            '"';
+    }
+
+    if (
+        is_string($loading) &&
+        $loading !== ''
+    ) {
+        $attributes[] =
+            'loading="' .
+            e($loading) .
+            '"';
+    }
+
+    if (
+        is_string($fetchPriority) &&
+        $fetchPriority !== ''
+    ) {
+        $attributes[] =
+            'fetchpriority="' .
+            e($fetchPriority) .
+            '"';
+    }
+
+    if (
+        is_string($decoding) &&
+        $decoding !== ''
+    ) {
+        $attributes[] =
+            'decoding="' .
+            e($decoding) .
+            '"';
+    }
+
+	if (is_array($extraAttributes)) {
+    foreach ($extraAttributes as $name => $value) {
+        if (
+            !is_string($name) ||
+            preg_match(
+                '/^[a-zA-Z_:][a-zA-Z0-9:._-]*$/',
+                $name
+            ) !== 1 ||
+            !is_scalar($value)
+        ) {
+            continue;
+        }
+
+        $attributes[] =
+            e($name) .
+            '="' .
+            e((string) $value) .
+            '"';
+    }
+}
+
+    return '<img ' .
+        implode(
+            ' ',
+            $attributes
+        ) .
+        '>';
+}
+
+/*
+|--------------------------------------------------------------------------
 | Page Metadata
 |--------------------------------------------------------------------------
 */

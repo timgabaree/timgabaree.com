@@ -27,8 +27,11 @@ $canonicalUrl =
 |--------------------------------------------------------------------------
 */
 
-$aboutImage =
-    SITE_ABOUT_IMAGE;
+$pageImageKey =
+    'about_family';
+
+$preloadImageKey =
+    'about_family';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,21 +47,6 @@ $ogTitle =
 $ogDescription =
     'About Tim Gabaree, Portfolio CIO, technology executive, board advisor, veteran, husband, father, and lifelong learner.';
 
-$ogImage =
-    $aboutImage;
-
-$ogImageType =
-    'image/webp';
-
-$ogImageWidth =
-    SITE_ABOUT_IMAGE_WIDTH;
-
-$ogImageHeight =
-    SITE_ABOUT_IMAGE_HEIGHT;
-
-$ogImageAlt =
-    'Tim Gabaree with his family';
-
 /*
 |--------------------------------------------------------------------------
 | X / Twitter
@@ -70,21 +58,6 @@ $twitterCard =
 
 $twitterDescription =
     'Technology executive, board advisor, veteran, husband, father, and lifelong learner.';
-
-$twitterImage =
-    SITE_ABOUT_IMAGE;
-
-$twitterImageAlt =
-    $ogImageAlt;
-
-/*
-|--------------------------------------------------------------------------
-| Performance
-|--------------------------------------------------------------------------
-*/
-
-$preloadImage =
-    SITE_ABOUT_IMAGE_PATH;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +75,14 @@ require __DIR__ . '/includes/components/component-header.php';
   id="main-content"
   class="about-page">
 
+<?= siteImage(
+    'background',
+    [
+        'class' =>
+            'page-background-image',
+    ]
+) ?>
+
   <!-- About Section -->
   <section
     class="about-hero"
@@ -111,14 +92,7 @@ require __DIR__ . '/includes/components/component-header.php';
 
       <figure class="about-featured-photo">
 
-        <img
-          src="<?= e(SITE_ABOUT_IMAGE_PATH) ?>"
-          alt="Tim Gabaree with Carrie, Clint, and Finn in Halloween costumes"
-          width="<?= e((string) SITE_ABOUT_IMAGE_WIDTH) ?>"
-          height="<?= e((string) SITE_ABOUT_IMAGE_HEIGHT) ?>"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async">
+        <?= siteImage($pageImageKey) ?>
 
         <figcaption>
           Every family needs a Batman and a chef. Fortunately, we have both.
@@ -199,52 +173,33 @@ require __DIR__ . '/includes/components/component-header.php';
 
     <figure class="gallery-large">
 
-      <img
-        src="/media/about-lady-liberty-finn-clint-carrie-tim-800x1067.webp"
-        alt="Tim Gabaree with Carrie, Clint, and Finn at the Statue of Liberty"
-        width="800"
-        height="1067"
-        loading="lazy"
-        decoding="async">
+  <?= siteImage('about_liberty_family') ?>
 
-      <figcaption>
-        Lady Liberty, Finn, Clint, Carrie, and me. Wow!
-      </figcaption>
+  <figcaption>
+    Lady Liberty, Finn, Clint, Carrie, and me. Wow!
+  </figcaption>
 
-    </figure>
+</figure>
 
     <figure>
 
-      <img
-        src="/media/about-finn-clint-working-hard-message-800x486.webp"
-        alt="Clint and Finn viewing an exhibit about hard work at Ellis Island"
-        width="800"
-        height="486"
-        loading="lazy"
-        decoding="async">
+  <?= siteImage('about_ellis_island') ?>
 
-      <figcaption>
-        At Ellis Island. Sometimes I wonder if we’ve lost touch with some of
-        these lessons along the way.
-      </figcaption>
+  <figcaption>
+    At Ellis Island. Sometimes I wonder if we’ve lost touch with some of
+    these lessons along the way.
+  </figcaption>
 
-    </figure>
-
+</figure>
     <figure>
 
-      <img
-        src="/media/about-gabaree-family-mt-vernon-800x600.webp"
-        alt="Tim Gabaree with Carrie, Clint, and Finn at Mount Vernon"
-        width="800"
-        height="600"
-        loading="lazy"
-        decoding="async">
+  <?= siteImage('about_mount_vernon') ?>
 
-      <figcaption>
-        Fun at George and Martha Washington's house.
-      </figcaption>
+  <figcaption>
+    Fun at George and Martha Washington's house.
+  </figcaption>
 
-    </figure>
+</figure>
 
   </div>
 
@@ -271,35 +226,67 @@ require __DIR__ . '/includes/components/component-header.php';
 
     <article class="interests-block coffee-roasting">
 
-      <h3 class="interest-caption">
-        Coffee Roasting
-      </h3>
+  <?= siteImage(
+      'interest_coffee',
+      [
+          'class' =>
+              'interests-block-image',
+      ]
+  ) ?>
 
-    </article>
+  <h3 class="interest-caption">
+    Coffee Roasting
+  </h3>
 
-    <article class="interests-block chocolatiering">
+</article>
 
-      <h3 class="interest-caption">
-        Baking and Chocolatiering
-      </h3>
+<article class="interests-block chocolatiering">
 
-    </article>
+  <?= siteImage(
+      'interest_chocolate',
+      [
+          'class' =>
+              'interests-block-image',
+      ]
+  ) ?>
 
-    <article class="interests-block pizza-making">
+  <h3 class="interest-caption">
+    Baking and Chocolatiering
+  </h3>
 
-      <h3 class="interest-caption">
-        Pizza Making
-      </h3>
+</article>
 
-    </article>
+<article class="interests-block pizza-making">
 
-    <article class="interests-block geeking-out">
+  <?= siteImage(
+      'interest_pizza',
+      [
+          'class' =>
+              'interests-block-image',
+      ]
+  ) ?>
 
-      <h3 class="interest-caption">
-        AI &amp; Emerging Technology
-      </h3>
+  <h3 class="interest-caption">
+    Pizza Making
+  </h3>
 
-    </article>
+</article>
+
+<article class="interests-block geeking-out">
+
+  <?= siteImage(
+      'interest_technology',
+      [
+          'class' =>
+              'interests-block-image',
+      ]
+  ) ?>
+
+  <h3 class="interest-caption">
+    AI &amp; Emerging Technology
+  </h3>
+
+</article>
 
   </div>
 
@@ -323,13 +310,7 @@ require __DIR__ . '/includes/components/component-header.php';
           href="<?= e(SITE_CONTACT_PATH) ?>"
           aria-label="Open Tim Gabaree’s contact page">
 
-          <img
-            src="<?= e(SITE_QR_CODE_PATH) ?>"
-            alt="QR code to Tim Gabaree’s contact page"
-            width="<?= e((string) SITE_QR_CODE_WIDTH) ?>"
-            height="<?= e((string) SITE_QR_CODE_HEIGHT) ?>"
-            loading="lazy"
-            decoding="async">
+          <?= siteImage('qr_code') ?>
 
         </a>
 
@@ -364,18 +345,6 @@ require __DIR__ . '/includes/components/component-header.php';
   </section>
   <!-- End Contact Section -->
 
-  <!-- Return to Main Page -->
-  <div class="about-return">
-
-    <a
-      class="primary-cta-button"
-      href="/">
-      Return to Main Page
-    </a>
-
-  </div>
-  <!-- End Return to Main Page -->
-	
 </main>
 
 <?php

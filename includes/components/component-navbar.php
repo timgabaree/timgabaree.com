@@ -238,12 +238,21 @@ $homePrefix =
       rel="noopener noreferrer"
       aria-label="Visit Tim Gabaree’s blog — opens in a new tab">
 
-      <img
-        src="/media/social-media-blogger-icon-50x50.webp"
-        width="25"
-        height="25"
-        alt=""
-        aria-hidden="true">
+      <?= siteImage(
+    'social_blogger',
+    [
+        'width' =>
+            25,
+
+        'height' =>
+            25,
+
+        'attributes' => [
+            'aria-hidden' =>
+                'true',
+        ],
+    ]
+) ?>
 
     </a>
 
@@ -255,12 +264,21 @@ $homePrefix =
       rel="me noopener noreferrer"
       aria-label="Visit Tim Gabaree’s LinkedIn profile — opens in a new tab">
 
-      <img
-        src="/media/social-media-linkedin-icon-50x50.webp"
-        width="25"
-        height="25"
-        alt=""
-        aria-hidden="true">
+      <?= siteImage(
+    'social_linkedin',
+    [
+        'width' =>
+            25,
+
+        'height' =>
+            25,
+
+        'attributes' => [
+            'aria-hidden' =>
+                'true',
+        ],
+    ]
+) ?>
 
     </a>
 
@@ -272,12 +290,21 @@ $homePrefix =
       rel="noopener noreferrer"
       aria-label="Visit Tim Gabaree’s GitHub profile — opens in a new tab">
 
-      <img
-        src="/media/social-media-github-icon-50x50.webp"
-        width="25"
-        height="25"
-        alt=""
-        aria-hidden="true">
+      <?= siteImage(
+    'social_github',
+    [
+        'width' =>
+            25,
+
+        'height' =>
+            25,
+
+        'attributes' => [
+            'aria-hidden' =>
+                'true',
+        ],
+    ]
+) ?>
 
     </a>
 

@@ -237,7 +237,6 @@ $submissionConfirmed =
 
 <?php
 
-require __DIR__ .
-    '/includes/components/component-footer.php';
+require __DIR__ . '/includes/components/component-footer.php';
 
 ?>

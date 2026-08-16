@@ -24,7 +24,8 @@ declare(strict_types=1);
 | 1. config.php defines site-specific values.
 | 2. constants.php defines application-level values.
 | 3. version.php defines cache-busting versions.
-| 4. functions.php defines shared helper functions.
+| 4. images.php defines the central site image registry.
+| 5. functions.php defines shared helper functions.
 |
 */
 
@@ -36,6 +37,9 @@ require_once __DIR__ .
 
 require_once __DIR__ .
     '/version.php';
+
+require_once __DIR__ .
+    '/images/images.php';
 
 require_once __DIR__ .
     '/functions.php';

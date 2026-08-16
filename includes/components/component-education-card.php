@@ -13,15 +13,15 @@ declare(strict_types=1);
 | - Institution name
 | - Institution website link
 | - Institution logo
+| - Education background image
 |
 | Expected variables:
 |
 | $educationDegree
 | $educationInstitution
 | $educationUrl
-| $educationLogo
-| $educationLogoWidth
-| $educationLogoHeight
+| $educationLogoImage
+| $educationBackgroundImage
 |
 | Optional variables:
 |
@@ -79,32 +79,42 @@ if (
 }
 
 if (
-    !isset($educationLogo) ||
-    !is_string($educationLogo) ||
-    trim($educationLogo) === ''
+    !isset($educationLogoImage) ||
+    !is_string($educationLogoImage) ||
+    trim($educationLogoImage) === ''
 ) {
     throw new RuntimeException(
-        'Education card requires a valid $educationLogo.'
+        'Education card requires a valid $educationLogoImage.'
     );
 }
 
 if (
-    !isset($educationLogoWidth) ||
-    !is_int($educationLogoWidth) ||
-    $educationLogoWidth < 1
+    getSiteImage(
+        $educationLogoImage
+    ) === []
 ) {
     throw new RuntimeException(
-        'Education card requires a valid integer $educationLogoWidth.'
+        'Education card references an unknown logo image.'
     );
 }
 
 if (
-    !isset($educationLogoHeight) ||
-    !is_int($educationLogoHeight) ||
-    $educationLogoHeight < 1
+    !isset($educationBackgroundImage) ||
+    !is_string($educationBackgroundImage) ||
+    trim($educationBackgroundImage) === ''
 ) {
     throw new RuntimeException(
-        'Education card requires a valid integer $educationLogoHeight.'
+        'Education card requires a valid $educationBackgroundImage.'
+    );
+}
+
+if (
+    getSiteImage(
+        $educationBackgroundImage
+    ) === []
+) {
+    throw new RuntimeException(
+        'Education card references an unknown background image.'
     );
 }
 
@@ -147,8 +157,11 @@ $educationInstitution =
 $educationUrl =
     trim($educationUrl);
 
-$educationLogo =
-    trim($educationLogo);
+$educationLogoImage =
+    trim($educationLogoImage);
+
+$educationBackgroundImage =
+    trim($educationBackgroundImage);
 
 $educationLinkLabel =
     trim($educationLinkLabel);
@@ -162,6 +175,14 @@ $educationClasses =
 ?>
 
 <article class="<?= e($educationClasses) ?>">
+
+  <?= siteImage(
+      $educationBackgroundImage,
+      [
+          'class' =>
+              'education-background-image',
+      ]
+  ) ?>
 
   <div class="education-inner-block">
 
@@ -177,13 +198,7 @@ $educationClasses =
         rel="noopener noreferrer"
         aria-label="<?= e($educationLinkLabel) ?>">
 
-        <img
-          src="<?= e($educationLogo) ?>"
-          alt="<?= e($educationInstitution) ?>"
-          width="<?= e((string) $educationLogoWidth) ?>"
-          height="<?= e((string) $educationLogoHeight) ?>"
-          loading="lazy"
-          decoding="async">
+        <?= siteImage($educationLogoImage) ?>
 
       </a>
 

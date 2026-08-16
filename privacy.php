@@ -45,12 +45,15 @@ $twitterDescription =
 
 /*
 |--------------------------------------------------------------------------
-| Page Assets
+| Page Images
 |--------------------------------------------------------------------------
 */
 
-$preloadImage =
-    SITE_BACKGROUND_IMAGE_PATH;
+$pageImageKey =
+    'profile';
+
+$preloadImageKey =
+    'background';
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +88,14 @@ require __DIR__ . '/includes/components/component-header.php';
 
 <!-- Main -->
 <main class="privacy-page">
+
+<?= siteImage(
+    'background',
+    [
+        'class' =>
+            'page-background-image',
+    ]
+) ?>
 
   <div class="privacy-container">
 
@@ -131,6 +142,87 @@ require __DIR__ . '/includes/components/component-header.php';
 
     </section>
     <!-- End Privacy Policy Introduction -->
+
+	  <!-- Privacy Policy Contents -->
+<section
+    id="privacy-contents"
+    class="privacy-card privacy-contents"
+    aria-labelledby="privacy-contents-title">
+
+  <h2 id="privacy-contents-title">
+    Contents
+  </h2>
+
+  <nav aria-label="Privacy Policy contents">
+
+    <ol class="privacy-contents-list">
+
+      <li>
+        <a href="#information-collected-title">
+          Information We Collect
+        </a>
+      </li>
+
+      <li>
+        <a href="#cookies-title">
+          Cookies
+        </a>
+      </li>
+
+      <li>
+        <a href="#information-use-title">
+          How Your Information Is Used
+        </a>
+      </li>
+
+      <li>
+        <a href="#third-party-title">
+          Third-Party Services
+        </a>
+      </li>
+
+      <li>
+        <a href="#retention-title">
+          Data Retention
+        </a>
+      </li>
+
+      <li>
+        <a href="#security-title">
+          Data Security
+        </a>
+      </li>
+
+      <li>
+        <a href="#rights-title">
+          Your Rights
+        </a>
+      </li>
+
+      <li>
+        <a href="#external-links-title">
+          External Links
+        </a>
+      </li>
+
+      <li>
+        <a href="#changes-title">
+          Changes to This Privacy Policy
+        </a>
+      </li>
+
+      <li>
+        <a href="#privacy-contact-title">
+          Contact
+        </a>
+      </li>
+
+    </ol>
+
+  </nav>
+
+</section>
+<!-- End Privacy Policy Contents -->
 
     <!-- Information We Collect -->
     <section
@@ -187,6 +279,12 @@ require __DIR__ . '/includes/components/component-header.php';
         and security.
       </p>
 
+		<p class="privacy-return-to-contents">
+  <a href="#privacy-contents">
+    Return to Table of Contents
+  </a>
+</p>
+
     </section>
     <!-- End Information We Collect -->
 
@@ -214,6 +312,12 @@ require __DIR__ . '/includes/components/component-header.php';
         You can configure your browser to refuse cookies, although some
         website features may not function as intended.
       </p>
+
+		<p class="privacy-return-to-contents">
+  <a href="#privacy-contents">
+    Return to Table of Contents
+  </a>
+</p>
 
     </section>
     <!-- End Cookies -->
@@ -243,6 +347,12 @@ require __DIR__ . '/includes/components/component-header.php';
       <p>
         <strong>Your information is not sold to third parties.</strong>
       </p>
+
+		<p class="privacy-return-to-contents">
+  <a href="#privacy-contents">
+    Return to Table of Contents
+  </a>
+</p>
 
     </section>
     <!-- End How Your Information Is Used -->
@@ -277,6 +387,12 @@ require __DIR__ . '/includes/components/component-header.php';
         how they process information.
       </p>
 
+		<p class="privacy-return-to-contents">
+  <a href="#privacy-contents">
+    Return to Table of Contents
+  </a>
+</p>
+
     </section>
     <!-- End Third-Party Services -->
 
@@ -295,6 +411,12 @@ require __DIR__ . '/includes/components/component-header.php';
         maintain business records, comply with legal obligations, or
         protect the security of the website.
       </p>
+
+		<p class="privacy-return-to-contents">
+  <a href="#privacy-contents">
+    Return to Table of Contents
+  </a>
+</p>
 
     </section>
     <!-- End Data Retention -->
@@ -318,6 +440,12 @@ require __DIR__ . '/includes/components/component-header.php';
         Internet or storing electronic data can be guaranteed to be
         completely secure.
       </p>
+
+		<p class="privacy-return-to-contents">
+  <a href="#privacy-contents">
+    Return to Table of Contents
+  </a>
+</p>
 
     </section>
     <!-- End Data Security -->
@@ -358,6 +486,12 @@ require __DIR__ . '/includes/components/component-header.php';
         provided below.
       </p>
 
+		<p class="privacy-return-to-contents">
+  <a href="#privacy-contents">
+    Return to Table of Contents
+  </a>
+</p>
+
     </section>
     <!-- End Your Rights -->
 
@@ -381,6 +515,12 @@ require __DIR__ . '/includes/components/component-header.php';
         practices or content of third-party websites.
       </p>
 
+		<p class="privacy-return-to-contents">
+  <a href="#privacy-contents">
+    Return to Table of Contents
+  </a>
+</p>
+
     </section>
     <!-- End External Links -->
 
@@ -403,6 +543,12 @@ require __DIR__ . '/includes/components/component-header.php';
         The “Last Updated” date at the top of this page indicates when
         revisions were most recently made.
       </p>
+
+		<p class="privacy-return-to-contents">
+  <a href="#privacy-contents">
+    Return to Table of Contents
+  </a>
+</p>
 
     </section>
     <!-- End Changes -->
@@ -436,8 +582,16 @@ require __DIR__ . '/includes/components/component-header.php';
 
       <p>
         You may also submit a message through the
-        <a href="<?= e(SITE_CONTACT_PATH) ?>">contact page</a>.
+        <strong>
+          <a href="<?= e(SITE_CONTACT_PATH) ?>">contact page</a>
+        </strong>.
       </p>
+
+		<p class="privacy-return-to-contents">
+  <a href="#privacy-contents">
+    Return to Table of Contents
+  </a>
+</p>
 
     </section>
     <!-- End Contact -->
