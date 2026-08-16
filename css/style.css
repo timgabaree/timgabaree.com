@@ -1449,6 +1449,28 @@ a:hover {
   box-shadow: 0 2px 5px var(--shadow-soft);
 }
 
+.qr-code-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-code-caption {
+  margin: 3px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.qr-code-caption-link,
+.qr-code-caption-link:visited,
+.qr-code-caption-link:hover,
+.qr-code-caption-link:focus-visible {
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
+
 .contact-block {
   flex: 1;
   max-width: 80%;
@@ -1459,18 +1481,21 @@ a:hover {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0;
   font-size: 14px;
   color: var(--text-light);
 }
 
 .contact-content span + span::before {
-  content: " | ";
+  content: "|";
+  margin: 0 8px;
   color: var(--text-light);
+  font-style: normal;
 }
 
 .contact-content span {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   line-height: 1.2;
 }
 
