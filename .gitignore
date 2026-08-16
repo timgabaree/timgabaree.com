@@ -12,9 +12,11 @@
 _notes/
 **/_notes/
 
-# PHP/server logs
+# PHP/server-generated files
 error_log
 **/error_log
+.ftpquota
+**/.ftpquota
 
 # Editor and temporary files
 *.tmp

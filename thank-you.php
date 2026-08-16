@@ -100,13 +100,13 @@ require __DIR__ . '/includes/components/component-header.php';
       <div class="contact-thank-you-actions">
 
         <a
-          href="/contact"
+          href="<?= e(SITE_CONTACT_PATH) ?>"
           class="contact-thank-you-button">
           Return to Contact Page
         </a>
 
         <a
-          href="/"
+          href="<?= e(SITE_HOME_PATH) ?>"
           class="contact-thank-you-button">
           View Executive Profile
         </a>

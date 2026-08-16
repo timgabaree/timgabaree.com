@@ -151,6 +151,9 @@ const SITE_ABOUT_PATH =
 const SITE_CONTACT_PATH =
     '/contact';
 
+const SITE_CONTACT_SUBMIT_PATH =
+    '/contact-submit';
+
 const SITE_PRIVACY_PATH =
     '/privacy';
 
@@ -159,6 +162,9 @@ const SITE_THANK_YOU_PATH =
 
 const SITE_SITEMAP_PATH =
     '/sitemap.xml';
+
+const SITE_VCARD_PATH =
+    '/timgabaree.vcf';
 
 /*
 |--------------------------------------------------------------------------

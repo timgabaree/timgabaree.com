@@ -944,13 +944,13 @@ unset(
   <div class="home-navigation-buttons">
 
     <a
-      href="/about"
+      href="<?= e(SITE_ABOUT_PATH) ?>"
       class="home-navigation-button">
       About Me
     </a>
 
     <a
-      href="/contact"
+      href="<?= e(SITE_CONTACT_PATH) ?>"
       class="home-navigation-button home-navigation-button-primary">
       Continue the Conversation
     </a>

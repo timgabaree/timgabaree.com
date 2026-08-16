@@ -242,14 +242,24 @@ require_once __DIR__ .
 
 <link
   rel="preload"
-  href="/fonts/Roboto-Regular.woff2"
+  href="<?= e(
+      asset(
+          '/fonts/Roboto-Regular.woff2',
+          VERSION_FONTS
+      )
+  ) ?>"
   as="font"
   type="font/woff2"
   crossorigin>
 
 <link
   rel="preload"
-  href="/fonts/Roboto-Bold.woff2"
+  href="<?= e(
+      asset(
+          '/fonts/Roboto-Bold.woff2',
+          VERSION_FONTS
+      )
+  ) ?>"
   as="font"
   type="font/woff2"
   crossorigin>

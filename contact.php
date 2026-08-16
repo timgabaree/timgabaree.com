@@ -191,7 +191,7 @@ require __DIR__ . '/includes/components/component-header.php';
         <div class="contact-actions">
 
           <a
-            href="/timgabaree.vcf"
+            href="<?= e(SITE_VCARD_PATH) ?>"
             class="contact-action contact-action-primary">
 
             <span
@@ -445,7 +445,7 @@ require __DIR__ . '/includes/components/component-header.php';
 
       <form
         class="contact-contact-form"
-        action="/contact-submit"
+        action="<?= e(SITE_CONTACT_SUBMIT_PATH) ?>"
         method="post"
         accept-charset="UTF-8"
         <?php if ($formStatusMessage !== ''): ?>
@@ -620,7 +620,7 @@ require __DIR__ . '/includes/components/component-header.php';
             sensitive information.
 
             <a
-              href="/privacy"
+              href="<?= e(SITE_PRIVACY_PATH) ?>"
               target="_blank"
               rel="noopener noreferrer">
               View the Privacy Policy.
@@ -655,7 +655,7 @@ require __DIR__ . '/includes/components/component-header.php';
     </p>
 
     <a
-      href="/contact"
+      href="<?= e(SITE_CONTACT_PATH) ?>"
       aria-label="Open Tim Gabaree’s contact page">
 
       <?= siteImage('qr_code') ?>
