@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------
-# Canonical Redirects and Extensionless PHP URLs
+# Canonical Redirects, Protected Files, and Extensionless PHP URLs
 # ----------------------------------------------------------------------
 
 Options -MultiViews
@@ -12,9 +12,9 @@ Options -MultiViews
   # Exclude Hosted Child Domains
   # --------------------------------------------------
   #
-  # The RGE document root also contains other hosted domains.
-  # Stop RGE-specific rewrite processing when the request host
-  # is not timgabaree.com or www.timgabaree.com.
+  # The document root also contains other hosted domains.
+  # Stop timgabaree.com-specific rewrite processing when the
+  # request host is not timgabaree.com or www.timgabaree.com.
   #
 
   RewriteCond %{HTTP_HOST} !^(?:www\.)?timgabaree\.com$ [NC]
@@ -27,11 +27,27 @@ Options -MultiViews
   RewriteRule ^errors/(403|404|500)\.php$ - [END]
 
   # --------------------------------------------------
-  # Branded 403 for Protected Application Files
+  # Protect Internal Application Files
   # --------------------------------------------------
+  #
+  # Block direct browser access to /includes while allowing
+  # PHP to include these files internally.
+  #
 
   RewriteCond %{THE_REQUEST} \s/+includes(?:/|%2F) [NC]
   RewriteRule ^includes(?:/.*)?$ /errors/403.php [END]
+
+  # --------------------------------------------------
+  # Protect Repository and Development Files
+  # --------------------------------------------------
+
+  RewriteCond %{THE_REQUEST} \s/+\.git(?:/|%2F) [NC,OR]
+  RewriteCond %{THE_REQUEST} \s/+scripts(?:/|%2F) [NC,OR]
+  RewriteCond %{THE_REQUEST} \s/+\.gitignore(?:[\s?]) [NC,OR]
+  RewriteCond %{THE_REQUEST} \s/+\.jsbeautifyrc(?:[\s?]) [NC,OR]
+  RewriteCond %{THE_REQUEST} \s/+README\.md(?:[\s?]) [NC,OR]
+  RewriteCond %{THE_REQUEST} \s/+\.ftpquota(?:[\s?]) [NC]
+  RewriteRule ^ /errors/403.php [END]
 
   # --------------------------------------------------
   # Force HTTPS and Non-WWW
@@ -74,7 +90,7 @@ Options -MultiViews
 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^ errors/404.php [L]
+  RewriteRule ^ errors/404.php [END]
 
 </IfModule>
 
