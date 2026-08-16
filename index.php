@@ -946,7 +946,7 @@ unset(
     <a
       href="<?= e(SITE_ABOUT_PATH) ?>"
       class="home-navigation-button">
-      About Me
+      About
     </a>
 
     <a
@@ -978,15 +978,27 @@ unset(
 
         <div class="qr-code-block">
 
-          <a
-            href="<?= e(SITE_CONTACT_PATH) ?>"
-            aria-label="Open Tim Gabaree’s contact page">
+  <div class="qr-code-stack">
 
-            <?= siteImage('qr_code') ?>
+    <a
+      href="<?= e(SITE_CONTACT_PATH) ?>"
+      aria-label="Open Tim Gabaree’s contact page">
 
-          </a>
+      <?= siteImage('qr_code') ?>
 
-        </div>
+    </a>
+
+    <p class="qr-code-caption">
+      <a
+        class="qr-code-caption-link"
+        href="<?= e(SITE_CONTACT_PATH) ?>">
+        Scan or click to connect
+      </a>
+    </p>
+
+  </div>
+
+</div>
 
         <div class="contact-block">
 

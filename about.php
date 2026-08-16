@@ -103,7 +103,7 @@ require __DIR__ . '/includes/components/component-header.php';
       <div class="about-author">
 
         <h1 id="about-title">
-          About Tim
+          About
         </h1>
 
         <p>
@@ -306,16 +306,27 @@ require __DIR__ . '/includes/components/component-header.php';
 
       <div class="qr-code-block">
 
-        <a
-          href="<?= e(SITE_CONTACT_PATH) ?>"
-          aria-label="Open Tim Gabaree’s contact page">
+  <div class="qr-code-stack">
 
-          <?= siteImage('qr_code') ?>
+    <a
+      href="<?= e(SITE_CONTACT_PATH) ?>"
+      aria-label="Open Tim Gabaree’s contact page">
 
-        </a>
+      <?= siteImage('qr_code') ?>
 
-      </div>
+    </a>
 
+    <p class="qr-code-caption">
+      <a
+        class="qr-code-caption-link"
+        href="<?= e(SITE_CONTACT_PATH) ?>">
+        Scan or click to connect
+      </a>
+    </p>
+
+  </div>
+
+</div>
       <address class="contact-content">
 
         <span>
