@@ -335,9 +335,9 @@ a:hover {
 
 .intro-links {
   background-color: var(--brand-blue);
-  color: var(--white) !important;
+  color: var(--white);
   text-align: center;
-  text-decoration: none !important;
+  text-decoration: none;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -345,7 +345,7 @@ a:hover {
 
 .intro-links:hover {
   background-color: var(--accent-hover);
-  color: var(--white) !important;
+  color: var(--white);
 }
 
 .intro-main-text-block .intro-cta-text {
@@ -361,7 +361,7 @@ a:hover {
   margin-top: 0.75rem;
   padding: 4px 24px;
   background: var(--brand-blue);
-  color: var(--white) !important;
+  color: var(--white);
   text-decoration: none;
   border: 2px solid var(--brand-blue);
   border-radius: 999px;
@@ -374,7 +374,7 @@ a:hover {
 .primary-cta-button:hover, .primary-cta-button:focus {
   background: var(--brand-blue-hover);
   border-color: var(--brand-blue-hover);
-  color: var(--white) !important;
+  color: var(--white);
   text-decoration: none;
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
@@ -1422,8 +1422,8 @@ a:hover {
 .qr-code-caption-link:visited,
 .qr-code-caption-link:hover,
 .qr-code-caption-link:focus-visible {
-  color: var(--white) !important;
-  text-decoration: none !important;
+  color: var(--white);
+  text-decoration: none;
 }
 
 .contact-block {
@@ -2039,10 +2039,10 @@ button.contact-action {
   line-height: 1.65;
 }
 
-.contact-thank-you-lead {
+.contact-thank-you-card .contact-thank-you-lead {
   margin-bottom: 22px;
-  color: var(--text-dark) !important;
-  font-size: 20px !important;
+  color: var(--text-dark);
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -2588,16 +2588,12 @@ button.contact-action {
     font-size: 1.1em;
   }
 
-  .contact-headline-item::before {
-    content: none !important;
-  }
-
   .contact-headline-item + .contact-headline-item::before {
-    content: none !important;
+    content: none;
   }
 
   .contact-headline-item-secondary {
-    margin-top: -8px;
+    margin-top: -6px;
   }
 }
 
@@ -2965,8 +2961,8 @@ button.contact-action {
     line-height: 1.55;
   }
 
-  .contact-thank-you-lead {
-    font-size: 18px !important;
+  .contact-thank-you-card .contact-thank-you-lead {
+    font-size: 18px;
   }
 
   .contact-thank-you-actions {
