@@ -147,11 +147,11 @@ require __DIR__ . '/includes/components/component-header.php';
 ) ?>
 
         <p class="contact-location">
-          Chicago
-          <span aria-hidden="true"> • </span>
           Washington, DC
           <span aria-hidden="true"> • </span>
           New York
+          <span aria-hidden="true"> • </span>
+          Chicago
         </p>
 
             </div>
@@ -168,19 +168,27 @@ require __DIR__ . '/includes/components/component-header.php';
 
         <p class="contact-headline">
 
-          <span class="contact-headline-item">
-            Portfolio CIO
-          </span>
+  <span class="contact-headline-line">
 
-          <span class="contact-headline-item">
-            Technology Value Creation
-          </span>
+    <span class="contact-headline-item">
+      Portfolio CIO
+    </span>
 
-          <span class="contact-headline-item">
-            Enterprise Performance
-          </span>
+    <span class="contact-headline-item">
+      Technology Value Creation
+    </span>
 
-        </p>
+  </span>
+
+  <span class="contact-headline-line">
+
+    <span class="contact-headline-item contact-headline-item-secondary">
+      Enterprise Performance
+    </span>
+
+  </span>
+
+</p>
 
         <p class="contact-summary">
           Technology and operations executive helping organizations improve
