@@ -5,19 +5,19 @@
 
   <meta
     http-equiv="refresh"
-    content="0; url=/errors/404">
+    content="0; url=/errors/500">
 
   <meta
     name="robots"
     content="noindex, nofollow">
 
-  <title>Page Not Found</title>
+  <title>Server Error</title>
 </head>
 
 <body>
 
   <p>
-    <a href="/errors/404">
+    <a href="/errors/500">
       Continue
     </a>
   </p>

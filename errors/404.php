@@ -34,11 +34,7 @@ $robots =
     'noindex, follow';
 
 $canonicalUrl =
-    SITE_URL .
-    '/404';
-
-require dirname(__DIR__) .
-    '/includes/schema/schema-error.php';
+    '';
 
 require dirname(__DIR__) .
     '/includes/components/component-head.php';

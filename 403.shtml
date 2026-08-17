@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+
   <meta
     http-equiv="refresh"
     content="0; url=/errors/403">
 
-  <title>Access Denied</title>
+  <meta
+    name="robots"
+    content="noindex, nofollow">
 
-  <link
-    rel="canonical"
-    href="/errors/403">
+  <title>Access Denied</title>
 </head>
 
 <body>

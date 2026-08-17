@@ -84,9 +84,13 @@ require_once __DIR__ .
   name="robots"
   content="<?= e($robots) ?>">
 
+<?php if ($canonicalUrl !== ''): ?>
+
 <link
   rel="canonical"
   href="<?= e($canonicalUrl) ?>">
+
+<?php endif; ?>
 
 <!-- ==========================================================
      Open Graph
@@ -112,9 +116,13 @@ require_once __DIR__ .
   property="og:description"
   content="<?= e($ogDescription) ?>">
 
+<?php if ($canonicalUrl !== ''): ?>
+
 <meta
   property="og:url"
   content="<?= e($canonicalUrl) ?>">
+
+<?php endif; ?>
 
 <meta
   property="og:image"

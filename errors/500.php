@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 require_once dirname(__DIR__) .
-
     '/includes/bootstrap.php';
 
 http_response_code(
@@ -20,7 +19,7 @@ $errorTitle =
     'Something Went Wrong';
 
 $errorMessage =
-    'The website encountered an unexpected error.';
+    'The website encountered an unexpected internal server error.';
 
 $errorSuggestion =
     'Please try again shortly. If the problem continues, you can contact Tim.';
@@ -29,17 +28,13 @@ $pageTitle =
     'Server Error | Tim Gabaree';
 
 $metaDescription =
-    'An unexpected server error occurred on timgabaree.com.';
+    'An unexpected internal server error occurred on timgabaree.com.';
 
 $robots =
     'noindex, nofollow';
 
 $canonicalUrl =
-    SITE_URL .
-    '/500';
-
-require dirname(__DIR__) .
-    '/includes/schema/schema-error.php';
+    '';
 
 require dirname(__DIR__) .
     '/includes/components/component-head.php';
