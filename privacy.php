@@ -76,20 +76,21 @@ $privacyModifiedDisplay =
 
 /*
 |--------------------------------------------------------------------------
-| Schema
+| Page Includes
 |--------------------------------------------------------------------------
 */
 
-require __DIR__ . '/includes/schema/schema-privacy.php';
+require_once __DIR__ .
+    '/includes/components/component-head-defaults.php';
 
-/*
-|--------------------------------------------------------------------------
-| Page Components
-|--------------------------------------------------------------------------
-*/
+require __DIR__ .
+    '/includes/schema/schema-privacy.php';
 
-require __DIR__ . '/includes/components/component-head.php';
-require __DIR__ . '/includes/components/component-header.php';
+require __DIR__ .
+    '/includes/components/component-head.php';
+
+require __DIR__ .
+    '/includes/components/component-header.php';
 
 ?>
 

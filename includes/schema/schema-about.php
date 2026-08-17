@@ -149,35 +149,6 @@ $aboutPageSchema = [
 $personSchema =
     buildPersonSchema();
 
-$personSchema['spouse'] = [
-    '@type' =>
-        'Person',
-
-    '@id' =>
-        'https://carriegabaree.com/#person',
-
-    'name' =>
-        'Carrie Gabaree',
-
-    'url' =>
-        'https://carriegabaree.com/',
-
-    'sameAs' => [
-        'https://www.linkedin.com/in/carriegabaree',
-    ],
-];
-
-$personSchema['affiliation'] = [
-    '@type' =>
-        'Organization',
-
-    'name' =>
-        'RGE Solutions LLC',
-
-    'url' =>
-        'https://rgesol.com/',
-];
-
 $personSchema['mainEntityOfPage'] = [
     '@id' =>
         SITE_ABOUT_URL .

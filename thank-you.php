@@ -57,9 +57,17 @@ $twitterDescription =
 |--------------------------------------------------------------------------
 */
 
-require __DIR__ . '/includes/schema/schema-thank-you.php';
-require __DIR__ . '/includes/components/component-head.php';
-require __DIR__ . '/includes/components/component-header.php';
+require_once __DIR__ .
+    '/includes/components/component-head-defaults.php';
+
+require __DIR__ .
+    '/includes/schema/schema-thank-you.php';
+
+require __DIR__ .
+    '/includes/components/component-head.php';
+
+require __DIR__ .
+    '/includes/components/component-header.php';
 
 ?>
 

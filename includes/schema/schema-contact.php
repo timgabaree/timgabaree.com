@@ -98,17 +98,6 @@ $contactPageSchema = [
 $personSchema =
     buildPersonSchema();
 
-$personSchema['affiliation'] = [
-    '@type' =>
-        'Organization',
-
-    'name' =>
-        'RGE Solutions LLC',
-
-    'url' =>
-        'https://rgesol.com/',
-];
-
 $personSchema['mainEntityOfPage'] = [
     '@id' =>
         SITE_CONTACT_URL .

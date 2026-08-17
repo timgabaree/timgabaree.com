@@ -45,7 +45,7 @@ $preloadImageKey =
 */
 
 $ogType =
-    'profile';
+    'website';
 
 $ogTitle =
     'Connect with Tim Gabaree';
@@ -111,9 +111,17 @@ $csrfToken =
 |--------------------------------------------------------------------------
 */
 
-require __DIR__ . '/includes/schema/schema-contact.php';
-require __DIR__ . '/includes/components/component-head.php';
-require __DIR__ . '/includes/components/component-header.php';
+require_once __DIR__ .
+    '/includes/components/component-head-defaults.php';
+
+require __DIR__ .
+    '/includes/schema/schema-contact.php';
+
+require __DIR__ .
+    '/includes/components/component-head.php';
+
+require __DIR__ .
+    '/includes/components/component-header.php';
 
 ?>
 

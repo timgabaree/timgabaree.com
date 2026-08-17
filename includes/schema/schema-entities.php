@@ -143,5 +143,145 @@ function buildPersonSchema(): array
 
         'sameAs' =>
             SITE_SOCIAL_PROFILES,
+
+        'spouse' => [
+            '@type' =>
+                'Person',
+
+            '@id' =>
+                'https://carriegabaree.com/#person',
+
+            'name' =>
+                'Carrie Gabaree',
+
+            'url' =>
+                'https://carriegabaree.com/',
+
+            'sameAs' => [
+                'https://www.linkedin.com/in/carriegabaree',
+            ],
+        ],
+
+        'affiliation' => [
+            '@type' =>
+                'Organization',
+
+            'name' =>
+                'RGE Solutions LLC',
+
+            'url' =>
+                'https://rgesol.com/',
+        ],
+
+        'memberOf' => [
+            [
+                '@type' =>
+                    'Organization',
+
+                'name' =>
+                    'Private Directors Association',
+            ],
+
+            [
+                '@type' =>
+                    'Organization',
+
+                'name' =>
+                    'IEEE',
+            ],
+
+            [
+                '@type' =>
+                    'Organization',
+
+                'name' =>
+                    'ISC2',
+            ],
+
+            [
+                '@type' =>
+                    'Organization',
+
+                'name' =>
+                    'Project Management Institute',
+            ],
+        ],
+
+        'alumniOf' => [
+            [
+                '@type' =>
+                    'CollegeOrUniversity',
+
+                'name' =>
+                    'Purdue University Global',
+            ],
+
+            [
+                '@type' =>
+                    'CollegeOrUniversity',
+
+                'name' =>
+                    'University of Illinois Springfield',
+            ],
+        ],
+
+        'hasCredential' => [
+            [
+                '@type' =>
+                    'EducationalOccupationalCredential',
+
+                'name' =>
+                    'Master of Business Administration',
+            ],
+
+            [
+                '@type' =>
+                    'EducationalOccupationalCredential',
+
+                'name' =>
+                    'Certified Information Systems Security Professional',
+            ],
+
+            [
+                '@type' =>
+                    'EducationalOccupationalCredential',
+
+                'name' =>
+                    'Project Management Professional',
+            ],
+
+            [
+                '@type' =>
+                    'EducationalOccupationalCredential',
+
+                'name' =>
+                    'Wharton Corporate Governance Certificate',
+            ],
+        ],
+
+        'knowsAbout' => [
+            'Technology Value Creation',
+            'Enterprise Performance',
+            'Technology Governance',
+            'Corporate Governance',
+            'Operating Model Transformation',
+            'Technology Advisory',
+            'Private Equity Portfolio Operations',
+            'Post-Acquisition Integration',
+            'Cybersecurity',
+            'Enterprise Infrastructure',
+            'Cloud Computing',
+            'Artificial Intelligence',
+            'AI Strategy',
+            'Vendor Rationalization',
+            'Program Recovery',
+            'Digital Transformation',
+            'Technology Strategy',
+            'Enterprise Architecture',
+        ],
+
+        'knowsLanguage' => [
+            'en',
+        ],
     ];
 }
