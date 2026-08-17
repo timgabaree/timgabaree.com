@@ -333,7 +333,7 @@ a:hover {
    6. Shared Buttons and Links
 ===================================================== */
 
-.calendly-link, .intro-links {
+.intro-links {
   background-color: var(--brand-blue);
   color: var(--white) !important;
   text-align: center;
@@ -343,26 +343,7 @@ a:hover {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.calendly-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 15px;
-}
-
-.calendly-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 25px;
-  padding: 0;
-  white-space: nowrap;
-  font-size: 16px;
-  border-radius: 4px;
-}
-
-.calendly-link:hover, .intro-links:hover {
+.intro-links:hover {
   background-color: var(--accent-hover);
   color: var(--white) !important;
 }
@@ -498,27 +479,6 @@ a:hover {
   line-height: 1.8;
   color: var(--text-dark);
   text-align: left;
-}
-
-.intro-main-text-block2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.intro-main-text-block2 p {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 100%;
-  margin: 5px 0 6px;
-  position: relative;
-  text-align: center;
-}
-
-.intro-main-text-block2:first-of-type {
-  margin-top: 12px;
 }
 
 .intro-links-heading {
@@ -1335,11 +1295,6 @@ a:hover {
   color: var(--text-light);
   text-align: center;
   text-transform: uppercase;
-}
-
-.about-return {
-  text-align: center;
-  margin: 28px 0 0;
 }
 
 /* =====================================================
@@ -2422,13 +2377,6 @@ button.contact-action {
    24. Footer
 ===================================================== */
 
-.footer-horizontal-rule {
-  width: 100%;
-  margin: 5px 0;
-  border: none;
-  border-top: 1px solid var(--border-color);
-}
-
 .footer-disclaimer {
   position: relative;
   z-index: 2;
@@ -2437,11 +2385,6 @@ button.contact-action {
   font-size: 14px;
   color: var(--text-muted);
   text-align: center;
-}
-
-.trust-seal {
-  text-align: center;
-  margin-top: 10px;
 }
 
 /* =====================================================
@@ -2551,11 +2494,6 @@ button.contact-action {
     flex: 1 1 auto;
     margin-left: 0;
     text-align: center;
-  }
-
-  .calendly-wrapper {
-    order: 3;
-    margin: 0;
   }
 
   .nav-link-container {
@@ -2717,15 +2655,6 @@ button.contact-action {
   .intro-text-content-block {
     width: 100%;
     text-align: center;
-  }
-
-  .intro-main-text-block2 p {
-    margin-bottom: 35px;
-    font-size: 20px;
-  }
-
-  .intro-main-text-block2:first-of-type {
-    margin-top: 24px;
   }
 
   .intro-links-block {
