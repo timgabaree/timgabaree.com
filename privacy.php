@@ -62,10 +62,17 @@ $preloadImageKey =
 */
 
 $privacyModifiedIso =
-    '2026-08-07';
+    pageModified(
+        $page
+    );
 
 $privacyModifiedDisplay =
-    'August 7, 2026';
+    date(
+        'F j, Y',
+        strtotime(
+            $privacyModifiedIso
+        )
+    );
 
 /*
 |--------------------------------------------------------------------------
