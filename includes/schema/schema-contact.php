@@ -142,7 +142,7 @@ $contactPointSchema = [
         SITE_CONTACT_URL,
 
     'availableLanguage' => [
-        'English',
+        'en',
     ],
 ];
 
