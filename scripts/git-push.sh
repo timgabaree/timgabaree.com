@@ -11,6 +11,32 @@ cd "$(dirname "$0")/.." || {
 }
 
 echo
+echo "Regenerating sitemap..."
+
+if ! php scripts/generate-sitemap.php; then
+  echo "Sitemap generation failed."
+  exit 1
+fi
+
+if command -v xmllint >/dev/null 2>&1; then
+  echo
+  echo "Validating sitemap XML..."
+
+  if ! xmllint --noout sitemap.xml; then
+    echo "Sitemap XML validation failed."
+    exit 1
+  fi
+fi
+
+echo
+echo "Checking working tree formatting..."
+
+if ! git diff --check; then
+  echo "git diff --check failed."
+  exit 1
+fi
+
+echo
 echo "Current Git status:"
 echo "-------------------"
 git status --short
