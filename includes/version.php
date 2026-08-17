@@ -54,9 +54,6 @@ const FRAMEWORK_BUILD_DATE =
 |--------------------------------------------------------------------------
 */
 
-const SITE_VERSION =
-    '1.0.0';
-
 const SITE_RELEASE_DATE =
     '2026-08-07';
 

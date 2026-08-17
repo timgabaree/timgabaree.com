@@ -129,48 +129,6 @@ function rateLimitAllows(
 
 /*
 |--------------------------------------------------------------------------
-| Remaining Wait Time
-|--------------------------------------------------------------------------
-*/
-
-/**
- * Return the number of seconds remaining before the action is allowed.
- */
-function rateLimitSecondsRemaining(
-    string $action,
-    int $minimumSeconds
-): int {
-
-    if (
-        $minimumSeconds <= 0
-    ) {
-        return 0;
-    }
-
-    $lastTimestamp =
-        rateLimitLastTimestamp(
-            $action
-        );
-
-    if (
-        $lastTimestamp === null
-    ) {
-        return 0;
-    }
-
-    $elapsedSeconds =
-        time() -
-        $lastTimestamp;
-
-    return max(
-        0,
-        $minimumSeconds -
-        $elapsedSeconds
-    );
-}
-
-/*
-|--------------------------------------------------------------------------
 | Record Action
 |--------------------------------------------------------------------------
 */
@@ -190,26 +148,4 @@ function rateLimitRecord(
     ] =
         $timestamp ??
         time();
-}
-
-/*
-|--------------------------------------------------------------------------
-| Clear Rate-Limit Record
-|--------------------------------------------------------------------------
-*/
-
-/**
- * Clear a recorded rate-limit timestamp.
- */
-function rateLimitClear(
-    string $action
-): void {
-
-    unset(
-        $_SESSION[
-            rateLimitSessionKey(
-                $action
-            )
-        ]
-    );
 }
