@@ -35,6 +35,7 @@ $bodyClass =
 ?>
 
 <!-- Page Body -->
+
 <body<?php if ($bodyClass !== ''): ?> class="<?= e($bodyClass) ?>"<?php endif; ?>>
 
 <?php

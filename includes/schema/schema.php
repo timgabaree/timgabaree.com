@@ -75,7 +75,9 @@ $structuredData = [
 ?>
 
 <!-- Structured Data -->
+
 <script type="application/ld+json">
 <?= jsonForHtml($structuredData) ?>
 </script>
+
 <!-- End Structured Data -->

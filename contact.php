@@ -129,30 +129,31 @@ require __DIR__ .
   id="main-content"
   class="executive-contact-page">
 
-<?= siteImage(
-    'background',
-    [
-        'class' =>
-            'contact-background-image',
-    ]
-) ?>
+  <?= siteImage(
+      'background',
+      [
+          'class' =>
+              'contact-background-image',
+      ]
+  ) ?>
 
 <!-- Executive Contact Section -->
-<section
-  class="executive-contact-section"
-  aria-labelledby="contact-page-title">
 
-  <div class="executive-contact-card">
+  <section
+    class="executive-contact-section"
+    aria-labelledby="contact-page-title">
+
+    <div class="executive-contact-card">
 
       <div class="contact-profile">
 
         <?= siteImage(
-    'profile',
-    [
-        'class' =>
-            'contact-profile-image',
-    ]
-) ?>
+            'profile',
+            [
+                'class' =>
+                    'contact-profile-image',
+            ]
+        ) ?>
 
         <p class="contact-location">
           Washington, DC
@@ -162,7 +163,7 @@ require __DIR__ .
           Chicago
         </p>
 
-            </div>
+      </div>
 
       <div class="executive-contact-content">
 
@@ -176,27 +177,27 @@ require __DIR__ .
 
         <p class="contact-headline">
 
-  <span class="contact-headline-line">
+          <span class="contact-headline-line">
 
-    <span class="contact-headline-item">
-      Portfolio CIO
-    </span>
+            <span class="contact-headline-item">
+              Portfolio CIO
+            </span>
 
-    <span class="contact-headline-item">
-      Technology Value Creation
-    </span>
+            <span class="contact-headline-item">
+              Technology Value Creation
+            </span>
 
-  </span>
+          </span>
 
-  <span class="contact-headline-line">
+          <span class="contact-headline-line">
 
-    <span class="contact-headline-item contact-headline-item-secondary">
-      Enterprise Performance
-    </span>
+            <span class="contact-headline-item contact-headline-item-secondary">
+              Enterprise Performance
+            </span>
 
-  </span>
+          </span>
 
-</p>
+        </p>
 
         <p class="contact-summary">
           Technology and operations executive helping organizations improve
@@ -322,104 +323,108 @@ require __DIR__ .
     </div>
 
   </section>
-  <!-- End Executive Contact Section -->
 
-  <!-- Executive Portfolio Section -->
-<section
-  class="contact-resources"
-  aria-labelledby="contact-resources-title">
+<!-- End Executive Contact Section -->
 
-  <h2
-    id="contact-resources-title"
-    class="contact-resources-heading">
-    Executive Portfolio
-  </h2>
+<!-- Executive Portfolio Section -->
 
-  <p class="contact-resources-description">
-    Executive and board materials highlighting my leadership experience,
-    governance philosophy, and enterprise technology strategy.
-  </p>
+  <section
+    class="contact-resources"
+    aria-labelledby="contact-resources-title">
 
-  <div class="contact-resource-grid">
+    <h2
+      id="contact-resources-title"
+      class="contact-resources-heading">
+      Executive Portfolio
+    </h2>
 
-    <a
-      href="<?= e(DOCSEND_EXECUTIVE_PROFILE) ?>"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="contact-resource-link">
+    <p class="contact-resources-description">
+      Executive and board materials highlighting my leadership experience,
+      governance philosophy, and enterprise technology strategy.
+    </p>
 
-      Executive Profile
+    <div class="contact-resource-grid">
 
-      <span class="visually-hidden">
-        — opens in a new tab
-      </span>
+      <a
+        href="<?= e(DOCSEND_EXECUTIVE_PROFILE) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-resource-link">
 
-    </a>
+        Executive Profile
 
-    <a
-      href="<?= e(DOCSEND_RESUME) ?>"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="contact-resource-link">
+        <span class="visually-hidden">
+          — opens in a new tab
+        </span>
 
-      Executive Résumé
+      </a>
 
-      <span class="visually-hidden">
-        — opens in a new tab
-      </span>
+      <a
+        href="<?= e(DOCSEND_RESUME) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-resource-link">
 
-    </a>
+        Executive Résumé
 
-    <a
-      href="<?= e(DOCSEND_EXECUTIVE_BIO) ?>"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="contact-resource-link">
+        <span class="visually-hidden">
+          — opens in a new tab
+        </span>
 
-      Executive Biography
+      </a>
 
-      <span class="visually-hidden">
-        — opens in a new tab
-      </span>
+      <a
+        href="<?= e(DOCSEND_EXECUTIVE_BIO) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-resource-link">
 
-    </a>
+        Executive Biography
 
-    <a
-      href="<?= e(DOCSEND_BOARD_RESUME) ?>"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="contact-resource-link">
+        <span class="visually-hidden">
+          — opens in a new tab
+        </span>
 
-      Board Résumé
+      </a>
 
-      <span class="visually-hidden">
-        — opens in a new tab
-      </span>
+      <a
+        href="<?= e(DOCSEND_BOARD_RESUME) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-resource-link">
 
-    </a>
+        Board Résumé
 
-    <a
-      href="<?= e(DOCSEND_BOARD_BIO) ?>"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="contact-resource-link">
+        <span class="visually-hidden">
+          — opens in a new tab
+        </span>
 
-      Board Biography
+      </a>
 
-      <span class="visually-hidden">
-        — opens in a new tab
-      </span>
+      <a
+        href="<?= e(DOCSEND_BOARD_BIO) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-resource-link">
 
-    </a>
+        Board Biography
 
-  </div>
+        <span class="visually-hidden">
+          — opens in a new tab
+        </span>
 
-</section>
+      </a>
+
+    </div>
+
+  </section>
+
 <!-- End Executive Portfolio Section -->
 
   <?php if ($formStatusMessage !== ''): ?>
 
-  <!-- Contact Form Status -->
+<!-- Contact Form Status -->
+
   <div
     id="contact-form-status"
     class="contact-form-status"
@@ -430,11 +435,13 @@ require __DIR__ .
     </p>
 
   </div>
-  <!-- End Contact Form Status -->
+
+<!-- End Contact Form Status -->
 
   <?php endif; ?>
 
-  <!-- Contact Form Section -->
+<!-- Contact Form Section -->
+
   <section
     class="contact-conversation-section"
     aria-labelledby="contact-conversation-title">
@@ -470,7 +477,12 @@ require __DIR__ .
         aria-describedby="contact-required-fields"
         <?php endif; ?>>
 
-        <!-- CSRF protection -->
+<!--
+|--------------------------------------------------------------------------
+| CSRF Protection
+|--------------------------------------------------------------------------
+-->
+
         <input
           type="hidden"
           name="csrf_token"
@@ -482,7 +494,12 @@ require __DIR__ .
           Fields marked with an asterisk are required.
         </p>
 
-        <!-- Honeypot field for spam protection -->
+<!--
+|--------------------------------------------------------------------------
+| Honeypot Spam Protection
+|--------------------------------------------------------------------------
+-->
+
         <div
           class="contact-form-honeypot"
           aria-hidden="true">
@@ -653,9 +670,11 @@ require __DIR__ .
     </div>
 
   </section>
-  <!-- End Contact Form Section -->
 
-  <!-- Mobile QR Code Section -->
+<!-- End Contact Form Section -->
+
+<!-- Mobile QR Code Section -->
+
   <section
     class="contact-qr-section"
     aria-labelledby="contact-qr-title">
@@ -679,9 +698,11 @@ require __DIR__ .
     </a>
 
   </section>
-  <!-- End Mobile QR Code Section -->
 
-  <!-- Related Website Section -->
+<!-- End Mobile QR Code Section -->
+
+<!-- Related Website Section -->
+
   <section
     class="contact-related-site"
     aria-labelledby="contact-related-site-title">
@@ -696,7 +717,7 @@ require __DIR__ .
       Looking for Carrie Gabaree, museum curator and public historian?
       <br>
 
-      Visit 
+      Visit
 
       <a
         href="https://carriegabaree.com/"
@@ -704,16 +725,27 @@ require __DIR__ .
         rel="noopener noreferrer">
         carriegabaree.com
         <span class="visually-hidden">
-          — opens in a new tab</span>
-		</a>
+          — opens in a new tab
+        </span>
+      </a>
     </p>
 
   </section>
-  <!-- End Related Website Section -->
+
+<!-- End Related Website Section -->
 
 </main>
 
-<!-- Calendly -->
+<!--
+|--------------------------------------------------------------------------
+| Calendly Integration
+|--------------------------------------------------------------------------
+|
+| Loads the Calendly popup widget on demand and records scheduling clicks
+| through the site data layer.
+|
+-->
+
 <script>
 function openCalendly() {
   window.dataLayer =
@@ -812,7 +844,6 @@ function openCalendly() {
   );
 }
 </script>
-<!-- End Calendly -->
 
 <?php
 

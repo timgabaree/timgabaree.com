@@ -24,11 +24,11 @@ declare(strict_types=1);
 
 const SITE_IMAGES = [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Primary Profile Image
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Primary Profile Image
+|--------------------------------------------------------------------------
+*/
 
     'profile' => [
         'path' =>
@@ -69,35 +69,35 @@ const SITE_IMAGES = [
 |--------------------------------------------------------------------------
 */
 
-'social_blogger' => [
-    'path' =>
-        '/media/social-media-blogger-icon-50x50.webp',
+    'social_blogger' => [
+        'path' =>
+            '/media/social-media-blogger-icon-50x50.webp',
 
-    'width' =>
-        50,
+        'width' =>
+            50,
 
-    'height' =>
-        50,
+        'height' =>
+            50,
 
-    'type' =>
-        'image/webp',
+        'type' =>
+            'image/webp',
 
-    'alt' =>
-        '',
+        'alt' =>
+            '',
 
-    'loading' =>
-        'lazy',
+        'loading' =>
+            'lazy',
 
-    'fetchpriority' =>
-        'auto',
+        'fetchpriority' =>
+            'auto',
 
-    'decoding' =>
-        'async',
+        'decoding' =>
+            'async',
 
-    'roles' => [
-        'content',
+        'roles' => [
+            'content',
+        ],
     ],
-],
 
 /*
 |--------------------------------------------------------------------------
@@ -105,35 +105,35 @@ const SITE_IMAGES = [
 |--------------------------------------------------------------------------
 */
 
-'social_linkedin' => [
-    'path' =>
-        '/media/social-media-linkedin-icon-50x50.webp',
+    'social_linkedin' => [
+        'path' =>
+            '/media/social-media-linkedin-icon-50x50.webp',
 
-    'width' =>
-        50,
+        'width' =>
+            50,
 
-    'height' =>
-        50,
+        'height' =>
+            50,
 
-    'type' =>
-        'image/webp',
+        'type' =>
+            'image/webp',
 
-    'alt' =>
-        '',
+        'alt' =>
+            '',
 
-    'loading' =>
-        'lazy',
+        'loading' =>
+            'lazy',
 
-    'fetchpriority' =>
-        'auto',
+        'fetchpriority' =>
+            'auto',
 
-    'decoding' =>
-        'async',
+        'decoding' =>
+            'async',
 
-    'roles' => [
-        'content',
+        'roles' => [
+            'content',
+        ],
     ],
-],
 
 /*
 |--------------------------------------------------------------------------
@@ -141,77 +141,78 @@ const SITE_IMAGES = [
 |--------------------------------------------------------------------------
 */
 
-'social_github' => [
-    'path' =>
-        '/media/social-media-github-icon-50x50.webp',
+    'social_github' => [
+        'path' =>
+            '/media/social-media-github-icon-50x50.webp',
 
-    'width' =>
-        50,
+        'width' =>
+            50,
 
-    'height' =>
-        50,
+        'height' =>
+            50,
 
-    'type' =>
-        'image/webp',
+        'type' =>
+            'image/webp',
 
-    'alt' =>
-        '',
+        'alt' =>
+            '',
 
-    'loading' =>
-        'lazy',
+        'loading' =>
+            'lazy',
 
-    'fetchpriority' =>
-        'auto',
+        'fetchpriority' =>
+            'auto',
 
-    'decoding' =>
-        'async',
+        'decoding' =>
+            'async',
 
-    'roles' => [
-        'content',
+        'roles' => [
+            'content',
+        ],
     ],
-],
+
 /*
 |--------------------------------------------------------------------------
 | Home Hover Profile Image
 |--------------------------------------------------------------------------
 */
 
-'profile_hover' => [
-    'path' =>
-        '/media/profile-pic-tim-gabaree-in-the-morning-400x534.webp',
+    'profile_hover' => [
+        'path' =>
+            '/media/profile-pic-tim-gabaree-in-the-morning-400x534.webp',
 
-    'width' =>
-        400,
+        'width' =>
+            400,
 
-    'height' =>
-        534,
+        'height' =>
+            534,
 
-    'type' =>
-        'image/webp',
+        'type' =>
+            'image/webp',
 
-    'alt' =>
-        '',
+        'alt' =>
+            '',
 
-    'loading' =>
-        'eager',
+        'loading' =>
+            'eager',
 
-    'fetchpriority' =>
-        'high',
+        'fetchpriority' =>
+            'high',
 
-    'decoding' =>
-        'async',
+        'decoding' =>
+            'async',
 
-    'roles' => [
-        'content',
-        'sitemap',
+        'roles' => [
+            'content',
+            'sitemap',
+        ],
     ],
-],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Square Profile Image
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Square Profile Image
+|--------------------------------------------------------------------------
+*/
 
     'profile_square' => [
         'path' =>
@@ -243,11 +244,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Results Background — Left
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Results Background — Left
+|--------------------------------------------------------------------------
+*/
 
     'results_left' => [
         'path' =>
@@ -280,11 +281,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Results Background — Middle
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Results Background — Middle
+|--------------------------------------------------------------------------
+*/
 
     'results_middle' => [
         'path' =>
@@ -317,11 +318,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Results Background — Right
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Results Background — Right
+|--------------------------------------------------------------------------
+*/
 
     'results_right' => [
         'path' =>
@@ -354,11 +355,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Expertise Background
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Expertise Background
+|--------------------------------------------------------------------------
+*/
 
     'expertise' => [
         'path' =>
@@ -397,36 +398,36 @@ const SITE_IMAGES = [
 |--------------------------------------------------------------------------
 */
 
-'education_uis_background' => [
-    'path' =>
-        '/media/education-background-university-of-illinois-springfield-1200x313.webp',
+    'education_uis_background' => [
+        'path' =>
+            '/media/education-background-university-of-illinois-springfield-1200x313.webp',
 
-    'width' =>
-        1200,
+        'width' =>
+            1200,
 
-    'height' =>
-        313,
+        'height' =>
+            313,
 
-    'type' =>
-        'image/webp',
+        'type' =>
+            'image/webp',
 
-    'alt' =>
-        '',
+        'alt' =>
+            '',
 
-    'loading' =>
-        'lazy',
+        'loading' =>
+            'lazy',
 
-    'fetchpriority' =>
-        'auto',
+        'fetchpriority' =>
+            'auto',
 
-    'decoding' =>
-        'async',
+        'decoding' =>
+            'async',
 
-    'roles' => [
-        'background',
-        'sitemap',
+        'roles' => [
+            'background',
+            'sitemap',
+        ],
     ],
-],
 
 /*
 |--------------------------------------------------------------------------
@@ -434,36 +435,36 @@ const SITE_IMAGES = [
 |--------------------------------------------------------------------------
 */
 
-'education_uis_logo' => [
-    'path' =>
-        '/media/education-logo-university-of-illinois-springfield-500x250.webp',
+    'education_uis_logo' => [
+        'path' =>
+            '/media/education-logo-university-of-illinois-springfield-500x250.webp',
 
-    'width' =>
-        500,
+        'width' =>
+            500,
 
-    'height' =>
-        250,
+        'height' =>
+            250,
 
-    'type' =>
-        'image/webp',
+        'type' =>
+            'image/webp',
 
-    'alt' =>
-        'University of Illinois Springfield',
+        'alt' =>
+            'University of Illinois Springfield',
 
-    'loading' =>
-        'lazy',
+        'loading' =>
+            'lazy',
 
-    'fetchpriority' =>
-        'auto',
+        'fetchpriority' =>
+            'auto',
 
-    'decoding' =>
-        'async',
+        'decoding' =>
+            'async',
 
-    'roles' => [
-        'content',
-        'sitemap',
+        'roles' => [
+            'content',
+            'sitemap',
+        ],
     ],
-],
 
 /*
 |--------------------------------------------------------------------------
@@ -471,36 +472,36 @@ const SITE_IMAGES = [
 |--------------------------------------------------------------------------
 */
 
-'education_purdue_background' => [
-    'path' =>
-        '/media/education-background-purdue-university-global-1200x444.webp',
+    'education_purdue_background' => [
+        'path' =>
+            '/media/education-background-purdue-university-global-1200x444.webp',
 
-    'width' =>
-        1200,
+        'width' =>
+            1200,
 
-    'height' =>
-        444,
+        'height' =>
+            444,
 
-    'type' =>
-        'image/webp',
+        'type' =>
+            'image/webp',
 
-    'alt' =>
-        '',
+        'alt' =>
+            '',
 
-    'loading' =>
-        'lazy',
+        'loading' =>
+            'lazy',
 
-    'fetchpriority' =>
-        'auto',
+        'fetchpriority' =>
+            'auto',
 
-    'decoding' =>
-        'async',
+        'decoding' =>
+            'async',
 
-    'roles' => [
-        'background',
-        'sitemap',
+        'roles' => [
+            'background',
+            'sitemap',
+        ],
     ],
-],
 
 /*
 |--------------------------------------------------------------------------
@@ -508,41 +509,42 @@ const SITE_IMAGES = [
 |--------------------------------------------------------------------------
 */
 
-'education_purdue_logo' => [
-    'path' =>
-        '/media/education-logo-purdue-university-global-500x137.webp',
+    'education_purdue_logo' => [
+        'path' =>
+            '/media/education-logo-purdue-university-global-500x137.webp',
 
-    'width' =>
-        500,
+        'width' =>
+            500,
 
-    'height' =>
-        137,
+        'height' =>
+            137,
 
-    'type' =>
-        'image/webp',
+        'type' =>
+            'image/webp',
 
-    'alt' =>
-        'Purdue University Global',
+        'alt' =>
+            'Purdue University Global',
 
-    'loading' =>
-        'lazy',
+        'loading' =>
+            'lazy',
 
-    'fetchpriority' =>
-        'auto',
+        'fetchpriority' =>
+            'auto',
 
-    'decoding' =>
-        'async',
+        'decoding' =>
+            'async',
 
-    'roles' => [
-        'content',
-        'sitemap',
+        'roles' => [
+            'content',
+            'sitemap',
+        ],
     ],
-],
-    /*
-    |--------------------------------------------------------------------------
-    | Personal Interest — Coffee Roasting
-    |--------------------------------------------------------------------------
-    */
+
+/*
+|--------------------------------------------------------------------------
+| Personal Interest — Coffee Roasting
+|--------------------------------------------------------------------------
+*/
 
     'interest_coffee' => [
         'path' =>
@@ -575,11 +577,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Personal Interest — Baking and Chocolatiering
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Personal Interest — Baking and Chocolatiering
+|--------------------------------------------------------------------------
+*/
 
     'interest_chocolate' => [
         'path' =>
@@ -612,11 +614,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Personal Interest — Pizza Making
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Personal Interest — Pizza Making
+|--------------------------------------------------------------------------
+*/
 
     'interest_pizza' => [
         'path' =>
@@ -649,11 +651,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Personal Interest — AI and Emerging Technology
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Personal Interest — AI and Emerging Technology
+|--------------------------------------------------------------------------
+*/
 
     'interest_technology' => [
         'path' =>
@@ -686,11 +688,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | About Family Image
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| About Family Image
+|--------------------------------------------------------------------------
+*/
 
     'about_family' => [
         'path' =>
@@ -725,11 +727,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Architecture Background
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Architecture Background
+|--------------------------------------------------------------------------
+*/
 
     'background' => [
         'path' =>
@@ -762,11 +764,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | About Gallery — Statue of Liberty
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| About Gallery — Statue of Liberty
+|--------------------------------------------------------------------------
+*/
 
     'about_liberty_family' => [
         'path' =>
@@ -799,11 +801,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | About Gallery — Ellis Island
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| About Gallery — Ellis Island
+|--------------------------------------------------------------------------
+*/
 
     'about_ellis_island' => [
         'path' =>
@@ -836,11 +838,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | About Gallery — Mount Vernon
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| About Gallery — Mount Vernon
+|--------------------------------------------------------------------------
+*/
 
     'about_mount_vernon' => [
         'path' =>
@@ -873,11 +875,11 @@ const SITE_IMAGES = [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Contact QR Code
-    |--------------------------------------------------------------------------
-    */
+/*
+|--------------------------------------------------------------------------
+| Contact QR Code
+|--------------------------------------------------------------------------
+*/
 
     'qr_code' => [
         'path' =>

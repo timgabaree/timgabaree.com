@@ -17,11 +17,11 @@ declare(strict_types=1);
 |--------------------------------------------------------------------------
 | HTML Escaping
 |--------------------------------------------------------------------------
+|
+| Escape a value for safe HTML output.
+|
 */
 
-/**
- * Escape a value for safe HTML output.
- */
 function e(
     string|int|float|null $value
 ): string {
@@ -36,19 +36,19 @@ function e(
 |--------------------------------------------------------------------------
 | Asset URLs
 |--------------------------------------------------------------------------
+|
+| Append an optional cache-busting version to a local asset path.
+|
+| Example:
+|
+| asset('/css/style.css', VERSION_CSS)
+|
+| Returns:
+|
+| /css/style.css?v=1.0.0
+|
 */
 
-/**
- * Append an optional cache-busting version to a local asset path.
- *
- * Example:
- *
- * asset('/css/style.css', VERSION_CSS)
- *
- * Returns:
- *
- * /css/style.css?v=1.0.0
- */
 function asset(
     string $path,
     string $version = ''
@@ -77,15 +77,16 @@ function asset(
 
 /*
 |--------------------------------------------------------------------------
-| Site Images
+| Site Image Retrieval
 |--------------------------------------------------------------------------
+|
+| Return a managed site image definition.
+|
+| Returns an array containing the configured image metadata and the
+| absolute image URL, or an empty array when the image is not defined.
+|
 */
 
-/**
- * Return a managed site image definition.
- *
- * @return array<string, mixed>
- */
 function getSiteImage(
     string $key
 ): array {
@@ -120,13 +121,17 @@ function getSiteImage(
     return $image;
 }
 
-/**
- * Render a managed site image.
- *
- * Page-specific values may override registry defaults.
- *
- * @param array<string, mixed> $overrides
- */
+/*
+|--------------------------------------------------------------------------
+| Site Image Rendering
+|--------------------------------------------------------------------------
+|
+| Render a managed site image.
+|
+| Page-specific values may override registry defaults.
+|
+*/
+
 function siteImage(
     string $key,
     array $overrides = []
@@ -178,7 +183,7 @@ function siteImage(
         $image['class'] ??
         '';
 
-	$extraAttributes =
+    $extraAttributes =
         $image['attributes'] ??
         [];
 
@@ -255,26 +260,26 @@ function siteImage(
             '"';
     }
 
-	if (is_array($extraAttributes)) {
-    foreach ($extraAttributes as $name => $value) {
-        if (
-            !is_string($name) ||
-            preg_match(
-                '/^[a-zA-Z_:][a-zA-Z0-9:._-]*$/',
-                $name
-            ) !== 1 ||
-            !is_scalar($value)
-        ) {
-            continue;
-        }
+    if (is_array($extraAttributes)) {
+        foreach ($extraAttributes as $name => $value) {
+            if (
+                !is_string($name) ||
+                preg_match(
+                    '/^[a-zA-Z_:][a-zA-Z0-9:._-]*$/',
+                    $name
+                ) !== 1 ||
+                !is_scalar($value)
+            ) {
+                continue;
+            }
 
-        $attributes[] =
-            e($name) .
-            '="' .
-            e((string) $value) .
-            '"';
+            $attributes[] =
+                e($name) .
+                '="' .
+                e((string) $value) .
+                '"';
+        }
     }
-}
 
     return '<img ' .
         implode(
@@ -286,18 +291,16 @@ function siteImage(
 
 /*
 |--------------------------------------------------------------------------
-| Page Metadata
+| Page Metadata Retrieval
 |--------------------------------------------------------------------------
+|
+| Return the metadata configuration for a public page.
+|
+| Returns publication and modification dates from PAGE_METADATA, with
+| SITE_RELEASE_DATE used as the fallback when metadata is unavailable.
+|
 */
 
-/**
- * Return the metadata configuration for a public page.
- *
- * @return array{
- *     published: string,
- *     modified: string
- * }
- */
 function pageMetadata(
     string $page
 ): array {
@@ -356,9 +359,15 @@ function pageMetadata(
     ];
 }
 
-/**
- * Return the publication date for a public page.
- */
+/*
+|--------------------------------------------------------------------------
+| Page Publication Date
+|--------------------------------------------------------------------------
+|
+| Return the publication date for a public page.
+|
+*/
+
 function pagePublished(
     string $page
 ): string {
@@ -368,9 +377,15 @@ function pagePublished(
     return $metadata['published'];
 }
 
-/**
- * Return the last meaningful modification date for a public page.
- */
+/*
+|--------------------------------------------------------------------------
+| Page Modification Date
+|--------------------------------------------------------------------------
+|
+| Return the last meaningful modification date for a public page.
+|
+*/
+
 function pageModified(
     string $page
 ): string {
@@ -382,17 +397,17 @@ function pageModified(
 
 /*
 |--------------------------------------------------------------------------
-| Phone Formatting
+| Telephone Link Formatting
 |--------------------------------------------------------------------------
+|
+| Convert a telephone number into a tel-link-safe value.
+|
+| Example:
+|
+| +1-773-609-0697
+|
 */
 
-/**
- * Convert a telephone number into a tel-link-safe value.
- *
- * Example:
- *
- * +1-773-609-0697
- */
 function phoneHref(
     string $phone
 ): string {
@@ -428,13 +443,19 @@ function phoneHref(
         : $digits;
 }
 
-/**
- * Format a North American telephone number for display.
- *
- * Example:
- *
- * +1-773-609-0697 becomes 773.609.0697
- */
+/*
+|--------------------------------------------------------------------------
+| Telephone Display Formatting
+|--------------------------------------------------------------------------
+|
+| Format a North American telephone number for display.
+|
+| Example:
+|
+| +1-773-609-0697 becomes 773.609.0697
+|
+*/
+
 function phoneDisplay(
     string $phone
 ): string {
@@ -488,13 +509,13 @@ function phoneDisplay(
 
 /*
 |--------------------------------------------------------------------------
-| Copyright
+| Copyright Year Range
 |--------------------------------------------------------------------------
+|
+| Return the current copyright year or year range.
+|
 */
 
-/**
- * Return the current copyright year or year range.
- */
 function copyrightYears(
     int $startYear = SITE_COPYRIGHT_START_YEAR
 ): string {
@@ -510,9 +531,15 @@ function copyrightYears(
         $currentYear;
 }
 
-/**
- * Return the complete copyright notice.
- */
+/*
+|--------------------------------------------------------------------------
+| Copyright Notice
+|--------------------------------------------------------------------------
+|
+| Return the complete copyright notice.
+|
+*/
+
 function copyrightNotice(): string
 {
     return 'Copyright © ' .
@@ -524,13 +551,13 @@ function copyrightNotice(): string
 
 /*
 |--------------------------------------------------------------------------
-| Request Helpers
+| Request Method
 |--------------------------------------------------------------------------
+|
+| Return the current request method.
+|
 */
 
-/**
- * Return the current request method.
- */
 function requestMethod(): string
 {
     $method =
@@ -542,11 +569,17 @@ function requestMethod(): string
         : '';
 }
 
-/**
- * Determine whether the request appears to originate from this site.
- *
- * This is a supplemental check and does not replace CSRF validation.
- */
+/*
+|--------------------------------------------------------------------------
+| Same-Site Request Check
+|--------------------------------------------------------------------------
+|
+| Determine whether the request appears to originate from this site.
+|
+| This is a supplemental check and does not replace CSRF validation.
+|
+*/
+
 function requestAppearsSameSite(): bool
 {
     $siteHost =
@@ -603,23 +636,28 @@ function requestAppearsSameSite(): bool
                 $siteHost;
     }
 
-    /*
-     * Some privacy tools omit both Origin and Referer.
-     * Allow the request to continue so CSRF validation can perform
-     * the primary verification.
-     */
+/*
+|--------------------------------------------------------------------------
+| Missing Origin and Referer
+|--------------------------------------------------------------------------
+|
+| Some privacy tools omit both Origin and Referer. Allow the request to
+| continue so CSRF validation can perform the primary verification.
+|
+*/
+
     return true;
 }
 
 /*
 |--------------------------------------------------------------------------
-| Form Input
+| POST String Retrieval
 |--------------------------------------------------------------------------
+|
+| Return a POST field as a trimmed string.
+|
 */
 
-/**
- * Return a POST field as a trimmed string.
- */
 function postString(
     string $key
 ): string {
@@ -635,9 +673,15 @@ function postString(
     );
 }
 
-/**
- * Normalize line endings and trim submitted text.
- */
+/*
+|--------------------------------------------------------------------------
+| Submitted Text Normalization
+|--------------------------------------------------------------------------
+|
+| Normalize line endings and trim submitted text.
+|
+*/
+
 function normalizeSubmittedText(
     string $value
 ): string {
@@ -654,9 +698,15 @@ function normalizeSubmittedText(
     return trim($value);
 }
 
-/**
- * Remove control characters that should not appear in ordinary form data.
- */
+/*
+|--------------------------------------------------------------------------
+| Control Character Removal
+|--------------------------------------------------------------------------
+|
+| Remove control characters that should not appear in ordinary form data.
+|
+*/
+
 function removeControlCharacters(
     string $value
 ): string {
@@ -672,9 +722,15 @@ function removeControlCharacters(
         : '';
 }
 
-/**
- * Normalize a single-line form value.
- */
+/*
+|--------------------------------------------------------------------------
+| Single-Line Input Normalization
+|--------------------------------------------------------------------------
+|
+| Normalize a single-line form value.
+|
+*/
+
 function normalizeSingleLineInput(
     string $value
 ): string {
@@ -695,9 +751,15 @@ function normalizeSingleLineInput(
         : '';
 }
 
-/**
- * Normalize a multiline form value.
- */
+/*
+|--------------------------------------------------------------------------
+| Multiline Input Normalization
+|--------------------------------------------------------------------------
+|
+| Normalize a multiline form value.
+|
+*/
+
 function normalizeMultilineInput(
     string $value
 ): string {
@@ -715,12 +777,12 @@ function normalizeMultilineInput(
 |--------------------------------------------------------------------------
 | Log Value Sanitization
 |--------------------------------------------------------------------------
+|
+| Normalize and truncate a value before including it in logs or
+| diagnostic messages.
+|
 */
 
-/**
- * Normalize and truncate a value before including it in logs or
- * diagnostic messages.
- */
 function sanitizeLogValue(
     string $value,
     int $maximumLength
@@ -767,13 +829,13 @@ function sanitizeLogValue(
 
 /*
 |--------------------------------------------------------------------------
-| Validation Helpers
+| Text Length Validation
 |--------------------------------------------------------------------------
+|
+| Determine whether text exceeds the specified character limit.
+|
 */
 
-/**
- * Determine whether text exceeds the specified character limit.
- */
 function textExceedsLength(
     string $value,
     int $maximumLength
@@ -793,9 +855,15 @@ function textExceedsLength(
         $maximumLength;
 }
 
-/**
- * Determine whether an email address is valid.
- */
+/*
+|--------------------------------------------------------------------------
+| Email Validation
+|--------------------------------------------------------------------------
+|
+| Determine whether an email address is valid.
+|
+*/
+
 function emailIsValid(
     string $email
 ): bool {
@@ -809,9 +877,15 @@ function emailIsValid(
     ) !== false;
 }
 
-/**
- * Detect carriage returns or line feeds used in header-injection attempts.
- */
+/*
+|--------------------------------------------------------------------------
+| Header Injection Detection
+|--------------------------------------------------------------------------
+|
+| Detect carriage returns or line feeds used in header-injection attempts.
+|
+*/
+
 function containsHeaderInjection(
     string $value
 ): bool {
@@ -827,13 +901,13 @@ function containsHeaderInjection(
 
 /*
 |--------------------------------------------------------------------------
-| Redirects
+| Redirect Handling
 |--------------------------------------------------------------------------
+|
+| Redirect using a 303 See Other response by default.
+|
 */
 
-/**
- * Redirect using a 303 See Other response.
- */
 function redirectTo(
     string $location,
     int $statusCode = HTTP_STATUS_SEE_OTHER
@@ -851,13 +925,11 @@ function redirectTo(
 |--------------------------------------------------------------------------
 | JSON Encoding
 |--------------------------------------------------------------------------
+|
+| Encode structured data safely for inclusion in HTML.
+|
 */
 
-/**
- * Encode structured data safely for inclusion in HTML.
- *
- * @param array<string, mixed> $data
- */
 function jsonForHtml(
     array $data
 ): string {

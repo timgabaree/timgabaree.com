@@ -18,11 +18,11 @@ declare(strict_types=1);
 |--------------------------------------------------------------------------
 | Mail Header Encoding
 |--------------------------------------------------------------------------
+|
+| Encode a mail-header value when multibyte support is available.
+|
 */
 
-/**
- * Encode a mail-header value when multibyte support is available.
- */
 function encodeMailHeader(
     string $value
 ): string {
@@ -46,12 +46,12 @@ function encodeMailHeader(
 |--------------------------------------------------------------------------
 | Mail Configuration Validation
 |--------------------------------------------------------------------------
+|
+| Determine whether the configured recipient and sender values are safe
+| for use in mail headers.
+|
 */
 
-/**
- * Determine whether the configured recipient and sender values are safe
- * for use in mail headers.
- */
 function contactMailConfigurationIsValid(
     string $recipientEmail,
     string $senderEmail,
@@ -108,11 +108,11 @@ function contactMailConfigurationIsValid(
 |--------------------------------------------------------------------------
 | Subject Construction
 |--------------------------------------------------------------------------
+|
+| Build the contact-form email subject.
+|
 */
 
-/**
- * Build the contact-form email subject.
- */
 function buildContactMailSubject(
     string $topicLabel
 ): string {
@@ -137,13 +137,11 @@ function buildContactMailSubject(
 |--------------------------------------------------------------------------
 | Message Body Construction
 |--------------------------------------------------------------------------
+|
+| Build the plain-text contact-form email body.
+|
 */
 
-/**
- * Build the plain-text contact-form email body.
- *
- * @param array<string, string> $formData
- */
 function buildContactMailBody(
     array $formData
 ): string {
@@ -189,13 +187,13 @@ function buildContactMailBody(
             'Unavailable';
     }
 
-	$remoteAddress =
+    $remoteAddress =
         sanitizeLogValue(
             $remoteAddress,
             CONTACT_FORM_REMOTE_ADDRESS_MAX_LENGTH
         );
 
-$userAgent =
+    $userAgent =
         sanitizeLogValue(
             $userAgent,
             CONTACT_FORM_USER_AGENT_MAX_LENGTH
@@ -281,15 +279,11 @@ $userAgent =
 |--------------------------------------------------------------------------
 | Mail Header Construction
 |--------------------------------------------------------------------------
+|
+| Build the mail headers.
+|
 */
 
-/**
- * Build the mail headers.
- *
- * @param array<string, string> $formData
- *
- * @return array<int, string>
- */
 function buildContactMailHeaders(
     array $formData,
     string $senderEmail,
@@ -364,13 +358,11 @@ function buildContactMailHeaders(
 |--------------------------------------------------------------------------
 | Send Contact Mail
 |--------------------------------------------------------------------------
+|
+| Send a validated contact-form submission.
+|
 */
 
-/**
- * Send a validated contact-form submission.
- *
- * @param array<string, string> $formData
- */
 function sendContactMail(
     array $formData,
     string $recipientEmail,
@@ -426,10 +418,16 @@ function sendContactMail(
             $senderName
         );
 
-    /*
-     * Keep the current four-argument mail() behavior while the existing
-     * GoDaddy mail transport is known to be working correctly.
-     */
+/*
+|--------------------------------------------------------------------------
+| Mail Transport Compatibility
+|--------------------------------------------------------------------------
+|
+| Keep the current four-argument mail() behavior while the existing
+| GoDaddy mail transport is known to be working correctly.
+|
+*/
+
     return mail(
         $recipientEmail,
         $subject,

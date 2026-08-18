@@ -52,21 +52,21 @@ function buildPrimaryImageSchema(
     bool $representativeOfPage = true
 ): array {
 
-        $image =
+    $image =
         getSiteImage(
             'profile'
         );
 
-        $schema = [
-            '@type' =>
-                'ImageObject',
+    $schema = [
+        '@type' =>
+            'ImageObject',
 
-            '@id' =>
-                SITE_PRIMARY_IMAGE_ID,
+        '@id' =>
+            SITE_PRIMARY_IMAGE_ID,
 
-            'url' =>
-        $image['url'] ??
-        '',
+        'url' =>
+            $image['url'] ??
+            '',
 
         'contentUrl' =>
             $image['url'] ??

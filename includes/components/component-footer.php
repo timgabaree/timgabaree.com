@@ -53,9 +53,15 @@ if (
 }
 
 /*
- * The Home link is unnecessary when the visitor is already on the
- * homepage.
- */
+|--------------------------------------------------------------------------
+| Home Link Suppression
+|--------------------------------------------------------------------------
+|
+| The Home link is unnecessary when the visitor is already on the
+| homepage.
+|
+*/
+
 if (
     isset($page) &&
     $page === 'home'
@@ -68,6 +74,7 @@ if (
 ?>
 
 <!-- Footer -->
+
 <footer class="footer-disclaimer">
 
   <?php if ($footerLinks !== []): ?>
@@ -105,9 +112,11 @@ if (
   </p>
 
 </footer>
+
 <!-- End Footer -->
 
 <!-- JavaScript -->
+
 <script
   src="<?= e(
       asset(
@@ -117,9 +126,11 @@ if (
   ) ?>"
   defer
 ></script>
+
 <!-- End JavaScript -->
 
 </body>
+
 <!-- End Page Body -->
 
 </html>

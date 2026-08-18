@@ -29,11 +29,11 @@ require_once dirname(__DIR__) .
 |--------------------------------------------------------------------------
 | XML Escaping
 |--------------------------------------------------------------------------
+|
+| Escape a value for XML text content.
+|
 */
 
-/**
- * Escape a value for XML text content.
- */
 function sitemapXmlEscape(
     string $value
 ): string {

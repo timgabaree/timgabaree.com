@@ -2,60 +2,68 @@
 
 declare(strict_types=1);
 
+/*
+|--------------------------------------------------------------------------
+| Error Page Component
+|--------------------------------------------------------------------------
+|
+| Renders the shared content for HTTP error pages.
+|
+| Expected variables:
+|
+| $errorCode
+| $errorTitle
+| $errorMessage
+| $errorSuggestion
+|
+*/
+
 ?>
 
 <main id="main-content">
 
+<!-- Error Section -->
+
 <section class="error-section">
 
-<div class="container">
+  <div class="container">
 
-<p class="section-kicker">
+    <p class="section-kicker">
+      Error <?= e($errorCode) ?>
+    </p>
 
-Error <?= e($errorCode) ?>
+    <h1>
+      <?= e($errorTitle) ?>
+    </h1>
 
-</p>
+    <p class="hero-lead">
+      <?= e($errorMessage) ?>
+    </p>
 
-<h1>
+    <p>
+      <?= e($errorSuggestion) ?>
+    </p>
 
-<?= e($errorTitle) ?>
+    <div class="error-actions">
 
-</h1>
+      <a
+        class="button primary"
+        href="<?= e(SITE_HOME_PATH) ?>">
+        Return Home
+      </a>
 
-<p class="hero-lead">
+      <a
+        class="button secondary"
+        href="<?= e(SITE_CONTACT_PATH) ?>">
+        Contact Tim
+      </a>
 
-<?= e($errorMessage) ?>
+    </div>
 
-</p>
-
-<p>
-
-<?= e($errorSuggestion) ?>
-
-</p>
-
-<div class="error-actions">
-
-<a
-class="button primary"
-href="<?= e(SITE_HOME_PATH) ?>">
-
-Return Home
-
-</a>
-
-<a
-class="button secondary"
-href="<?= e(SITE_CONTACT_PATH) ?>">
-
-Contact Tim
-
-</a>
-
-</div>
-
-</div>
+  </div>
 
 </section>
+
+<!-- End Error Section -->
 
 </main>

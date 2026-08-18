@@ -184,5 +184,4 @@ const PAGE_METADATA = [
         'modified' =>
             '2026-08-07',
     ],
-
 ];

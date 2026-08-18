@@ -29,8 +29,7 @@ $currentPage =
         : '';
 
 $isHomePage =
-    $currentPage ===
-    'home';
+    $currentPage === 'home';
 
 $homePrefix =
     $isHomePage
@@ -40,11 +39,13 @@ $homePrefix =
 ?>
 
 <!-- Navbar -->
+
 <nav
   class="navbar"
   aria-label="Primary navigation">
 
-  <!-- Mobile Navigation Toggle -->
+<!-- Mobile Navigation Toggle -->
+
   <button
     class="navbar-toggler"
     type="button"
@@ -59,7 +60,8 @@ $homePrefix =
 
   </button>
 
-  <!-- Site Brand -->
+<!-- Site Brand -->
+
   <a
     class="navbar-brand"
     href="<?= e(
@@ -70,14 +72,16 @@ $homePrefix =
     <?= e(SITE_NAME) ?>
   </a>
 
-  <!-- Primary Navigation -->
+<!-- Primary Navigation -->
+
   <div
     class="navbar-collapse"
     id="navbarNav">
 
     <ul class="navbar-nav">
 
-      <!-- Home -->
+<!-- Home -->
+
       <li class="nav-item">
 
         <a
@@ -95,7 +99,8 @@ $homePrefix =
 
       </li>
 
-      <!-- Operating Leadership -->
+<!-- Operating Leadership -->
+
       <li class="nav-item dropdown">
 
         <button
@@ -160,7 +165,8 @@ $homePrefix =
 
       </li>
 
-      <!-- About -->
+<!-- About -->
+
       <li class="nav-item dropdown">
 
         <button
@@ -207,7 +213,8 @@ $homePrefix =
 
       </li>
 
-      <!-- Contact -->
+<!-- Contact -->
+
       <li class="nav-item">
 
         <a
@@ -225,12 +232,14 @@ $homePrefix =
 
   </div>
 
-  <!-- Social Profiles -->
+<!-- Social Profiles -->
+
   <div
     class="nav-link-container"
     aria-label="Tim Gabaree social profiles">
 
-    <!-- Blog -->
+<!-- Blog -->
+
     <a
       class="nav-link"
       href="<?= e(SITE_BLOGSPOT) ?>"
@@ -239,24 +248,25 @@ $homePrefix =
       aria-label="Visit Tim Gabaree’s blog — opens in a new tab">
 
       <?= siteImage(
-    'social_blogger',
-    [
-        'width' =>
-            25,
+          'social_blogger',
+          [
+              'width' =>
+                  25,
 
-        'height' =>
-            25,
+              'height' =>
+                  25,
 
-        'attributes' => [
-            'aria-hidden' =>
-                'true',
-        ],
-    ]
-) ?>
+              'attributes' => [
+                  'aria-hidden' =>
+                      'true',
+              ],
+          ]
+      ) ?>
 
     </a>
 
-    <!-- LinkedIn -->
+<!-- LinkedIn -->
+
     <a
       class="nav-link"
       href="<?= e(SITE_LINKEDIN) ?>"
@@ -265,24 +275,25 @@ $homePrefix =
       aria-label="Visit Tim Gabaree’s LinkedIn profile — opens in a new tab">
 
       <?= siteImage(
-    'social_linkedin',
-    [
-        'width' =>
-            25,
+          'social_linkedin',
+          [
+              'width' =>
+                  25,
 
-        'height' =>
-            25,
+              'height' =>
+                  25,
 
-        'attributes' => [
-            'aria-hidden' =>
-                'true',
-        ],
-    ]
-) ?>
+              'attributes' => [
+                  'aria-hidden' =>
+                      'true',
+              ],
+          ]
+      ) ?>
 
     </a>
 
-    <!-- GitHub -->
+<!-- GitHub -->
+
     <a
       class="nav-link"
       href="<?= e(SITE_GITHUB) ?>"
@@ -291,24 +302,25 @@ $homePrefix =
       aria-label="Visit Tim Gabaree’s GitHub profile — opens in a new tab">
 
       <?= siteImage(
-    'social_github',
-    [
-        'width' =>
-            25,
+          'social_github',
+          [
+              'width' =>
+                  25,
 
-        'height' =>
-            25,
+              'height' =>
+                  25,
 
-        'attributes' => [
-            'aria-hidden' =>
-                'true',
-        ],
-    ]
-) ?>
+              'attributes' => [
+                  'aria-hidden' =>
+                      'true',
+              ],
+          ]
+      ) ?>
 
     </a>
 
   </div>
 
 </nav>
+
 <!-- End Navbar -->

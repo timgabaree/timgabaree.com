@@ -69,7 +69,8 @@ require __DIR__ .
 
 <main id="main-content">
 
-  <!-- Intro Section -->
+<!-- Intro Section -->
+
   <section
     id="home"
     class="section-wrapper"
@@ -78,13 +79,14 @@ require __DIR__ .
     <div
       id="intro"
       class="intro-section">
-		<?= siteImage(
-        'background',
-    [
-        'class' =>
-            'section-background-image',
-    ]
-) ?>
+
+      <?= siteImage(
+          'background',
+          [
+              'class' =>
+                  'section-background-image',
+          ]
+      ) ?>
 
       <div class="intro-text-content-block">
 
@@ -139,135 +141,137 @@ require __DIR__ .
 
         </div>
 
-       <section
-  class="intro-links-block"
-  aria-labelledby="executive-documents-title">
+        <section
+          class="intro-links-block"
+          aria-labelledby="executive-documents-title">
 
-  <h2
-    id="executive-documents-title"
-    class="intro-links-heading">
-    Executive Portfolio
-  </h2>
+          <h2
+            id="executive-documents-title"
+            class="intro-links-heading">
+            Executive Portfolio
+          </h2>
 
-  <p class="intro-links-description">
-    Executive and board materials highlighting my leadership experience,
-    governance philosophy, and enterprise technology strategy.
-  </p>
+          <p class="intro-links-description">
+            Executive and board materials highlighting my leadership experience,
+            governance philosophy, and enterprise technology strategy.
+          </p>
 
-  <ul class="intro-links-list">
+          <ul class="intro-links-list">
 
-    <li>
-      <a
-        href="<?= e(DOCSEND_EXECUTIVE_PROFILE) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="intro-links">
+            <li>
+              <a
+                href="<?= e(DOCSEND_EXECUTIVE_PROFILE) ?>"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="intro-links">
 
-        Executive Profile
+                Executive Profile
 
-        <span class="visually-hidden">
-          — opens in a new tab
-        </span>
+                <span class="visually-hidden">
+                  — opens in a new tab
+                </span>
 
-      </a>
-    </li>
+              </a>
+            </li>
 
-    <li>
-      <a
-        href="<?= e(DOCSEND_RESUME) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="intro-links">
+            <li>
+              <a
+                href="<?= e(DOCSEND_RESUME) ?>"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="intro-links">
 
-        Executive Résumé
+                Executive Résumé
 
-        <span class="visually-hidden">
-          — opens in a new tab
-        </span>
+                <span class="visually-hidden">
+                  — opens in a new tab
+                </span>
 
-      </a>
-    </li>
+              </a>
+            </li>
 
-    <li>
-      <a
-        href="<?= e(DOCSEND_EXECUTIVE_BIO) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="intro-links">
+            <li>
+              <a
+                href="<?= e(DOCSEND_EXECUTIVE_BIO) ?>"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="intro-links">
 
-        Executive Biography
+                Executive Biography
 
-        <span class="visually-hidden">
-          — opens in a new tab
-        </span>
+                <span class="visually-hidden">
+                  — opens in a new tab
+                </span>
 
-      </a>
-    </li>
+              </a>
+            </li>
 
-    <li>
-      <a
-        href="<?= e(DOCSEND_BOARD_RESUME) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="intro-links">
+            <li>
+              <a
+                href="<?= e(DOCSEND_BOARD_RESUME) ?>"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="intro-links">
 
-        Board Résumé
+                Board Résumé
 
-        <span class="visually-hidden">
-          — opens in a new tab
-        </span>
+                <span class="visually-hidden">
+                  — opens in a new tab
+                </span>
 
-      </a>
-    </li>
+              </a>
+            </li>
 
-    <li>
-      <a
-        href="<?= e(DOCSEND_BOARD_BIO) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="intro-links">
+            <li>
+              <a
+                href="<?= e(DOCSEND_BOARD_BIO) ?>"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="intro-links">
 
-        Board Biography
+                Board Biography
 
-        <span class="visually-hidden">
-          — opens in a new tab
-        </span>
+                <span class="visually-hidden">
+                  — opens in a new tab
+                </span>
 
-      </a>
-    </li>
+              </a>
+            </li>
 
-  </ul>
+          </ul>
 
-</section>
+        </section>
 
       </div>
 
       <div class="intro-profile-picture-block">
 
         <?= siteImage(
-    'profile',
-    [
-        'class' =>
-            'intro-profile-picture-img main-img',
-    ]
-) ?>
+            'profile',
+            [
+                'class' =>
+                    'intro-profile-picture-img main-img',
+            ]
+        ) ?>
 
         <?= siteImage(
-    'profile_hover',
-    [
-        'class' =>
-            'intro-profile-picture-img hover-img',
-    ]
-) ?>
+            'profile_hover',
+            [
+                'class' =>
+                    'intro-profile-picture-img hover-img',
+            ]
+        ) ?>
 
       </div>
 
     </div>
 
   </section>
-  <!-- End Intro Section -->
 
-  <!-- Results Preview Section -->
+<!-- End Intro Section -->
+
+<!-- Results Preview Section -->
+
   <section
     class="section-wrapper"
     aria-labelledby="results-preview-title">
@@ -282,12 +286,17 @@ require __DIR__ .
         Selected Operating Results Preview
       </h2>
 
-      <!--
-        The animated slides provide a visual preview of information
-        presented in full in the Selected Operating Results section.
-        They are hidden from assistive technology to avoid duplicate
-        announcements.
-      -->
+<!--
+|--------------------------------------------------------------------------
+| Results Carousel Accessibility
+|--------------------------------------------------------------------------
+|
+| The animated slides provide a visual preview of information presented
+| in full in the Selected Operating Results section. They are hidden from
+| assistive technology to avoid duplicate announcements.
+|
+-->
+
       <div
         id="results-carousel"
         class="results-carousel"
@@ -295,13 +304,13 @@ require __DIR__ .
 
         <div class="results-slide slide-1">
 
-  <?= siteImage(
-      'results_left',
-      [
-          'class' =>
-              'results-slide-image',
-      ]
-  ) ?>
+          <?= siteImage(
+              'results_left',
+              [
+                  'class' =>
+                      'results-slide-image',
+              ]
+          ) ?>
 
           <p class="results-kicker">
             Operating Result
@@ -323,13 +332,13 @@ require __DIR__ .
 
         <div class="results-slide slide-2">
 
-  <?= siteImage(
-      'results_middle',
-      [
-          'class' =>
-              'results-slide-image',
-      ]
-  ) ?>
+          <?= siteImage(
+              'results_middle',
+              [
+                  'class' =>
+                      'results-slide-image',
+              ]
+          ) ?>
 
           <p class="results-kicker">
             Operating Result
@@ -351,13 +360,13 @@ require __DIR__ .
 
         <div class="results-slide slide-3">
 
-  <?= siteImage(
-      'results_right',
-      [
-          'class' =>
-              'results-slide-image',
-      ]
-  ) ?>
+          <?= siteImage(
+              'results_right',
+              [
+                  'class' =>
+                      'results-slide-image',
+              ]
+          ) ?>
 
           <p class="results-kicker">
             Operating Result
@@ -379,13 +388,13 @@ require __DIR__ .
 
         <div class="results-slide slide-4">
 
-  <?= siteImage(
-      'results_left',
-      [
-          'class' =>
-              'results-slide-image',
-      ]
-  ) ?>
+          <?= siteImage(
+              'results_left',
+              [
+                  'class' =>
+                      'results-slide-image',
+              ]
+          ) ?>
 
           <p class="results-kicker">
             Leadership Result
@@ -407,13 +416,13 @@ require __DIR__ .
 
         <div class="results-slide slide-5">
 
-  <?= siteImage(
-      'results_middle',
-      [
-          'class' =>
-              'results-slide-image',
-      ]
-  ) ?>
+          <?= siteImage(
+              'results_middle',
+              [
+                  'class' =>
+                      'results-slide-image',
+              ]
+          ) ?>
 
           <p class="results-kicker">
             Positioning
@@ -457,9 +466,11 @@ require __DIR__ .
     </div>
 
   </section>
-  <!-- End Results Preview Section -->
 
-  <!-- Expertise Section -->
+<!-- End Results Preview Section -->
+
+<!-- Expertise Section -->
+
   <div class="section-wrapper">
 
     <section
@@ -496,29 +507,40 @@ require __DIR__ .
 
         </div>
 
-        <!-- Decorative image supporting the expertise section -->
+<!--
+|--------------------------------------------------------------------------
+| Decorative Expertise Image
+|--------------------------------------------------------------------------
+|
+| This image supports the visual presentation of the Expertise section
+| and is intentionally hidden from assistive technology.
+|
+-->
+
         <div
-  class="expertise-image-block"
-  aria-hidden="true">
+          class="expertise-image-block"
+          aria-hidden="true">
 
-  <?= siteImage(
-    'expertise',
-    [
-        'class' =>
-            'expertise-image',
-    ]
-) ?>
+          <?= siteImage(
+              'expertise',
+              [
+                  'class' =>
+                      'expertise-image',
+              ]
+          ) ?>
 
-</div>
+        </div>
 
       </div>
 
     </section>
 
   </div>
-  <!-- End Expertise Section -->
 
-  <!-- Operating Results Section -->
+<!-- End Expertise Section -->
+
+<!-- Operating Results Section -->
+
   <?php
 
   $sectionId = 'experience';
@@ -580,7 +602,8 @@ require __DIR__ .
       ],
   ];
 
-  require __DIR__ . '/includes/components/component-section-card.php';
+  require __DIR__ .
+      '/includes/components/component-section-card.php';
 
   unset(
       $sectionId,
@@ -590,9 +613,11 @@ require __DIR__ .
   );
 
   ?>
-  <!-- End Operating Results Section -->
 
-  <!-- Board and Advisory Section -->
+<!-- End Operating Results Section -->
+
+<!-- Board and Advisory Section -->
+
   <?php
 
   $sectionId = 'board';
@@ -624,7 +649,8 @@ require __DIR__ .
       ],
   ];
 
-  require __DIR__ . '/includes/components/component-section-card.php';
+  require __DIR__ .
+      '/includes/components/component-section-card.php';
 
   unset(
       $sectionId,
@@ -634,106 +660,110 @@ require __DIR__ .
   );
 
   ?>
+
 <!-- End Board and Advisory Section -->
 
 <!-- Education Section -->
-<div class="section-wrapper">
 
-  <section
-    id="education"
-    class="education-section"
-    aria-labelledby="education-title">
+  <div class="section-wrapper">
 
-    <div class="education-heading-block">
+    <section
+      id="education"
+      class="education-section"
+      aria-labelledby="education-title">
 
-      <h2
-        id="education-title"
-        class="education-heading">
-        Education
-      </h2>
+      <div class="education-heading-block">
 
-    </div>
+        <h2
+          id="education-title"
+          class="education-heading">
+          Education
+        </h2>
 
-    <div class="education-content">
+      </div>
 
-<?php
+      <div class="education-content">
 
-$educationItems = [
-    [
-        'degree' =>
-            'Master of Business Administration',
+        <?php
 
-        'institution' =>
-            'University of Illinois Springfield',
+        $educationItems = [
+            [
+                'degree' =>
+                    'Master of Business Administration',
 
-        'url' =>
-            'https://www.uis.edu/',
+                'institution' =>
+                    'University of Illinois Springfield',
 
-        'logo_image' =>
-            'education_uis_logo',
+                'url' =>
+                    'https://www.uis.edu/',
 
-        'background_image' =>
-            'education_uis_background',
-    ],
+                'logo_image' =>
+                    'education_uis_logo',
 
-    [
-        'degree' =>
-            'Bachelor of Science in Analytics',
+                'background_image' =>
+                    'education_uis_background',
+            ],
 
-        'institution' =>
-            'Purdue University Global',
+            [
+                'degree' =>
+                    'Bachelor of Science in Analytics',
 
-        'url' =>
-            'https://www.purdueglobal.edu/',
+                'institution' =>
+                    'Purdue University Global',
 
-        'logo_image' =>
-            'education_purdue_logo',
+                'url' =>
+                    'https://www.purdueglobal.edu/',
 
-        'background_image' =>
-            'education_purdue_background',
-    ],
-];
+                'logo_image' =>
+                    'education_purdue_logo',
 
-foreach ($educationItems as $educationItem) {
-    $educationDegree =
-        $educationItem['degree'];
+                'background_image' =>
+                    'education_purdue_background',
+            ],
+        ];
 
-    $educationInstitution =
-        $educationItem['institution'];
+        foreach ($educationItems as $educationItem) {
+            $educationDegree =
+                $educationItem['degree'];
 
-    $educationUrl =
-        $educationItem['url'];
+            $educationInstitution =
+                $educationItem['institution'];
 
-    $educationBackgroundImage =
-        $educationItem['background_image'];
+            $educationUrl =
+                $educationItem['url'];
 
-    $educationLogoImage =
-        $educationItem['logo_image'];
+            $educationBackgroundImage =
+                $educationItem['background_image'];
 
-    require __DIR__ .
-        '/includes/components/component-education-card.php';
-}
+            $educationLogoImage =
+                $educationItem['logo_image'];
 
-unset(
-    $educationItems,
-    $educationItem,
-    $educationDegree,
-    $educationInstitution,
-    $educationUrl,
-    $educationBackgroundImage,
-    $educationLogoImage
-);
+            require __DIR__ .
+                '/includes/components/component-education-card.php';
+        }
 
-?>
+        unset(
+            $educationItems,
+            $educationItem,
+            $educationDegree,
+            $educationInstitution,
+            $educationUrl,
+            $educationBackgroundImage,
+            $educationLogoImage
+        );
 
-    </div>
+        ?>
 
-  </section>
+      </div>
 
-</div>
+    </section>
+
+  </div>
+
 <!-- End Education Section -->
 
-  <!-- Leadership Perspective Section -->
+<!-- Leadership Perspective Section -->
+
   <div class="section-wrapper">
 
     <section
@@ -813,162 +843,169 @@ unset(
     </section>
 
   </div>
-  <!-- End Leadership Perspective Section -->
 
-  <!-- Testimonials Section -->
-<div class="section-wrapper">
+<!-- End Leadership Perspective Section -->
 
-  <section
-    id="testimonials"
-    class="testimonials-section"
-    aria-labelledby="testimonials-title">
+<!-- Testimonials Section -->
 
-    <div class="testimonials-heading-block">
+  <div class="section-wrapper">
 
-      <h2
-        id="testimonials-title"
-        class="testimonials-heading">
-        Testimonials
-      </h2>
+    <section
+      id="testimonials"
+      class="testimonials-section"
+      aria-labelledby="testimonials-title">
 
-    </div>
+      <div class="testimonials-heading-block">
 
-    <div class="testimonials-list-wrapper">
-
-      <div class="testimonials-list">
-
-        <?php
-
-        $testimonials = [
-            [
-                'quote' =>
-                    'Tim brings strategic insight and sound judgment to every challenge. He’s a trusted advisor who sees the big picture, communicates clearly, and drives aligned action across stakeholders. Visionary, tenacious, and highly professional, Tim leads with purpose and delivers results.',
-                'name' =>
-                    'Scott A. Smith',
-                'title' =>
-                    'President & CEO',
-                'organization' =>
-                    'thinQtank Global, Inc.',
-            ],
-            [
-                'quote' =>
-                    'Tim guided our Project Engineering Team through the busiest site refresh season in our company’s history. His organizational skill and adaptability kept projects on schedule while helping grow the bottom line. He took care of his employees, cared about work-life balance, and stayed focused on getting the job done.',
-                'name' =>
-                    'Stephen Mouser',
-                'title' =>
-                    'Network OPS QA Manager',
-                'organization' =>
-                    'Apogee, Inc.',
-            ],
-            [
-                'quote' =>
-                    'Tim was never afraid to step in and keep a project moving when others had thrown in the towel. His problem-solving ability and operational focus consistently helped teams deliver successful outcomes under pressure.',
-                'name' =>
-                    'Dan Southwick',
-                'title' =>
-                    'Principal ProdOps Engineer',
-                'organization' =>
-                    'Research Innovations Incorporated',
-            ],
-            [
-                'quote' =>
-                    'Tim consistently demonstrated discipline, adaptability, and strong operational leadership. His communication, collaboration, and organizational skills were instrumental in growing and stabilizing DOJ operational environments. He also has a genuine talent for mentoring teams and building strong working relationships.',
-                'name' =>
-                    'Michael Cook',
-                'title' =>
-                    'Network Manager',
-                'organization' =>
-                    'ITC Federal',
-            ],
-            [
-                'quote' =>
-                    'Tim stands out for his research skills, adaptability, and ability to lead teams through modernization efforts. His contributions to DOJ modernization initiatives were invaluable. I highly recommend Tim for any organization looking to improve efficiency, resilience, and operational performance.',
-                'name' =>
-                    'Steve Joo',
-                'title' =>
-                    'IT Cybersecurity Specialist (Network)',
-                'organization' =>
-                    'U.S. Department of Justice',
-            ],
-            [
-                'quote' =>
-                    'Tim consistently helped the organization save significant resources and improve operational efficiency. He is a strong leader who ensures his teams have the training, experience, and confidence needed to make sound decisions.',
-                'name' =>
-                    'Roderick Adams',
-                'title' =>
-                    'Government Lead, Network Services',
-                'organization' =>
-                    'Executive Office for Immigration Review, Office of Information Technology',
-            ],
-        ];
-
-        foreach ($testimonials as $testimonial) {
-            $testimonialQuote =
-                $testimonial['quote'];
-
-            $testimonialName =
-                $testimonial['name'];
-
-            $testimonialTitle =
-                $testimonial['title'];
-
-            $testimonialOrganization =
-                $testimonial['organization'];
-
-            require __DIR__ . '/includes/components/component-testimonial-card.php';
-        }
-
-        unset(
-            $testimonials,
-            $testimonial,
-            $testimonialQuote,
-            $testimonialName,
-            $testimonialTitle,
-            $testimonialOrganization
-        );
-
-        ?>
+        <h2
+          id="testimonials-title"
+          class="testimonials-heading">
+          Testimonials
+        </h2>
 
       </div>
+
+      <div class="testimonials-list-wrapper">
+
+        <div class="testimonials-list">
+
+          <?php
+
+          $testimonials = [
+              [
+                  'quote' =>
+                      'Tim brings strategic insight and sound judgment to every challenge. He’s a trusted advisor who sees the big picture, communicates clearly, and drives aligned action across stakeholders. Visionary, tenacious, and highly professional, Tim leads with purpose and delivers results.',
+                  'name' =>
+                      'Scott A. Smith',
+                  'title' =>
+                      'President & CEO',
+                  'organization' =>
+                      'thinQtank Global, Inc.',
+              ],
+              [
+                  'quote' =>
+                      'Tim guided our Project Engineering Team through the busiest site refresh season in our company’s history. His organizational skill and adaptability kept projects on schedule while helping grow the bottom line. He took care of his employees, cared about work-life balance, and stayed focused on getting the job done.',
+                  'name' =>
+                      'Stephen Mouser',
+                  'title' =>
+                      'Network OPS QA Manager',
+                  'organization' =>
+                      'Apogee, Inc.',
+              ],
+              [
+                  'quote' =>
+                      'Tim was never afraid to step in and keep a project moving when others had thrown in the towel. His problem-solving ability and operational focus consistently helped teams deliver successful outcomes under pressure.',
+                  'name' =>
+                      'Dan Southwick',
+                  'title' =>
+                      'Principal ProdOps Engineer',
+                  'organization' =>
+                      'Research Innovations Incorporated',
+              ],
+              [
+                  'quote' =>
+                      'Tim consistently demonstrated discipline, adaptability, and strong operational leadership. His communication, collaboration, and organizational skills were instrumental in growing and stabilizing DOJ operational environments. He also has a genuine talent for mentoring teams and building strong working relationships.',
+                  'name' =>
+                      'Michael Cook',
+                  'title' =>
+                      'Network Manager',
+                  'organization' =>
+                      'ITC Federal',
+              ],
+              [
+                  'quote' =>
+                      'Tim stands out for his research skills, adaptability, and ability to lead teams through modernization efforts. His contributions to DOJ modernization initiatives were invaluable. I highly recommend Tim for any organization looking to improve efficiency, resilience, and operational performance.',
+                  'name' =>
+                      'Steve Joo',
+                  'title' =>
+                      'IT Cybersecurity Specialist (Network)',
+                  'organization' =>
+                      'U.S. Department of Justice',
+              ],
+              [
+                  'quote' =>
+                      'Tim consistently helped the organization save significant resources and improve operational efficiency. He is a strong leader who ensures his teams have the training, experience, and confidence needed to make sound decisions.',
+                  'name' =>
+                      'Roderick Adams',
+                  'title' =>
+                      'Government Lead, Network Services',
+                  'organization' =>
+                      'Executive Office for Immigration Review, Office of Information Technology',
+              ],
+          ];
+
+          foreach ($testimonials as $testimonial) {
+              $testimonialQuote =
+                  $testimonial['quote'];
+
+              $testimonialName =
+                  $testimonial['name'];
+
+              $testimonialTitle =
+                  $testimonial['title'];
+
+              $testimonialOrganization =
+                  $testimonial['organization'];
+
+              require __DIR__ .
+                  '/includes/components/component-testimonial-card.php';
+          }
+
+          unset(
+              $testimonials,
+              $testimonial,
+              $testimonialQuote,
+              $testimonialName,
+              $testimonialTitle,
+              $testimonialOrganization
+          );
+
+          ?>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+<!-- End Testimonials Section -->
+
+<!-- Home Page Navigation -->
+
+  <section
+    class="home-navigation"
+    aria-labelledby="home-navigation-title">
+
+    <h2
+      id="home-navigation-title"
+      class="visually-hidden">
+      Continue Exploring
+    </h2>
+
+    <div class="home-navigation-buttons">
+
+      <a
+        href="<?= e(SITE_ABOUT_PATH) ?>"
+        class="home-navigation-button">
+        About
+      </a>
+
+      <a
+        href="<?= e(SITE_CONTACT_PATH) ?>"
+        class="home-navigation-button home-navigation-button-primary">
+        Continue the Conversation
+      </a>
 
     </div>
 
   </section>
 
-</div>
-<!-- End Testimonials Section -->
-
-<!-- Home Page Navigation -->
-<section
-  class="home-navigation"
-  aria-labelledby="home-navigation-title">
-
-  <h2
-    id="home-navigation-title"
-    class="visually-hidden">
-    Continue Exploring
-  </h2>
-
-  <div class="home-navigation-buttons">
-
-    <a
-      href="<?= e(SITE_ABOUT_PATH) ?>"
-      class="home-navigation-button">
-      About
-    </a>
-
-    <a
-      href="<?= e(SITE_CONTACT_PATH) ?>"
-      class="home-navigation-button home-navigation-button-primary">
-      Continue the Conversation
-    </a>
-
-  </div>
-
-</section>
 <!-- End Home Page Navigation -->
-	
+
 <!-- Contact Section -->
+
   <div class="section-wrapper">
 
     <section
@@ -986,27 +1023,27 @@ unset(
 
         <div class="qr-code-block">
 
-  <div class="qr-code-stack">
+          <div class="qr-code-stack">
 
-    <a
-      href="<?= e(SITE_CONTACT_PATH) ?>"
-      aria-label="Open Tim Gabaree’s contact page">
+            <a
+              href="<?= e(SITE_CONTACT_PATH) ?>"
+              aria-label="Open Tim Gabaree’s contact page">
 
-      <?= siteImage('qr_code') ?>
+              <?= siteImage('qr_code') ?>
 
-    </a>
+            </a>
 
-    <p class="qr-code-caption">
-      <a
-        class="qr-code-caption-link"
-        href="<?= e(SITE_CONTACT_PATH) ?>">
-        Scan or click to connect
-      </a>
-    </p>
+            <p class="qr-code-caption">
+              <a
+                class="qr-code-caption-link"
+                href="<?= e(SITE_CONTACT_PATH) ?>">
+                Scan or click to connect
+              </a>
+            </p>
 
-  </div>
+          </div>
 
-</div>
+        </div>
 
         <div class="contact-block">
 
@@ -1041,11 +1078,20 @@ unset(
     </section>
 
   </div>
-  <!-- End Contact Section -->
+
+<!-- End Contact Section -->
 
 </main>
 
-<!-- Results Carousel Controls -->
+<!--
+|--------------------------------------------------------------------------
+| Results Carousel Controls
+|--------------------------------------------------------------------------
+|
+| Provides the pause and resume control for the animated results carousel.
+|
+-->
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const carousel =
@@ -1074,7 +1120,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-<!-- End Results Carousel Controls -->
 
 <?php
 

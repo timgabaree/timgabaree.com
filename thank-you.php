@@ -75,7 +75,8 @@ require __DIR__ .
   id="main-content"
   class="executive-contact-page">
 
-  <!-- Thank-You Section -->
+<!-- Thank-You Section -->
+
   <section
     class="contact-thank-you-section"
     aria-labelledby="contact-thank-you-title">
@@ -189,11 +190,13 @@ require __DIR__ .
     </div>
 
   </section>
-  <!-- End Thank-You Section -->
+
+<!-- End Thank-You Section -->
 
 </main>
 
 <!-- Contact-Form Conversion Event -->
+
 <?php
 
 $submissionConfirmed =
@@ -219,12 +222,17 @@ $submissionConfirmed =
     form_location: "/contact"
   });
 
-  /*
-   * Remove the submission parameter after recording the event.
-   *
-   * This prevents a refresh from recording a duplicate conversion,
-   * while allowing a later successful submission to record normally.
-   */
+/*
+|--------------------------------------------------------------------------
+| Conversion Deduplication
+|--------------------------------------------------------------------------
+|
+| Remove the submission parameter after recording the event. This prevents
+| a refresh from recording a duplicate conversion while allowing a later
+| successful submission to record normally.
+|
+*/
+
   currentUrl.searchParams.delete("submitted");
 
   const cleanUrl =
@@ -241,6 +249,7 @@ $submissionConfirmed =
 </script>
 
 <?php endif; ?>
+
 <!-- End Contact-Form Conversion Event -->
 
 <?php

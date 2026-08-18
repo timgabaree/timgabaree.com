@@ -26,6 +26,7 @@ if (
 ?>
 
 <!-- Google Tag Manager -->
+
 <script>
 (function (window, document, script, dataLayerName, containerId) {
   window[dataLayerName] =
@@ -78,6 +79,7 @@ if (
   ) ?>
 );
 </script>
+
 <!-- End Google Tag Manager -->
 
 <?php
@@ -100,6 +102,7 @@ if (
 ?>
 
 <!-- Google tag -->
+
 <script
   async
   src="https://www.googletagmanager.com/gtag/js?id=<?= e(
@@ -132,6 +135,7 @@ gtag(
   ) ?>
 );
 </script>
+
 <!-- End Google tag -->
 
 <?php

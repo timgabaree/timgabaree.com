@@ -293,10 +293,15 @@ $mailSent =
 
 if ($mailSent) {
 
-    /*
-     * Record the successful submission and invalidate the CSRF token
-     * that was just used.
-     */
+/*
+|--------------------------------------------------------------------------
+| Successful Submission
+|--------------------------------------------------------------------------
+|
+| Record the successful submission and invalidate the CSRF token that was
+| just used.
+|
+*/
 
     rateLimitRecord(
         CONTACT_FORM_RATE_LIMIT_ACTION
@@ -304,11 +309,15 @@ if ($mailSent) {
 
     csrfRotateToken();
 
-    /*
-     * The submitted flag allows analytics to distinguish a genuine
-     * contact-form conversion from a visitor opening the thank-you URL
-     * directly.
-     */
+/*
+|--------------------------------------------------------------------------
+| Analytics Conversion Flag
+|--------------------------------------------------------------------------
+|
+| The submitted flag allows analytics to distinguish a genuine contact-form
+| conversion from a visitor opening the thank-you URL directly.
+|
+*/
 
     redirectTo(
         $thankYouConversionUrl

@@ -18,13 +18,13 @@ declare(strict_types=1);
 |--------------------------------------------------------------------------
 | Generate or Retrieve CSRF Token
 |--------------------------------------------------------------------------
+|
+| Return the current CSRF token.
+|
+| Generates one if a valid token does not already exist.
+|
 */
 
-/**
- * Return the current CSRF token.
- *
- * Generates one if a valid token does not already exist.
- */
 function csrfToken(): string
 {
     $existingToken =
@@ -70,11 +70,11 @@ function csrfToken(): string
 |--------------------------------------------------------------------------
 | Render Hidden CSRF Form Field
 |--------------------------------------------------------------------------
+|
+| Return a hidden HTML field containing the CSRF token.
+|
 */
 
-/**
- * Return a hidden HTML field containing the CSRF token.
- */
 function csrfField(): string
 {
     return
@@ -91,11 +91,11 @@ function csrfField(): string
 |--------------------------------------------------------------------------
 | Validate Submitted CSRF Token
 |--------------------------------------------------------------------------
+|
+| Validate a submitted CSRF token.
+|
 */
 
-/**
- * Validate a submitted CSRF token.
- */
 function csrfIsValid(
     ?string $submittedToken
 ): bool {
@@ -123,14 +123,14 @@ function csrfIsValid(
 |--------------------------------------------------------------------------
 | Rotate CSRF Token
 |--------------------------------------------------------------------------
+|
+| Remove the current token after a successful submission.
+|
+| A fresh token will be generated the next time csrfToken() or
+| csrfField() is called.
+|
 */
 
-/**
- * Remove the current token after a successful submission.
- *
- * A fresh token will be generated the next time csrfToken() or
- * csrfField() is called.
- */
 function csrfRotateToken(): void
 {
     unset(

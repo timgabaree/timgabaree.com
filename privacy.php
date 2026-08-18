@@ -95,22 +95,24 @@ require __DIR__ .
 ?>
 
 <!-- Main -->
+
 <main class="privacy-page">
 
-<?= siteImage(
-    'background',
-    [
-        'class' =>
-            'page-background-image',
-    ]
-) ?>
+  <?= siteImage(
+      'background',
+      [
+          'class' =>
+              'page-background-image',
+      ]
+  ) ?>
 
   <div class="privacy-container">
 
-    <!-- Privacy Policy Introduction -->
+<!-- Privacy Policy Introduction -->
+
     <section
-        class="privacy-card privacy-intro"
-        aria-labelledby="privacy-title">
+      class="privacy-card privacy-intro"
+      aria-labelledby="privacy-title">
 
       <p class="privacy-eyebrow">
         Privacy &amp; Data Use
@@ -149,93 +151,97 @@ require __DIR__ .
       </p>
 
     </section>
-    <!-- End Privacy Policy Introduction -->
 
-	  <!-- Privacy Policy Contents -->
-<section
-    id="privacy-contents"
-    class="privacy-card privacy-contents"
-    aria-labelledby="privacy-contents-title">
+<!-- End Privacy Policy Introduction -->
 
-  <h2 id="privacy-contents-title">
-    Contents
-  </h2>
+<!-- Privacy Policy Contents -->
 
-  <nav aria-label="Privacy Policy contents">
+    <section
+      id="privacy-contents"
+      class="privacy-card privacy-contents"
+      aria-labelledby="privacy-contents-title">
 
-    <ol class="privacy-contents-list">
+      <h2 id="privacy-contents-title">
+        Contents
+      </h2>
 
-      <li>
-        <a href="#information-collected-title">
-          Information We Collect
-        </a>
-      </li>
+      <nav aria-label="Privacy Policy contents">
 
-      <li>
-        <a href="#cookies-title">
-          Cookies
-        </a>
-      </li>
+        <ol class="privacy-contents-list">
 
-      <li>
-        <a href="#information-use-title">
-          How Your Information Is Used
-        </a>
-      </li>
+          <li>
+            <a href="#information-collected-title">
+              Information We Collect
+            </a>
+          </li>
 
-      <li>
-        <a href="#third-party-title">
-          Third-Party Services
-        </a>
-      </li>
+          <li>
+            <a href="#cookies-title">
+              Cookies
+            </a>
+          </li>
 
-      <li>
-        <a href="#retention-title">
-          Data Retention
-        </a>
-      </li>
+          <li>
+            <a href="#information-use-title">
+              How Your Information Is Used
+            </a>
+          </li>
 
-      <li>
-        <a href="#security-title">
-          Data Security
-        </a>
-      </li>
+          <li>
+            <a href="#third-party-title">
+              Third-Party Services
+            </a>
+          </li>
 
-      <li>
-        <a href="#rights-title">
-          Your Rights
-        </a>
-      </li>
+          <li>
+            <a href="#retention-title">
+              Data Retention
+            </a>
+          </li>
 
-      <li>
-        <a href="#external-links-title">
-          External Links
-        </a>
-      </li>
+          <li>
+            <a href="#security-title">
+              Data Security
+            </a>
+          </li>
 
-      <li>
-        <a href="#changes-title">
-          Changes to This Privacy Policy
-        </a>
-      </li>
+          <li>
+            <a href="#rights-title">
+              Your Rights
+            </a>
+          </li>
 
-      <li>
-        <a href="#privacy-contact-title">
-          Contact
-        </a>
-      </li>
+          <li>
+            <a href="#external-links-title">
+              External Links
+            </a>
+          </li>
 
-    </ol>
+          <li>
+            <a href="#changes-title">
+              Changes to This Privacy Policy
+            </a>
+          </li>
 
-  </nav>
+          <li>
+            <a href="#privacy-contact-title">
+              Contact
+            </a>
+          </li>
 
-</section>
+        </ol>
+
+      </nav>
+
+    </section>
+
 <!-- End Privacy Policy Contents -->
 
-    <!-- Information We Collect -->
+<!-- Information We Collect -->
+
     <section
-        class="privacy-card"
-        aria-labelledby="information-collected-title">
+      class="privacy-card"
+      aria-labelledby="information-collected-title">
 
       <h2 id="information-collected-title">
         Information We Collect
@@ -287,19 +293,21 @@ require __DIR__ .
         and security.
       </p>
 
-		<p class="privacy-return-to-contents">
-  <a href="#privacy-contents">
-    Return to Table of Contents
-  </a>
-</p>
+      <p class="privacy-return-to-contents">
+        <a href="#privacy-contents">
+          Return to Table of Contents
+        </a>
+      </p>
 
     </section>
-    <!-- End Information We Collect -->
 
-    <!-- Cookies -->
+<!-- End Information We Collect -->
+
+<!-- Cookies -->
+
     <section
-        class="privacy-card"
-        aria-labelledby="cookies-title">
+      class="privacy-card"
+      aria-labelledby="cookies-title">
 
       <h2 id="cookies-title">
         Cookies
@@ -321,19 +329,21 @@ require __DIR__ .
         website features may not function as intended.
       </p>
 
-		<p class="privacy-return-to-contents">
-  <a href="#privacy-contents">
-    Return to Table of Contents
-  </a>
-</p>
+      <p class="privacy-return-to-contents">
+        <a href="#privacy-contents">
+          Return to Table of Contents
+        </a>
+      </p>
 
     </section>
-    <!-- End Cookies -->
 
-    <!-- How Your Information Is Used -->
+<!-- End Cookies -->
+
+<!-- How Your Information Is Used -->
+
     <section
-        class="privacy-card"
-        aria-labelledby="information-use-title">
+      class="privacy-card"
+      aria-labelledby="information-use-title">
 
       <h2 id="information-use-title">
         How Your Information Is Used
@@ -356,19 +366,21 @@ require __DIR__ .
         <strong>Your information is not sold to third parties.</strong>
       </p>
 
-		<p class="privacy-return-to-contents">
-  <a href="#privacy-contents">
-    Return to Table of Contents
-  </a>
-</p>
+      <p class="privacy-return-to-contents">
+        <a href="#privacy-contents">
+          Return to Table of Contents
+        </a>
+      </p>
 
     </section>
-    <!-- End How Your Information Is Used -->
 
-    <!-- Third-Party Services -->
+<!-- End How Your Information Is Used -->
+
+<!-- Third-Party Services -->
+
     <section
-        class="privacy-card"
-        aria-labelledby="third-party-title">
+      class="privacy-card"
+      aria-labelledby="third-party-title">
 
       <h2 id="third-party-title">
         Third-Party Services
@@ -395,19 +407,21 @@ require __DIR__ .
         how they process information.
       </p>
 
-		<p class="privacy-return-to-contents">
-  <a href="#privacy-contents">
-    Return to Table of Contents
-  </a>
-</p>
+      <p class="privacy-return-to-contents">
+        <a href="#privacy-contents">
+          Return to Table of Contents
+        </a>
+      </p>
 
     </section>
-    <!-- End Third-Party Services -->
 
-    <!-- Data Retention -->
+<!-- End Third-Party Services -->
+
+<!-- Data Retention -->
+
     <section
-        class="privacy-card"
-        aria-labelledby="retention-title">
+      class="privacy-card"
+      aria-labelledby="retention-title">
 
       <h2 id="retention-title">
         Data Retention
@@ -420,19 +434,21 @@ require __DIR__ .
         protect the security of the website.
       </p>
 
-		<p class="privacy-return-to-contents">
-  <a href="#privacy-contents">
-    Return to Table of Contents
-  </a>
-</p>
+      <p class="privacy-return-to-contents">
+        <a href="#privacy-contents">
+          Return to Table of Contents
+        </a>
+      </p>
 
     </section>
-    <!-- End Data Retention -->
 
-    <!-- Data Security -->
+<!-- End Data Retention -->
+
+<!-- Data Security -->
+
     <section
-        class="privacy-card"
-        aria-labelledby="security-title">
+      class="privacy-card"
+      aria-labelledby="security-title">
 
       <h2 id="security-title">
         Data Security
@@ -449,19 +465,21 @@ require __DIR__ .
         completely secure.
       </p>
 
-		<p class="privacy-return-to-contents">
-  <a href="#privacy-contents">
-    Return to Table of Contents
-  </a>
-</p>
+      <p class="privacy-return-to-contents">
+        <a href="#privacy-contents">
+          Return to Table of Contents
+        </a>
+      </p>
 
     </section>
-    <!-- End Data Security -->
 
-    <!-- Your Rights -->
+<!-- End Data Security -->
+
+<!-- Your Rights -->
+
     <section
-        class="privacy-card"
-        aria-labelledby="rights-title">
+      class="privacy-card"
+      aria-labelledby="rights-title">
 
       <h2 id="rights-title">
         Your Rights
@@ -494,19 +512,21 @@ require __DIR__ .
         provided below.
       </p>
 
-		<p class="privacy-return-to-contents">
-  <a href="#privacy-contents">
-    Return to Table of Contents
-  </a>
-</p>
+      <p class="privacy-return-to-contents">
+        <a href="#privacy-contents">
+          Return to Table of Contents
+        </a>
+      </p>
 
     </section>
-    <!-- End Your Rights -->
 
-    <!-- External Links -->
+<!-- End Your Rights -->
+
+<!-- External Links -->
+
     <section
-        class="privacy-card"
-        aria-labelledby="external-links-title">
+      class="privacy-card"
+      aria-labelledby="external-links-title">
 
       <h2 id="external-links-title">
         External Links
@@ -523,19 +543,21 @@ require __DIR__ .
         practices or content of third-party websites.
       </p>
 
-		<p class="privacy-return-to-contents">
-  <a href="#privacy-contents">
-    Return to Table of Contents
-  </a>
-</p>
+      <p class="privacy-return-to-contents">
+        <a href="#privacy-contents">
+          Return to Table of Contents
+        </a>
+      </p>
 
     </section>
-    <!-- End External Links -->
 
-    <!-- Changes -->
+<!-- End External Links -->
+
+<!-- Changes -->
+
     <section
-        class="privacy-card"
-        aria-labelledby="changes-title">
+      class="privacy-card"
+      aria-labelledby="changes-title">
 
       <h2 id="changes-title">
         Changes to This Privacy Policy
@@ -552,19 +574,21 @@ require __DIR__ .
         revisions were most recently made.
       </p>
 
-		<p class="privacy-return-to-contents">
-  <a href="#privacy-contents">
-    Return to Table of Contents
-  </a>
-</p>
+      <p class="privacy-return-to-contents">
+        <a href="#privacy-contents">
+          Return to Table of Contents
+        </a>
+      </p>
 
     </section>
-    <!-- End Changes -->
 
-    <!-- Contact -->
+<!-- End Changes -->
+
+<!-- Contact -->
+
     <section
-        class="privacy-card privacy-contact"
-        aria-labelledby="privacy-contact-title">
+      class="privacy-card privacy-contact"
+      aria-labelledby="privacy-contact-title">
 
       <h2 id="privacy-contact-title">
         Contact
@@ -595,30 +619,34 @@ require __DIR__ .
         </strong>.
       </p>
 
-		<p class="privacy-return-to-contents">
-  <a href="#privacy-contents">
-    Return to Table of Contents
-  </a>
-</p>
+      <p class="privacy-return-to-contents">
+        <a href="#privacy-contents">
+          Return to Table of Contents
+        </a>
+      </p>
 
     </section>
-    <!-- End Contact -->
 
-    <!-- Return -->
+<!-- End Contact -->
+
+<!-- Return -->
+
     <div class="privacy-return">
 
       <a
-          class="primary-cta-button"
-          href="<?= e(SITE_HOME_PATH) ?>">
+        class="primary-cta-button"
+        href="<?= e(SITE_HOME_PATH) ?>">
         Return to Main Page
       </a>
 
     </div>
-    <!-- End Return -->
+
+<!-- End Return -->
 
   </div>
 
 </main>
+
 <!-- End Main -->
 
 <?php

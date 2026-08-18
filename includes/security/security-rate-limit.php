@@ -18,11 +18,11 @@ declare(strict_types=1);
 |--------------------------------------------------------------------------
 | Normalize Rate-Limit Storage Key
 |--------------------------------------------------------------------------
+|
+| Return the session key used for a rate-limited action.
+|
 */
 
-/**
- * Return the session key used for a rate-limited action.
- */
 function rateLimitSessionKey(
     string $action
 ): string {
@@ -52,11 +52,11 @@ function rateLimitSessionKey(
 |--------------------------------------------------------------------------
 | Last Recorded Action
 |--------------------------------------------------------------------------
+|
+| Return the timestamp of the last recorded action.
+|
 */
 
-/**
- * Return the timestamp of the last recorded action.
- */
 function rateLimitLastTimestamp(
     string $action
 ): ?int {
@@ -93,11 +93,11 @@ function rateLimitLastTimestamp(
 |--------------------------------------------------------------------------
 | Check Whether Action Is Allowed
 |--------------------------------------------------------------------------
+|
+| Determine whether the action may proceed.
+|
 */
 
-/**
- * Determine whether the action may proceed.
- */
 function rateLimitAllows(
     string $action,
     int $minimumSeconds
@@ -131,11 +131,11 @@ function rateLimitAllows(
 |--------------------------------------------------------------------------
 | Record Action
 |--------------------------------------------------------------------------
+|
+| Record that a rate-limited action occurred.
+|
 */
 
-/**
- * Record that a rate-limited action occurred.
- */
 function rateLimitRecord(
     string $action,
     ?int $timestamp = null

@@ -83,15 +83,16 @@ require __DIR__ .
   id="main-content"
   class="about-page">
 
-<?= siteImage(
-    'background',
-    [
-        'class' =>
-            'page-background-image',
-    ]
-) ?>
+  <?= siteImage(
+      'background',
+      [
+          'class' =>
+              'page-background-image',
+      ]
+  ) ?>
 
-  <!-- About Section -->
+<!-- About Section -->
+
   <section
     class="about-hero"
     aria-labelledby="about-title">
@@ -160,148 +161,155 @@ require __DIR__ .
     </div>
 
   </section>
-  <!-- End About Section -->
+
+<!-- End About Section -->
 
 <!-- Family Gallery Section -->
-<section
-  class="about-gallery-section"
-  aria-labelledby="about-gallery-title">
 
-  <div class="about-section-heading-block">
+  <section
+    class="about-gallery-section"
+    aria-labelledby="about-gallery-title">
 
-    <h2
-      id="about-gallery-title"
-      class="about-section-heading">
-      Family Experiences
-    </h2>
+    <div class="about-section-heading-block">
 
-  </div>
+      <h2
+        id="about-gallery-title"
+        class="about-section-heading">
+        Family Experiences
+      </h2>
 
-  <div class="about-gallery about-gallery-featured">
+    </div>
 
-    <figure class="gallery-large">
+    <div class="about-gallery about-gallery-featured">
 
-  <?= siteImage('about_liberty_family') ?>
+      <figure class="gallery-large">
 
-  <figcaption>
-    Lady Liberty, Finn, Clint, Carrie, and me. Wow!
-  </figcaption>
+        <?= siteImage('about_liberty_family') ?>
 
-</figure>
+        <figcaption>
+          Lady Liberty, Finn, Clint, Carrie, and me. Wow!
+        </figcaption>
 
-    <figure>
+      </figure>
 
-  <?= siteImage('about_ellis_island') ?>
+      <figure>
 
-  <figcaption>
-    At Ellis Island. Sometimes I wonder if we’ve lost touch with some of
-    these lessons along the way.
-  </figcaption>
+        <?= siteImage('about_ellis_island') ?>
 
-</figure>
-    <figure>
+        <figcaption>
+          At Ellis Island. Sometimes I wonder if we’ve lost touch with some
+          of these lessons along the way.
+        </figcaption>
 
-  <?= siteImage('about_mount_vernon') ?>
+      </figure>
 
-  <figcaption>
-    Fun at George and Martha Washington's house.
-  </figcaption>
+      <figure>
 
-</figure>
+        <?= siteImage('about_mount_vernon') ?>
 
-  </div>
+        <figcaption>
+          Fun at George and Martha Washington's house.
+        </figcaption>
 
-</section>
+      </figure>
+
+    </div>
+
+  </section>
+
 <!-- End Family Gallery Section -->
 
-<!-- Personal Interests -->
-<section
-  id="interests-and-hobbies"
-  class="about-interests-section"
-  aria-labelledby="about-interests-title">
+<!-- Personal Interests Section -->
 
-  <div class="about-interests-heading-block">
+  <section
+    id="interests-and-hobbies"
+    class="about-interests-section"
+    aria-labelledby="about-interests-title">
 
-    <h2
-  id="about-interests-title"
-  class="about-interests-heading">
-  Personal Interests
-</h2>
+    <div class="about-interests-heading-block">
 
-  </div>
+      <h2
+        id="about-interests-title"
+        class="about-interests-heading">
+        Personal Interests
+      </h2>
 
-  <div class="interests-content">
+    </div>
 
-    <article class="interests-block coffee-roasting">
+    <div class="interests-content">
 
-  <?= siteImage(
-      'interest_coffee',
-      [
-          'class' =>
-              'interests-block-image',
-      ]
-  ) ?>
+      <article class="interests-block coffee-roasting">
 
-  <h3 class="interest-caption">
-    Coffee Roasting
-  </h3>
+        <?= siteImage(
+            'interest_coffee',
+            [
+                'class' =>
+                    'interests-block-image',
+            ]
+        ) ?>
 
-</article>
+        <h3 class="interest-caption">
+          Coffee Roasting
+        </h3>
 
-<article class="interests-block chocolatiering">
+      </article>
 
-  <?= siteImage(
-      'interest_chocolate',
-      [
-          'class' =>
-              'interests-block-image',
-      ]
-  ) ?>
+      <article class="interests-block chocolatiering">
 
-  <h3 class="interest-caption">
-    Baking and Chocolatiering
-  </h3>
+        <?= siteImage(
+            'interest_chocolate',
+            [
+                'class' =>
+                    'interests-block-image',
+            ]
+        ) ?>
 
-</article>
+        <h3 class="interest-caption">
+          Baking and Chocolatiering
+        </h3>
 
-<article class="interests-block pizza-making">
+      </article>
 
-  <?= siteImage(
-      'interest_pizza',
-      [
-          'class' =>
-              'interests-block-image',
-      ]
-  ) ?>
+      <article class="interests-block pizza-making">
 
-  <h3 class="interest-caption">
-    Pizza Making
-  </h3>
+        <?= siteImage(
+            'interest_pizza',
+            [
+                'class' =>
+                    'interests-block-image',
+            ]
+        ) ?>
 
-</article>
+        <h3 class="interest-caption">
+          Pizza Making
+        </h3>
 
-<article class="interests-block geeking-out">
+      </article>
 
-  <?= siteImage(
-      'interest_technology',
-      [
-          'class' =>
-              'interests-block-image',
-      ]
-  ) ?>
+      <article class="interests-block geeking-out">
 
-  <h3 class="interest-caption">
-    AI &amp; Emerging Technology
-  </h3>
+        <?= siteImage(
+            'interest_technology',
+            [
+                'class' =>
+                    'interests-block-image',
+            ]
+        ) ?>
 
-</article>
+        <h3 class="interest-caption">
+          AI &amp; Emerging Technology
+        </h3>
 
-  </div>
+      </article>
 
-</section>
+    </div>
+
+  </section>
+
 <!-- End Personal Interests Section -->
 
-  <!-- Contact Section -->
+<!-- Contact Section -->
+
   <section
     class="about-contact"
     aria-labelledby="about-contact-title">
@@ -314,27 +322,28 @@ require __DIR__ .
 
       <div class="qr-code-block">
 
-  <div class="qr-code-stack">
+        <div class="qr-code-stack">
 
-    <a
-      href="<?= e(SITE_CONTACT_PATH) ?>"
-      aria-label="Open Tim Gabaree’s contact page">
+          <a
+            href="<?= e(SITE_CONTACT_PATH) ?>"
+            aria-label="Open Tim Gabaree’s contact page">
 
-      <?= siteImage('qr_code') ?>
+            <?= siteImage('qr_code') ?>
 
-    </a>
+          </a>
 
-    <p class="qr-code-caption">
-      <a
-        class="qr-code-caption-link"
-        href="<?= e(SITE_CONTACT_PATH) ?>">
-        Scan or click to connect
-      </a>
-    </p>
+          <p class="qr-code-caption">
+            <a
+              class="qr-code-caption-link"
+              href="<?= e(SITE_CONTACT_PATH) ?>">
+              Scan or click to connect
+            </a>
+          </p>
 
-  </div>
+        </div>
 
-</div>
+      </div>
+
       <address class="contact-content">
 
         <span>
@@ -362,7 +371,8 @@ require __DIR__ .
     </div>
 
   </section>
-  <!-- End Contact Section -->
+
+<!-- End Contact Section -->
 
 </main>
 
