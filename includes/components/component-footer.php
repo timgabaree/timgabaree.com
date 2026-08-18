@@ -115,6 +115,30 @@ if (
 
 <!-- End Footer -->
 
+<?php
+
+if (
+    !isset($pageScripts) ||
+    !is_array($pageScripts)
+) {
+    $pageScripts = [];
+}
+
+$pageScripts =
+    array_values(
+        array_filter(
+            $pageScripts,
+            static function (
+                mixed $pageScript
+            ): bool {
+                return is_string($pageScript) &&
+                    trim($pageScript) !== '';
+            }
+        )
+    );
+
+?>
+
 <!-- JavaScript -->
 
 <script
@@ -126,6 +150,20 @@ if (
   ) ?>"
   defer
 ></script>
+
+<?php foreach ($pageScripts as $pageScript): ?>
+
+<script
+  src="<?= e(
+      asset(
+          trim($pageScript),
+          VERSION_JS
+      )
+  ) ?>"
+  defer
+></script>
+
+<?php endforeach; ?>
 
 <!-- End JavaScript -->
 

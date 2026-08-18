@@ -206,54 +206,18 @@ $submissionConfirmed =
 
 ?>
 
-<?php if ($submissionConfirmed): ?>
-
-<script>
-(function () {
-  const currentUrl =
-    new URL(window.location.href);
-
-  window.dataLayer =
-    window.dataLayer || [];
-
-  window.dataLayer.push({
-    event: "contact_form_submission",
-    form_name: "Continue the Conversation",
-    form_location: "/contact"
-  });
-
-/*
-|--------------------------------------------------------------------------
-| Conversion Deduplication
-|--------------------------------------------------------------------------
-|
-| Remove the submission parameter after recording the event. This prevents
-| a refresh from recording a duplicate conversion while allowing a later
-| successful submission to record normally.
-|
-*/
-
-  currentUrl.searchParams.delete("submitted");
-
-  const cleanUrl =
-    currentUrl.pathname +
-    currentUrl.search +
-    currentUrl.hash;
-
-  window.history.replaceState(
-    {},
-    document.title,
-    cleanUrl
-  );
-})();
-</script>
-
-<?php endif; ?>
-
 <!-- End Contact-Form Conversion Event -->
 
 <?php
 
-require __DIR__ . '/includes/components/component-footer.php';
+$pageScripts = [];
+
+if ($submissionConfirmed) {
+    $pageScripts[] =
+        '/js/contact-conversion.js';
+}
+
+require __DIR__ .
+    '/includes/components/component-footer.php';
 
 ?>

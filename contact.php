@@ -278,10 +278,11 @@ require __DIR__ .
 
           </a>
 
-          <button
-            type="button"
+          <a
+            href="<?= e(SITE_CALENDLY) ?>"
             class="contact-action"
-            onclick="openCalendly()">
+            data-calendly-trigger
+            data-calendly-url="<?= e(SITE_CALENDLY) ?>">
 
             <span
               class="contact-action-icon contact-schedule-icon"
@@ -294,7 +295,7 @@ require __DIR__ .
               <small>View availability</small>
             </span>
 
-          </button>
+          </a>
 
           <a
             href="https://rgesol.com/"
@@ -736,117 +737,13 @@ require __DIR__ .
 
 </main>
 
-<!--
-|--------------------------------------------------------------------------
-| Calendly Integration
-|--------------------------------------------------------------------------
-|
-| Loads the Calendly popup widget on demand and records scheduling clicks
-| through the site data layer.
-|
--->
-
-<script>
-function openCalendly() {
-  window.dataLayer =
-    window.dataLayer || [];
-
-  window.dataLayer.push({
-    event: "calendly_click"
-  });
-
-  const calendlyUrl = <?= json_encode(
-      SITE_CALENDLY,
-      JSON_UNESCAPED_SLASHES |
-      JSON_UNESCAPED_UNICODE |
-      JSON_HEX_TAG |
-      JSON_HEX_AMP |
-      JSON_HEX_APOS |
-      JSON_HEX_QUOT
-  ) ?>;
-
-  if (typeof Calendly !== "undefined") {
-    Calendly.initPopupWidget({
-      url: calendlyUrl
-    });
-
-    return;
-  }
-
-  const existingStylesheet =
-    document.querySelector(
-      'link[data-calendly-stylesheet]'
-    );
-
-  if (!existingStylesheet) {
-    const stylesheet =
-      document.createElement("link");
-
-    stylesheet.rel =
-      "stylesheet";
-
-    stylesheet.href =
-      "https://assets.calendly.com/assets/external/widget.css";
-
-    stylesheet.dataset.calendlyStylesheet =
-      "true";
-
-    document.head.appendChild(
-      stylesheet
-    );
-  }
-
-  const existingScript =
-    document.querySelector(
-      'script[data-calendly-script]'
-    );
-
-  if (existingScript) {
-    existingScript.addEventListener(
-      "load",
-      function () {
-        if (typeof Calendly !== "undefined") {
-          Calendly.initPopupWidget({
-            url: calendlyUrl
-          });
-        }
-      },
-      {
-        once: true
-      }
-    );
-
-    return;
-  }
-
-  const script =
-    document.createElement("script");
-
-  script.src =
-    "https://assets.calendly.com/assets/external/widget.js";
-
-  script.async =
-    true;
-
-  script.dataset.calendlyScript =
-    "true";
-
-  script.onload = function () {
-    if (typeof Calendly !== "undefined") {
-      Calendly.initPopupWidget({
-        url: calendlyUrl
-      });
-    }
-  };
-
-  document.body.appendChild(
-    script
-  );
-}
-</script>
-
 <?php
 
-require __DIR__ . '/includes/components/component-footer.php';
+$pageScripts = [
+    '/js/calendly.js',
+];
+
+require __DIR__ .
+    '/includes/components/component-footer.php';
 
 ?>
