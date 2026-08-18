@@ -333,19 +333,25 @@ a:hover {
    6. Shared Buttons and Links
 ===================================================== */
 
-.intro-links {
+.intro-links,
+.intro-links:visited {
   background-color: var(--brand-blue);
   color: var(--white);
   text-align: center;
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.intro-links:hover {
+.intro-links:hover,
+.intro-links:focus-visible {
   background-color: var(--accent-hover);
   color: var(--white);
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .intro-main-text-block .intro-cta-text {
@@ -1607,6 +1613,7 @@ a.contactLink:hover {
   min-height: 76px;
   padding: 14px 16px;
   color: var(--text-dark);
+  font-style: normal;
   text-decoration: none;
   background-color: var(--background-color);
   border: 1px solid var(--border-color);
@@ -2114,7 +2121,8 @@ button.contact-action {
   gap: 11px;
 }
 
-.contact-thank-you-contact-links a, .contact-thank-you-contact-links a:visited {
+.contact-thank-you-contact-links a,
+.contact-thank-you-contact-links a:visited {
   display: grid;
   grid-template-columns: 22px auto;
   align-items: center;
@@ -2122,6 +2130,7 @@ button.contact-action {
   width: auto;
   color: var(--text-dark);
   font-size: 15px;
+  font-style: normal;
   font-weight: 700;
   line-height: 1.35;
   text-align: left;
