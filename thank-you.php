@@ -2,72 +2,26 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/includes/bootstrap.php';
-
-/*
-|--------------------------------------------------------------------------
-| Page Configuration
-|--------------------------------------------------------------------------
-*/
-
-$page = 'thank-you';
-
-$bodyClass =
-    'contact-body';
-
-$pageTitle =
-    'Thank You | Tim Gabaree';
-
-$metaDescription =
-    'Thank you for contacting Tim Gabaree. Your message has been received and will be reviewed personally.';
-
-$robots =
-    'noindex, follow';
-
-$canonicalUrl =
-    SITE_THANK_YOU_URL;
-
-/*
-|--------------------------------------------------------------------------
-| Open Graph
-|--------------------------------------------------------------------------
-*/
-
-$ogType =
-    'website';
-
-$ogTitle =
-    'Thank You | Tim Gabaree';
-
-$ogDescription =
-    'Your message has been received. Thank you for continuing the conversation with Tim Gabaree.';
-
-/*
-|--------------------------------------------------------------------------
-| X / Twitter
-|--------------------------------------------------------------------------
-*/
-
-$twitterDescription =
-    'Your message has been received. Thank you for continuing the conversation.';
-
-/*
-|--------------------------------------------------------------------------
-| Page Includes
-|--------------------------------------------------------------------------
-*/
-
 require_once __DIR__ .
-    '/includes/components/component-head-defaults.php';
+    '/includes/bootstrap.php';
+
+/*
+|--------------------------------------------------------------------------
+| Page
+|--------------------------------------------------------------------------
+*/
+
+$page =
+    'thank-you';
+
+/*
+|--------------------------------------------------------------------------
+| Page Start
+|--------------------------------------------------------------------------
+*/
 
 require __DIR__ .
-    '/includes/schema/schema-thank-you.php';
-
-require __DIR__ .
-    '/includes/components/component-head.php';
-
-require __DIR__ .
-    '/includes/components/component-header.php';
+    '/includes/components/component-page-start.php';
 
 ?>
 

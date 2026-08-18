@@ -2,65 +2,20 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/includes/bootstrap.php';
-require_once __DIR__ . '/includes/forms/form-contact-topics.php';
+require_once __DIR__ .
+    '/includes/bootstrap.php';
+
+require_once __DIR__ .
+    '/includes/forms/form-contact-topics.php';
 
 /*
 |--------------------------------------------------------------------------
-| Page Configuration
+| Page
 |--------------------------------------------------------------------------
 */
 
 $page =
     'contact';
-
-$bodyClass =
-    'contact-body';
-
-$pageTitle =
-    'Connect with Tim Gabaree | Executive Contact';
-
-$metaDescription =
-    'Connect with Tim Gabaree, Portfolio CIO and technology executive focused on technology value creation, governance, and enterprise performance.';
-
-$canonicalUrl =
-    SITE_CONTACT_URL;
-
-/*
-|--------------------------------------------------------------------------
-| Page Images
-|--------------------------------------------------------------------------
-*/
-
-$pageImageKey =
-    'profile';
-
-$preloadImageKey =
-    'profile';
-
-/*
-|--------------------------------------------------------------------------
-| Open Graph
-|--------------------------------------------------------------------------
-*/
-
-$ogType =
-    'website';
-
-$ogTitle =
-    'Connect with Tim Gabaree';
-
-$ogDescription =
-    'Save Tim’s contact information, connect on LinkedIn, schedule a meeting, or review executive materials.';
-
-/*
-|--------------------------------------------------------------------------
-| X / Twitter
-|--------------------------------------------------------------------------
-*/
-
-$twitterDescription =
-    'Portfolio CIO | Technology Value Creation | Enterprise Performance';
 
 /*
 |--------------------------------------------------------------------------
@@ -107,21 +62,12 @@ $csrfToken =
 
 /*
 |--------------------------------------------------------------------------
-| Page Includes
+| Page Start
 |--------------------------------------------------------------------------
 */
 
-require_once __DIR__ .
-    '/includes/components/component-head-defaults.php';
-
 require __DIR__ .
-    '/includes/schema/schema-contact.php';
-
-require __DIR__ .
-    '/includes/components/component-head.php';
-
-require __DIR__ .
-    '/includes/components/component-header.php';
+    '/includes/components/component-page-start.php';
 
 ?>
 

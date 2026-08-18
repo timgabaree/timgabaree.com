@@ -188,6 +188,193 @@ const SITE_THANK_YOU_URL =
 
 /*
 |--------------------------------------------------------------------------
+| Public Page Configuration
+|--------------------------------------------------------------------------
+|
+| Defines shared presentation, metadata, social, image, and schema
+| configuration for public pages.
+|
+| Publication and modification dates remain centralized separately in
+| PAGE_METADATA within version.php.
+|
+*/
+
+const PAGE_CONFIG = [
+    'home' => [
+        'title' =>
+            'Tim Gabaree | Portfolio CIO | Technology Value Creation | Enterprise Performance',
+
+        'description' =>
+            'Tim Gabaree is a Portfolio CIO and technology executive helping organizations improve performance through technology value creation, governance, operating model transformation, and enterprise leadership.',
+
+        'canonical_url' =>
+            SITE_HOME_URL,
+
+        'og_type' =>
+            'profile',
+
+        'og_title' =>
+            'Tim Gabaree | Portfolio CIO | Technology Value Creation',
+
+        'og_description' =>
+            'Tim Gabaree is a Portfolio CIO and technology executive helping organizations improve performance through governance, technology value creation, and operating model transformation.',
+
+        'image' =>
+            'profile',
+
+        'preload_image' =>
+            'background',
+
+        'schema' =>
+            'schema-home.php',
+    ],
+
+    'about' => [
+        'title' =>
+            'About Tim Gabaree | Portfolio CIO | Technology Value Creation',
+
+        'description' =>
+            'About Tim Gabaree, Portfolio CIO and technology executive focused on governance, technology value creation, operating model transformation, and enterprise performance.',
+
+        'canonical_url' =>
+            SITE_ABOUT_URL,
+
+        'og_type' =>
+            'profile',
+
+        'og_title' =>
+            'About Tim Gabaree | Portfolio CIO',
+
+        'og_description' =>
+            'About Tim Gabaree, Portfolio CIO, technology executive, board advisor, veteran, husband, father, and lifelong learner.',
+
+        'twitter_card' =>
+            'summary_large_image',
+
+        'twitter_description' =>
+            'Technology executive, board advisor, veteran, husband, father, and lifelong learner.',
+
+        'image' =>
+            'about_family',
+
+        'preload_image' =>
+            'about_family',
+
+        'schema' =>
+            'schema-about.php',
+    ],
+
+    'contact' => [
+        'body_class' =>
+            'contact-body',
+
+        'title' =>
+            'Connect with Tim Gabaree | Executive Contact',
+
+        'description' =>
+            'Connect with Tim Gabaree, Portfolio CIO and technology executive focused on technology value creation, governance, and enterprise performance.',
+
+        'canonical_url' =>
+            SITE_CONTACT_URL,
+
+        'og_type' =>
+            'website',
+
+        'og_title' =>
+            'Connect with Tim Gabaree',
+
+        'og_description' =>
+            'Save Tim’s contact information, connect on LinkedIn, schedule a meeting, or review executive materials.',
+
+        'twitter_description' =>
+            'Portfolio CIO | Technology Value Creation | Enterprise Performance',
+
+        'image' =>
+            'profile',
+
+        'preload_image' =>
+            'profile',
+
+        'schema' =>
+            'schema-contact.php',
+    ],
+
+    'privacy' => [
+        'body_class' =>
+            'privacy-body',
+
+        'title' =>
+            'Privacy Policy | Tim Gabaree',
+
+        'description' =>
+            'Privacy Policy for timgabaree.com explaining what information may be collected, how it is used, and the privacy choices available to website visitors.',
+
+        'canonical_url' =>
+            SITE_PRIVACY_URL,
+
+        'og_type' =>
+            'website',
+
+        'og_title' =>
+            'Privacy Policy | Tim Gabaree',
+
+        'og_description' =>
+            'Privacy Policy for timgabaree.com explaining how information may be collected, used, retained, and protected.',
+
+        'twitter_description' =>
+            'Privacy Policy for timgabaree.com explaining how visitor information may be collected and used.',
+
+        'image' =>
+            'profile',
+
+        'preload_image' =>
+            'background',
+
+        'schema' =>
+            'schema-privacy.php',
+    ],
+
+    'thank-you' => [
+        'body_class' =>
+            'contact-body',
+
+        'title' =>
+            'Thank You | Tim Gabaree',
+
+        'description' =>
+            'Thank you for contacting Tim Gabaree. Your message has been received and will be reviewed personally.',
+
+        'robots' =>
+            'noindex, follow',
+
+        'canonical_url' =>
+            SITE_THANK_YOU_URL,
+
+        'og_type' =>
+            'website',
+
+        'og_title' =>
+            'Thank You | Tim Gabaree',
+
+        'og_description' =>
+            'Your message has been received. Thank you for continuing the conversation with Tim Gabaree.',
+
+        'twitter_description' =>
+            'Your message has been received. Thank you for continuing the conversation.',
+
+        'image' =>
+            'profile',
+
+        'preload_image' =>
+            '',
+
+        'schema' =>
+            'schema-thank-you.php',
+    ],
+];
+
+/*
+|--------------------------------------------------------------------------
 | Structured Data Identifiers
 |--------------------------------------------------------------------------
 */

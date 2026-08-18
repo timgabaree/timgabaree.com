@@ -291,6 +291,34 @@ function siteImage(
 
 /*
 |--------------------------------------------------------------------------
+| Page Configuration Retrieval
+|--------------------------------------------------------------------------
+|
+| Return the shared configuration for a public page.
+|
+| An empty array is returned when the page identifier is not defined.
+|
+*/
+
+function pageConfig(
+    string $page
+): array {
+    $page =
+        trim($page);
+
+    if (
+        $page === '' ||
+        !isset(PAGE_CONFIG[$page]) ||
+        !is_array(PAGE_CONFIG[$page])
+    ) {
+        return [];
+    }
+
+    return PAGE_CONFIG[$page];
+}
+
+/*
+|--------------------------------------------------------------------------
 | Page Metadata Retrieval
 |--------------------------------------------------------------------------
 |

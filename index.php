@@ -2,68 +2,26 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/includes/bootstrap.php';
-
-/*
-|--------------------------------------------------------------------------
-| Page Configuration
-|--------------------------------------------------------------------------
-*/
-
-$page = 'home';
-
-$pageTitle =
-    'Tim Gabaree | Portfolio CIO | Technology Value Creation | Enterprise Performance';
-
-$metaDescription =
-    'Tim Gabaree is a Portfolio CIO and technology executive helping organizations improve performance through technology value creation, governance, operating model transformation, and enterprise leadership.';
-
-$canonicalUrl =
-    SITE_HOME_URL;
-
-/*
-|--------------------------------------------------------------------------
-| Open Graph
-|--------------------------------------------------------------------------
-*/
-
-$ogType = 'profile';
-
-$ogTitle =
-    'Tim Gabaree | Portfolio CIO | Technology Value Creation';
-
-$ogDescription =
-    'Tim Gabaree is a Portfolio CIO and technology executive helping organizations improve performance through governance, technology value creation, and operating model transformation.';
-
-/*
-|--------------------------------------------------------------------------
-| Page Images
-|--------------------------------------------------------------------------
-*/
-
-$pageImageKey =
-    'profile';
-
-$preloadImageKey =
-    'background';
-
-/*
-|--------------------------------------------------------------------------
-| Page Includes
-|--------------------------------------------------------------------------
-*/
-
 require_once __DIR__ .
-    '/includes/components/component-head-defaults.php';
+    '/includes/bootstrap.php';
+
+/*
+|--------------------------------------------------------------------------
+| Page
+|--------------------------------------------------------------------------
+*/
+
+$page =
+    'home';
+
+/*
+|--------------------------------------------------------------------------
+| Page Start
+|--------------------------------------------------------------------------
+*/
 
 require __DIR__ .
-    '/includes/schema/schema-home.php';
-
-require __DIR__ .
-    '/includes/components/component-head.php';
-
-require __DIR__ .
-    '/includes/components/component-header.php';
+    '/includes/components/component-page-start.php';
 
 ?>
 
