@@ -11,9 +11,7 @@ declare(strict_types=1);
 |
 | - framework versions;
 | - site releases;
-| - asset cache-busting;
-| - public-page publication dates;
-| - public-page modification dates.
+| - asset cache-busting.
 |
 | Framework and site releases use semantic versioning.
 |
@@ -77,60 +75,3 @@ const VERSION_JS =
 
 const VERSION_FAVICONS =
     '20260712.01';
-
-/*
-|--------------------------------------------------------------------------
-| Public Page Metadata
-|--------------------------------------------------------------------------
-|
-| The array key must match the page identifier assigned near the top of
-| each public PHP page.
-|
-| Publication dates should normally remain unchanged.
-|
-| Modification dates should be updated only after a meaningful
-| public-facing content, structural, metadata, or structured-data change.
-|
-*/
-
-const PAGE_METADATA = [
-    'home' => [
-        'published' =>
-            '2026-08-07',
-
-        'modified' =>
-            '2026-08-17',
-    ],
-
-    'about' => [
-        'published' =>
-            '2026-08-07',
-
-        'modified' =>
-            '2026-08-17',
-    ],
-
-    'contact' => [
-        'published' =>
-            '2026-08-07',
-
-        'modified' =>
-            '2026-08-17',
-    ],
-
-    'privacy' => [
-        'published' =>
-            '2026-08-07',
-
-        'modified' =>
-            '2026-08-17',
-    ],
-
-    'thank-you' => [
-        'published' =>
-            '2026-08-07',
-
-        'modified' =>
-            '2026-08-07',
-    ],
-];

@@ -10,7 +10,7 @@ declare(strict_types=1);
 | Defines the canonical public pages included in sitemap.xml and the
 | managed SITE_IMAGES entries associated with each page.
 |
-| Page modification dates are provided centrally by PAGE_METADATA.
+| Page modification dates are provided centrally by PAGE_CONFIG.
 | Image paths are provided centrally by SITE_IMAGES.
 |
 */

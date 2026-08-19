@@ -10,7 +10,7 @@ declare(strict_types=1);
 | Generates the root sitemap.xml from canonical application data:
 |
 | - SITEMAP_PAGES defines public page URLs and page/image associations.
-| - PAGE_METADATA supplies meaningful page modification dates.
+| - PAGE_CONFIG supplies meaningful page modification dates.
 | - SITE_IMAGES supplies managed image paths and roles.
 |
 | Run from the project root:
@@ -113,12 +113,25 @@ foreach (
         );
     }
 
+    $publicPageConfig =
+        pageConfig(
+            $pageKey
+        );
+
+    if ($publicPageConfig === []) {
+        throw new RuntimeException(
+            'Missing PAGE_CONFIG entry for sitemap page: ' .
+            $pageKey
+        );
+    }
+
     if (
-        !isset(PAGE_METADATA[$pageKey]) ||
-        !is_array(PAGE_METADATA[$pageKey])
+        !isset($publicPageConfig['modified']) ||
+        !is_string($publicPageConfig['modified']) ||
+        $publicPageConfig['modified'] === ''
     ) {
         throw new RuntimeException(
-            'Missing PAGE_METADATA entry for sitemap page: ' .
+            'Missing modification date for sitemap page: ' .
             $pageKey
         );
     }

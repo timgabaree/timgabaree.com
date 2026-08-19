@@ -319,90 +319,35 @@ function pageConfig(
 
 /*
 |--------------------------------------------------------------------------
-| Page Metadata Retrieval
-|--------------------------------------------------------------------------
-|
-| Return the metadata configuration for a public page.
-|
-| Returns publication and modification dates from PAGE_METADATA, with
-| SITE_RELEASE_DATE used as the fallback when metadata is unavailable.
-|
-*/
-
-function pageMetadata(
-    string $page
-): array {
-    $page =
-        trim($page);
-
-    $defaultMetadata = [
-        'published' =>
-            SITE_RELEASE_DATE,
-
-        'modified' =>
-            SITE_RELEASE_DATE,
-    ];
-
-    if (
-        $page === '' ||
-        !isset(PAGE_METADATA[$page]) ||
-        !is_array(PAGE_METADATA[$page])
-    ) {
-        return $defaultMetadata;
-    }
-
-    $metadata =
-        PAGE_METADATA[$page];
-
-    $published =
-        $metadata['published'] ??
-        SITE_RELEASE_DATE;
-
-    $modified =
-        $metadata['modified'] ??
-        $published;
-
-    if (
-        !is_string($published) ||
-        $published === ''
-    ) {
-        $published =
-            SITE_RELEASE_DATE;
-    }
-
-    if (
-        !is_string($modified) ||
-        $modified === ''
-    ) {
-        $modified =
-            $published;
-    }
-
-    return [
-        'published' =>
-            $published,
-
-        'modified' =>
-            $modified,
-    ];
-}
-
-/*
-|--------------------------------------------------------------------------
 | Page Publication Date
 |--------------------------------------------------------------------------
 |
-| Return the publication date for a public page.
+| Return the publication date configured for a public page.
+|
+| SITE_RELEASE_DATE is used when no valid page-specific date is defined.
 |
 */
 
 function pagePublished(
     string $page
 ): string {
-    $metadata =
-        pageMetadata($page);
+    $configuration =
+        pageConfig(
+            $page
+        );
 
-    return $metadata['published'];
+    $published =
+        $configuration['published'] ??
+        SITE_RELEASE_DATE;
+
+    if (
+        !is_string($published) ||
+        $published === ''
+    ) {
+        return SITE_RELEASE_DATE;
+    }
+
+    return $published;
 }
 
 /*
@@ -410,17 +355,35 @@ function pagePublished(
 | Page Modification Date
 |--------------------------------------------------------------------------
 |
-| Return the last meaningful modification date for a public page.
+| Return the last meaningful modification date configured for a public
+| page.
+|
+| The publication date is used when no valid modification date is defined.
 |
 */
 
 function pageModified(
     string $page
 ): string {
-    $metadata =
-        pageMetadata($page);
+    $configuration =
+        pageConfig(
+            $page
+        );
 
-    return $metadata['modified'];
+    $modified =
+        $configuration['modified'] ??
+        '';
+
+    if (
+        is_string($modified) &&
+        $modified !== ''
+    ) {
+        return $modified;
+    }
+
+    return pagePublished(
+        $page
+    );
 }
 
 /*

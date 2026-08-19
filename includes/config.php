@@ -191,16 +191,19 @@ const SITE_THANK_YOU_URL =
 | Public Page Configuration
 |--------------------------------------------------------------------------
 |
-| Defines shared presentation, metadata, social, image, and schema
+| Defines shared presentation, metadata, social, image, schema, and date
 | configuration for public pages.
-|
-| Publication and modification dates remain centralized separately in
-| PAGE_METADATA within version.php.
 |
 */
 
 const PAGE_CONFIG = [
     'home' => [
+        'published' =>
+            '2026-08-07',
+
+        'modified' =>
+            '2026-08-17',
+
         'title' =>
             'Tim Gabaree | Portfolio CIO | Technology Value Creation | Enterprise Performance',
 
@@ -230,6 +233,12 @@ const PAGE_CONFIG = [
     ],
 
     'about' => [
+        'published' =>
+            '2026-08-07',
+
+        'modified' =>
+            '2026-08-17',
+
         'title' =>
             'About Tim Gabaree | Portfolio CIO | Technology Value Creation',
 
@@ -265,6 +274,12 @@ const PAGE_CONFIG = [
     ],
 
     'contact' => [
+        'published' =>
+            '2026-08-07',
+
+        'modified' =>
+            '2026-08-17',
+
         'body_class' =>
             'contact-body',
 
@@ -300,6 +315,12 @@ const PAGE_CONFIG = [
     ],
 
     'privacy' => [
+        'published' =>
+            '2026-08-07',
+
+        'modified' =>
+            '2026-08-17',
+
         'body_class' =>
             'privacy-body',
 
@@ -404,6 +425,12 @@ const PAGE_CONFIG = [
     ],
 
     'thank-you' => [
+        'published' =>
+            '2026-08-07',
+
+        'modified' =>
+            '2026-08-07',
+
         'body_class' =>
             'contact-body',
 

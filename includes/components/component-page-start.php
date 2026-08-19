@@ -137,7 +137,7 @@ $preloadImageKey =
 |--------------------------------------------------------------------------
 |
 | Publication and modification dates are controlled centrally through
-| PAGE_METADATA in version.php.
+| PAGE_CONFIG in config.php.
 |
 */
 
