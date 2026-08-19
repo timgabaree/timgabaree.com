@@ -49,6 +49,44 @@ document.addEventListener(
         }
 
         /*
+         * Close all dropdown menus.
+         */
+        const closeDropdowns =
+            () => {
+                dropdownButtons.forEach(
+                    (button) => {
+                        button.setAttribute(
+                            'aria-expanded',
+                            'false'
+                        );
+
+                        button
+                            .nextElementSibling
+                            ?.classList.remove(
+                                'show'
+                            );
+                    }
+                );
+            };
+
+        /*
+         * Close the mobile navigation and all dropdown menus.
+         */
+        const closeNavigation =
+            () => {
+                nav.classList.remove(
+                    'show'
+                );
+
+                toggler.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
+                closeDropdowns();
+            };
+
+        /*
          * Toggle the mobile navigation menu.
          */
         toggler.addEventListener(
@@ -136,29 +174,7 @@ document.addEventListener(
                     link.addEventListener(
                         'click',
                         () => {
-                            nav.classList.remove(
-                                'show'
-                            );
-
-                            toggler.setAttribute(
-                                'aria-expanded',
-                                'false'
-                            );
-
-                            dropdownButtons.forEach(
-                                (button) => {
-                                    button.setAttribute(
-                                        'aria-expanded',
-                                        'false'
-                                    );
-
-                                    button
-                                        .nextElementSibling
-                                        ?.classList.remove(
-                                            'show'
-                                        );
-                                }
-                            );
+                            closeNavigation();
                         }
                     );
                 }
@@ -176,21 +192,69 @@ document.addEventListener(
                         '.dropdown'
                     )
                 ) {
-                    dropdownButtons.forEach(
-                        (button) => {
-                            button.setAttribute(
-                                'aria-expanded',
-                                'false'
-                            );
-
-                            button
-                                .nextElementSibling
-                                ?.classList.remove(
-                                    'show'
-                                );
-                        }
-                    );
+                    closeDropdowns();
                 }
+            }
+        );
+
+        /*
+         * Close open navigation controls with Escape.
+         *
+         * Return focus to the dropdown button that owns the focused
+         * dropdown, or to the mobile navigation toggle otherwise.
+         */
+        document.addEventListener(
+            'keydown',
+            (event) => {
+                if (event.key !== 'Escape') {
+                    return;
+                }
+
+                const focusedDropdown =
+                    document.activeElement
+                        ?.closest(
+                            '.dropdown'
+                        );
+
+                const dropdownButton =
+                    focusedDropdown
+                        ?.querySelector(
+                            '.dropdown-toggle'
+                        );
+
+                const navigationWasOpen =
+                    nav.classList.contains(
+                        'show'
+                    );
+
+                const dropdownWasOpen =
+                    Array.from(
+                        dropdownButtons
+                    ).some(
+                        (button) =>
+                            button.getAttribute(
+                                'aria-expanded'
+                            ) === 'true'
+                    );
+
+                if (
+                    dropdownWasOpen
+                ) {
+                    closeDropdowns();
+
+                    if (dropdownButton) {
+                        dropdownButton.focus();
+                    }
+
+                    return;
+                }
+
+                if (!navigationWasOpen) {
+                    return;
+                }
+
+                closeNavigation();
+                toggler.focus();
             }
         );
     }
