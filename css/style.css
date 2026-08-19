@@ -113,6 +113,12 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-hover);
+  outline-offset: 3px;
+}
+
 /* =====================================================
    4. Layout and Utilities
 ===================================================== */
@@ -3025,16 +3031,15 @@ button.contact-action {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .intro-profile-picture-block {
-    animation: none;
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
   }
 
-  .intro-profile-picture-img,
-  .nav-link-container img,
-  .contact-action,
-  .contact-resource-link,
-  .contact-qr-section img {
-    transition: none;
+  .intro-profile-picture-block {
+    animation: none;
   }
 
   .results-slide {
