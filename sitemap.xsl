@@ -43,16 +43,16 @@
             rel="icon"
             type="image/png"
             sizes="96x96"
-            href="/favicon-96.png?v=20260712.01"/>
+            href="/favicon-96.png"/>
 
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/apple-touch-icon.png?v=20260712.01"/>
+            href="/apple-touch-icon.png"/>
 
         <link
             rel="icon"
-            href="/favicon.ico?v=20260712.01"/>
+            href="/favicon.ico"/>
 
         <style>
           :root {
