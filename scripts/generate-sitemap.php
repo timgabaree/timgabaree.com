@@ -9,8 +9,8 @@ declare(strict_types=1);
 |
 | Generates the root sitemap.xml from canonical application data:
 |
-| - SITEMAP_PAGES defines public page URLs and page/image associations.
-| - PAGE_CONFIG supplies meaningful page modification dates.
+| - SITEMAP_PAGES defines public page inclusion and image associations.
+| - PAGE_CONFIG supplies canonical URLs and meaningful modification dates.
 | - SITE_IMAGES supplies managed image paths and roles.
 |
 | Run from the project root:
@@ -96,8 +96,20 @@ foreach (
         );
     }
 
+    $publicPageConfig =
+        pageConfig(
+            $pageKey
+        );
+
+    if ($publicPageConfig === []) {
+        throw new RuntimeException(
+            'Missing PAGE_CONFIG entry for sitemap page: ' .
+            $pageKey
+        );
+    }
+
     $pageUrl =
-        $pageConfig['url'] ??
+        $publicPageConfig['canonical_url'] ??
         '';
 
     if (
@@ -108,19 +120,7 @@ foreach (
         ) === false
     ) {
         throw new RuntimeException(
-            'Invalid sitemap URL for page: ' .
-            $pageKey
-        );
-    }
-
-    $publicPageConfig =
-        pageConfig(
-            $pageKey
-        );
-
-    if ($publicPageConfig === []) {
-        throw new RuntimeException(
-            'Missing PAGE_CONFIG entry for sitemap page: ' .
+            'Invalid canonical URL for sitemap page: ' .
             $pageKey
         );
     }

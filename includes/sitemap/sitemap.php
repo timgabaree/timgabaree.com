@@ -7,19 +7,16 @@ declare(strict_types=1);
 | Sitemap Configuration
 |--------------------------------------------------------------------------
 |
-| Defines the canonical public pages included in sitemap.xml and the
-| managed SITE_IMAGES entries associated with each page.
+| Defines the public pages included in sitemap.xml and the managed
+| SITE_IMAGES entries associated with each page.
 |
-| Page modification dates are provided centrally by PAGE_CONFIG.
-| Image paths are provided centrally by SITE_IMAGES.
+| Canonical page URLs and modification dates are provided centrally by
+| PAGE_CONFIG. Image paths are provided centrally by SITE_IMAGES.
 |
 */
 
 const SITEMAP_PAGES = [
     'home' => [
-        'url' =>
-            SITE_HOME_URL,
-
         'images' => [
             'profile',
             'profile_hover',
@@ -37,9 +34,6 @@ const SITEMAP_PAGES = [
     ],
 
     'about' => [
-        'url' =>
-            SITE_ABOUT_URL,
-
         'images' => [
             'about_family',
             'about_liberty_family',
@@ -55,9 +49,6 @@ const SITEMAP_PAGES = [
     ],
 
     'contact' => [
-        'url' =>
-            SITE_CONTACT_URL,
-
         'images' => [
             'profile',
             'qr_code',
@@ -66,9 +57,6 @@ const SITEMAP_PAGES = [
     ],
 
     'privacy' => [
-        'url' =>
-            SITE_PRIVACY_URL,
-
         'images' => [
             'background',
         ],
