@@ -230,6 +230,10 @@ const PAGE_CONFIG = [
 
         'schema' =>
             'schema-home.php',
+
+        'scripts' => [
+            '/js/results-carousel.js',
+        ],
     ],
 
     'about' => [
@@ -312,6 +316,10 @@ const PAGE_CONFIG = [
 
         'schema' =>
             'schema-contact.php',
+
+        'scripts' => [
+            '/js/calendly.js',
+        ],
     ],
 
     'privacy' => [

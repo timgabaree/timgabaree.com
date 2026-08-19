@@ -175,8 +175,6 @@ unset(
 
 <?php
 
-$pageScripts = [];
-
 if ($submissionConfirmed) {
     $pageScripts[] =
         '/js/contact-conversion.js';

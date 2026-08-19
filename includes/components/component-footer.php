@@ -117,13 +117,6 @@ if (
 
 <?php
 
-if (
-    !isset($pageScripts) ||
-    !is_array($pageScripts)
-) {
-    $pageScripts = [];
-}
-
 $pageScripts =
     array_values(
         array_filter(

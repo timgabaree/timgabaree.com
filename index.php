@@ -1043,10 +1043,6 @@ require __DIR__ .
 
 <?php
 
-$pageScripts = [
-    '/js/results-carousel.js',
-];
-
 require __DIR__ .
     '/includes/components/component-footer.php';
 
