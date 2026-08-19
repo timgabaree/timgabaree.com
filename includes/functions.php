@@ -173,7 +173,7 @@ function siteImage(
 
     $fetchPriority =
         $image['fetchpriority'] ??
-        '';
+        'auto';
 
     $decoding =
         $image['decoding'] ??

@@ -50,9 +50,6 @@ const SITE_IMAGES = [
         'fetchpriority' =>
             'high',
 
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -79,15 +76,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             '',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
     ],
 
 /*
@@ -111,15 +99,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             '',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
     ],
 
 /*
@@ -143,15 +122,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             '',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
     ],
 
 /*
@@ -182,9 +152,6 @@ const SITE_IMAGES = [
         'fetchpriority' =>
             'high',
 
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -211,15 +178,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             '',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
 
         'roles' => [
             'sitemap',
@@ -248,15 +206,6 @@ const SITE_IMAGES = [
         'alt' =>
             '',
 
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -283,15 +232,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             '',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
 
         'roles' => [
             'sitemap',
@@ -320,15 +260,6 @@ const SITE_IMAGES = [
         'alt' =>
             '',
 
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -355,15 +286,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             '',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
 
         'roles' => [
             'sitemap',
@@ -392,15 +314,6 @@ const SITE_IMAGES = [
         'alt' =>
             'University of Illinois Springfield',
 
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -427,15 +340,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             '',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
 
         'roles' => [
             'sitemap',
@@ -464,15 +368,6 @@ const SITE_IMAGES = [
         'alt' =>
             'Purdue University Global',
 
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -499,15 +394,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             '',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
 
         'roles' => [
             'sitemap',
@@ -536,15 +422,6 @@ const SITE_IMAGES = [
         'alt' =>
             '',
 
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -572,15 +449,6 @@ const SITE_IMAGES = [
         'alt' =>
             '',
 
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -607,15 +475,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             '',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
 
         'roles' => [
             'sitemap',
@@ -650,9 +509,6 @@ const SITE_IMAGES = [
         'fetchpriority' =>
             'high',
 
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -686,9 +542,6 @@ const SITE_IMAGES = [
         'fetchpriority' =>
             'high',
 
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -715,15 +568,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             'Tim Gabaree with Carrie, Clint, and Finn at the Statue of Liberty',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
 
         'roles' => [
             'sitemap',
@@ -752,15 +596,6 @@ const SITE_IMAGES = [
         'alt' =>
             'Clint and Finn viewing an exhibit about hard work at Ellis Island',
 
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -788,15 +623,6 @@ const SITE_IMAGES = [
         'alt' =>
             'Tim Gabaree with Carrie, Clint, and Finn at Mount Vernon',
 
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
-
         'roles' => [
             'sitemap',
         ],
@@ -823,15 +649,6 @@ const SITE_IMAGES = [
 
         'alt' =>
             'QR code to Tim Gabaree’s contact page',
-
-        'loading' =>
-            'lazy',
-
-        'fetchpriority' =>
-            'auto',
-
-        'decoding' =>
-            'async',
 
         'roles' => [
             'sitemap',
