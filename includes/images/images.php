@@ -11,14 +11,12 @@ declare(strict_types=1);
 |
 | Add, remove, rename, or update important site images here.
 |
-| Each image definition may be used by:
+| Image definitions are shared across HTML rendering, metadata,
+| structured data, preload logic, and sitemap generation.
 |
-| - HTML image rendering
-| - Open Graph metadata
-| - X / Twitter metadata
-| - Schema.org structured data
-| - preload logic
-| - sitemap generation
+| The optional roles array is reserved for behavior that requires explicit
+| authorization. Currently, the sitemap role approves an image for sitemap
+| inclusion.
 |
 */
 
@@ -56,9 +54,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
-            'metadata',
-            'schema',
             'sitemap',
         ],
     ],
@@ -93,10 +88,6 @@ const SITE_IMAGES = [
 
         'decoding' =>
             'async',
-
-        'roles' => [
-            'content',
-        ],
     ],
 
 /*
@@ -129,10 +120,6 @@ const SITE_IMAGES = [
 
         'decoding' =>
             'async',
-
-        'roles' => [
-            'content',
-        ],
     ],
 
 /*
@@ -165,10 +152,6 @@ const SITE_IMAGES = [
 
         'decoding' =>
             'async',
-
-        'roles' => [
-            'content',
-        ],
     ],
 
 /*
@@ -203,7 +186,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
@@ -240,7 +222,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'background',
             'sitemap',
         ],
     ],
@@ -277,7 +258,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'background',
             'sitemap',
         ],
     ],
@@ -314,7 +294,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'background',
             'sitemap',
         ],
     ],
@@ -351,7 +330,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'background',
             'sitemap',
         ],
     ],
@@ -388,7 +366,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'background',
             'sitemap',
         ],
     ],
@@ -425,7 +402,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
@@ -462,7 +438,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'background',
             'sitemap',
         ],
     ],
@@ -499,7 +474,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
@@ -536,7 +510,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
@@ -573,7 +546,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
@@ -610,7 +582,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
@@ -647,7 +618,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
@@ -684,9 +654,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
-            'metadata',
-            'schema',
             'sitemap',
         ],
     ],
@@ -723,7 +690,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'background',
             'sitemap',
         ],
     ],
@@ -760,7 +726,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
@@ -797,7 +762,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
@@ -834,7 +798,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
@@ -871,7 +834,6 @@ const SITE_IMAGES = [
             'async',
 
         'roles' => [
-            'content',
             'sitemap',
         ],
     ],
