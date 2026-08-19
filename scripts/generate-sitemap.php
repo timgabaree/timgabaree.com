@@ -295,6 +295,23 @@ $sitemapPath =
     dirname(__DIR__) .
     '/sitemap.xml';
 
+$existingSitemap =
+    is_file($sitemapPath)
+        ? file_get_contents(
+            $sitemapPath
+        )
+        : false;
+
+if ($existingSitemap === $sitemapXml) {
+    printf(
+        "Sitemap unchanged (%d bytes)%s",
+        strlen($sitemapXml),
+        PHP_EOL
+    );
+
+    exit(0);
+}
+
 $result =
     file_put_contents(
         $sitemapPath,
