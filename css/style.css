@@ -2450,7 +2450,6 @@ button.contact-action {
   }
 
   .intro-profile-picture-img {
-    width: 100%;
     height: auto;
   }
 
@@ -2622,7 +2621,6 @@ button.contact-action {
   body {
     font-size: 14px;
     line-height: 1.5;
-    padding-top: 60px;
   }
 
   .container {
@@ -2696,7 +2694,6 @@ button.contact-action {
   }
 
   .intro-profile-picture-img {
-    width: 100%;
     max-width: 300px;
     height: auto;
   }
@@ -2761,16 +2758,12 @@ button.contact-action {
 
 
   .interests-content {
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--card-gap);
-    width: 100%;
   }
 
   .interests-block {
     width: auto;
     max-width: none;
-    min-width: 0;
     height: 250px;
     margin: 0;
     padding: 0;
@@ -2991,7 +2984,6 @@ button.contact-action {
   }
 
   .intro-profile-picture-img {
-    position: absolute;
     left: 50%;
     max-width: 300px;
     height: auto;
