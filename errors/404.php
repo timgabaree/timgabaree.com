@@ -9,8 +9,20 @@ http_response_code(
     HTTP_STATUS_NOT_FOUND
 );
 
+/*
+|--------------------------------------------------------------------------
+| Page
+|--------------------------------------------------------------------------
+*/
+
 $page =
     'error-404';
+
+/*
+|--------------------------------------------------------------------------
+| Error Content
+|--------------------------------------------------------------------------
+*/
 
 $errorCode =
     404;
@@ -24,23 +36,14 @@ $errorMessage =
 $errorSuggestion =
     'The address may have changed, or the page may no longer be available. You can return to the homepage or contact Tim.';
 
-$pageTitle =
-    'Page Not Found | Tim Gabaree';
-
-$metaDescription =
-    'The requested page could not be found on timgabaree.com.';
-
-$robots =
-    'noindex, follow';
-
-$canonicalUrl =
-    '';
+/*
+|--------------------------------------------------------------------------
+| Page Start
+|--------------------------------------------------------------------------
+*/
 
 require dirname(__DIR__) .
-    '/includes/components/component-head.php';
-
-require dirname(__DIR__) .
-    '/includes/components/component-header.php';
+    '/includes/components/component-page-start.php';
 
 require dirname(__DIR__) .
     '/includes/components/component-error.php';

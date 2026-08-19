@@ -9,8 +9,20 @@ http_response_code(
     HTTP_STATUS_INTERNAL_SERVER_ERROR
 );
 
+/*
+|--------------------------------------------------------------------------
+| Page
+|--------------------------------------------------------------------------
+*/
+
 $page =
     'error-500';
+
+/*
+|--------------------------------------------------------------------------
+| Error Content
+|--------------------------------------------------------------------------
+*/
 
 $errorCode =
     500;
@@ -24,23 +36,14 @@ $errorMessage =
 $errorSuggestion =
     'Please try again shortly. If the problem continues, you can contact Tim.';
 
-$pageTitle =
-    'Server Error | Tim Gabaree';
-
-$metaDescription =
-    'An unexpected internal server error occurred on timgabaree.com.';
-
-$robots =
-    'noindex, nofollow';
-
-$canonicalUrl =
-    '';
+/*
+|--------------------------------------------------------------------------
+| Page Start
+|--------------------------------------------------------------------------
+*/
 
 require dirname(__DIR__) .
-    '/includes/components/component-head.php';
-
-require dirname(__DIR__) .
-    '/includes/components/component-header.php';
+    '/includes/components/component-page-start.php';
 
 require dirname(__DIR__) .
     '/includes/components/component-error.php';

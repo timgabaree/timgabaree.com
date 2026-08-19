@@ -9,8 +9,20 @@ http_response_code(
     HTTP_STATUS_FORBIDDEN
 );
 
+/*
+|--------------------------------------------------------------------------
+| Page
+|--------------------------------------------------------------------------
+*/
+
 $page =
     'error-403';
+
+/*
+|--------------------------------------------------------------------------
+| Error Content
+|--------------------------------------------------------------------------
+*/
 
 $errorCode =
     403;
@@ -24,23 +36,14 @@ $errorMessage =
 $errorSuggestion =
     'You can return to the homepage or contact Tim if you believe you reached this page in error.';
 
-$pageTitle =
-    'Access Denied | Tim Gabaree';
-
-$metaDescription =
-    'Access to this page or resource is restricted.';
-
-$robots =
-    'noindex, follow';
-
-$canonicalUrl =
-    '';
+/*
+|--------------------------------------------------------------------------
+| Page Start
+|--------------------------------------------------------------------------
+*/
 
 require dirname(__DIR__) .
-    '/includes/components/component-head.php';
-
-require dirname(__DIR__) .
-    '/includes/components/component-header.php';
+    '/includes/components/component-page-start.php';
 
 require dirname(__DIR__) .
     '/includes/components/component-error.php';

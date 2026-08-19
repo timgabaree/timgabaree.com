@@ -38,16 +38,10 @@ declare(strict_types=1);
 | Component Requirements
 |--------------------------------------------------------------------------
 |
-| bootstrap.php must already be loaded by the calling page.
-|
-| Page-specific values should be assigned before requiring this component.
-| Missing optional metadata values are normalized by
-| component-head-defaults.php.
+| bootstrap.php and component-page-start.php must already have initialized
+| the page metadata before this component is rendered.
 |
 */
-
-require_once __DIR__ .
-    '/component-head-defaults.php';
 
 ?>
 <!doctype html>

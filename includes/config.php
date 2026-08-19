@@ -334,6 +334,75 @@ const PAGE_CONFIG = [
             'schema-privacy.php',
     ],
 
+    'error-403' => [
+        'title' =>
+            'Access Denied | Tim Gabaree',
+
+        'description' =>
+            'Access to this page or resource is restricted.',
+
+        'robots' =>
+            'noindex, follow',
+
+        'canonical_url' =>
+            '',
+
+        'image' =>
+            'profile',
+
+        'preload_image' =>
+            '',
+
+        'schema' =>
+            '',
+    ],
+
+    'error-404' => [
+        'title' =>
+            'Page Not Found | Tim Gabaree',
+
+        'description' =>
+            'The requested page could not be found on timgabaree.com.',
+
+        'robots' =>
+            'noindex, follow',
+
+        'canonical_url' =>
+            '',
+
+        'image' =>
+            'profile',
+
+        'preload_image' =>
+            '',
+
+        'schema' =>
+            '',
+    ],
+
+    'error-500' => [
+        'title' =>
+            'Server Error | Tim Gabaree',
+
+        'description' =>
+            'An unexpected internal server error occurred on timgabaree.com.',
+
+        'robots' =>
+            'noindex, nofollow',
+
+        'canonical_url' =>
+            '',
+
+        'image' =>
+            'profile',
+
+        'preload_image' =>
+            '',
+
+        'schema' =>
+            '',
+    ],
+
     'thank-you' => [
         'body_class' =>
             'contact-body',

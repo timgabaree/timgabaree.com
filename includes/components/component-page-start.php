@@ -133,12 +133,92 @@ $preloadImageKey =
 
 /*
 |--------------------------------------------------------------------------
-| Normalize Head Defaults
+| Page Dates
+|--------------------------------------------------------------------------
+|
+| Publication and modification dates are controlled centrally through
+| PAGE_METADATA in version.php.
+|
+*/
+
+$pageDatePublished =
+    pagePublished(
+        $page
+    );
+
+$pageDateModified =
+    pageModified(
+        $page
+    );
+
+/*
+|--------------------------------------------------------------------------
+| Page Image Data
 |--------------------------------------------------------------------------
 */
 
-require_once __DIR__ .
-    '/component-head-defaults.php';
+$pageImage =
+    getSiteImage(
+        $pageImageKey
+    );
+
+/*
+|--------------------------------------------------------------------------
+| Open Graph Image
+|--------------------------------------------------------------------------
+*/
+
+$ogLocale =
+    SITE_LOCALE;
+
+$ogImage =
+    $pageImage['url'] ??
+    '';
+
+$ogImageType =
+    $pageImage['type'] ??
+    '';
+
+$ogImageWidth =
+    $pageImage['width'] ??
+    0;
+
+$ogImageHeight =
+    $pageImage['height'] ??
+    0;
+
+$ogImageAlt =
+    $pageImage['alt'] ??
+    '';
+
+/*
+|--------------------------------------------------------------------------
+| X / Twitter Image
+|--------------------------------------------------------------------------
+*/
+
+$twitterImage =
+    $ogImage;
+
+$twitterImageAlt =
+    $ogImageAlt;
+
+/*
+|--------------------------------------------------------------------------
+| Preload Image
+|--------------------------------------------------------------------------
+*/
+
+$preloadImageData =
+    $preloadImageKey !== ''
+        ? getSiteImage(
+            $preloadImageKey
+        )
+        : [];
+
+$preloadImage =
+    $preloadImageData['path'] ??
+    '';
 
 /*
 |--------------------------------------------------------------------------
@@ -150,32 +230,43 @@ $schemaFile =
     $pageConfiguration['schema'] ??
     '';
 
-if (
-    !is_string($schemaFile) ||
-    preg_match(
-        '/^schema-[a-z0-9-]+\\.php$/',
-        $schemaFile
-    ) !== 1
-) {
+if (!is_string($schemaFile)) {
     throw new RuntimeException(
-        'A valid schema file is required for page: ' .
+        'Invalid schema configuration for page: ' .
         $page
     );
 }
 
-$schemaPath =
-    dirname(__DIR__) .
-    '/schema/' .
-    $schemaFile;
+$schemaFile =
+    trim($schemaFile);
 
-if (!is_file($schemaPath)) {
-    throw new RuntimeException(
-        'Schema file not found for page: ' .
-        $page
-    );
+if ($schemaFile !== '') {
+    if (
+        preg_match(
+            '/^schema-[a-z0-9-]+\\.php$/',
+            $schemaFile
+        ) !== 1
+    ) {
+        throw new RuntimeException(
+            'A valid schema file is required for page: ' .
+            $page
+        );
+    }
+
+    $schemaPath =
+        dirname(__DIR__) .
+        '/schema/' .
+        $schemaFile;
+
+    if (!is_file($schemaPath)) {
+        throw new RuntimeException(
+            'Schema file not found for page: ' .
+            $page
+        );
+    }
+
+    require $schemaPath;
 }
-
-require $schemaPath;
 
 /*
 |--------------------------------------------------------------------------

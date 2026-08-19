@@ -3,7 +3,7 @@
 set -u
 
 BRANCH="main"
-REMOTE="timgabareecom"
+REMOTE="timgabaree.com"
 
 cd "$(dirname "$0")/.." || {
   echo "Unable to locate repository."
