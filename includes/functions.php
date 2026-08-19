@@ -118,6 +118,36 @@ function getSiteImage(
             ? SITE_URL . $path
             : '';
 
+    $extension =
+        strtolower(
+            pathinfo(
+                $path,
+                PATHINFO_EXTENSION
+            )
+        );
+
+    $image['type'] =
+        match ($extension) {
+            'webp' =>
+                'image/webp',
+
+            'png' =>
+                'image/png',
+
+            'jpg',
+            'jpeg' =>
+                'image/jpeg',
+
+            'avif' =>
+                'image/avif',
+
+            'svg' =>
+                'image/svg+xml',
+
+            default =>
+                '',
+        };
+
     return $image;
 }
 

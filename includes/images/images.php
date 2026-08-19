@@ -38,9 +38,6 @@ const SITE_IMAGES = [
         'height' =>
             1200,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             'Tim Gabaree',
 
@@ -71,9 +68,6 @@ const SITE_IMAGES = [
         'height' =>
             50,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             '',
     ],
@@ -93,9 +87,6 @@ const SITE_IMAGES = [
 
         'height' =>
             50,
-
-        'type' =>
-            'image/webp',
 
         'alt' =>
             '',
@@ -117,9 +108,6 @@ const SITE_IMAGES = [
         'height' =>
             50,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             '',
     ],
@@ -139,9 +127,6 @@ const SITE_IMAGES = [
 
         'height' =>
             534,
-
-        'type' =>
-            'image/webp',
 
         'alt' =>
             '',
@@ -173,9 +158,6 @@ const SITE_IMAGES = [
         'height' =>
             1050,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             '',
 
@@ -199,9 +181,6 @@ const SITE_IMAGES = [
 
         'height' =>
             1050,
-
-        'type' =>
-            'image/webp',
 
         'alt' =>
             '',
@@ -227,9 +206,6 @@ const SITE_IMAGES = [
         'height' =>
             1050,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             '',
 
@@ -253,9 +229,6 @@ const SITE_IMAGES = [
 
         'height' =>
             752,
-
-        'type' =>
-            'image/webp',
 
         'alt' =>
             '',
@@ -281,9 +254,6 @@ const SITE_IMAGES = [
         'height' =>
             313,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             '',
 
@@ -307,9 +277,6 @@ const SITE_IMAGES = [
 
         'height' =>
             250,
-
-        'type' =>
-            'image/webp',
 
         'alt' =>
             'University of Illinois Springfield',
@@ -335,9 +302,6 @@ const SITE_IMAGES = [
         'height' =>
             444,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             '',
 
@@ -361,9 +325,6 @@ const SITE_IMAGES = [
 
         'height' =>
             137,
-
-        'type' =>
-            'image/webp',
 
         'alt' =>
             'Purdue University Global',
@@ -389,9 +350,6 @@ const SITE_IMAGES = [
         'height' =>
             602,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             '',
 
@@ -415,9 +373,6 @@ const SITE_IMAGES = [
 
         'height' =>
             602,
-
-        'type' =>
-            'image/webp',
 
         'alt' =>
             '',
@@ -443,9 +398,6 @@ const SITE_IMAGES = [
         'height' =>
             602,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             '',
 
@@ -470,9 +422,6 @@ const SITE_IMAGES = [
         'height' =>
             533,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             '',
 
@@ -496,9 +445,6 @@ const SITE_IMAGES = [
 
         'height' =>
             600,
-
-        'type' =>
-            'image/webp',
 
         'alt' =>
             'Tim Gabaree with Carrie, Clint, and Finn in Halloween costumes',
@@ -530,9 +476,6 @@ const SITE_IMAGES = [
         'height' =>
             942,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             '',
 
@@ -563,9 +506,6 @@ const SITE_IMAGES = [
         'height' =>
             1067,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             'Tim Gabaree with Carrie, Clint, and Finn at the Statue of Liberty',
 
@@ -589,9 +529,6 @@ const SITE_IMAGES = [
 
         'height' =>
             486,
-
-        'type' =>
-            'image/webp',
 
         'alt' =>
             'Clint and Finn viewing an exhibit about hard work at Ellis Island',
@@ -617,9 +554,6 @@ const SITE_IMAGES = [
         'height' =>
             600,
 
-        'type' =>
-            'image/webp',
-
         'alt' =>
             'Tim Gabaree with Carrie, Clint, and Finn at Mount Vernon',
 
@@ -643,9 +577,6 @@ const SITE_IMAGES = [
 
         'height' =>
             500,
-
-        'type' =>
-            'image/webp',
 
         'alt' =>
             'QR code to Tim Gabaree’s contact page',
