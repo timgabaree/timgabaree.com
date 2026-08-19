@@ -158,6 +158,31 @@ a:hover {
   border: 0 !important;
 }
 
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1200;
+  padding: 10px 14px;
+  color: var(--white);
+  background-color: var(--brand-blue);
+  border: 2px solid var(--white);
+  border-radius: var(--radius-standard);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  color: var(--white);
+  text-decoration: none;
+  transform: translateY(0);
+  outline: 3px solid var(--accent-hover);
+  outline-offset: 3px;
+}
+
 /* =====================================================
    5. Navigation
 ===================================================== */

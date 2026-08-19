@@ -46,7 +46,9 @@ require __DIR__ .
 
 <!-- Main -->
 
-<main class="privacy-page">
+<main
+  id="main-content"
+  class="privacy-page">
 
   <?= siteImage(
       'background',

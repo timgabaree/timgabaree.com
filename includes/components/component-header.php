@@ -38,6 +38,12 @@ $bodyClass =
 
 <body<?php if ($bodyClass !== ''): ?> class="<?= e($bodyClass) ?>"<?php endif; ?>>
 
+<a
+  class="skip-link"
+  href="#main-content">
+  Skip to main content
+</a>
+
 <?php
 
 require __DIR__ .
