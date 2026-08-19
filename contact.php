@@ -30,17 +30,22 @@ $formStatus =
         : '';
 
 $formStatusMessages = [
-    'missing' =>
+    CONTACT_STATUS_MISSING =>
         'Please complete all required fields.',
-    'invalid' =>
+
+    CONTACT_STATUS_INVALID =>
         'Some submitted information could not be accepted. Please review the form and try again.',
-    'invalid-email' =>
+
+    CONTACT_STATUS_INVALID_EMAIL =>
         'Please enter a valid email address.',
-    'rate-limited' =>
+
+    CONTACT_STATUS_RATE_LIMITED =>
         'Please wait a few seconds before submitting another message.',
-    'security-error' =>
+
+    CONTACT_STATUS_SECURITY_ERROR =>
         'Your form session could not be verified. Please reload this page and try again.',
-    'send-error' =>
+
+    CONTACT_STATUS_SEND_ERROR =>
         'Your message could not be sent at this time. Please try again or contact me directly.',
 ];
 

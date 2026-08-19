@@ -106,9 +106,7 @@ if (
         'Tim Gabaree contact form: rejected cross-site submission.'
     );
 
-    redirectTo(
-        $contactUrl .
-        '?status=' .
+    redirectToContactStatus(
         CONTACT_STATUS_INVALID
     );
 }
@@ -140,9 +138,7 @@ if (
     $contentLength >
         CONTACT_FORM_MAX_REQUEST_BYTES
 ) {
-    redirectTo(
-        $contactUrl .
-        '?status=' .
+    redirectToContactStatus(
         CONTACT_STATUS_INVALID
     );
 }
@@ -159,9 +155,7 @@ if (
         CONTACT_FORM_MINIMUM_SECONDS_BETWEEN_SUBMISSIONS
     )
 ) {
-    redirectTo(
-        $contactUrl .
-        '?status=' .
+    redirectToContactStatus(
         CONTACT_STATUS_RATE_LIMITED
     );
 }
@@ -216,9 +210,7 @@ if (
         'Tim Gabaree contact form: invalid CSRF token.'
     );
 
-    redirectTo(
-        $contactUrl .
-        '?status=' .
+    redirectToContactStatus(
         CONTACT_STATUS_SECURITY_ERROR
     );
 }
@@ -252,12 +244,8 @@ if ($isValid !== true) {
             CONTACT_STATUS_INVALID;
     }
 
-    redirectTo(
-        $contactUrl .
-        '?status=' .
-        rawurlencode(
-            $status
-        )
+    redirectToContactStatus(
+        $status
     );
 }
 
@@ -270,9 +258,7 @@ if (
         $formData
     )
 ) {
-    redirectTo(
-        $contactUrl .
-        '?status=' .
+    redirectToContactStatus(
         CONTACT_STATUS_INVALID
     );
 }
@@ -334,8 +320,6 @@ error_log(
     'Tim Gabaree contact form: mail() returned false.'
 );
 
-redirectTo(
-    $contactUrl .
-    '?status=' .
+redirectToContactStatus(
     CONTACT_STATUS_SEND_ERROR
 );

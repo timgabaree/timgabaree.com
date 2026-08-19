@@ -944,6 +944,25 @@ function redirectTo(
 
 /*
 |--------------------------------------------------------------------------
+| Contact Form Status Redirect
+|--------------------------------------------------------------------------
+|
+| Redirect to the contact page with a form-status query parameter.
+|
+*/
+
+function redirectToContactStatus(
+    string $status
+): never {
+    redirectTo(
+        SITE_CONTACT_PATH .
+        '?status=' .
+        rawurlencode($status)
+    );
+}
+
+/*
+|--------------------------------------------------------------------------
 | JSON Encoding
 |--------------------------------------------------------------------------
 |
