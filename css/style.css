@@ -134,7 +134,7 @@ button:focus-visible {
 
 #home,
 
-#experience,
+#operating-results,
 
 #results,
 
@@ -423,7 +423,7 @@ button:focus-visible {
 ===================================================== */
 .expertise-heading-block,
 
-.experience-heading-block,
+.section-card-heading-block,
 
 .education-heading-block,
 
@@ -436,7 +436,7 @@ button:focus-visible {
 
 .expertise-heading,
 
-.experience-heading,
+.section-card-heading,
 
 .education-heading,
 
@@ -886,17 +886,17 @@ button:focus-visible {
 }
 
 /* =====================================================
-   11. Home: Experience and Board
+   11. Home: Operating Results and Board
 ===================================================== */
 
-.experience-section {
+.section-card-section {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
 }
 
-.experience-entry {
+.section-card-entry {
   width: 100%;
   margin: 0 auto;
   padding: 28px;
@@ -906,7 +906,7 @@ button:focus-visible {
   box-shadow: 0 2px 5px var(--shadow-soft);
 }
 
-.experience-intro {
+.section-card-intro {
   margin: 0 0 22px;
   font-size: 17px;
   line-height: 1.6;
@@ -2670,7 +2670,7 @@ button.contact-action {
 
   .expertise-section,
 
-  .experience-entry,
+  .section-card-entry,
 
   .education-section,
 
@@ -2762,7 +2762,7 @@ button.contact-action {
   }
 
   .expertise-heading-block,
-  .experience-heading-block,
+  .section-card-heading-block,
   .education-heading-block,
   .qanda-heading-block,
   .testimonials-heading-block {
@@ -2773,7 +2773,7 @@ button.contact-action {
     margin-bottom: 16px;
   }
 
-  .experience-heading-block, .qanda-heading-block {
+  .section-card-heading-block, .qanda-heading-block {
     margin-bottom: 14px;
   }
 

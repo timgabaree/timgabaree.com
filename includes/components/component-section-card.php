@@ -135,7 +135,7 @@ foreach ($sectionItems as $sectionItem) {
 $sectionHeadingId = $sectionId . '-title';
 
 $sectionClasses = trim(
-    'experience-section scroll-offset ' .
+    'section-card-section scroll-offset ' .
     $sectionClass
 );
 
@@ -148,21 +148,21 @@ $sectionClasses = trim(
     class="<?= e($sectionClasses) ?>"
     aria-labelledby="<?= e($sectionHeadingId) ?>">
 
-    <div class="experience-heading-block">
+    <div class="section-card-heading-block">
 
       <h2
         id="<?= e($sectionHeadingId) ?>"
-        class="experience-heading">
+        class="section-card-heading">
         <?= e($sectionTitle) ?>
       </h2>
 
     </div>
 
-    <div class="experience-entry">
+    <div class="section-card-entry">
 
       <?php if ($sectionIntro !== ''): ?>
 
-      <p class="experience-intro">
+      <p class="section-card-intro">
         <?= e($sectionIntro) ?>
       </p>
 

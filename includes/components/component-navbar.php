@@ -120,7 +120,7 @@ $homePrefix =
             class="dropdown-item"
             href="<?= e(
                 $homePrefix .
-                '#experience'
+                '#operating-results'
             ) ?>">
             Operating Results
           </a>

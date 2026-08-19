@@ -415,7 +415,7 @@ require __DIR__ .
 
         <a
           class="results-preview-link"
-          href="#experience">
+          href="#operating-results">
           View selected operating results
         </a>
 
@@ -501,7 +501,7 @@ require __DIR__ .
 
   <?php
 
-  $sectionId = 'experience';
+  $sectionId = 'operating-results';
 
   $sectionTitle =
       'Selected Operating Results';
