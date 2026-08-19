@@ -42,52 +42,31 @@ $primaryImageSchema =
 |--------------------------------------------------------------------------
 */
 
-$profilePageSchema = [
-    '@type' =>
+$profilePageSchema =
+    buildPageSchema(
         'ProfilePage',
-
-    '@id' =>
-        SITE_HOME_URL .
-        '#webpage',
-
-    'url' =>
         SITE_HOME_URL,
-
-    'name' =>
         $pageTitle,
-
-    'description' =>
         $metaDescription,
-
-    'inLanguage' =>
-        SITE_LANGUAGE,
-
-    'datePublished' =>
         $pageDatePublished,
-
-    'dateModified' =>
         $pageDateModified,
+        [
+            'primaryImageOfPage' => [
+                '@id' =>
+                    SITE_PRIMARY_IMAGE_ID,
+            ],
 
-    'isPartOf' => [
-        '@id' =>
-            SITE_WEBSITE_ID,
-    ],
+            'mainEntity' => [
+                '@id' =>
+                    SITE_PERSON_ID,
+            ],
 
-    'primaryImageOfPage' => [
-        '@id' =>
-            SITE_PRIMARY_IMAGE_ID,
-    ],
-
-    'mainEntity' => [
-        '@id' =>
-            SITE_PERSON_ID,
-    ],
-
-    'about' => [
-        '@id' =>
-            SITE_PERSON_ID,
-    ],
-];
+            'about' => [
+                '@id' =>
+                    SITE_PERSON_ID,
+            ],
+        ]
+    );
 
 /*
 |--------------------------------------------------------------------------

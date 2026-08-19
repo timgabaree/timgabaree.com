@@ -89,52 +89,31 @@ $aboutImageSchema = [
 |--------------------------------------------------------------------------
 */
 
-$aboutPageSchema = [
-    '@type' =>
+$aboutPageSchema =
+    buildPageSchema(
         'ProfilePage',
-
-    '@id' =>
-        SITE_ABOUT_URL .
-        '#webpage',
-
-    'url' =>
         SITE_ABOUT_URL,
-
-    'name' =>
         $pageTitle,
-
-    'description' =>
         $metaDescription,
-
-    'inLanguage' =>
-        SITE_LANGUAGE,
-
-    'datePublished' =>
         $pageDatePublished,
-
-    'dateModified' =>
         $pageDateModified,
+        [
+            'primaryImageOfPage' => [
+                '@id' =>
+                    $aboutImageId,
+            ],
 
-    'isPartOf' => [
-        '@id' =>
-            SITE_WEBSITE_ID,
-    ],
+            'mainEntity' => [
+                '@id' =>
+                    SITE_PERSON_ID,
+            ],
 
-    'primaryImageOfPage' => [
-        '@id' =>
-            $aboutImageId,
-    ],
-
-    'mainEntity' => [
-        '@id' =>
-            SITE_PERSON_ID,
-    ],
-
-    'about' => [
-        '@id' =>
-            SITE_PERSON_ID,
-    ],
-];
+            'about' => [
+                '@id' =>
+                    SITE_PERSON_ID,
+            ],
+        ]
+    );
 
 /*
 |--------------------------------------------------------------------------

@@ -44,6 +44,64 @@ function buildWebsiteSchema(): array
 
 /*
 |--------------------------------------------------------------------------
+| Page
+|--------------------------------------------------------------------------
+|
+| Build the shared Schema.org properties used by public page entities.
+|
+| Page-specific schema properties may be supplied through $additional.
+|
+*/
+
+function buildPageSchema(
+    string $type,
+    string $url,
+    string $name,
+    string $description,
+    string $datePublished,
+    string $dateModified,
+    array $additional = []
+): array {
+    $schema = [
+        '@type' =>
+            $type,
+
+        '@id' =>
+            $url .
+            '#webpage',
+
+        'url' =>
+            $url,
+
+        'name' =>
+            $name,
+
+        'description' =>
+            $description,
+
+        'inLanguage' =>
+            SITE_LANGUAGE,
+
+        'datePublished' =>
+            $datePublished,
+
+        'dateModified' =>
+            $dateModified,
+
+        'isPartOf' => [
+            '@id' =>
+                SITE_WEBSITE_ID,
+        ],
+    ];
+
+    return array_merge(
+        $schema,
+        $additional
+    );
+}
+
+/*
+|--------------------------------------------------------------------------
 | Primary Image
 |--------------------------------------------------------------------------
 */

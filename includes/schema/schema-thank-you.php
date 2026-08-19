@@ -44,42 +44,21 @@ $primaryImageSchema =
 |--------------------------------------------------------------------------
 */
 
-$thankYouPageSchema = [
-    '@type' =>
+$thankYouPageSchema =
+    buildPageSchema(
         'WebPage',
-
-    '@id' =>
-        SITE_THANK_YOU_URL .
-        '#webpage',
-
-    'url' =>
         SITE_THANK_YOU_URL,
-
-    'name' =>
         $pageTitle,
-
-    'description' =>
         $metaDescription,
-
-    'inLanguage' =>
-        SITE_LANGUAGE,
-
-    'datePublished' =>
         $pageDatePublished,
-
-    'dateModified' =>
         $pageDateModified,
-
-    'isPartOf' => [
-        '@id' =>
-            SITE_WEBSITE_ID,
-    ],
-
-    'about' => [
-        '@id' =>
-            SITE_PERSON_ID,
-    ],
-];
+        [
+            'about' => [
+                '@id' =>
+                    SITE_PERSON_ID,
+            ],
+        ]
+    );
 
 /*
 |--------------------------------------------------------------------------

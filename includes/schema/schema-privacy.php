@@ -33,42 +33,21 @@ $websiteSchema =
 |--------------------------------------------------------------------------
 */
 
-$privacyPageSchema = [
-    '@type' =>
+$privacyPageSchema =
+    buildPageSchema(
         'WebPage',
-
-    '@id' =>
-        SITE_PRIVACY_URL .
-        '#webpage',
-
-    'url' =>
         SITE_PRIVACY_URL,
-
-    'name' =>
         $pageTitle,
-
-    'description' =>
         $metaDescription,
-
-    'inLanguage' =>
-        SITE_LANGUAGE,
-
-    'datePublished' =>
         $pageDatePublished,
-
-    'dateModified' =>
         $pageDateModified,
-
-    'isPartOf' => [
-        '@id' =>
-            SITE_WEBSITE_ID,
-    ],
-
-    'about' => [
-        '@id' =>
-            SITE_PERSON_ID,
-    ],
-];
+        [
+            'about' => [
+                '@id' =>
+                    SITE_PERSON_ID,
+            ],
+        ]
+    );
 
 /*
 |--------------------------------------------------------------------------

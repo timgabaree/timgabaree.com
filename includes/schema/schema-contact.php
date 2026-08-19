@@ -42,52 +42,31 @@ $primaryImageSchema =
 |--------------------------------------------------------------------------
 */
 
-$contactPageSchema = [
-    '@type' =>
+$contactPageSchema =
+    buildPageSchema(
         'ContactPage',
-
-    '@id' =>
-        SITE_CONTACT_URL .
-        '#webpage',
-
-    'url' =>
         SITE_CONTACT_URL,
-
-    'name' =>
         $pageTitle,
-
-    'description' =>
         $metaDescription,
-
-    'inLanguage' =>
-        SITE_LANGUAGE,
-
-    'datePublished' =>
         $pageDatePublished,
-
-    'dateModified' =>
         $pageDateModified,
+        [
+            'primaryImageOfPage' => [
+                '@id' =>
+                    SITE_PRIMARY_IMAGE_ID,
+            ],
 
-    'isPartOf' => [
-        '@id' =>
-            SITE_WEBSITE_ID,
-    ],
+            'about' => [
+                '@id' =>
+                    SITE_PERSON_ID,
+            ],
 
-    'primaryImageOfPage' => [
-        '@id' =>
-            SITE_PRIMARY_IMAGE_ID,
-    ],
-
-    'about' => [
-        '@id' =>
-            SITE_PERSON_ID,
-    ],
-
-    'mainEntity' => [
-        '@id' =>
-            SITE_PERSON_ID,
-    ],
-];
+            'mainEntity' => [
+                '@id' =>
+                    SITE_PERSON_ID,
+            ],
+        ]
+    );
 
 /*
 |--------------------------------------------------------------------------
