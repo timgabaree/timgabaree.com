@@ -123,6 +123,7 @@ a:hover {
   padding: 0 20px;
   box-sizing: border-box;
 }
+
 .scroll-offset,
 
 #home,
@@ -401,6 +402,7 @@ a:hover {
   text-align: center;
   margin: 24px 0 20px;
 }
+
 .expertise-heading,
 
 .experience-heading,
@@ -1303,7 +1305,6 @@ a:hover {
    18. About: Personal Interests
 ===================================================== */
 
-
 .interests-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1893,6 +1894,7 @@ button.contact-action {
   padding: 14px;
   resize: vertical;
 }
+
 .contact-form-field input:hover,
 
 .contact-form-field select:hover,
@@ -1900,6 +1902,7 @@ button.contact-action {
 .contact-form-field textarea:hover {
   border-color: var(--brand-blue);
 }
+
 .contact-form-field input:focus,
 
 .contact-form-field select:focus,
@@ -2631,7 +2634,8 @@ button.contact-action {
   .nav-link {
     padding-top: 6px;
   }
-.intro-section,
+
+  .intro-section,
 
   .expertise-section,
 
@@ -2755,7 +2759,6 @@ button.contact-action {
     width: auto;
     max-width: 100%;
   }
-
 
   .interests-content {
     grid-template-columns: repeat(2, minmax(0, 1fr));
