@@ -68,27 +68,6 @@ function csrfToken(): string
 
 /*
 |--------------------------------------------------------------------------
-| Render Hidden CSRF Form Field
-|--------------------------------------------------------------------------
-|
-| Return a hidden HTML field containing the CSRF token.
-|
-*/
-
-function csrfField(): string
-{
-    return
-        '<input type="hidden" ' .
-        'name="csrf_token" ' .
-        'value="' .
-        e(
-            csrfToken()
-        ) .
-        '">';
-}
-
-/*
-|--------------------------------------------------------------------------
 | Validate Submitted CSRF Token
 |--------------------------------------------------------------------------
 |
@@ -126,8 +105,7 @@ function csrfIsValid(
 |
 | Remove the current token after a successful submission.
 |
-| A fresh token will be generated the next time csrfToken() or
-| csrfField() is called.
+| A fresh token will be generated the next time csrfToken() is called.
 |
 */
 
