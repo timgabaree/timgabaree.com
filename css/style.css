@@ -397,8 +397,6 @@ a:hover {
 
 .qanda-heading-block,
 
-.interests-heading-block,
-
 .testimonials-heading-block {
   text-align: center;
   margin: 24px 0 20px;
@@ -410,8 +408,6 @@ a:hover {
 .education-heading,
 
 .qanda-heading,
-
-.interests-heading,
 
 .testimonials-heading {
   margin: 0;
@@ -1172,7 +1168,7 @@ a:hover {
   z-index: 1;
 }
 
-.about-card, .about-gallery figure, .contact-card {
+.about-card, .about-gallery figure {
   background-color: var(--surface-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-standard);
@@ -1307,17 +1303,6 @@ a:hover {
    18. About: Personal Interests
 ===================================================== */
 
-.interests-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  text-align: center;
-  justify-content: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-}
 
 .interests-content {
   display: grid;
@@ -2756,7 +2741,6 @@ button.contact-action {
   .experience-heading-block,
   .education-heading-block,
   .qanda-heading-block,
-  .interests-heading-block,
   .testimonials-heading-block {
     margin: 18px 0;
   }
@@ -2783,13 +2767,6 @@ button.contact-action {
     max-width: 100%;
   }
 
-  .interests-heading-block {
-    margin-bottom: 12px;
-  }
-
-  .interests-section {
-    width: 100%;
-  }
 
   .interests-content {
     display: grid;
