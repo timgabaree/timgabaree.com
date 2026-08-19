@@ -2147,7 +2147,7 @@ button.contact-action {
 .error-section > .container {
   padding: 48px 42px;
   text-align: center;
-  background: #ffffff;
+  background: var(--white);
   border: 1px solid rgba(39, 64, 103, 0.12);
   border-radius: 20px;
   box-shadow: 0 18px 45px rgba(20, 37, 63, 0.08);
@@ -2213,7 +2213,7 @@ button.contact-action {
 
 .error-actions .button.primary,
 .error-actions .button.primary:visited {
-  color: #ffffff;
+  color: var(--white);
   background: #2d4f83;
   border: 1px solid #2d4f83;
 }
@@ -2228,7 +2228,7 @@ button.contact-action {
 .error-actions .button.secondary,
 .error-actions .button.secondary:visited {
   color: #2d4f83;
-  background: #ffffff;
+  background: var(--white);
   border: 1px solid rgba(45, 79, 131, 0.35);
 }
 
