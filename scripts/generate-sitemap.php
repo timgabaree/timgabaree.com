@@ -9,8 +9,9 @@ declare(strict_types=1);
 |
 | Generates the root sitemap.xml from canonical application data:
 |
-| - SITEMAP_PAGES defines public page inclusion and image associations.
-| - PAGE_CONFIG supplies canonical URLs and meaningful modification dates.
+| - PAGE_CONFIG determines sitemap-eligible public pages and supplies
+|   canonical URLs and meaningful modification dates.
+| - SITEMAP_IMAGES defines image associations for those pages.
 | - SITE_IMAGES supplies managed image paths and roles.
 |
 | Run from the project root:
@@ -53,12 +54,11 @@ function sitemapXmlEscape(
 */
 
 if (
-    !defined('SITEMAP_PAGES') ||
-    !is_array(SITEMAP_PAGES) ||
-    SITEMAP_PAGES === []
+    !defined('SITEMAP_IMAGES') ||
+    !is_array(SITEMAP_IMAGES)
 ) {
     throw new RuntimeException(
-        'SITEMAP_PAGES must contain at least one public page.'
+        'SITEMAP_IMAGES must be an array.'
     );
 }
 
@@ -78,42 +78,45 @@ $lines = [
 ];
 
 foreach (
-    SITEMAP_PAGES as $pageKey => $pageConfig
+    PAGE_CONFIG as $pageKey => $publicPageConfig
 ) {
     if (
         !is_string($pageKey) ||
         trim($pageKey) === ''
     ) {
         throw new RuntimeException(
-            'Sitemap page keys must be non-empty strings.'
+            'PAGE_CONFIG page keys must be non-empty strings.'
         );
     }
 
-    if (!is_array($pageConfig)) {
+    if (!is_array($publicPageConfig)) {
         throw new RuntimeException(
-            'Invalid sitemap configuration for page: ' .
+            'Invalid PAGE_CONFIG entry for page: ' .
             $pageKey
         );
     }
 
-    $publicPageConfig =
-        pageConfig(
-            $pageKey
-        );
-
-    if ($publicPageConfig === []) {
-        throw new RuntimeException(
-            'Missing PAGE_CONFIG entry for sitemap page: ' .
-            $pageKey
-        );
-    }
+    $robots =
+        $publicPageConfig['robots'] ??
+        'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
     $pageUrl =
         $publicPageConfig['canonical_url'] ??
         '';
 
     if (
+        !is_string($robots) ||
+        !str_starts_with(
+            $robots,
+            'index'
+        ) ||
         !is_string($pageUrl) ||
+        $pageUrl === ''
+    ) {
+        continue;
+    }
+
+    if (
         filter_var(
             $pageUrl,
             FILTER_VALIDATE_URL
@@ -154,7 +157,7 @@ foreach (
     }
 
     $imageKeys =
-        $pageConfig['images'] ??
+        SITEMAP_IMAGES[$pageKey] ??
         [];
 
     if (!is_array($imageKeys)) {
