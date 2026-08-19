@@ -154,9 +154,20 @@ require __DIR__ .
 <?php
 
 $submissionConfirmed =
-    isset($_GET['submitted']) &&
-    is_string($_GET['submitted']) &&
-    $_GET['submitted'] === '1';
+    isset(
+        $_SESSION[
+            SESSION_CONTACT_CONVERSION_KEY
+        ]
+    ) &&
+    $_SESSION[
+        SESSION_CONTACT_CONVERSION_KEY
+    ] === true;
+
+unset(
+    $_SESSION[
+        SESSION_CONTACT_CONVERSION_KEY
+    ]
+);
 
 ?>
 

@@ -114,6 +114,9 @@ const SESSION_CSRF_TOKEN_KEY =
 const SESSION_RATE_LIMIT_KEY =
     'timgabaree_rate_limit';
 
+const SESSION_CONTACT_CONVERSION_KEY =
+    'timgabaree_contact_conversion';
+
 /*
 |--------------------------------------------------------------------------
 | Security

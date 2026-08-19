@@ -71,10 +71,6 @@ $contactUrl =
 $thankYouUrl =
     SITE_THANK_YOU_PATH;
 
-$thankYouConversionUrl =
-    SITE_THANK_YOU_PATH .
-    '?submitted=1';
-
 /*
 |--------------------------------------------------------------------------
 | Accept POST Requests Only
@@ -300,13 +296,18 @@ if ($mailSent) {
 | Analytics Conversion Flag
 |--------------------------------------------------------------------------
 |
-| The submitted flag allows analytics to distinguish a genuine contact-form
-| conversion from a visitor opening the thank-you URL directly.
+| Record a one-time session flag so the thank-you page can distinguish
+| a genuine contact-form conversion from a direct page visit.
 |
 */
 
+    $_SESSION[
+        SESSION_CONTACT_CONVERSION_KEY
+    ] =
+        true;
+
     redirectTo(
-        $thankYouConversionUrl
+        $thankYouUrl
     );
 }
 
