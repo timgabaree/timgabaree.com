@@ -25,7 +25,7 @@ $page =
 */
 
 $errorCode =
-    403;
+    HTTP_STATUS_FORBIDDEN;
 
 $errorTitle =
     'Access Denied';

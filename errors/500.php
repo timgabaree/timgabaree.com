@@ -25,7 +25,7 @@ $page =
 */
 
 $errorCode =
-    500;
+    HTTP_STATUS_INTERNAL_SERVER_ERROR;
 
 $errorTitle =
     'Something Went Wrong';

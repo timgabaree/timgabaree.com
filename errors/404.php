@@ -25,7 +25,7 @@ $page =
 */
 
 $errorCode =
-    404;
+    HTTP_STATUS_NOT_FOUND;
 
 $errorTitle =
     'Page Not Found';
