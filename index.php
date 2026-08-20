@@ -36,7 +36,7 @@ require __DIR__ .
 
     <div
       id="intro"
-      class="intro-section">
+      class="home-intro-section">
 
       <?= siteImage(
           'background',
@@ -46,17 +46,17 @@ require __DIR__ .
           ]
       ) ?>
 
-      <div class="intro-text-content-block">
+      <div class="home-intro-text-content-block">
 
-        <header class="intro-title-block">
+        <header class="home-intro-title-block">
 
           <h1
             id="home-title"
-            class="intro-title">
+            class="home-intro-title">
             <?= e(SITE_NAME) ?>
           </h1>
 
-          <p class="intro-subtitle">
+          <p class="home-intro-subtitle">
             Portfolio CIO
             <span aria-hidden="true"> | </span>
             Technology Value Creation
@@ -66,7 +66,7 @@ require __DIR__ .
 
         </header>
 
-        <div class="intro-main-text-block">
+        <div class="home-intro-main-text-block">
 
           <p>
             <strong>
@@ -84,7 +84,7 @@ require __DIR__ .
             performance, reducing complexity, and strengthening governance.
           </p>
 
-          <p class="intro-cta-text">
+          <p class="home-intro-cta-text">
             Whether you're exploring executive leadership, board
             opportunities, advisory work, or technology transformation,
             I'd welcome the opportunity to connect.
@@ -100,28 +100,28 @@ require __DIR__ .
         </div>
 
         <section
-          class="intro-links-block"
+          class="home-intro-links-block"
           aria-labelledby="executive-documents-title">
 
           <h2
             id="executive-documents-title"
-            class="intro-links-heading">
+            class="home-intro-links-heading">
             Executive Portfolio
           </h2>
 
-          <p class="intro-links-description">
+          <p class="home-intro-links-description">
             Executive and board materials highlighting my leadership experience,
             governance philosophy, and enterprise technology strategy.
           </p>
 
-          <ul class="intro-links-list">
+          <ul class="home-intro-links-list">
 
             <li>
               <a
                 href="<?= e(DOCSEND_EXECUTIVE_PROFILE) ?>"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="intro-links">
+                class="home-intro-links">
 
                 Executive Profile
 
@@ -137,7 +137,7 @@ require __DIR__ .
                 href="<?= e(DOCSEND_RESUME) ?>"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="intro-links">
+                class="home-intro-links">
 
                 Executive Résumé
 
@@ -153,7 +153,7 @@ require __DIR__ .
                 href="<?= e(DOCSEND_EXECUTIVE_BIO) ?>"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="intro-links">
+                class="home-intro-links">
 
                 Executive Biography
 
@@ -169,7 +169,7 @@ require __DIR__ .
                 href="<?= e(DOCSEND_BOARD_RESUME) ?>"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="intro-links">
+                class="home-intro-links">
 
                 Board Résumé
 
@@ -185,7 +185,7 @@ require __DIR__ .
                 href="<?= e(DOCSEND_BOARD_BIO) ?>"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="intro-links">
+                class="home-intro-links">
 
                 Board Biography
 
@@ -202,13 +202,13 @@ require __DIR__ .
 
       </div>
 
-      <div class="intro-profile-picture-block">
+      <div class="home-intro-profile-picture-block">
 
         <?= siteImage(
             'profile',
             [
                 'class' =>
-                    'intro-profile-picture-img main-img',
+                    'home-intro-profile-picture-img home-intro-profile-picture-img-main',
             ]
         ) ?>
 
@@ -216,7 +216,7 @@ require __DIR__ .
             'profile_hover',
             [
                 'class' =>
-                    'intro-profile-picture-img hover-img',
+                    'home-intro-profile-picture-img home-intro-profile-picture-img-hover',
             ]
         ) ?>
 
@@ -236,7 +236,7 @@ require __DIR__ .
 
     <div
       id="results"
-      class="results-carousel-section">
+      class="home-results-carousel-section">
 
       <h2
         id="results-preview-title"
@@ -257,144 +257,144 @@ require __DIR__ .
 
       <div
         id="results-carousel"
-        class="results-carousel"
+        class="home-results-carousel"
         aria-hidden="true">
 
-        <div class="results-slide slide-1">
+        <div class="home-results-slide home-results-slide-1">
 
           <?= siteImage(
               'results_left',
               [
                   'class' =>
-                      'results-slide-image',
+                      'home-results-slide-image',
               ]
           ) ?>
 
-          <p class="results-kicker">
+          <p class="home-results-kicker">
             Operating Result
           </p>
 
-          <p class="results-number">
+          <p class="home-results-number">
             $115M
           </p>
 
-          <p class="results-label">
+          <p class="home-results-label">
             Program Stabilized
           </p>
 
-          <p class="results-detail">
+          <p class="home-results-detail">
             Operational recovery | Stakeholder alignment | Continuity
           </p>
 
         </div>
 
-        <div class="results-slide slide-2">
+        <div class="home-results-slide home-results-slide-2">
 
           <?= siteImage(
               'results_middle',
               [
                   'class' =>
-                      'results-slide-image',
+                      'home-results-slide-image',
               ]
           ) ?>
 
-          <p class="results-kicker">
+          <p class="home-results-kicker">
             Operating Result
           </p>
 
-          <p class="results-number">
+          <p class="home-results-number">
             $25M+
           </p>
 
-          <p class="results-label">
+          <p class="home-results-label">
             Savings Delivered
           </p>
 
-          <p class="results-detail">
+          <p class="home-results-detail">
             Modernization | Governance | Cost discipline
           </p>
 
         </div>
 
-        <div class="results-slide slide-3">
+        <div class="home-results-slide home-results-slide-3">
 
           <?= siteImage(
               'results_right',
               [
                   'class' =>
-                      'results-slide-image',
+                      'home-results-slide-image',
               ]
           ) ?>
 
-          <p class="results-kicker">
+          <p class="home-results-kicker">
             Operating Result
           </p>
 
-          <p class="results-number">
+          <p class="home-results-number">
             $80M
           </p>
 
-          <p class="results-label">
+          <p class="home-results-label">
             Mission-Critical Program Delivered
           </p>
 
-          <p class="results-detail">
+          <p class="home-results-detail">
             Security | Compliance | Execution risk reduction
           </p>
 
         </div>
 
-        <div class="results-slide slide-4">
+        <div class="home-results-slide home-results-slide-4">
 
           <?= siteImage(
               'results_left',
               [
                   'class' =>
-                      'results-slide-image',
+                      'home-results-slide-image',
               ]
           ) ?>
 
-          <p class="results-kicker">
+          <p class="home-results-kicker">
             Leadership Result
           </p>
 
-          <p class="results-number">
+          <p class="home-results-number">
             96%
           </p>
 
-          <p class="results-label">
+          <p class="home-results-label">
             Workforce Retention
           </p>
 
-          <p class="results-detail">
+          <p class="home-results-detail">
             Organizational redesign | Leadership development | Performance
           </p>
 
         </div>
 
-        <div class="results-slide slide-5">
+        <div class="home-results-slide home-results-slide-5">
 
           <?= siteImage(
               'results_middle',
               [
                   'class' =>
-                      'results-slide-image',
+                      'home-results-slide-image',
               ]
           ) ?>
 
-          <p class="results-kicker">
+          <p class="home-results-kicker">
             Positioning
           </p>
 
-          <p class="results-number">
+          <p class="home-results-number">
             Portfolio CIO
           </p>
 
-          <p class="results-label">
+          <p class="home-results-label">
             Governance | Technology Value Creation | Enterprise Performance
           </p>
 
-          <p class="results-detail">
+          <p class="home-results-detail">
             Aligning technology, operations, investment, and risk management.
           </p>
 
@@ -402,11 +402,11 @@ require __DIR__ .
 
       </div>
 
-      <div class="results-carousel-controls">
+      <div class="home-results-carousel-controls">
 
         <button
           id="results-animation-toggle"
-          class="results-animation-toggle"
+          class="home-results-animation-toggle"
           type="button"
           aria-controls="results-carousel"
           aria-pressed="false">
@@ -414,7 +414,7 @@ require __DIR__ .
         </button>
 
         <a
-          class="results-preview-link"
+          class="home-results-preview-link"
           href="#operating-results">
           View selected operating results
         </a>
@@ -433,24 +433,24 @@ require __DIR__ .
 
     <section
       id="expertise"
-      class="expertise-section"
+      class="home-expertise-section"
       aria-labelledby="expertise-title">
 
-      <div class="expertise-heading-block">
+      <div class="home-expertise-heading-block">
 
         <h2
           id="expertise-title"
-          class="expertise-heading">
+          class="home-expertise-heading">
           Expertise
         </h2>
 
       </div>
 
-      <div class="expertise-container">
+      <div class="home-expertise-container">
 
-        <div class="expertise-text-block">
+        <div class="home-expertise-text-block">
 
-          <ul class="expertise-list">
+          <ul class="home-expertise-list">
             <li>Technology Value Creation</li>
             <li>Technology &amp; Operations Leadership</li>
             <li>Enterprise Performance</li>
@@ -476,14 +476,14 @@ require __DIR__ .
 -->
 
         <div
-          class="expertise-image-block"
+          class="home-expertise-image-block"
           aria-hidden="true">
 
           <?= siteImage(
               'expertise',
               [
                   'class' =>
-                      'expertise-image',
+                      'home-expertise-image',
               ]
           ) ?>
 
@@ -627,20 +627,20 @@ require __DIR__ .
 
     <section
       id="education"
-      class="education-section"
+      class="home-education-section"
       aria-labelledby="education-title">
 
-      <div class="education-heading-block">
+      <div class="home-education-heading-block">
 
         <h2
           id="education-title"
-          class="education-heading">
+          class="home-education-heading">
           Education
         </h2>
 
       </div>
 
-      <div class="education-content">
+      <div class="home-education-content">
 
         <?php
 
@@ -726,28 +726,28 @@ require __DIR__ .
 
     <section
       id="q-and-a"
-      class="qanda-section"
+      class="home-qanda-section"
       aria-labelledby="leadership-perspective-title">
 
-      <div class="qanda-heading-block">
+      <div class="home-qanda-heading-block">
 
         <h2
           id="leadership-perspective-title"
-          class="qanda-heading">
+          class="home-qanda-heading">
           Leadership Perspective
         </h2>
 
       </div>
 
-      <div class="qanda-content">
+      <div class="home-qanda-content">
 
-        <article class="qanda-block">
+        <article class="home-qanda-block">
 
-          <h3 class="qanda-question">
+          <h3 class="home-qanda-question">
             Why did you choose your profession?
           </h3>
 
-          <p class="qanda-answer">
+          <p class="home-qanda-answer">
             I got my first computer at 11 after saving money from a paper
             route and neighborhood jobs. Learning how it worked sparked an
             interest that eventually became a career helping organizations
@@ -756,13 +756,13 @@ require __DIR__ .
 
         </article>
 
-        <article class="qanda-block">
+        <article class="home-qanda-block">
 
-          <h3 class="qanda-question">
+          <h3 class="home-qanda-question">
             What personal experience shaped how you lead?
           </h3>
 
-          <p class="qanda-answer">
+          <p class="home-qanda-answer">
             Losing my father at a young age after a stroke shaped how I view
             leadership, family, resilience, and gratitude. It taught me to
             lead with perspective, stay grounded under pressure, and make
@@ -771,14 +771,14 @@ require __DIR__ .
 
         </article>
 
-        <article class="qanda-block">
+        <article class="home-qanda-block">
 
-          <h3 class="qanda-question">
+          <h3 class="home-qanda-question">
             How would your peers and team members describe your
             responsiveness as a leader?
           </h3>
 
-          <p class="qanda-answer">
+          <p class="home-qanda-answer">
             My leadership approach was heavily influenced by my military
             background and years leading teams through complex operational
             environments. I believe in accountability, transparency, and
@@ -787,7 +787,7 @@ require __DIR__ .
             direct, and individuals feel ownership in the outcome.
           </p>
 
-          <p class="qanda-answer">
+          <p class="home-qanda-answer">
             Peers and team members often describe me as calm under pressure,
             operationally focused, and approachable. I work to create
             environments where people can grow, solve problems
@@ -810,22 +810,22 @@ require __DIR__ .
 
     <section
       id="testimonials"
-      class="testimonials-section"
+      class="home-testimonials-section"
       aria-labelledby="testimonials-title">
 
-      <div class="testimonials-heading-block">
+      <div class="home-testimonials-heading-block">
 
         <h2
           id="testimonials-title"
-          class="testimonials-heading">
+          class="home-testimonials-heading">
           Testimonials
         </h2>
 
       </div>
 
-      <div class="testimonials-list-wrapper">
+      <div class="home-testimonials-list-wrapper">
 
-        <div class="testimonials-list">
+        <div class="home-testimonials-list">
 
           <?php
 
@@ -968,7 +968,7 @@ require __DIR__ .
 
     <section
       id="contact"
-      class="contact-section"
+      class="home-contact-section"
       aria-labelledby="home-contact-title">
 
       <div class="contact-class">
@@ -1003,7 +1003,7 @@ require __DIR__ .
 
         </div>
 
-        <div class="contact-block">
+        <div class="home-contact-block">
 
           <address class="contact-content">
 
