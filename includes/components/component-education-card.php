@@ -198,7 +198,16 @@ $educationClasses =
         rel="noopener noreferrer"
         aria-label="<?= e($educationLinkLabel) ?>">
 
-        <?= siteImage($educationLogoImage) ?>
+        <?= siteImage(
+            $educationLogoImage,
+            [
+                'alt' =>
+                    '',
+
+                'include_description' =>
+                    false,
+            ]
+        ) ?>
 
       </a>
 

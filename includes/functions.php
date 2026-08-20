@@ -193,6 +193,10 @@ function siteImage(
         $image['description'] ??
         '';
 
+    $includeDescription =
+        $image['include_description'] ??
+        true;
+
     $width =
         $image['width'] ??
         0;
@@ -258,6 +262,7 @@ function siteImage(
         '';
 
     if (
+        $includeDescription === true &&
         is_string($description) &&
         trim($description) !== '' &&
         is_string($alt) &&
