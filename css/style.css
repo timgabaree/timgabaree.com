@@ -123,6 +123,18 @@ button:focus-visible {
    4. Layout and Utilities
 ===================================================== */
 
+.page-background-image {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .section-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -1180,27 +1192,13 @@ button:focus-visible {
    16. About Page
 ===================================================== */
 
-.about-page,
-.privacy-page {
+.about-page {
   position: relative;
   isolation: isolate;
   padding: 40px 20px 20px;
 }
 
-.page-background-image {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.35;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.about-page > :not(.page-background-image),
-.privacy-page > :not(.page-background-image) {
+.about-page > :not(.page-background-image) {
   position: relative;
   z-index: 1;
 }
@@ -2374,6 +2372,17 @@ button.contact-action {
 /* =====================================================
    24. Privacy Policy
 ===================================================== */
+
+.privacy-page {
+  position: relative;
+  isolation: isolate;
+  padding: 40px 20px 20px;
+}
+
+.privacy-page > :not(.page-background-image) {
+  position: relative;
+  z-index: 1;
+}
 
 .privacy-container {
   max-width: 920px;
