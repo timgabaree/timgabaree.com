@@ -1172,6 +1172,10 @@ button:focus-visible {
   color: var(--white);
 }
 
+.home-contact-section {
+  margin-bottom: 30px;
+}
+
 /* =====================================================
    16. About Page
 ===================================================== */
@@ -1390,10 +1394,6 @@ button:focus-visible {
    19. Shared Contact Strip
 ===================================================== */
 
-.executive-contact-section {
-  width: 100%;
-}
-
 .contact-class {
   display: flex;
   flex-direction: row;
@@ -1408,10 +1408,6 @@ button:focus-visible {
   background-color: var(--brand-blue);
   border-radius: var(--radius-standard);
   box-shadow: 0 1px 3px var(--shadow-soft);
-}
-
-.home-contact-section {
-  margin-bottom: 30px;
 }
 
 .qr-code-block {
@@ -1473,7 +1469,7 @@ button:focus-visible {
 
 .contact-content span + span::before {
   content: "|";
-  margin: 0 8px;
+  margin: 0 4px 0 6px;
   color: var(--text-light);
   font-style: normal;
 }
@@ -1522,14 +1518,18 @@ a.contactLink:hover {
   pointer-events: none;
 }
 
-.executive-contact-page {
+.contact-section {
+  width: 100%;
+}
+
+.contact-page {
   max-width: 1200px;
   min-height: calc(100vh - 120px);
   margin: 0 auto;
   padding: 58px 20px 20px;
 }
 
-.executive-contact-card {
+.contact-card {
   display: grid;
   grid-template-columns: minmax(240px, 350px) minmax(0, 1fr);
   gap: clamp(28px, 5vw, 64px);
@@ -1569,7 +1569,7 @@ a.contactLink:hover {
   text-align: center;
 }
 
-.executive-contact-content h1 {
+.contact-page-content h1 {
   margin: 0 0 10px;
   color: var(--primary-color);
   font-size: clamp(38px, 6vw, 68px);
@@ -2884,13 +2884,19 @@ button.contact-action {
     text-align: center;
   }
 
-  .executive-contact-content span {
+  .home-contact-block .contact-content {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-page-content span {
     display: block;
     width: 100%;
     text-align: center;
   }
 
-  .executive-contact-content span + span::before {
+  .contact-page-content span + span::before {
     content: "";
     margin: 0;
   }
@@ -2899,12 +2905,12 @@ button.contact-action {
     background-attachment: scroll;
   }
 
-  .executive-contact-page,
+  .contact-page,
   .thank-you-page {
     padding: 12px 14px;
   }
 
-  .executive-contact-card {
+  .contact-card {
     grid-template-columns: 1fr;
     gap: 22px;
     padding: 24px 18px;
@@ -2923,11 +2929,11 @@ button.contact-action {
   }
 
   .contact-content,
-  .executive-contact-content {
+  .contact-page-content {
     text-align: center;
   }
 
-  .executive-contact-content h1 {
+  .contact-page-content h1 {
     font-size: clamp(36px, 12vw, 50px);
   }
 

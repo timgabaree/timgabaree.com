@@ -78,7 +78,7 @@ require __DIR__ .
 
 <main
   id="main-content"
-  class="executive-contact-page">
+  class="contact-page">
 
   <?= siteImage(
       'background',
@@ -91,10 +91,10 @@ require __DIR__ .
 <!-- Executive Contact Section -->
 
   <section
-    class="executive-contact-section"
+    class="contact-section"
     aria-labelledby="contact-page-title">
 
-    <div class="executive-contact-card">
+    <div class="contact-card">
 
       <div class="contact-profile">
 
@@ -116,7 +116,7 @@ require __DIR__ .
 
       </div>
 
-      <div class="executive-contact-content">
+      <div class="contact-page-content">
 
         <p class="contact-eyebrow">
           Connect
