@@ -521,21 +521,14 @@
           }
 
           .site-footer a {
-            position: relative;
-            top: 0;
-            display: inline-block;
             color: var(--text-soft);
             text-decoration: none;
-            transition:
-              top 0.2s ease,
-              opacity 0.2s ease;
           }
 
           .site-footer a:hover,
-          .site-footer a:focus {
-            top: -2px;
-            opacity: 0.85;
-            text-decoration: none;
+          .site-footer a:focus-visible {
+            color: var(--accent);
+            text-decoration: underline;
           }
 
           /* =====================================================
