@@ -109,7 +109,7 @@ $testimonialOrganization =
 
 $testimonialClasses =
     trim(
-        'testimonial-block ' .
+        'home-testimonial-block ' .
         $testimonialClass
     );
 
@@ -117,7 +117,7 @@ $testimonialClasses =
 
 <figure class="<?= e($testimonialClasses) ?>">
 
-  <blockquote class="testimonial-quote">
+  <blockquote class="home-testimonial-quote">
 
     <p>
       <?= e($testimonialQuote) ?>
@@ -125,7 +125,7 @@ $testimonialClasses =
 
   </blockquote>
 
-  <figcaption class="testimonial-author">
+  <figcaption class="home-testimonial-author">
 
     <strong>
       <?= e($testimonialName) ?>

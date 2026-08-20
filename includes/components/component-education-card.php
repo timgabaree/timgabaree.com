@@ -168,7 +168,7 @@ $educationLinkLabel =
 
 $educationClasses =
     trim(
-        'education-block ' .
+        'home-education-block ' .
         $educationClass
     );
 
@@ -180,17 +180,17 @@ $educationClasses =
       $educationBackgroundImage,
       [
           'class' =>
-              'education-background-image',
+              'home-education-background-image',
       ]
   ) ?>
 
-  <div class="education-inner-block">
+  <div class="home-education-inner-block">
 
-    <h3 class="education-title">
+    <h3 class="home-education-title">
       <?= e($educationDegree) ?>
     </h3>
 
-    <div class="education-logo">
+    <div class="home-education-logo">
 
       <a
         href="<?= e($educationUrl) ?>"

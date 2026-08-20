@@ -435,7 +435,7 @@ button:focus-visible {
 ===================================================== */
 .home-expertise-heading-block,
 
-.section-card-heading-block,
+.home-section-card-heading-block,
 
 .home-education-heading-block,
 
@@ -448,7 +448,7 @@ button:focus-visible {
 
 .home-expertise-heading,
 
-.section-card-heading,
+.home-section-card-heading,
 
 .home-education-heading,
 
@@ -901,14 +901,14 @@ button:focus-visible {
    11. Home: Operating Results and Board
 ===================================================== */
 
-.section-card-section {
+.home-section-card-section {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
 }
 
-.section-card-entry {
+.home-section-card-entry {
   width: 100%;
   margin: 0 auto;
   padding: 28px;
@@ -918,7 +918,7 @@ button:focus-visible {
   box-shadow: 0 2px 5px var(--shadow-soft);
 }
 
-.section-card-intro {
+.home-section-card-intro {
   margin: 0 0 22px;
   font-size: 17px;
   line-height: 1.6;
@@ -926,7 +926,7 @@ button:focus-visible {
   text-align: left;
 }
 
-.impact-list {
+.home-impact-list {
   margin: 0;
   padding-left: 22px;
   color: var(--text-muted);
@@ -934,22 +934,22 @@ button:focus-visible {
   line-height: 1.65;
 }
 
-.impact-list li {
+.home-impact-list li {
   margin-bottom: 0;
 }
 
-.impact-list li p {
+.home-impact-list li p {
   margin: 6px 0 18px;
   color: var(--text-muted);
   font-size: 16px;
   line-height: 1.65;
 }
 
-.impact-list li:last-child p {
+.home-impact-list li:last-child p {
   margin-bottom: 0;
 }
 
-.impact-list strong {
+.home-impact-list strong {
   color: var(--accent-color);
   font-weight: 600;
 }
@@ -974,11 +974,11 @@ button:focus-visible {
   width: 100%;
 }
 
-.education-block + .education-block {
+.home-education-block + .home-education-block {
   margin-top: 20px;
 }
 
-.education-block {
+.home-education-block {
   position: relative;
   display: flex;
   align-items: center;
@@ -990,7 +990,7 @@ button:focus-visible {
   box-shadow: 0 2px 5px var(--shadow-soft);
 }
 
-.education-background-image {
+.home-education-background-image {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -999,7 +999,7 @@ button:focus-visible {
   z-index: 0;
 }
 
-.education-inner-block {
+.home-education-inner-block {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1013,14 +1013,14 @@ button:focus-visible {
   z-index: 1;
 }
 
-.education-title {
+.home-education-title {
   margin-bottom: 10px;
   font-size: 22px;
   font-weight: 900;
   color: var(--accent-color);
 }
 
-.education-logo img {
+.home-education-logo img {
   max-width: 250px;
   height: auto;
 }
@@ -1108,7 +1108,7 @@ button:focus-visible {
   max-width: 1100px;
 }
 
-.testimonial-block {
+.home-testimonial-block {
   padding: 20px;
   text-align: center;
   background-color: var(--overlay-white);
@@ -1116,14 +1116,14 @@ button:focus-visible {
   box-shadow: 0 2px 6px var(--shadow-soft);
 }
 
-.testimonial-quote {
+.home-testimonial-quote {
   margin: 15px 50px;
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-light);
 }
 
-.testimonial-author {
+.home-testimonial-author {
   margin-top: 10px;
   font-size: 18px;
   font-weight: 600;
@@ -2660,11 +2660,11 @@ button.contact-action {
     white-space: normal;
   }
 
-  .testimonial-quote {
+  .home-testimonial-quote {
     margin: 15px 0;
   }
 
-  .testimonial-quote p {
+  .home-testimonial-quote p {
     margin: 0;
   }
 
@@ -2746,7 +2746,7 @@ button.contact-action {
 
   .home-expertise-section,
 
-  .section-card-entry,
+  .home-section-card-entry,
 
   .home-education-section,
 
@@ -2838,7 +2838,7 @@ button.contact-action {
   }
 
   .home-expertise-heading-block,
-  .section-card-heading-block,
+  .home-section-card-heading-block,
   .home-education-heading-block,
   .home-qanda-heading-block,
   .home-testimonials-heading-block {
@@ -2849,7 +2849,7 @@ button.contact-action {
     margin-bottom: 16px;
   }
 
-  .section-card-heading-block, .home-qanda-heading-block {
+  .home-section-card-heading-block, .home-qanda-heading-block {
     margin-bottom: 14px;
   }
 
