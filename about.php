@@ -128,7 +128,7 @@ require __DIR__ .
 
     <div class="about-gallery about-gallery-featured">
 
-      <figure class="gallery-large">
+      <figure class="about-gallery-large">
 
         <?= siteImage('about_liberty_family') ?>
 
@@ -182,67 +182,67 @@ require __DIR__ .
 
     </div>
 
-    <div class="interests-content">
+    <div class="about-interests-content">
 
-      <article class="interests-block coffee-roasting">
+      <article class="about-interests-block">
 
         <?= siteImage(
             'interest_coffee',
             [
                 'class' =>
-                    'interests-block-image',
+                    'about-interests-block-image',
             ]
         ) ?>
 
-        <h3 class="interest-caption">
+        <h3 class="about-interest-caption">
           Coffee Roasting
         </h3>
 
       </article>
 
-      <article class="interests-block chocolatiering">
+      <article class="about-interests-block">
 
         <?= siteImage(
             'interest_chocolate',
             [
                 'class' =>
-                    'interests-block-image',
+                    'about-interests-block-image',
             ]
         ) ?>
 
-        <h3 class="interest-caption">
+        <h3 class="about-interest-caption">
           Baking and Chocolatiering
         </h3>
 
       </article>
 
-      <article class="interests-block pizza-making">
+      <article class="about-interests-block">
 
         <?= siteImage(
             'interest_pizza',
             [
                 'class' =>
-                    'interests-block-image',
+                    'about-interests-block-image',
             ]
         ) ?>
 
-        <h3 class="interest-caption">
+        <h3 class="about-interest-caption">
           Pizza Making
         </h3>
 
       </article>
 
-      <article class="interests-block geeking-out">
+      <article class="about-interests-block">
 
         <?= siteImage(
             'interest_technology',
             [
                 'class' =>
-                    'interests-block-image',
+                    'about-interests-block-image',
             ]
         ) ?>
 
-        <h3 class="interest-caption">
+        <h3 class="about-interest-caption">
           AI &amp; Emerging Technology
         </h3>
 

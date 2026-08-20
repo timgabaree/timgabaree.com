@@ -1297,7 +1297,7 @@ button:focus-visible {
   box-shadow: 0 2px 5px var(--shadow-soft);
 }
 
-.about-gallery .gallery-large {
+.about-gallery .about-gallery-large {
   grid-row: span 2;
 }
 
@@ -1341,14 +1341,14 @@ button:focus-visible {
    18. About: Personal Interests
 ===================================================== */
 
-.interests-content {
+.about-interests-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--card-gap);
   width: 100%;
 }
 
-.interests-block {
+.about-interests-block {
   position: relative;
   min-width: 0;
   height: 300px;
@@ -1363,7 +1363,7 @@ button:focus-visible {
   box-shadow: 0 1px 3px var(--shadow-soft);
 }
 
-.interests-block-image {
+.about-interests-block-image {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1372,7 +1372,7 @@ button:focus-visible {
   z-index: 0;
 }
 
-.interest-caption {
+.about-interest-caption {
   position: relative;
   bottom: 20px;
   left: 0;
@@ -2517,7 +2517,7 @@ button.contact-action {
     min-height: 400px;
   }
 
-  .interests-block {
+  .about-interests-block {
     flex: 1 1 calc(25% - 20px);
     height: 200px;
     min-width: 200px;
@@ -2659,7 +2659,7 @@ button.contact-action {
     font-size: 15px;
   }
 
-  .about-gallery .gallery-large {
+  .about-gallery .about-gallery-large {
     grid-row: auto;
   }
 
@@ -2812,11 +2812,11 @@ button.contact-action {
     max-width: 100%;
   }
 
-  .interests-content {
+  .about-interests-content {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .interests-block {
+  .about-interests-block {
     width: auto;
     max-width: none;
     height: 250px;
