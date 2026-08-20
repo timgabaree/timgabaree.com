@@ -189,6 +189,10 @@ function siteImage(
         $image['alt'] ??
         '';
 
+    $description =
+        $image['description'] ??
+        '';
+
     $width =
         $image['width'] ??
         0;
@@ -249,6 +253,47 @@ function siteImage(
             ) .
             '"',
     ];
+
+    $descriptionId =
+        '';
+
+    if (
+        is_string($description) &&
+        trim($description) !== '' &&
+        is_string($alt) &&
+        trim($alt) !== ''
+    ) {
+        static $descriptionCounts = [];
+
+        $descriptionKey =
+            preg_replace(
+                '/[^a-zA-Z0-9_-]+/',
+                '-',
+                strtolower($key)
+            );
+
+        if (
+            !is_string($descriptionKey) ||
+            $descriptionKey === ''
+        ) {
+            $descriptionKey =
+                'image';
+        }
+
+        $descriptionCounts[$descriptionKey] =
+            ($descriptionCounts[$descriptionKey] ?? 0) + 1;
+
+        $descriptionId =
+            'image-description-' .
+            $descriptionKey .
+            '-' .
+            $descriptionCounts[$descriptionKey];
+
+        $attributes[] =
+            'aria-describedby="' .
+            e($descriptionId) .
+            '"';
+    }
 
     if (
         is_string($class) &&
@@ -311,12 +356,24 @@ function siteImage(
         }
     }
 
-    return '<img ' .
+    $imageMarkup =
+        '<img ' .
         implode(
             ' ',
             $attributes
         ) .
         '>';
+
+    if ($descriptionId === '') {
+        return $imageMarkup;
+    }
+
+    return $imageMarkup .
+        '<span id="' .
+        e($descriptionId) .
+        '" class="visually-hidden">' .
+        e(trim($description)) .
+        '</span>';
 }
 
 /*

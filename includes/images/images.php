@@ -39,7 +39,10 @@ const SITE_IMAGES = [
             1200,
 
         'alt' =>
-            'Tim Gabaree',
+            'Portrait of Tim',
+
+        'description' =>
+            'Head-and-shoulders professional portrait of Tim smiling at the camera. He has short gray and light-brown hair and rectangular dark-framed glasses, and wears a light blue collared shirt beneath a dark blazer. The softly blurred background shows a bright indoor setting.',
 
         'loading' =>
             'eager',
@@ -351,7 +354,10 @@ const SITE_IMAGES = [
             602,
 
         'alt' =>
-            '',
+            'Freshly roasted coffee beans and espresso',
+
+        'description' =>
+            'A white ceramic cup filled with coffee rests on a matching saucer on a wooden table. Dark roasted coffee beans are scattered across the saucer and tabletop around the cup, representing Tim’s interest in home coffee roasting.',
 
         'roles' => [
             'sitemap',
@@ -375,7 +381,10 @@ const SITE_IMAGES = [
             602,
 
         'alt' =>
-            '',
+            'Homemade chocolate babka',
+
+        'description' =>
+            'A freshly baked chocolate babka with dark chocolate swirled through its braided top sits on a white plate held by Tim. Several small candles are lit across the top of the loaf, representing Tim’s interest in baking and chocolatiering.',
 
         'roles' => [
             'sitemap',
@@ -399,7 +408,10 @@ const SITE_IMAGES = [
             602,
 
         'alt' =>
-            '',
+            'Homemade Neapolitan-style pizza',
+
+        'description' =>
+            'A homemade Neapolitan-style pizza rests on a round wooden board beside a pizza oven. Its puffy, blistered and lightly charred crust surrounds tomato sauce, melted cheese, and several fresh basil leaves, representing Tim’s interest in pizza making.',
 
         'roles' => [
             'sitemap',
@@ -423,7 +435,10 @@ const SITE_IMAGES = [
             533,
 
         'alt' =>
-            '',
+            'Tim exploring technology',
+
+        'description' =>
+            'Illustrated portrait of Tim smiling and wearing dark-framed glasses and a dark shirt. Behind him, a stylized technology-themed background contains circuit traces, data-chart symbols, and the outline of a human head containing a gear, representing Tim’s interest in artificial intelligence and emerging technology.',
 
         'roles' => [
             'sitemap',
@@ -447,7 +462,10 @@ const SITE_IMAGES = [
             600,
 
         'alt' =>
-            'Tim Gabaree with Carrie, Clint, and Finn in Halloween costumes',
+            'Tim, Carrie, Clint, and Finn in Halloween costumes',
+
+        'description' =>
+            'Family selfie at a Halloween gathering. Carrie smiles from the upper left in a dark superhero-style costume, Clint wears a gray Batman costume and black mask, and Finn wears a white chef’s hat and chef costume. Tim smiles at the camera from the right, with other costumed people visible behind the family.',
 
         'loading' =>
             'eager',
@@ -507,7 +525,10 @@ const SITE_IMAGES = [
             1067,
 
         'alt' =>
-            'Tim Gabaree with Carrie, Clint, and Finn at the Statue of Liberty',
+            'Tim, Carrie, Clint, and Finn at the Statue of Liberty',
+
+        'description' =>
+            'Close family selfie outdoors at the Statue of Liberty. Tim, wearing sunglasses, Carrie, and Finn fill the foreground while Clint leans into the photograph from above. The Statue of Liberty rises in the background against a vivid blue sky with scattered white clouds.',
 
         'roles' => [
             'sitemap',
@@ -531,7 +552,10 @@ const SITE_IMAGES = [
             486,
 
         'alt' =>
-            'Clint and Finn viewing an exhibit about hard work at Ellis Island',
+            'Clint and Finn viewing an Ellis Island exhibit',
+
+        'description' =>
+            'Clint and Finn stand side by side facing a large museum exhibit at Ellis Island. Above them, a prominent quotation describes being given nothing, having to work hard, and immigrants coming to America expecting to work harder to get anything. Historical photographs, illustrations, and interpretive panels extend across the exhibit wall.',
 
         'roles' => [
             'sitemap',
@@ -555,7 +579,10 @@ const SITE_IMAGES = [
             600,
 
         'alt' =>
-            'Tim Gabaree with Carrie, Clint, and Finn at Mount Vernon',
+            'Tim, Carrie, Clint, and Finn at Mount Vernon',
+
+        'description' =>
+            'Family selfie outdoors at Mount Vernon. Carrie and Tim lean into the photograph from the left and right while Clint and Finn stand between them wearing caps and sunglasses. George Washington’s Mount Vernon mansion is centered behind the family beneath a bright blue sky with scattered clouds.',
 
         'roles' => [
             'sitemap',
