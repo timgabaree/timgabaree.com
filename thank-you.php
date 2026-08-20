@@ -27,25 +27,33 @@ require __DIR__ .
 
 <main
   id="main-content"
-  class="executive-contact-page">
+  class="thank-you-page">
+
+  <?= siteImage(
+      'background',
+      [
+          'class' =>
+              'thank-you-background-image',
+      ]
+  ) ?>
 
 <!-- Thank-You Section -->
 
   <section
-    class="contact-thank-you-section"
-    aria-labelledby="contact-thank-you-title">
+    class="thank-you-section"
+    aria-labelledby="thank-you-title">
 
-    <div class="contact-thank-you-card">
+    <div class="thank-you-card">
 
-      <p class="contact-eyebrow">
+      <p class="thank-you-eyebrow">
         Conversation Continued
       </p>
 
-      <h1 id="contact-thank-you-title">
+      <h1 id="thank-you-title">
         Thank you.
       </h1>
 
-      <p class="contact-thank-you-lead">
+      <p class="thank-you-lead">
         Your message has been received successfully.
       </p>
 
@@ -60,17 +68,17 @@ require __DIR__ .
         on LinkedIn.
       </p>
 
-      <div class="contact-thank-you-actions">
+      <div class="thank-you-actions">
 
         <a
           href="<?= e(SITE_CONTACT_PATH) ?>"
-          class="contact-thank-you-button">
+          class="thank-you-button">
           Return to Contact Page
         </a>
 
         <a
           href="<?= e(SITE_HOME_PATH) ?>"
-          class="contact-thank-you-button">
+          class="thank-you-button">
           View Executive Profile
         </a>
 
@@ -79,19 +87,19 @@ require __DIR__ .
       <hr>
 
       <section
-        class="contact-thank-you-contact"
-        aria-labelledby="contact-direct-contact-title">
+        class="thank-you-contact"
+        aria-labelledby="thank-you-direct-contact-title">
 
-        <h2 id="contact-direct-contact-title">
+        <h2 id="thank-you-direct-contact-title">
           Need to reach out directly?
         </h2>
 
-        <address class="contact-thank-you-contact-links">
+        <address class="thank-you-contact-links">
 
           <a href="mailto:<?= e(SITE_EMAIL) ?>">
 
             <span
-              class="contact-thank-you-contact-icon"
+              class="thank-you-contact-icon"
               aria-hidden="true">
               ✉
             </span>
@@ -105,7 +113,7 @@ require __DIR__ .
           <a href="tel:<?= e(phoneHref(SITE_PHONE)) ?>">
 
             <span
-              class="contact-thank-you-contact-icon"
+              class="thank-you-contact-icon"
               aria-hidden="true">
               ☎
             </span>
@@ -122,7 +130,7 @@ require __DIR__ .
             rel="me noopener noreferrer">
 
             <span
-              class="contact-thank-you-contact-icon contact-linkedin-icon"
+              class="thank-you-contact-icon thank-you-linkedin-icon"
               aria-hidden="true">
               in
             </span>

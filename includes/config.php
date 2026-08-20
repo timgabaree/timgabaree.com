@@ -440,7 +440,7 @@ const PAGE_CONFIG = [
             '2026-08-07',
 
         'body_class' =>
-            'contact-body',
+            'thank-you-body',
 
         'title' =>
             'Thank You | Tim Gabaree',
