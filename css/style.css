@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* =====================================================
-   1. Design Tokens
+   1. Global: Design Tokens
 ===================================================== */
 
 :root {
@@ -34,7 +34,7 @@
 }
 
 /* =====================================================
-   2. Fonts
+   2. Global: Fonts
 ===================================================== */
 
 @font-face {
@@ -54,7 +54,7 @@
 }
 
 /* =====================================================
-   3. Base and Typography
+   3. Global: Base and Typography
 ===================================================== */
 
 html, body {
@@ -120,7 +120,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   4. Layout and Utilities
+   4. Global: Layout and Utilities
 ===================================================== */
 
 .page-background-image {
@@ -133,35 +133,6 @@ button:focus-visible {
   opacity: 0.35;
   z-index: 0;
   pointer-events: none;
-}
-
-.home-section-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.home-scroll-offset,
-
-#home,
-
-#operating-results,
-
-#results,
-
-#expertise,
-
-#education,
-
-#q-and-a,
-
-#testimonials,
-
-#board,
-
-#interests-and-hobbies {
-  scroll-margin-top: 55px;
 }
 
 .visually-hidden {
@@ -202,7 +173,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   5. Navigation
+   5. Global: Navigation
 ===================================================== */
 
 .navbar {
@@ -374,33 +345,22 @@ button:focus-visible {
 }
 
 /* =====================================================
-   6. Shared Buttons and Links
+   6. Global: Footer
 ===================================================== */
 
-.home-intro-links,
-.home-intro-links:visited {
-  background-color: var(--brand-blue);
-  color: var(--white);
+.footer-disclaimer {
+  position: relative;
+  z-index: 2;
+  margin: -10px 0 15px;
+  padding-top: 0;
+  font-size: 14px;
+  color: var(--text-muted);
   text-align: center;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
 }
 
-.home-intro-links:hover,
-.home-intro-links:focus-visible {
-  background-color: var(--accent-hover);
-  color: var(--white);
-  text-decoration: none;
-  transform: translateY(-1px);
-}
-
-.home-intro-main-text-block .home-intro-cta-text {
-  padding-top: 0.5rem;
-}
+/* =====================================================
+   7. Shared: Buttons and Links
+===================================================== */
 
 .primary-cta-button, .primary-cta-button:visited {
   display: flex;
@@ -431,7 +391,135 @@ button:focus-visible {
 }
 
 /* =====================================================
-   7. Shared Section Headings
+   8. Shared: Contact Strip
+===================================================== */
+
+.contact-class {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 15px auto 0;
+  padding: 20px;
+  text-align: left;
+  background-color: var(--brand-blue);
+  border-radius: var(--radius-standard);
+  box-shadow: 0 1px 3px var(--shadow-soft);
+}
+
+.qr-code-block {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-code-block img {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-standard);
+  box-shadow: 0 2px 5px var(--shadow-soft);
+  transition: transform 0.2s ease;
+}
+
+.qr-code-block a:hover img,
+.qr-code-block a:focus-visible img {
+  transform: scale(1.03);
+}
+
+.qr-code-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-code-caption {
+  margin: 3px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.qr-code-caption-link,
+.qr-code-caption-link:visited,
+.qr-code-caption-link:hover,
+.qr-code-caption-link:focus-visible {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.contact-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.contact-content span + span::before {
+  content: "|";
+  margin: 0 4px 0 6px;
+  color: var(--text-light);
+  font-style: normal;
+}
+
+.contact-content span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.2;
+}
+
+a.contactLink, a.contactLink:visited {
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--border-color);
+  text-decoration: none;
+}
+
+a.contactLink:hover {
+  color: var(--white);
+}
+
+/* =====================================================
+   9. Home: Layout and Utilities
+===================================================== */
+
+.home-section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.home-scroll-offset,
+
+#home,
+
+#operating-results,
+
+#results,
+
+#expertise,
+
+#education,
+
+#q-and-a,
+
+#testimonials,
+
+#board,
+
+#interests-and-hobbies {
+  scroll-margin-top: 55px;
+}
+
+/* =====================================================
+   10. Home: Section Headings
 ===================================================== */
 .home-expertise-heading-block,
 
@@ -462,8 +550,33 @@ button:focus-visible {
 }
 
 /* =====================================================
-   8. Home: Introduction
+   11. Home: Introduction
 ===================================================== */
+
+.home-intro-links,
+.home-intro-links:visited {
+  background-color: var(--brand-blue);
+  color: var(--white);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.home-intro-links:hover,
+.home-intro-links:focus-visible {
+  background-color: var(--accent-hover);
+  color: var(--white);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.home-intro-main-text-block .home-intro-cta-text {
+  padding-top: 0.5rem;
+}
 
 .home-intro-section {
   display: flex;
@@ -621,8 +734,42 @@ button:focus-visible {
   opacity: 0;
 }
 
+@keyframes home-intro-slide-in-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes home-intro-slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes home-intro-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /* =====================================================
-   9. Home: Results Carousel
+   12. Home: Results Carousel
 ===================================================== */
 
 .home-results-carousel-section {
@@ -841,7 +988,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   10. Home: Expertise
+   13. Home: Expertise
 ===================================================== */
 
 .home-expertise-container {
@@ -898,7 +1045,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   11. Home: Operating Results and Board
+   14. Home: Operating Results and Board
 ===================================================== */
 
 .home-section-card-section {
@@ -955,7 +1102,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   12. Home: Education
+   15. Home: Education
 ===================================================== */
 
 .home-education-section {
@@ -1026,7 +1173,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   13. Home: Leadership Perspective
+   16. Home: Leadership Perspective
 ===================================================== */
 
 .home-qanda-section {
@@ -1074,7 +1221,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   14. Home: Testimonials
+   17. Home: Testimonials
 ===================================================== */
 
 .home-testimonials-section {
@@ -1132,7 +1279,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   15. Home: Page Navigation
+   18. Home: Page Navigation
 ===================================================== */
 
 .home-navigation {
@@ -1184,12 +1331,22 @@ button:focus-visible {
   color: var(--white);
 }
 
+/* =====================================================
+   19. Home: Contact
+===================================================== */
+
 .home-contact-section {
   margin-bottom: 30px;
 }
 
+.home-contact-block {
+  flex: 1;
+  max-width: 80%;
+  text-align: left;
+}
+
 /* =====================================================
-   16. About Page
+   20. About: Page
 ===================================================== */
 
 .about-page {
@@ -1260,7 +1417,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   17. About: Gallery and Headings
+   21. About: Gallery and Headings
 ===================================================== */
 
 .about-gallery-section, .about-interests-section {
@@ -1303,13 +1460,6 @@ button:focus-visible {
   grid-row: span 2;
 }
 
-.about-gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-standard);
-}
-
 .about-contact {
   max-width: 980px;
   margin: 0 auto;
@@ -1340,7 +1490,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   18. About: Personal Interests
+   22. About: Personal Interests
 ===================================================== */
 
 .about-interests-content {
@@ -1389,108 +1539,7 @@ button:focus-visible {
 }
 
 /* =====================================================
-   19. Shared Contact Strip
-===================================================== */
-
-.contact-class {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 15px auto 0;
-  padding: 20px;
-  text-align: left;
-  background-color: var(--brand-blue);
-  border-radius: var(--radius-standard);
-  box-shadow: 0 1px 3px var(--shadow-soft);
-}
-
-.qr-code-block {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.qr-code-block img {
-  width: 100px;
-  height: 100px;
-  border-radius: var(--radius-standard);
-  box-shadow: 0 2px 5px var(--shadow-soft);
-  transition: transform 0.2s ease;
-}
-
-.qr-code-block a:hover img,
-.qr-code-block a:focus-visible img {
-  transform: scale(1.03);
-}
-
-.qr-code-stack {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.qr-code-caption {
-  margin: 3px 0 0;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.qr-code-caption-link,
-.qr-code-caption-link:visited,
-.qr-code-caption-link:hover,
-.qr-code-caption-link:focus-visible {
-  color: var(--white);
-  text-decoration: none;
-}
-
-.home-contact-block {
-  flex: 1;
-  max-width: 80%;
-  text-align: left;
-}
-
-.contact-content {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0;
-  font-size: 14px;
-  color: var(--text-light);
-}
-
-.contact-content span + span::before {
-  content: "|";
-  margin: 0 4px 0 6px;
-  color: var(--text-light);
-  font-style: normal;
-}
-
-.contact-content span {
-  display: inline-flex;
-  align-items: center;
-  line-height: 1.2;
-}
-
-a.contactLink, a.contactLink:visited {
-  display: inline-block;
-  padding: 6px 0;
-  color: var(--border-color);
-  text-decoration: none;
-}
-
-a.contactLink:hover {
-  color: var(--white);
-}
-
-/* =====================================================
-   20. Executive Contact Page
+   23. Contact: Page
 ===================================================== */
 
 .contact-body {
@@ -1843,7 +1892,7 @@ button.contact-action {
 }
 
 /* =====================================================
-   21. Contact Form
+   24. Contact: Form
 ===================================================== */
 
 .contact-conversation-section {
@@ -2033,7 +2082,7 @@ button.contact-action {
 }
 
 /* =====================================================
-   22. Thank-You Page
+   25. Thank-You: Page
 ===================================================== */
 
 .thank-you-body {
@@ -2235,7 +2284,7 @@ button.contact-action {
 }
 
 /* =====================================================
-   23. Error Pages
+   26. Error: Pages
 ===================================================== */
 
 .error-section {
@@ -2338,39 +2387,8 @@ button.contact-action {
   transform: translateY(-1px);
 }
 
-@media (max-width: 720px) {
-
-  .error-section {
-    width: min(calc(100% - 28px), 980px);
-    margin: 32px auto 48px;
-  }
-
-  .error-section > .container {
-    padding: 36px 24px;
-    border-radius: 16px;
-  }
-
-  .error-section h1 {
-    font-size: clamp(1.8rem, 9vw, 2.5rem);
-  }
-
-  .error-section .hero-lead {
-    font-size: 1.12rem;
-  }
-
-  .error-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .error-actions .button {
-    width: 100%;
-  }
-
-}
-
 /* =====================================================
-   24. Privacy Policy
+   27. Privacy: Policy
 ===================================================== */
 
 .privacy-page {
@@ -2481,62 +2499,13 @@ button.contact-action {
 }
 
 /* =====================================================
-   25. Footer
-===================================================== */
-
-.footer-disclaimer {
-  position: relative;
-  z-index: 2;
-  margin: -10px 0 15px;
-  padding-top: 0;
-  font-size: 14px;
-  color: var(--text-muted);
-  text-align: center;
-}
-
-/* =====================================================
-   26. Animations
-===================================================== */
-
-@keyframes home-intro-slide-in-up {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes home-intro-slide-in-right {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes home-intro-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-/* =====================================================
-   27. Responsive Design
+   28. Responsive Design
 ===================================================== */
 
 @media (max-width: 1200px) {
+
+  /* Home: Introduction */
+
   .home-intro-links {
     width: 140px;
     height: 44px;
@@ -2545,6 +2514,9 @@ button.contact-action {
 }
 
 @media (min-width: 769px) and (max-width: 1128px) {
+
+  /* Home: Introduction */
+
   .home-intro-section {
     flex-direction: column;
     align-items: center;
@@ -2568,9 +2540,14 @@ button.contact-action {
     padding: 20px;
   }
 
-  .home-expertise-text-block, .home-expertise-image-block {
+  /* Home: Expertise */
+
+  .home-expertise-text-block,
+  .home-expertise-image-block {
     min-height: 400px;
   }
+
+  /* About: Personal Interests */
 
   .about-interests-block {
     flex: 1 1 calc(25% - 20px);
@@ -2580,9 +2557,14 @@ button.contact-action {
 }
 
 @media (max-width: 991px) {
+
+  /* Global: Base and Typography */
+
   body {
     padding-top: 60px;
   }
+
+  /* Global: Navigation */
 
   .navbar {
     height: 50px;
@@ -2651,14 +2633,12 @@ button.contact-action {
     border-radius: var(--radius-standard);
   }
 
-  .dropdown-menu.show {
-    display: block;
-  }
-
   .dropdown-item {
     padding: 9px 14px;
     white-space: normal;
   }
+
+  /* Home: Testimonials */
 
   .home-testimonial-quote {
     margin: 15px 0;
@@ -2667,6 +2647,8 @@ button.contact-action {
   .home-testimonial-quote p {
     margin: 0;
   }
+
+  /* Contact: Page */
 
   .contact-headline {
     align-items: center;
@@ -2693,11 +2675,15 @@ button.contact-action {
 }
 
 @media (max-width: 800px) {
+
+  /* About: Page */
+
   .about-page {
     padding: 28px 14px;
   }
 
-  .about-card, .about-gallery {
+  .about-card,
+  .about-gallery {
     grid-template-columns: 1fr;
   }
 
@@ -2714,6 +2700,8 @@ button.contact-action {
     font-size: 15px;
   }
 
+  /* About: Gallery and Headings */
+
   .about-gallery .about-gallery-large {
     grid-row: auto;
   }
@@ -2722,38 +2710,57 @@ button.contact-action {
     padding: 14px;
   }
 
+  /* About: Contact */
+
   .about-contact .contact-class {
     width: 100%;
   }
 }
 
 @media (max-width: 768px) {
+
+  /* Global: Base and Typography */
+
   body {
     font-size: 14px;
     line-height: 1.5;
   }
+
+  /* Global: Layout and Utilities */
 
   .container {
     width: 100%;
     padding: 10px;
   }
 
+  /* Global: Navigation */
+
   .nav-link {
     padding-top: 6px;
   }
 
+  /* Shared: Contact Strip */
+
+  .contact-class {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Home: Layout and Utilities */
+
   .home-intro-section,
-
   .home-expertise-section,
-
   .home-section-card-entry,
-
   .home-education-section,
-
   .home-testimonials-section {
     flex-direction: column;
     gap: 15px;
   }
+
+  /* Home: Introduction */
 
   .home-intro-section {
     align-items: center;
@@ -2809,6 +2816,8 @@ button.contact-action {
     height: auto;
   }
 
+  /* Home: Results Carousel */
+
   .home-results-carousel-section {
     margin-top: 15px;
   }
@@ -2821,13 +2830,16 @@ button.contact-action {
     padding: 28px 20px;
   }
 
+  /* Home: Expertise */
+
   .home-expertise-container {
     flex-direction: column;
     gap: 10px;
     padding: 0;
   }
 
-  .home-expertise-text-block, .home-expertise-image-block {
+  .home-expertise-text-block,
+  .home-expertise-image-block {
     flex: 1 1 100%;
     min-height: 300px;
   }
@@ -2836,6 +2848,8 @@ button.contact-action {
     font-size: clamp(16px, 4vw, 20px);
     line-height: 1.6;
   }
+
+  /* Home: Section Headings */
 
   .home-expertise-heading-block,
   .home-section-card-heading-block,
@@ -2849,13 +2863,17 @@ button.contact-action {
     margin-bottom: 16px;
   }
 
-  .home-section-card-heading-block, .home-qanda-heading-block {
+  .home-section-card-heading-block,
+  .home-qanda-heading-block {
     margin-bottom: 14px;
   }
 
-  .home-education-heading-block, .home-testimonials-heading-block {
+  .home-education-heading-block,
+  .home-testimonials-heading-block {
     margin-bottom: 2px;
   }
+
+  /* Home: Page Navigation */
 
   .home-navigation-buttons {
     flex-direction: column;
@@ -2866,6 +2884,22 @@ button.contact-action {
     width: auto;
     max-width: 100%;
   }
+
+  /* Home: Contact */
+
+  .home-contact-block {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .home-contact-block .contact-content {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* About: Personal Interests */
 
   .about-interests-content {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2879,25 +2913,7 @@ button.contact-action {
     padding: 0;
   }
 
-  .contact-class {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .home-contact-block {
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .home-contact-block .contact-content {
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-  }
+  /* Contact: Page */
 
   .contact-page-content span {
     display: block;
@@ -2914,8 +2930,7 @@ button.contact-action {
     background-attachment: scroll;
   }
 
-  .contact-page,
-  .thank-you-page {
+  .contact-page {
     padding: 12px 14px;
   }
 
@@ -2960,7 +2975,8 @@ button.contact-action {
     gap: 12px;
   }
 
-  .contact-action, .contact-action:visited {
+  .contact-action,
+  .contact-action:visited {
     min-height: 66px;
     padding: 12px 14px;
     text-align: left;
@@ -2985,9 +3001,12 @@ button.contact-action {
     gap: 10px;
   }
 
-  .contact-resource-link, .contact-resource-link:visited {
+  .contact-resource-link,
+  .contact-resource-link:visited {
     width: 100%;
   }
+
+  /* Contact: Form */
 
   .contact-conversation-section {
     margin-top: 14px;
@@ -3035,6 +3054,12 @@ button.contact-action {
     text-align: center;
   }
 
+  /* Thank-You: Page */
+
+  .thank-you-page {
+    padding: 12px 14px;
+  }
+
   .thank-you-card {
     padding: 34px 20px;
     border-radius: 12px;
@@ -3073,6 +3098,8 @@ button.contact-action {
     font-size: 14px;
   }
 
+  /* Privacy: Policy */
+
   .privacy-page {
     background-attachment: scroll;
     padding: 24px 14px;
@@ -3091,7 +3118,42 @@ button.contact-action {
   }
 }
 
+@media (max-width: 720px) {
+
+  /* Error: Pages */
+
+  .error-section {
+    width: min(calc(100% - 28px), 980px);
+    margin: 32px auto 48px;
+  }
+
+  .error-section > .container {
+    padding: 36px 24px;
+    border-radius: 16px;
+  }
+
+  .error-section h1 {
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+  }
+
+  .error-section .hero-lead {
+    font-size: 1.12rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .error-actions .button {
+    width: 100%;
+  }
+}
+
 @media only screen and (orientation: landscape) and (max-width: 1024px) {
+
+  /* Home: Introduction */
+
   .home-intro-profile-picture-block {
     position: relative;
     display: block;
@@ -3114,6 +3176,9 @@ button.contact-action {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
+  /* Global: Reduced Motion */
+
   *,
   *::before,
   *::after {
@@ -3121,9 +3186,13 @@ button.contact-action {
     transition-delay: 0s !important;
   }
 
+  /* Home: Introduction */
+
   .home-intro-profile-picture-block {
     animation: none;
   }
+
+  /* Home: Results Carousel */
 
   .home-results-slide {
     animation: none;
