@@ -24,11 +24,11 @@ declare(strict_types=1);
 
 <!-- Error Section -->
 
-<section class="error-section">
+<section class="component-error">
 
-  <div class="container">
+  <div class="component-error-container">
 
-    <p class="section-kicker">
+    <p class="component-error-kicker">
       Error <?= e($errorCode) ?>
     </p>
 
@@ -36,7 +36,7 @@ declare(strict_types=1);
       <?= e($errorTitle) ?>
     </h1>
 
-    <p class="hero-lead">
+    <p class="component-error-lead">
       <?= e($errorMessage) ?>
     </p>
 
@@ -44,16 +44,16 @@ declare(strict_types=1);
       <?= e($errorSuggestion) ?>
     </p>
 
-    <div class="error-actions">
+    <div class="component-error-actions">
 
       <a
-        class="button primary"
+        class="component-error-button component-error-button-primary"
         href="<?= e(SITE_HOME_PATH) ?>">
         Return Home
       </a>
 
       <a
-        class="button secondary"
+        class="component-error-button component-error-button-secondary"
         href="<?= e(SITE_CONTACT_PATH) ?>">
         Contact Tim
       </a>
