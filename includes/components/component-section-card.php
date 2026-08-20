@@ -135,13 +135,13 @@ foreach ($sectionItems as $sectionItem) {
 $sectionHeadingId = $sectionId . '-title';
 
 $sectionClasses = trim(
-    'home-section-card-section scroll-offset ' .
+    'home-section-card-section home-scroll-offset ' .
     $sectionClass
 );
 
 ?>
 
-<div class="section-wrapper">
+<div class="home-section-wrapper">
 
   <section
     id="<?= e($sectionId) ?>"

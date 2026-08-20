@@ -31,7 +31,7 @@ require __DIR__ .
 
   <section
     id="home"
-    class="section-wrapper"
+    class="home-section-wrapper"
     aria-labelledby="home-title">
 
     <div
@@ -42,7 +42,7 @@ require __DIR__ .
           'background',
           [
               'class' =>
-                  'section-background-image',
+                  'home-section-background-image',
           ]
       ) ?>
 
@@ -231,7 +231,7 @@ require __DIR__ .
 <!-- Results Preview Section -->
 
   <section
-    class="section-wrapper"
+    class="home-section-wrapper"
     aria-labelledby="results-preview-title">
 
     <div
@@ -429,7 +429,7 @@ require __DIR__ .
 
 <!-- Expertise Section -->
 
-  <div class="section-wrapper">
+  <div class="home-section-wrapper">
 
     <section
       id="expertise"
@@ -623,7 +623,7 @@ require __DIR__ .
 
 <!-- Education Section -->
 
-  <div class="section-wrapper">
+  <div class="home-section-wrapper">
 
     <section
       id="education"
@@ -722,7 +722,7 @@ require __DIR__ .
 
 <!-- Leadership Perspective Section -->
 
-  <div class="section-wrapper">
+  <div class="home-section-wrapper">
 
     <section
       id="q-and-a"
@@ -806,7 +806,7 @@ require __DIR__ .
 
 <!-- Testimonials Section -->
 
-  <div class="section-wrapper">
+  <div class="home-section-wrapper">
 
     <section
       id="testimonials"
@@ -964,7 +964,7 @@ require __DIR__ .
 
 <!-- Contact Section -->
 
-  <div class="section-wrapper">
+  <div class="home-section-wrapper">
 
     <section
       id="contact"

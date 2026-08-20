@@ -135,14 +135,14 @@ button:focus-visible {
   pointer-events: none;
 }
 
-.section-wrapper {
+.home-section-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
-.scroll-offset,
+.home-scroll-offset,
 
 #home,
 
@@ -481,7 +481,7 @@ button:focus-visible {
   box-shadow: 0 4px 6px var(--shadow-soft);
 }
 
-.section-background-image {
+.home-section-background-image {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -490,7 +490,7 @@ button:focus-visible {
   z-index: 0;
 }
 
-.home-intro-section > :not(.section-background-image) {
+.home-intro-section > :not(.home-section-background-image) {
   position: relative;
   z-index: 1;
 }
