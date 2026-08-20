@@ -588,7 +588,7 @@ button:focus-visible {
   min-height: 100%;
   border-radius: var(--radius-standard);
   overflow: hidden;
-  animation: slideInRight 1.5s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
+  animation: home-intro-slide-in-right 1.5s ease-in-out forwards, home-intro-fade-in 2s ease-in-out forwards;
 }
 
 .home-intro-profile-picture-img {
@@ -653,7 +653,7 @@ button:focus-visible {
   color: var(--white);
   overflow: hidden;
   opacity: 0;
-  animation: resultsFade 30s infinite;
+  animation: home-results-fade 30s infinite;
 }
 
 .home-results-slide-image {
@@ -696,7 +696,7 @@ button:focus-visible {
 }
 
 .home-results-slide-5 {
-  animation: resultsFadeFinal 30s infinite;
+  animation: home-results-fade-final 30s infinite;
   animation-delay: 20s;
 }
 
@@ -796,7 +796,7 @@ button:focus-visible {
   animation-play-state: paused;
 }
 
-@keyframes resultsFade {
+@keyframes home-results-fade {
   0% {
     opacity: 0;
   }
@@ -818,7 +818,7 @@ button:focus-visible {
   }
 }
 
-@keyframes resultsFadeFinal {
+@keyframes home-results-fade-final {
   0% {
     opacity: 0;
   }
@@ -2498,7 +2498,7 @@ button.contact-action {
    26. Animations
 ===================================================== */
 
-@keyframes slideInUp {
+@keyframes home-intro-slide-in-up {
   from {
     transform: translateY(100%);
     opacity: 0;
@@ -2510,7 +2510,7 @@ button.contact-action {
   }
 }
 
-@keyframes slideInRight {
+@keyframes home-intro-slide-in-right {
   from {
     transform: translateX(100%);
     opacity: 0;
@@ -2522,7 +2522,7 @@ button.contact-action {
   }
 }
 
-@keyframes fadeIn {
+@keyframes home-intro-fade-in {
   from {
     opacity: 0;
   }
@@ -2556,7 +2556,7 @@ button.contact-action {
     width: 100%;
     max-width: 320px;
     margin: 0 auto 30px;
-    animation: slideInUp 1.5s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
+    animation: home-intro-slide-in-up 1.5s ease-in-out forwards, home-intro-fade-in 2s ease-in-out forwards;
   }
 
   .home-intro-profile-picture-img {
@@ -2801,7 +2801,7 @@ button.contact-action {
     min-height: 400px;
     height: auto;
     margin-bottom: 20px;
-    animation: slideInUp 1.5s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
+    animation: home-intro-slide-in-up 1.5s ease-in-out forwards, home-intro-fade-in 2s ease-in-out forwards;
   }
 
   .home-intro-profile-picture-img {
