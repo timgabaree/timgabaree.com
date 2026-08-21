@@ -1352,7 +1352,7 @@ a.contactLink:hover {
 .about-page {
   position: relative;
   isolation: isolate;
-  padding: 40px 20px 20px;
+  padding: 58px 20px 20px;
 }
 
 .about-page > :not(.page-background-image) {
@@ -2133,7 +2133,7 @@ button.contact-action {
 
 .thank-you-section {
   width: 100%;
-  padding: 24px 0 40px;
+  padding: 0 0 40px;
 }
 
 .thank-you-card {
@@ -2394,7 +2394,7 @@ button.contact-action {
 .privacy-page {
   position: relative;
   isolation: isolate;
-  padding: 40px 20px 20px;
+  padding: 58px 20px 20px;
 }
 
 .privacy-page > :not(.page-background-image) {
