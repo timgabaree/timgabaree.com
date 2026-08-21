@@ -77,6 +77,67 @@ function asset(
 
 /*
 |--------------------------------------------------------------------------
+| HTTP Security Headers
+|--------------------------------------------------------------------------
+|
+| Send shared browser security headers for HTTP requests.
+|
+| Content Security Policy is intentionally managed separately because the
+| site currently uses Google Tag Manager and Calendly integrations.
+|
+*/
+
+function sendSecurityHeaders(): void
+{
+    if (PHP_SAPI === 'cli') {
+        return;
+    }
+
+    /*
+    |----------------------------------------------------------------------
+    | Remove PHP Version Disclosure
+    |----------------------------------------------------------------------
+    */
+
+    header_remove(
+        'X-Powered-By'
+    );
+
+    /*
+    |----------------------------------------------------------------------
+    | HTTPS Transport Security
+    |----------------------------------------------------------------------
+    |
+    | Do not add includeSubDomains or preload unless every applicable
+    | subdomain has been independently verified for permanent HTTPS use.
+    |
+    */
+
+    header(
+        'Strict-Transport-Security: max-age=31536000'
+    );
+
+    /*
+    |----------------------------------------------------------------------
+    | Browser Protections
+    |----------------------------------------------------------------------
+    */
+
+    header(
+        'X-Content-Type-Options: nosniff'
+    );
+
+    header(
+        'Referrer-Policy: strict-origin-when-cross-origin'
+    );
+
+    header(
+        'Permissions-Policy: geolocation=(), camera=(), microphone=()'
+    );
+}
+
+/*
+|--------------------------------------------------------------------------
 | Application Session
 |--------------------------------------------------------------------------
 |

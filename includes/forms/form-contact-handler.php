@@ -48,10 +48,6 @@ header(
     'Pragma: no-cache'
 );
 
-header(
-    'X-Content-Type-Options: nosniff'
-);
-
 /*
 |--------------------------------------------------------------------------
 | Configuration
