@@ -27,7 +27,7 @@ if (
 
 <!-- Google Tag Manager -->
 
-<script>
+<script nonce="<?= e(contentSecurityPolicyNonce()) ?>">
 (function (window, document, script, dataLayerName, containerId) {
   window[dataLayerName] =
     window[dataLayerName] || [];
@@ -109,7 +109,7 @@ if (
       GOOGLE_ANALYTICS_ID
   ) ?>"></script>
 
-<script>
+<script nonce="<?= e(contentSecurityPolicyNonce()) ?>">
 window.dataLayer =
   window.dataLayer || [];
 

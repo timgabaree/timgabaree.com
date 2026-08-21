@@ -76,7 +76,9 @@ $structuredData = [
 
 <!-- Structured Data -->
 
-<script type="application/ld+json">
+<script
+  type="application/ld+json"
+  nonce="<?= e(contentSecurityPolicyNonce()) ?>">
 <?= jsonForHtml($structuredData) ?>
 </script>
 

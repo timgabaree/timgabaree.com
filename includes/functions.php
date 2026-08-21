@@ -87,6 +87,22 @@ function asset(
 |
 */
 
+function contentSecurityPolicyNonce(): string
+{
+    static $nonce = null;
+
+    if (is_string($nonce)) {
+        return $nonce;
+    }
+
+    $nonce =
+        base64_encode(
+            random_bytes(18)
+        );
+
+    return $nonce;
+}
+
 function sendSecurityHeaders(): void
 {
     if (PHP_SAPI === 'cli') {
@@ -133,6 +149,48 @@ function sendSecurityHeaders(): void
 
     header(
         'Permissions-Policy: geolocation=(), camera=(), microphone=()'
+    );
+
+    header(
+        'X-Frame-Options: SAMEORIGIN'
+    );
+
+    /*
+    |----------------------------------------------------------------------
+    | Content Security Policy
+    |----------------------------------------------------------------------
+    |
+    | Begin in Report-Only mode so third-party integrations can be
+    | validated before the policy is enforced.
+    |
+    */
+
+    $cspNonce =
+        contentSecurityPolicyNonce();
+
+    $contentSecurityPolicy =
+        implode(
+            '; ',
+            [
+                "default-src 'self'",
+                "base-uri 'self'",
+                "object-src 'none'",
+                "frame-ancestors 'self'",
+                "form-action 'self'",
+                "script-src 'self' 'nonce-" .
+                    $cspNonce .
+                    "' https://www.googletagmanager.com https://assets.calendly.com",
+                "style-src 'self' 'unsafe-inline' https://assets.calendly.com",
+                "img-src 'self' data: https:",
+                "font-src 'self' data:",
+                "connect-src 'self' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://calendly.com https://*.calendly.com",
+                "frame-src https://www.googletagmanager.com https://calendly.com https://*.calendly.com",
+            ]
+        );
+
+    header(
+        'Content-Security-Policy-Report-Only: ' .
+        $contentSecurityPolicy
     );
 }
 
