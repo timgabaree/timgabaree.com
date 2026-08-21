@@ -159,10 +159,6 @@ function sendSecurityHeaders(): void
     |----------------------------------------------------------------------
     | Content Security Policy
     |----------------------------------------------------------------------
-    |
-    | Begin in Report-Only mode so third-party integrations can be
-    | validated before the policy is enforced.
-    |
     */
 
     $cspNonce =
@@ -189,7 +185,7 @@ function sendSecurityHeaders(): void
         );
 
     header(
-        'Content-Security-Policy-Report-Only: ' .
+        'Content-Security-Policy: ' .
         $contentSecurityPolicy
     );
 }
