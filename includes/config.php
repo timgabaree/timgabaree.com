@@ -327,7 +327,7 @@ const PAGE_CONFIG = [
             '2026-08-07',
 
         'modified' =>
-            '2026-08-19',
+            '2026-08-20',
 
         'body_class' =>
             'privacy-body',

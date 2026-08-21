@@ -98,8 +98,8 @@ require __DIR__ .
       </p>
 
       <p>
-        By using this website, you agree to the practices described in
-        this Privacy Policy.
+        This Privacy Policy describes the information practices associated
+        with this website and the services available through it.
       </p>
 
     </section>
@@ -226,8 +226,9 @@ require __DIR__ .
       </h3>
 
       <p>
-        Like most websites, certain information may be collected
-        automatically when you visit the site. This may include:
+        Certain technical information is processed automatically when you
+        visit or interact with the site. Depending on the feature used,
+        this may include:
       </p>
 
       <ul>
@@ -238,11 +239,23 @@ require __DIR__ .
         <li>Date and time of your visit</li>
         <li>Time spent on pages</li>
         <li>Referring website</li>
+        <li>Browser user-agent information</li>
       </ul>
 
       <p>
-        This information helps improve website performance, usability,
-        and security.
+        This information may be used for website operation, analytics,
+        performance monitoring, usability, and security.
+      </p>
+
+      <p>
+        Contact-form submissions include limited technical request
+        information, including the submitting IP address and browser
+        user-agent information, for security and operational purposes.
+        The contact-form abuse-prevention system also uses a
+        cryptographic hash derived from the IP address together with
+        recent submission timestamps. That short-lived rate-limit state
+        is automatically discarded after the configured protection
+        window.
       </p>
 
       <p class="privacy-return-to-contents">
@@ -266,19 +279,28 @@ require __DIR__ .
       </h2>
 
       <p>
-        This website may use cookies or similar technologies to:
+        This website uses a first-party session cookie for contact-related
+        requests. It supports form security, submission throttling, and
+        one-time contact-conversion state. The session cookie is not used
+        to create a persistent visitor profile.
       </p>
 
-      <ul>
-        <li>Remember basic site preferences</li>
-        <li>Measure website traffic</li>
-        <li>Improve site functionality</li>
-        <li>Understand how visitors use the website</li>
-      </ul>
+      <p>
+        Google Tag Manager is loaded on the website and may deliver
+        configured analytics or measurement tags. Those services may use
+        cookies or similar browser technologies according to their own
+        configurations and privacy practices.
+      </p>
 
       <p>
-        You can configure your browser to refuse cookies, although some
-        website features may not function as intended.
+        Calendly resources are loaded when the scheduling feature is
+        activated. Calendly may use cookies or browser storage as part of
+        providing its scheduling service.
+      </p>
+
+      <p>
+        You can configure your browser to refuse or remove cookies,
+        although some website features may not function as intended.
       </p>
 
       <p class="privacy-return-to-contents">
@@ -339,24 +361,30 @@ require __DIR__ .
       </h2>
 
       <p>
-        This website may use trusted third-party services to support
-        its operation. Depending on the features used, these services
-        may include:
+        This website uses or integrates with third-party services that
+        support hosting, measurement, scheduling, security, and related
+        website functions. These services include:
       </p>
 
       <ul>
-        <li>Google Analytics</li>
+        <li>Google Tag Manager</li>
+        <li>Google Analytics, when configured through site measurement</li>
         <li>Google Search Console</li>
         <li>Calendly</li>
-        <li>LinkedIn</li>
-        <li>DocSend</li>
         <li>GoDaddy Hosting</li>
         <li>Cloudflare</li>
       </ul>
 
       <p>
-        These providers maintain their own privacy policies governing
-        how they process information.
+        The website also contains links to external services and
+        professional platforms, including LinkedIn and DocSend. Those
+        services are governed by their own privacy policies when you
+        choose to visit them.
+      </p>
+
+      <p>
+        Third-party providers maintain their own privacy policies
+        governing how they process information.
       </p>
 
       <p class="privacy-return-to-contents">
