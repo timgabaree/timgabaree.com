@@ -77,6 +77,50 @@ function asset(
 
 /*
 |--------------------------------------------------------------------------
+| Application Session
+|--------------------------------------------------------------------------
+|
+| Start the application session only when a request requires session state.
+|
+| Public pages that do not use CSRF, rate limiting, or one-time conversion
+| state should not create a PHP session or session cookie.
+|
+*/
+
+function startApplicationSession(): void
+{
+    if (
+        session_status() !==
+        PHP_SESSION_NONE
+    ) {
+        return;
+    }
+
+    session_set_cookie_params([
+        'lifetime' =>
+            0,
+
+        'path' =>
+            '/',
+
+        'secure' =>
+            SESSION_COOKIE_SECURE,
+
+        'httponly' =>
+            SESSION_COOKIE_HTTP_ONLY,
+
+        'samesite' =>
+            SESSION_COOKIE_SAME_SITE,
+    ]);
+
+    session_start([
+        'use_strict_mode' =>
+            true,
+    ]);
+}
+
+/*
+|--------------------------------------------------------------------------
 | Site Image Retrieval
 |--------------------------------------------------------------------------
 |

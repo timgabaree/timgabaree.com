@@ -32,6 +32,8 @@ require_once __DIR__ .
 require_once __DIR__ .
     '/form-mail.php';
 
+startApplicationSession();
+
 /*
 |--------------------------------------------------------------------------
 | Response Headers

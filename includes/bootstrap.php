@@ -98,41 +98,13 @@ if (
 
 /*
 |--------------------------------------------------------------------------
-| Session Configuration
+| Session Initialization
 |--------------------------------------------------------------------------
 |
-| Sessions support CSRF protection and session-based rate limiting.
-|
-| Cookie parameters must be configured before the session starts.
+| Sessions are started explicitly with startApplicationSession() only by
+| requests that require CSRF, rate-limiting, or conversion session state.
 |
 */
-
-if (
-    session_status() ===
-    PHP_SESSION_NONE
-) {
-    session_set_cookie_params([
-        'lifetime' =>
-            0,
-
-        'path' =>
-            '/',
-
-        'secure' =>
-            SESSION_COOKIE_SECURE,
-
-        'httponly' =>
-            SESSION_COOKIE_HTTP_ONLY,
-
-        'samesite' =>
-            SESSION_COOKIE_SAME_SITE,
-    ]);
-
-    session_start([
-        'use_strict_mode' =>
-            true,
-    ]);
-}
 
 /*
 |--------------------------------------------------------------------------

@@ -9,8 +9,8 @@ declare(strict_types=1);
 |
 | Generates, stores, validates, and rotates CSRF tokens for public forms.
 |
-| Sessions are initialized centrally by bootstrap.php before this module
-| is loaded.
+| Callers must initialize the application session with
+| startApplicationSession() before using these functions.
 |
 */
 

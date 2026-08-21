@@ -8,6 +8,8 @@ require_once __DIR__ .
 require_once __DIR__ .
     '/includes/forms/form-contact-topics.php';
 
+startApplicationSession();
+
 /*
 |--------------------------------------------------------------------------
 | Page
