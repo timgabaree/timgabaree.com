@@ -18,6 +18,9 @@ error_log
 .ftpquota
 **/.ftpquota
 
+# Runtime application state
+/tmp/
+
 # Editor and temporary files
 *.tmp
 *.swp

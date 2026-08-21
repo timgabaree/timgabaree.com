@@ -211,6 +211,24 @@ if (
 
 /*
 |--------------------------------------------------------------------------
+| Remote-Address Rate Limiting
+|--------------------------------------------------------------------------
+*/
+
+if (
+    !ipRateLimitAllowsAndRecord(
+        CONTACT_FORM_RATE_LIMIT_ACTION,
+        CONTACT_FORM_IP_RATE_LIMIT_MAX_ATTEMPTS,
+        CONTACT_FORM_IP_RATE_LIMIT_WINDOW_SECONDS
+    )
+) {
+    redirectToContactStatus(
+        CONTACT_STATUS_RATE_LIMITED
+    );
+}
+
+/*
+|--------------------------------------------------------------------------
 | Validate Form Data
 |--------------------------------------------------------------------------
 */
