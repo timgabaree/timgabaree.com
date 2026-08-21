@@ -49,6 +49,15 @@ Options -MultiViews
   RewriteCond %{THE_REQUEST} \s/+\.ftpquota(?:[\s?]) [NC]
   RewriteRule ^ /errors/403.php [END]
 
+  # Block local metadata, logs, synchronization data, and temporary files.
+  # These rules remain inside the timgabaree.com host guard above, so they
+  # do not alter rewrite behavior for hosted child domains.
+
+  RewriteRule (^|/)\.DS_Store$ /errors/403.php [END,NC]
+  RewriteRule (^|/)error_log$ /errors/403.php [END,NC]
+  RewriteRule (^|/)_notes(?:/|$) /errors/403.php [END,NC]
+  RewriteRule ^tmp(?:/|$) /errors/403.php [END,NC]
+
   # --------------------------------------------------
   # Force HTTPS and Non-WWW
   # --------------------------------------------------
