@@ -96,7 +96,7 @@ $robots =
 
 $canonicalUrl =
     $pageConfiguration['canonical_url'] ??
-    SITE_HOME_URL;
+    '';
 
 /*
 |--------------------------------------------------------------------------

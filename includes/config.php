@@ -202,7 +202,7 @@ const PAGE_CONFIG = [
             '2026-08-07',
 
         'modified' =>
-            '2026-08-17',
+            '2026-08-19',
 
         'title' =>
             'Tim Gabaree | Portfolio CIO | Technology Value Creation | Enterprise Performance',
@@ -241,7 +241,7 @@ const PAGE_CONFIG = [
             '2026-08-07',
 
         'modified' =>
-            '2026-08-17',
+            '2026-08-19',
 
         'title' =>
             'About Tim Gabaree | Portfolio CIO | Technology Value Creation',
@@ -282,7 +282,7 @@ const PAGE_CONFIG = [
             '2026-08-07',
 
         'modified' =>
-            '2026-08-17',
+            '2026-08-19',
 
         'body_class' =>
             'contact-body',
@@ -327,7 +327,7 @@ const PAGE_CONFIG = [
             '2026-08-07',
 
         'modified' =>
-            '2026-08-17',
+            '2026-08-19',
 
         'body_class' =>
             'privacy-body',
@@ -437,7 +437,7 @@ const PAGE_CONFIG = [
             '2026-08-07',
 
         'modified' =>
-            '2026-08-07',
+            '2026-08-19',
 
         'body_class' =>
             'thank-you-body',
