@@ -103,7 +103,11 @@ require __DIR__ .
             <span
               class="thank-you-contact-icon"
               aria-hidden="true">
-              ✉
+              <img
+                src="<?= e(SITE_IMAGES['contact_email']['path']) ?>"
+                width="50"
+                height="50"
+                alt="">
             </span>
 
             <span>
@@ -117,7 +121,11 @@ require __DIR__ .
             <span
               class="thank-you-contact-icon"
               aria-hidden="true">
-              ☎
+              <img
+                src="<?= e(SITE_IMAGES['contact_telephone']['path']) ?>"
+                width="50"
+                height="50"
+                alt="">
             </span>
 
             <span>
@@ -132,9 +140,13 @@ require __DIR__ .
             rel="me noopener noreferrer">
 
             <span
-              class="thank-you-contact-icon thank-you-linkedin-icon"
+              class="thank-you-contact-icon"
               aria-hidden="true">
-              in
+              <img
+                src="<?= e(SITE_IMAGES['contact_linkedin']['path']) ?>"
+                width="50"
+                height="50"
+                alt="">
             </span>
 
             <span>

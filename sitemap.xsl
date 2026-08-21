@@ -183,6 +183,20 @@
             font-size: clamp(1rem, 2vw, 1.18rem);
           }
 
+          .hero-site-link,
+          .hero-site-link:visited {
+            display: inline-block;
+            color: inherit;
+            text-decoration: none;
+            transition: transform 0.18s ease;
+          }
+
+          .hero-site-link:hover,
+          .hero-site-link:focus {
+            transform: translateY(-2px);
+            text-decoration: none;
+          }
+
           /* =====================================================
              Buttons
           ===================================================== */
@@ -478,7 +492,7 @@
             padding: 0 26px 26px;
             color: var(--muted);
           }
-			
+
 		  /* =====================================================
 			 Return Navigation
 		  ===================================================== */
@@ -644,7 +658,12 @@
             </p>
 
             <h1>
-              TimGabaree.com Sitemap
+              <a
+                class="hero-site-link"
+                href="https://timgabaree.com/">
+                TimGabaree.com
+              </a>
+              Sitemap
             </h1>
 
             <p class="hero-copy">
@@ -652,7 +671,7 @@
               on timgabaree.com. This XML sitemap also helps search engines
               discover and understand the site’s content.
             </p>
-            
+
           </div>
 
         </header>
@@ -899,7 +918,7 @@
             </xsl:for-each>
 
           </div>
-			
+
         </main>
         <!-- End Main Content -->
 
