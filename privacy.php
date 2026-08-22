@@ -599,12 +599,6 @@ require __DIR__ .
         </strong>.
       </p>
 
-      <p class="privacy-return-to-contents">
-        <a href="#privacy-contents">
-          Return to Table of Contents
-        </a>
-      </p>
-
     </section>
 
 <!-- End Contact -->

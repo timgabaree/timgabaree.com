@@ -2460,8 +2460,12 @@ button.contact-action {
 }
 
 .privacy-return {
-  margin: 40px 0 0;
+  margin: 0;
   text-align: center;
+}
+
+.privacy-return .primary-cta-button {
+  margin-top: 0;
 }
 
 .privacy-contents-list {
@@ -2685,7 +2689,7 @@ button.contact-action {
   /* About: Page */
 
   .about-page {
-    padding: 28px 14px;
+    padding: 12px 14px;
   }
 
   .about-card,
@@ -2763,7 +2767,7 @@ button.contact-action {
 
   .home-intro-section {
     align-items: center;
-    margin: 40px auto 0;
+    margin: 12px auto 0;
     padding: 20px;
   }
 
@@ -3101,7 +3105,7 @@ button.contact-action {
 
   .privacy-page {
     background-attachment: scroll;
-    padding: 24px 14px;
+    padding: 12px 14px;
   }
 
   .privacy-card {
