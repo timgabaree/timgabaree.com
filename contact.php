@@ -408,10 +408,6 @@ require __DIR__ .
           Continue the Conversation
         </p>
 
-        <h2 id="contact-conversation-title">
-          Let’s stay connected.
-        </h2>
-
         <p>
           Share a little about the opportunity, challenge, or conversation
           you would like to continue. I review each message personally and
