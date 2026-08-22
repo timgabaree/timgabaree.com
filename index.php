@@ -139,7 +139,7 @@ require __DIR__ .
                 rel="noopener noreferrer"
                 class="home-intro-links">
 
-                Executive Résumé
+                Résumé
 
                 <span class="visually-hidden">
                   — opens in a new tab

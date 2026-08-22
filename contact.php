@@ -184,7 +184,9 @@ require __DIR__ .
             <span
               class="contact-action-icon contact-email-icon"
               aria-hidden="true">
-              ✉
+              <span class="contact-action-glyph">
+                ✉
+              </span>
             </span>
 
             <span class="contact-action-text">
@@ -240,7 +242,9 @@ require __DIR__ .
             <span
               class="contact-action-icon contact-schedule-icon"
               aria-hidden="true">
-              ◷
+              <span class="contact-action-glyph">
+                ◷
+              </span>
             </span>
 
             <span class="contact-action-text">
@@ -319,7 +323,7 @@ require __DIR__ .
         rel="noopener noreferrer"
         class="contact-resource-link">
 
-        Executive Résumé
+        Résumé
 
         <span class="visually-hidden">
           — opens in a new tab

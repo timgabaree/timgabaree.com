@@ -1730,6 +1730,17 @@ a.contactLink:hover {
   font-weight: 700;
 }
 
+.contact-action-glyph {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.contact-email-icon .contact-action-glyph,
+.contact-schedule-icon .contact-action-glyph {
+  transform: translateY(-1px);
+}
+
 .contact-action-primary .contact-action-icon {
   color: var(--accent-color);
   background-color: var(--white);
