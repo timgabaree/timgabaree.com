@@ -1,0 +1,7 @@
+#!/bin/sh
+
+./scripts/sync-sitemap-css-version.py || exit 1
+
+git add sitemap.xsl
+
+git diff --cached --check || exit 1

@@ -334,14 +334,26 @@ button:focus-visible {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   margin-left: auto;
+}
+
+.nav-link-container .nav-link {
+  padding: 0;
 }
 
 .nav-link-container img {
   display: block;
   border-radius: 4px;
   transition: transform 0.3s ease;
+}
+
+.nav-link-container .nav-link:last-child {
+  margin-left: -2px;
+}
+
+.nav-link-container img:hover {
+  transform: scale(1.1);
 }
 
 .nav-link-container img:hover {
