@@ -25,3 +25,6 @@ error_log
 *.tmp
 *.swp
 *~
+
+# PhpStorm synchronization metadata
+.idea/
