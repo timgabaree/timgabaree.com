@@ -199,10 +199,10 @@ const SITE_THANK_YOU_URL =
 const PAGE_CONFIG = [
     'home' => [
         'published' =>
-            '2026-08-07',
+            '2026-08-07T00:00:00-05:00',
 
         'modified' =>
-            '2026-08-19',
+            '2026-08-19T00:00:00-05:00',
 
         'title' =>
             'Tim Gabaree | Portfolio CIO | Technology Value Creation | Enterprise Performance',
@@ -238,10 +238,10 @@ const PAGE_CONFIG = [
 
     'about' => [
         'published' =>
-            '2026-08-07',
+            '2026-08-07T00:00:00-05:00',
 
         'modified' =>
-            '2026-08-19',
+            '2026-08-19T00:00:00-05:00',
 
         'title' =>
             'About Tim Gabaree | Portfolio CIO | Technology Value Creation',
@@ -279,10 +279,10 @@ const PAGE_CONFIG = [
 
     'contact' => [
         'published' =>
-            '2026-08-07',
+            '2026-08-07T00:00:00-05:00',
 
         'modified' =>
-            '2026-08-19',
+            '2026-08-19T00:00:00-05:00',
 
         'body_class' =>
             'contact-body',
@@ -324,10 +324,10 @@ const PAGE_CONFIG = [
 
     'privacy' => [
         'published' =>
-            '2026-08-07',
+            '2026-08-07T00:00:00-05:00',
 
         'modified' =>
-            '2026-08-20',
+            '2026-08-20T00:00:00-05:00',
 
         'body_class' =>
             'privacy-body',
@@ -434,10 +434,10 @@ const PAGE_CONFIG = [
 
     'thank-you' => [
         'published' =>
-            '2026-08-07',
+            '2026-08-07T00:00:00-05:00',
 
         'modified' =>
-            '2026-08-19',
+            '2026-08-19T00:00:00-05:00',
 
         'body_class' =>
             'thank-you-body',
