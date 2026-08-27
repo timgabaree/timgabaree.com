@@ -47,41 +47,41 @@ require __DIR__ .
 <!-- Main -->
 
 <main
-  id="main-content"
-  class="privacy-page">
+    id="main-content"
+    class="privacy-page">
 
-  <?= siteImage(
-      'background',
-      [
-          'class' =>
-              'page-background-image',
-      ]
-  ) ?>
+    <?= siteImage(
+        'background',
+        [
+            'class' =>
+                'page-background-image',
+        ]
+    ) ?>
 
-  <div class="privacy-container">
+    <div class="privacy-container">
 
-<!-- Privacy Policy Introduction -->
+        <!-- Privacy Policy Introduction -->
 
-    <section
-      class="privacy-card privacy-intro"
-      aria-labelledby="privacy-title">
+        <section
+            class="privacy-card privacy-intro"
+            aria-labelledby="privacy-title">
 
-      <p class="privacy-eyebrow">
-        Privacy &amp; Data Use
-      </p>
+            <p class="privacy-eyebrow">
+                Privacy &amp; Data Use
+            </p>
 
-      <h1 id="privacy-title">
-        Privacy Policy
-      </h1>
+            <h1 id="privacy-title">
+                Privacy Policy
+            </h1>
 
-      <p class="privacy-updated">
-        Last Updated:
-        <time datetime="<?= e($privacyModifiedIso) ?>">
-          <?= e($privacyModifiedDisplay) ?>
-        </time>
-      </p>
+            <p class="privacy-updated">
+                Last Updated:
+                <time datetime="<?= e($privacyModifiedIso) ?>">
+                    <?= e($privacyModifiedDisplay) ?>
+                </time>
+            </p>
 
-      <p>
+            <p>
         At timgabaree.com, your privacy is important. This Privacy
         Policy explains what information may be collected when you
         visit this website, how it is used, and the choices available
