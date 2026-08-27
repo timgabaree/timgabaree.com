@@ -59,9 +59,9 @@ require __DIR__ .
           <p class="home-intro-subtitle">
             Portfolio CIO
             <span aria-hidden="true"> | </span>
-            Technology Value Creation
+              Infrastructure & Operations Strategy
             <span aria-hidden="true"> | </span>
-            Enterprise Performance
+              Technology Value Creation
           </p>
 
         </header>
@@ -79,15 +79,15 @@ require __DIR__ .
           </p>
 
           <p>
-            Converting strategy into execution by aligning technology,
-            operations, investment, and risk management. Improving
-            performance, reducing complexity, and strengthening governance.
+              Converting strategy into execution by aligning technology,
+              infrastructure and operations, investment, and risk with business priorities. Improving
+              performance, reducing complexity, strengthening governance, and enabling sustainable growth.
           </p>
 
           <p class="home-intro-cta-text">
-            Whether you're exploring executive leadership, board
-            opportunities, advisory work, or technology transformation,
-            I'd welcome the opportunity to connect.
+              Whether you're exploring executive leadership, board
+              opportunities, advisory work, or technology transformation,
+              I'd welcome the opportunity to connect.
           </p>
 
           <a
