@@ -52,18 +52,15 @@ $profilePageSchema =
         $pageDateModified,
         [
             'primaryImageOfPage' => [
-                '@id' =>
-                    SITE_PRIMARY_IMAGE_ID,
+                '@id' => SITE_PRIMARY_IMAGE_ID,
             ],
 
             'mainEntity' => [
-                '@id' =>
-                    SITE_PERSON_ID,
+                '@id' => SITE_PERSON_ID,
             ],
 
             'about' => [
-                '@id' =>
-                    SITE_PERSON_ID,
+                '@id' => SITE_PERSON_ID,
             ],
         ]
     );
@@ -78,8 +75,7 @@ $personSchema =
     buildPersonSchema();
 
 $personSchema['mainEntityOfPage'] = [
-    '@id' =>
-        SITE_HOME_URL .
+    '@id' => SITE_HOME_URL .
         '#webpage',
 ];
 

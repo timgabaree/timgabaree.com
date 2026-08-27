@@ -32,8 +32,7 @@ require __DIR__ .
   <?= siteImage(
       'background',
       [
-          'class' =>
-              'page-background-image',
+          'class' => 'page-background-image',
       ]
   ) ?>
 
@@ -189,8 +188,7 @@ require __DIR__ .
         <?= siteImage(
             'interest_coffee',
             [
-                'class' =>
-                    'about-interests-block-image',
+                'class' => 'about-interests-block-image',
             ]
         ) ?>
 
@@ -205,8 +203,7 @@ require __DIR__ .
         <?= siteImage(
             'interest_chocolate',
             [
-                'class' =>
-                    'about-interests-block-image',
+                'class' => 'about-interests-block-image',
             ]
         ) ?>
 
@@ -221,8 +218,7 @@ require __DIR__ .
         <?= siteImage(
             'interest_pizza',
             [
-                'class' =>
-                    'about-interests-block-image',
+                'class' => 'about-interests-block-image',
             ]
         ) ?>
 
@@ -237,8 +233,7 @@ require __DIR__ .
         <?= siteImage(
             'interest_technology',
             [
-                'class' =>
-                    'about-interests-block-image',
+                'class' => 'about-interests-block-image',
             ]
         ) ?>
 

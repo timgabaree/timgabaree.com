@@ -52,35 +52,26 @@ $websiteSchema =
 */
 
 $aboutImageSchema = [
-    '@type' =>
-        'ImageObject',
+    '@type' => 'ImageObject',
 
-    '@id' =>
-        $aboutImageId,
+    '@id' => $aboutImageId,
 
-    'url' =>
-        $aboutImage,
+    'url' => $aboutImage,
 
-    'contentUrl' =>
-        $aboutImage,
+    'contentUrl' => $aboutImage,
 
-    'width' =>
-        $aboutImageData['width'] ??
+    'width' => $aboutImageData['width'] ??
         0,
 
-    'height' =>
-        $aboutImageData['height'] ??
+    'height' => $aboutImageData['height'] ??
         0,
 
-    'encodingFormat' =>
-        $aboutImageData['type'] ??
+    'encodingFormat' => $aboutImageData['type'] ??
         '',
 
-    'caption' =>
-        'Tim Gabaree with his family',
+    'caption' => 'Tim Gabaree with his family',
 
-    'representativeOfPage' =>
-        true,
+    'representativeOfPage' => true,
 ];
 
 /*
@@ -99,18 +90,15 @@ $aboutPageSchema =
         $pageDateModified,
         [
             'primaryImageOfPage' => [
-                '@id' =>
-                    $aboutImageId,
+                '@id' => $aboutImageId,
             ],
 
             'mainEntity' => [
-                '@id' =>
-                    SITE_PERSON_ID,
+                '@id' => SITE_PERSON_ID,
             ],
 
             'about' => [
-                '@id' =>
-                    SITE_PERSON_ID,
+                '@id' => SITE_PERSON_ID,
             ],
         ]
     );
@@ -129,8 +117,7 @@ $personSchema =
     buildPersonSchema();
 
 $personSchema['mainEntityOfPage'] = [
-    '@id' =>
-        SITE_ABOUT_URL .
+    '@id' => SITE_ABOUT_URL .
         '#webpage',
 ];
 

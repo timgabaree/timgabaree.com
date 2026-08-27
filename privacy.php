@@ -53,8 +53,7 @@ require __DIR__ .
     <?= siteImage(
         'background',
         [
-            'class' =>
-                'page-background-image',
+            'class' => 'page-background-image',
         ]
     ) ?>
 

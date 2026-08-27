@@ -179,8 +179,7 @@ $educationClasses =
   <?= siteImage(
       $educationBackgroundImage,
       [
-          'class' =>
-              'home-education-background-image',
+          'class' => 'home-education-background-image',
       ]
   ) ?>
 
@@ -201,11 +200,9 @@ $educationClasses =
         <?= siteImage(
             $educationLogoImage,
             [
-                'alt' =>
-                    '',
+                'alt' => '',
 
-                'include_description' =>
-                    false,
+                'include_description' => false,
             ]
         ) ?>
 

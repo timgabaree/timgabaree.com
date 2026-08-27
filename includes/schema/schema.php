@@ -59,11 +59,9 @@ if ($schemaGraph === []) {
 */
 
 $structuredData = [
-    '@context' =>
-        SCHEMA_CONTEXT,
+    '@context' => SCHEMA_CONTEXT,
 
-    '@graph' =>
-        $schemaGraph,
+    '@graph' => $schemaGraph,
 ];
 
 /*

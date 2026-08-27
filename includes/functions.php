@@ -212,25 +212,19 @@ function startApplicationSession(): void
     }
 
     session_set_cookie_params([
-        'lifetime' =>
-            0,
+        'lifetime' => 0,
 
-        'path' =>
-            '/',
+        'path' => '/',
 
-        'secure' =>
-            SESSION_COOKIE_SECURE,
+        'secure' => SESSION_COOKIE_SECURE,
 
-        'httponly' =>
-            SESSION_COOKIE_HTTP_ONLY,
+        'httponly' => SESSION_COOKIE_HTTP_ONLY,
 
-        'samesite' =>
-            SESSION_COOKIE_SAME_SITE,
+        'samesite' => SESSION_COOKIE_SAME_SITE,
     ]);
 
     session_start([
-        'use_strict_mode' =>
-            true,
+        'use_strict_mode' => true,
     ]);
 }
 
@@ -287,24 +281,18 @@ function getSiteImage(
 
     $image['type'] =
         match ($extension) {
-            'webp' =>
-                'image/webp',
+            'webp' => 'image/webp',
 
-            'png' =>
-                'image/png',
+            'png' => 'image/png',
 
             'jpg',
-            'jpeg' =>
-                'image/jpeg',
+            'jpeg' => 'image/jpeg',
 
-            'avif' =>
-                'image/avif',
+            'avif' => 'image/avif',
 
-            'svg' =>
-                'image/svg+xml',
+            'svg' => 'image/svg+xml',
 
-            default =>
-                '',
+            default => '',
         };
 
     return $image;

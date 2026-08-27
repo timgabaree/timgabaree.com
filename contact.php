@@ -32,20 +32,15 @@ $formStatus =
         : '';
 
 $formStatusMessages = [
-    CONTACT_STATUS_MISSING =>
-        'Please complete all required fields.',
+    CONTACT_STATUS_MISSING => 'Please complete all required fields.',
 
-    CONTACT_STATUS_INVALID =>
-        'Some submitted information could not be accepted. Please review the form and try again.',
+    CONTACT_STATUS_INVALID => 'Some submitted information could not be accepted. Please review the form and try again.',
 
-    CONTACT_STATUS_INVALID_EMAIL =>
-        'Please enter a valid email address.',
+    CONTACT_STATUS_INVALID_EMAIL => 'Please enter a valid email address.',
 
-    CONTACT_STATUS_RATE_LIMITED =>
-        'Please wait a few seconds before submitting another message.',
+    CONTACT_STATUS_RATE_LIMITED => 'Please wait a few seconds before submitting another message.',
 
-    CONTACT_STATUS_SECURITY_ERROR =>
-        'Your form session could not be verified. Please reload this page and try again.',
+    CONTACT_STATUS_SECURITY_ERROR => 'Your form session could not be verified. Please reload this page and try again.',
 
     CONTACT_STATUS_SEND_ERROR =>
         'Your message could not be sent at this time. Please try again or contact me directly.',
@@ -85,8 +80,7 @@ require __DIR__ .
   <?= siteImage(
       'background',
       [
-          'class' =>
-              'contact-background-image',
+          'class' => 'contact-background-image',
       ]
   ) ?>
 
@@ -103,8 +97,7 @@ require __DIR__ .
         <?= siteImage(
             'profile',
             [
-                'class' =>
-                    'contact-profile-image',
+                'class' => 'contact-profile-image',
             ]
         ) ?>
 

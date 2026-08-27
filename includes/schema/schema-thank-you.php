@@ -54,8 +54,7 @@ $thankYouPageSchema =
         $pageDateModified,
         [
             'about' => [
-                '@id' =>
-                    SITE_PERSON_ID,
+                '@id' => SITE_PERSON_ID,
             ],
         ]
     );

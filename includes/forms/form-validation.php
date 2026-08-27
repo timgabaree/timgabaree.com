@@ -94,14 +94,11 @@ function validateContactForm(
         $message === ''
     ) {
         return [
-            'is_valid' =>
-                false,
+            'is_valid' => false,
 
-            'status' =>
-                CONTACT_STATUS_MISSING,
+            'status' => CONTACT_STATUS_MISSING,
 
-            'data' =>
-                [],
+            'data' => [],
         ];
     }
 
@@ -134,14 +131,11 @@ function validateContactForm(
         )
     ) {
         return [
-            'is_valid' =>
-                false,
+            'is_valid' => false,
 
-            'status' =>
-                CONTACT_STATUS_INVALID,
+            'status' => CONTACT_STATUS_INVALID,
 
-            'data' =>
-                [],
+            'data' => [],
         ];
     }
 
@@ -157,14 +151,11 @@ function validateContactForm(
         )
     ) {
         return [
-            'is_valid' =>
-                false,
+            'is_valid' => false,
 
-            'status' =>
-                CONTACT_STATUS_INVALID_EMAIL,
+            'status' => CONTACT_STATUS_INVALID_EMAIL,
 
-            'data' =>
-                [],
+            'data' => [],
         ];
     }
 
@@ -192,14 +183,11 @@ function validateContactForm(
         )
     ) {
         return [
-            'is_valid' =>
-                false,
+            'is_valid' => false,
 
-            'status' =>
-                CONTACT_STATUS_INVALID,
+            'status' => CONTACT_STATUS_INVALID,
 
-            'data' =>
-                [],
+            'data' => [],
         ];
     }
 
@@ -216,14 +204,11 @@ function validateContactForm(
         )
     ) {
         return [
-            'is_valid' =>
-                false,
+            'is_valid' => false,
 
-            'status' =>
-                CONTACT_STATUS_INVALID,
+            'status' => CONTACT_STATUS_INVALID,
 
-            'data' =>
-                [],
+            'data' => [],
         ];
     }
 
@@ -237,14 +222,11 @@ function validateContactForm(
         $topicLabel === ''
     ) {
         return [
-            'is_valid' =>
-                false,
+            'is_valid' => false,
 
-            'status' =>
-                CONTACT_STATUS_INVALID,
+            'status' => CONTACT_STATUS_INVALID,
 
-            'data' =>
-                [],
+            'data' => [],
         ];
     }
 
@@ -255,33 +237,24 @@ function validateContactForm(
 */
 
     return [
-        'is_valid' =>
-            true,
+        'is_valid' => true,
 
-        'status' =>
-            '',
+        'status' => '',
 
         'data' => [
-            'name' =>
-                $name,
+            'name' => $name,
 
-            'organization' =>
-                $organization,
+            'organization' => $organization,
 
-            'email' =>
-                $email,
+            'email' => $email,
 
-            'phone' =>
-                $phone,
+            'phone' => $phone,
 
-            'topic' =>
-                $topic,
+            'topic' => $topic,
 
-            'topic_label' =>
-                $topicLabel,
+            'topic_label' => $topicLabel,
 
-            'message' =>
-                $message,
+            'message' => $message,
         ],
     ];
 }

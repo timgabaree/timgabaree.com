@@ -340,8 +340,7 @@ function ipRateLimitAllowsAndRecord(
 
         foreach (
             $state as
-            $storedKey =>
-            $timestamps
+            $storedKey => $timestamps
         ) {
             if (
                 !is_string(

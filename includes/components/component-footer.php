@@ -41,14 +41,11 @@ if (
     !is_array($footerLinks)
 ) {
     $footerLinks = [
-        'Home' =>
-            SITE_HOME_PATH,
+        'Home' => SITE_HOME_PATH,
 
-        'Privacy Policy' =>
-            SITE_PRIVACY_PATH,
+        'Privacy Policy' => SITE_PRIVACY_PATH,
 
-        'Sitemap' =>
-            SITE_SITEMAP_PATH,
+        'Sitemap' => SITE_SITEMAP_PATH,
     ];
 }
 

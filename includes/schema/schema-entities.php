@@ -22,23 +22,17 @@ declare(strict_types=1);
 function buildWebsiteSchema(): array
 {
     return [
-        '@type' =>
-            'WebSite',
+        '@type' => 'WebSite',
 
-        '@id' =>
-            SITE_WEBSITE_ID,
+        '@id' => SITE_WEBSITE_ID,
 
-        'url' =>
-            SITE_HOME_URL,
+        'url' => SITE_HOME_URL,
 
-        'name' =>
-            SITE_NAME,
+        'name' => SITE_NAME,
 
-        'description' =>
-            SITE_DESCRIPTION,
+        'description' => SITE_DESCRIPTION,
 
-        'inLanguage' =>
-            SITE_LANGUAGE,
+        'inLanguage' => SITE_LANGUAGE,
     ];
 }
 
@@ -63,34 +57,25 @@ function buildPageSchema(
     array $additional = []
 ): array {
     $schema = [
-        '@type' =>
-            $type,
+        '@type' => $type,
 
-        '@id' =>
-            $url .
+        '@id' => $url .
             '#webpage',
 
-        'url' =>
-            $url,
+        'url' => $url,
 
-        'name' =>
-            $name,
+        'name' => $name,
 
-        'description' =>
-            $description,
+        'description' => $description,
 
-        'inLanguage' =>
-            SITE_LANGUAGE,
+        'inLanguage' => SITE_LANGUAGE,
 
-        'datePublished' =>
-            $datePublished,
+        'datePublished' => $datePublished,
 
-        'dateModified' =>
-            $dateModified,
+        'dateModified' => $dateModified,
 
         'isPartOf' => [
-            '@id' =>
-                SITE_WEBSITE_ID,
+            '@id' => SITE_WEBSITE_ID,
         ],
     ];
 
@@ -116,34 +101,26 @@ function buildPrimaryImageSchema(
         );
 
     $schema = [
-        '@type' =>
-            'ImageObject',
+        '@type' => 'ImageObject',
 
-        '@id' =>
-            SITE_PRIMARY_IMAGE_ID,
+        '@id' => SITE_PRIMARY_IMAGE_ID,
 
-        'url' =>
-            $image['url'] ??
+        'url' => $image['url'] ??
             '',
 
-        'contentUrl' =>
-            $image['url'] ??
+        'contentUrl' => $image['url'] ??
             '',
 
-        'width' =>
-            $image['width'] ??
+        'width' => $image['width'] ??
             0,
 
-        'height' =>
-            $image['height'] ??
+        'height' => $image['height'] ??
             0,
 
-        'encodingFormat' =>
-            $image['type'] ??
+        'encodingFormat' => $image['type'] ??
             '',
 
-        'caption' =>
-            'Tim Gabaree, Portfolio CIO and technology executive',
+        'caption' => 'Tim Gabaree, Portfolio CIO and technology executive',
     ];
 
     if ($representativeOfPage) {
@@ -163,57 +140,42 @@ function buildPrimaryImageSchema(
 function buildPersonSchema(): array
 {
     return [
-        '@type' =>
-            'Person',
+        '@type' => 'Person',
 
-        '@id' =>
-            SITE_PERSON_ID,
+        '@id' => SITE_PERSON_ID,
 
-        'name' =>
-            SITE_NAME,
+        'name' => SITE_NAME,
 
-        'givenName' =>
-            'Tim',
+        'givenName' => 'Tim',
 
-        'familyName' =>
-            'Gabaree',
+        'familyName' => 'Gabaree',
 
-        'url' =>
-            SITE_HOME_URL,
+        'url' => SITE_HOME_URL,
 
         'image' => [
-            '@id' =>
-                SITE_PRIMARY_IMAGE_ID,
+            '@id' => SITE_PRIMARY_IMAGE_ID,
         ],
 
-        'jobTitle' =>
-            'Portfolio CIO',
+        'jobTitle' => 'Portfolio CIO',
 
         'description' =>
             'Portfolio CIO and technology executive focused on technology value creation, governance, operating model transformation, and enterprise performance.',
 
-        'email' =>
-            'mailto:' .
+        'email' => 'mailto:' .
             SITE_EMAIL,
 
-        'telephone' =>
-            SITE_PHONE,
+        'telephone' => SITE_PHONE,
 
-        'sameAs' =>
-            SITE_SOCIAL_PROFILES,
+        'sameAs' => SITE_SOCIAL_PROFILES,
 
         'spouse' => [
-            '@type' =>
-                'Person',
+            '@type' => 'Person',
 
-            '@id' =>
-                'https://carriegabaree.com/#person',
+            '@id' => 'https://carriegabaree.com/#person',
 
-            'name' =>
-                'Carrie Gabaree',
+            'name' => 'Carrie Gabaree',
 
-            'url' =>
-                'https://carriegabaree.com/',
+            'url' => 'https://carriegabaree.com/',
 
             'sameAs' => [
                 'https://www.linkedin.com/in/carriegabaree',
@@ -221,99 +183,76 @@ function buildPersonSchema(): array
         ],
 
         'affiliation' => [
-            '@type' =>
-                'Organization',
+            '@type' => 'Organization',
 
-            'name' =>
-                'RGE Solutions LLC',
+            'name' => 'RGE Solutions LLC',
 
-            'url' =>
-                'https://rgesol.com/',
+            'url' => 'https://rgesol.com/',
         ],
 
         'memberOf' => [
             [
-                '@type' =>
-                    'Organization',
+                '@type' => 'Organization',
 
-                'name' =>
-                    'Private Directors Association',
+                'name' => 'Private Directors Association',
             ],
 
             [
-                '@type' =>
-                    'Organization',
+                '@type' => 'Organization',
 
-                'name' =>
-                    'IEEE',
+                'name' => 'IEEE',
             ],
 
             [
-                '@type' =>
-                    'Organization',
+                '@type' => 'Organization',
 
-                'name' =>
-                    'ISC2',
+                'name' => 'ISC2',
             ],
 
             [
-                '@type' =>
-                    'Organization',
+                '@type' => 'Organization',
 
-                'name' =>
-                    'Project Management Institute',
+                'name' => 'Project Management Institute',
             ],
         ],
 
         'alumniOf' => [
             [
-                '@type' =>
-                    'CollegeOrUniversity',
+                '@type' => 'CollegeOrUniversity',
 
-                'name' =>
-                    'Purdue University Global',
+                'name' => 'Purdue University Global',
             ],
 
             [
-                '@type' =>
-                    'CollegeOrUniversity',
+                '@type' => 'CollegeOrUniversity',
 
-                'name' =>
-                    'University of Illinois Springfield',
+                'name' => 'University of Illinois Springfield',
             ],
         ],
 
         'hasCredential' => [
             [
-                '@type' =>
-                    'EducationalOccupationalCredential',
+                '@type' => 'EducationalOccupationalCredential',
 
-                'name' =>
-                    'Master of Business Administration',
+                'name' => 'Master of Business Administration',
             ],
 
             [
-                '@type' =>
-                    'EducationalOccupationalCredential',
+                '@type' => 'EducationalOccupationalCredential',
 
-                'name' =>
-                    'Certified Information Systems Security Professional',
+                'name' => 'Certified Information Systems Security Professional',
             ],
 
             [
-                '@type' =>
-                    'EducationalOccupationalCredential',
+                '@type' => 'EducationalOccupationalCredential',
 
-                'name' =>
-                    'Project Management Professional',
+                'name' => 'Project Management Professional',
             ],
 
             [
-                '@type' =>
-                    'EducationalOccupationalCredential',
+                '@type' => 'EducationalOccupationalCredential',
 
-                'name' =>
-                    'Wharton Corporate Governance Certificate',
+                'name' => 'Wharton Corporate Governance Certificate',
             ],
         ],
 

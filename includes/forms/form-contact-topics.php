@@ -15,27 +15,19 @@ declare(strict_types=1);
 */
 
 $contactTopics = [
-    'executive-leadership' =>
-        'Executive Leadership Opportunity',
+    'executive-leadership' => 'Executive Leadership Opportunity',
 
-    'board-advisory' =>
-        'Board or Advisory Opportunity',
+    'board-advisory' => 'Board or Advisory Opportunity',
 
-    'private-equity-portfolio' =>
-        'Private Equity or Portfolio Leadership',
+    'private-equity-portfolio' => 'Private Equity or Portfolio Leadership',
 
-    'speaking-media' =>
-        'Speaking or Media Inquiry',
+    'speaking-media' => 'Speaking or Media Inquiry',
 
-    'professional-networking' =>
-        'Professional Networking',
+    'professional-networking' => 'Professional Networking',
 
-    'privacy-request' =>
-        'Privacy or Personal Data Request',
+    'privacy-request' => 'Privacy or Personal Data Request',
 
-    'rge-solutions' =>
-        'RGE Solutions Inquiry',
+    'rge-solutions' => 'RGE Solutions Inquiry',
 
-    'other' =>
-        'Other',
+    'other' => 'Other',
 ];

@@ -250,15 +250,12 @@ $homePrefix =
       <?= siteImage(
           'social_blogger',
           [
-              'width' =>
-                  25,
+              'width' => 25,
 
-              'height' =>
-                  25,
+              'height' => 25,
 
               'attributes' => [
-                  'aria-hidden' =>
-                      'true',
+                  'aria-hidden' => 'true',
               ],
           ]
       ) ?>
@@ -277,15 +274,12 @@ $homePrefix =
       <?= siteImage(
           'social_linkedin',
           [
-              'width' =>
-                  25,
+              'width' => 25,
 
-              'height' =>
-                  25,
+              'height' => 25,
 
               'attributes' => [
-                  'aria-hidden' =>
-                      'true',
+                  'aria-hidden' => 'true',
               ],
           ]
       ) ?>
@@ -304,15 +298,12 @@ $homePrefix =
       <?= siteImage(
           'social_github',
           [
-              'width' =>
-                  25,
+              'width' => 25,
 
-              'height' =>
-                  25,
+              'height' => 25,
 
               'attributes' => [
-                  'aria-hidden' =>
-                      'true',
+                  'aria-hidden' => 'true',
               ],
           ]
       ) ?>

@@ -41,8 +41,7 @@ require __DIR__ .
       <?= siteImage(
           'background',
           [
-              'class' =>
-                  'home-section-background-image',
+              'class' => 'home-section-background-image',
           ]
       ) ?>
 
@@ -207,16 +206,14 @@ require __DIR__ .
         <?= siteImage(
             'profile',
             [
-                'class' =>
-                    'home-intro-profile-picture-img home-intro-profile-picture-img-main',
+                'class' => 'home-intro-profile-picture-img home-intro-profile-picture-img-main',
             ]
         ) ?>
 
         <?= siteImage(
             'profile_hover',
             [
-                'class' =>
-                    'home-intro-profile-picture-img home-intro-profile-picture-img-hover',
+                'class' => 'home-intro-profile-picture-img home-intro-profile-picture-img-hover',
             ]
         ) ?>
 
@@ -265,8 +262,7 @@ require __DIR__ .
           <?= siteImage(
               'results_left',
               [
-                  'class' =>
-                      'home-results-slide-image',
+                  'class' => 'home-results-slide-image',
               ]
           ) ?>
 
@@ -293,8 +289,7 @@ require __DIR__ .
           <?= siteImage(
               'results_middle',
               [
-                  'class' =>
-                      'home-results-slide-image',
+                  'class' => 'home-results-slide-image',
               ]
           ) ?>
 
@@ -321,8 +316,7 @@ require __DIR__ .
           <?= siteImage(
               'results_right',
               [
-                  'class' =>
-                      'home-results-slide-image',
+                  'class' => 'home-results-slide-image',
               ]
           ) ?>
 
@@ -349,8 +343,7 @@ require __DIR__ .
           <?= siteImage(
               'results_left',
               [
-                  'class' =>
-                      'home-results-slide-image',
+                  'class' => 'home-results-slide-image',
               ]
           ) ?>
 
@@ -377,8 +370,7 @@ require __DIR__ .
           <?= siteImage(
               'results_middle',
               [
-                  'class' =>
-                      'home-results-slide-image',
+                  'class' => 'home-results-slide-image',
               ]
           ) ?>
 
@@ -482,8 +474,7 @@ require __DIR__ .
           <?= siteImage(
               'expertise',
               [
-                  'class' =>
-                      'home-expertise-image',
+                  'class' => 'home-expertise-image',
               ]
           ) ?>
 
@@ -511,52 +502,36 @@ require __DIR__ .
 
   $sectionItems = [
       [
-          'title' =>
-              'Delivered more than $25 million in savings',
-          'description' =>
-              'Achieved through vendor rationalization, analytics, and cost discipline.',
+          'title' => 'Delivered more than $25 million in savings',
+          'description' => 'Achieved through vendor rationalization, analytics, and cost discipline.',
       ],
       [
-          'title' =>
-              'Stabilized a $115 million at-risk federal program',
-          'description' =>
-              'Restored performance through operational recovery and stakeholder alignment.',
+          'title' => 'Stabilized a $115 million at-risk federal program',
+          'description' => 'Restored performance through operational recovery and stakeholder alignment.',
       ],
       [
-          'title' =>
-              'Led modernization across environments valued at more than $100 million',
-          'description' =>
-              'Directed initiatives spanning technology, cybersecurity, compliance, and data strategy.',
+          'title' => 'Led modernization across environments valued at more than $100 million',
+          'description' => 'Directed initiatives spanning technology, cybersecurity, compliance, and data strategy.',
       ],
       [
-          'title' =>
-              'Increased billable utilization from 60% to 93%',
-          'description' =>
-              'Improved operating performance while generating $2 million in additional revenue.',
+          'title' => 'Increased billable utilization from 60% to 93%',
+          'description' => 'Improved operating performance while generating $2 million in additional revenue.',
       ],
       [
-          'title' =>
-              'Raised workforce retention to 96%',
-          'description' =>
-              'Strengthened organizational performance through redesign and leadership development.',
+          'title' => 'Raised workforce retention to 96%',
+          'description' => 'Strengthened organizational performance through redesign and leadership development.',
       ],
       [
-          'title' =>
-              'Delivered an $80 million mission-critical federal program',
-          'description' =>
-              'Improved margins while reducing delivery and execution risk.',
+          'title' => 'Delivered an $80 million mission-critical federal program',
+          'description' => 'Improved margins while reducing delivery and execution risk.',
       ],
       [
-          'title' =>
-              'Reduced operating costs across Department of Defense programs',
-          'description' =>
-              'Achieved efficiencies through consolidation and modernization.',
+          'title' => 'Reduced operating costs across Department of Defense programs',
+          'description' => 'Achieved efficiencies through consolidation and modernization.',
       ],
       [
-          'title' =>
-              'Aligned capital allocation and technology investment priorities',
-          'description' =>
-              'Connected investment decisions with broader enterprise objectives.',
+          'title' => 'Aligned capital allocation and technology investment priorities',
+          'description' => 'Connected investment decisions with broader enterprise objectives.',
       ],
   ];
 
@@ -588,20 +563,17 @@ require __DIR__ .
 
   $sectionItems = [
       [
-          'title' =>
-              'Independent Board Director | EMAXIQ',
+          'title' => 'Independent Board Director | EMAXIQ',
           'description' =>
               'Advises leadership on corporate strategy, platform direction, governance, and international expansion for a digital consultancy and executive collaboration platform.',
       ],
       [
-          'title' =>
-              'Independent Board Director | Marian Homes',
+          'title' => 'Independent Board Director | Marian Homes',
           'description' =>
               'Supported financial stewardship, fundraising, governance, and long-term planning for a nonprofit serving adults with intellectual disabilities.',
       ],
       [
-          'title' =>
-              'Board Advisor | Chicago House Athletic Club',
+          'title' => 'Board Advisor | Chicago House Athletic Club',
           'description' =>
               'Advised organizational leadership on strategy, operating priorities, governance, and stakeholder engagement supporting continued growth.',
       ],
@@ -646,37 +618,27 @@ require __DIR__ .
 
         $educationItems = [
             [
-                'degree' =>
-                    'Master of Business Administration',
+                'degree' => 'Master of Business Administration',
 
-                'institution' =>
-                    'University of Illinois Springfield',
+                'institution' => 'University of Illinois Springfield',
 
-                'url' =>
-                    'https://www.uis.edu/',
+                'url' => 'https://www.uis.edu/',
 
-                'logo_image' =>
-                    'education_uis_logo',
+                'logo_image' => 'education_uis_logo',
 
-                'background_image' =>
-                    'education_uis_background',
+                'background_image' => 'education_uis_background',
             ],
 
             [
-                'degree' =>
-                    'Bachelor of Science in Analytics',
+                'degree' => 'Bachelor of Science in Analytics',
 
-                'institution' =>
-                    'Purdue University Global',
+                'institution' => 'Purdue University Global',
 
-                'url' =>
-                    'https://www.purdueglobal.edu/',
+                'url' => 'https://www.purdueglobal.edu/',
 
-                'logo_image' =>
-                    'education_purdue_logo',
+                'logo_image' => 'education_purdue_logo',
 
-                'background_image' =>
-                    'education_purdue_background',
+                'background_image' => 'education_purdue_background',
             ],
         ];
 
@@ -833,62 +795,44 @@ require __DIR__ .
               [
                   'quote' =>
                       'Tim brings strategic insight and sound judgment to every challenge. He’s a trusted advisor who sees the big picture, communicates clearly, and drives aligned action across stakeholders. Visionary, tenacious, and highly professional, Tim leads with purpose and delivers results.',
-                  'name' =>
-                      'Scott A. Smith',
-                  'title' =>
-                      'President & CEO',
-                  'organization' =>
-                      'thinQtank Global, Inc.',
+                  'name' => 'Scott A. Smith',
+                  'title' => 'President & CEO',
+                  'organization' => 'thinQtank Global, Inc.',
               ],
               [
                   'quote' =>
                       'Tim guided our Project Engineering Team through the busiest site refresh season in our company’s history. His organizational skill and adaptability kept projects on schedule while helping grow the bottom line. He took care of his employees, cared about work-life balance, and stayed focused on getting the job done.',
-                  'name' =>
-                      'Stephen Mouser',
-                  'title' =>
-                      'Network OPS QA Manager',
-                  'organization' =>
-                      'Apogee, Inc.',
+                  'name' => 'Stephen Mouser',
+                  'title' => 'Network OPS QA Manager',
+                  'organization' => 'Apogee, Inc.',
               ],
               [
                   'quote' =>
                       'Tim was never afraid to step in and keep a project moving when others had thrown in the towel. His problem-solving ability and operational focus consistently helped teams deliver successful outcomes under pressure.',
-                  'name' =>
-                      'Dan Southwick',
-                  'title' =>
-                      'Principal ProdOps Engineer',
-                  'organization' =>
-                      'Research Innovations Incorporated',
+                  'name' => 'Dan Southwick',
+                  'title' => 'Principal ProdOps Engineer',
+                  'organization' => 'Research Innovations Incorporated',
               ],
               [
                   'quote' =>
                       'Tim consistently demonstrated discipline, adaptability, and strong operational leadership. His communication, collaboration, and organizational skills were instrumental in growing and stabilizing DOJ operational environments. He also has a genuine talent for mentoring teams and building strong working relationships.',
-                  'name' =>
-                      'Michael Cook',
-                  'title' =>
-                      'Network Manager',
-                  'organization' =>
-                      'ITC Federal',
+                  'name' => 'Michael Cook',
+                  'title' => 'Network Manager',
+                  'organization' => 'ITC Federal',
               ],
               [
                   'quote' =>
                       'Tim stands out for his research skills, adaptability, and ability to lead teams through modernization efforts. His contributions to DOJ modernization initiatives were invaluable. I highly recommend Tim for any organization looking to improve efficiency, resilience, and operational performance.',
-                  'name' =>
-                      'Steve Joo',
-                  'title' =>
-                      'IT Cybersecurity Specialist (Network)',
-                  'organization' =>
-                      'U.S. Department of Justice',
+                  'name' => 'Steve Joo',
+                  'title' => 'IT Cybersecurity Specialist (Network)',
+                  'organization' => 'U.S. Department of Justice',
               ],
               [
                   'quote' =>
                       'Tim consistently helped the organization save significant resources and improve operational efficiency. He is a strong leader who ensures his teams have the training, experience, and confidence needed to make sound decisions.',
-                  'name' =>
-                      'Roderick Adams',
-                  'title' =>
-                      'Government Lead, Network Services',
-                  'organization' =>
-                      'Executive Office for Immigration Review, Office of Information Technology',
+                  'name' => 'Roderick Adams',
+                  'title' => 'Government Lead, Network Services',
+                  'organization' => 'Executive Office for Immigration Review, Office of Information Technology',
               ],
           ];
 

@@ -52,18 +52,15 @@ $contactPageSchema =
         $pageDateModified,
         [
             'primaryImageOfPage' => [
-                '@id' =>
-                    SITE_PRIMARY_IMAGE_ID,
+                '@id' => SITE_PRIMARY_IMAGE_ID,
             ],
 
             'about' => [
-                '@id' =>
-                    SITE_PERSON_ID,
+                '@id' => SITE_PERSON_ID,
             ],
 
             'mainEntity' => [
-                '@id' =>
-                    SITE_PERSON_ID,
+                '@id' => SITE_PERSON_ID,
             ],
         ]
     );
@@ -78,8 +75,7 @@ $personSchema =
     buildPersonSchema();
 
 $personSchema['mainEntityOfPage'] = [
-    '@id' =>
-        SITE_CONTACT_URL .
+    '@id' => SITE_CONTACT_URL .
         '#webpage',
 ];
 
@@ -90,24 +86,18 @@ $personSchema['mainEntityOfPage'] = [
 */
 
 $contactPointSchema = [
-    '@type' =>
-        'ContactPoint',
+    '@type' => 'ContactPoint',
 
-    '@id' =>
-        SITE_CONTACT_URL .
+    '@id' => SITE_CONTACT_URL .
         '#contactpoint',
 
-    'contactType' =>
-        'professional inquiries',
+    'contactType' => 'professional inquiries',
 
-    'email' =>
-        SITE_EMAIL,
+    'email' => SITE_EMAIL,
 
-    'telephone' =>
-        SITE_PHONE,
+    'telephone' => SITE_PHONE,
 
-    'url' =>
-        SITE_CONTACT_URL,
+    'url' => SITE_CONTACT_URL,
 
     'availableLanguage' => [
         'en',
@@ -121,8 +111,7 @@ $contactPointSchema = [
 */
 
 $personSchema['contactPoint'] = [
-    '@id' =>
-        SITE_CONTACT_URL .
+    '@id' => SITE_CONTACT_URL .
         '#contactpoint',
 ];
 
