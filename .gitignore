@@ -28,3 +28,6 @@ error_log
 
 # PhpStorm synchronization metadata
 .idea/
+
+# IDE-generated package metadata
+package.xml
