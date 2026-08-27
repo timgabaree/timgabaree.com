@@ -9,10 +9,10 @@ declare(strict_types=1);
 */
 
 const SITE_NAME =
-    'Tim Gabaree';
+'Tim Gabaree';
 
 const SITE_URL =
-    'https://timgabaree.com';
+'https://timgabaree.com';
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +21,13 @@ const SITE_URL =
 */
 
 const SITE_PHONE =
-    '+1-571-762-3769';
+'+1-571-762-3769';
 
 const SITE_EMAIL =
-    'tim@timgabaree.com';
+'tim@timgabaree.com';
 
 const SITE_FORM_EMAIL =
-    'webform@timgabaree.com';
+'webform@timgabaree.com';
 
 /*
 |--------------------------------------------------------------------------
@@ -36,10 +36,10 @@ const SITE_FORM_EMAIL =
 */
 
 const SITE_COPYRIGHT_START_YEAR =
-    2023;
+2023;
 
 const SITE_COPYRIGHT_OWNER =
-    'Tim Gabaree';
+'Tim Gabaree';
 
 /*
 |--------------------------------------------------------------------------
@@ -48,13 +48,13 @@ const SITE_COPYRIGHT_OWNER =
 */
 
 const SITE_LANGUAGE =
-    'en-US';
+'en-US';
 
 const SITE_LOCALE =
-    'en_US';
+'en_US';
 
 const SITE_TIMEZONE =
-    'America/Chicago';
+'America/Chicago';
 
 /*
 |--------------------------------------------------------------------------
@@ -63,28 +63,28 @@ const SITE_TIMEZONE =
 */
 
 const GOOGLE_TAG_MANAGER_ID =
-    'GTM-ML7T9TJ8';
+'GTM-ML7T9TJ8';
 
 const GOOGLE_ANALYTICS_ID =
-    '';
+'';
 
 const SITE_CALENDLY =
-    'https://calendly.com/timgabaree/meet-with-tim';
+'https://calendly.com/timgabaree/meet-with-tim';
 
 const SITE_LINKEDIN =
-    'https://www.linkedin.com/in/timgabaree';
+'https://www.linkedin.com/in/timgabaree';
 
 const SITE_GITHUB =
-    'https://github.com/timgabaree';
+'https://github.com/timgabaree';
 
 const SITE_BLOGSPOT =
-    'https://timgabaree.blogspot.com';
+'https://timgabaree.blogspot.com';
 
 const SITE_TWITTER =
-    'https://x.com/timgabaree';
+'https://x.com/timgabaree';
 
 const SITE_BLUESKY =
-    'https://bsky.app/profile/timgabaree.bsky.social';
+'https://bsky.app/profile/timgabaree.bsky.social';
 
 const SITE_SOCIAL_PROFILES = [
     SITE_LINKEDIN,
@@ -95,19 +95,19 @@ const SITE_SOCIAL_PROFILES = [
 ];
 
 const DOCSEND_EXECUTIVE_PROFILE =
-    'https://docsend.com/view/8sd3u5znxdmwtaqp';
+'https://docsend.com/view/8sd3u5znxdmwtaqp';
 
 const DOCSEND_RESUME =
-    'https://docsend.com/view/r4xai6b9k5zq6y5n';
+'https://docsend.com/view/r4xai6b9k5zq6y5n';
 
 const DOCSEND_EXECUTIVE_BIO =
-    'https://docsend.com/view/g4ipzhamredfwbtb';
+'https://docsend.com/view/g4ipzhamredfwbtb';
 
 const DOCSEND_BOARD_RESUME =
-    'https://docsend.com/view/68wp4jd332kg86d3';
+'https://docsend.com/view/68wp4jd332kg86d3';
 
 const DOCSEND_BOARD_BIO =
-    'https://docsend.com/view/z6gz9pvv9jkr8zfk';
+'https://docsend.com/view/z6gz9pvv9jkr8zfk';
 
 /*
 |--------------------------------------------------------------------------
@@ -116,7 +116,7 @@ const DOCSEND_BOARD_BIO =
 */
 
 const SITE_DESCRIPTION =
-    'Executive technology leadership, enterprise transformation, infrastructure modernization, cybersecurity, AI enablement, and technology value creation.';
+'Executive technology leadership, enterprise transformation, infrastructure modernization, cybersecurity, AI enablement, and technology value creation.';
 
 /*
 |--------------------------------------------------------------------------
@@ -125,10 +125,10 @@ const SITE_DESCRIPTION =
 */
 
 const SITE_FORM_SENDER_EMAIL =
-    SITE_FORM_EMAIL;
+SITE_FORM_EMAIL;
 
 const SITE_FORM_SENDER_NAME =
-    'Tim Gabaree Website';
+'Tim Gabaree Website';
 
 /*
 |--------------------------------------------------------------------------
@@ -137,28 +137,28 @@ const SITE_FORM_SENDER_NAME =
 */
 
 const SITE_HOME_PATH =
-    '/';
+'/';
 
 const SITE_ABOUT_PATH =
-    '/about';
+'/about';
 
 const SITE_CONTACT_PATH =
-    '/contact';
+'/contact';
 
 const SITE_CONTACT_SUBMIT_PATH =
-    '/contact-submit';
+'/contact-submit';
 
 const SITE_PRIVACY_PATH =
-    '/privacy';
+'/privacy';
 
 const SITE_THANK_YOU_PATH =
-    '/thank-you';
+'/thank-you';
 
 const SITE_SITEMAP_PATH =
-    '/sitemap.xml';
+'/sitemap.xml';
 
 const SITE_VCARD_PATH =
-    '/timgabaree.vcf';
+'/timgabaree.vcf';
 
 /*
 |--------------------------------------------------------------------------
