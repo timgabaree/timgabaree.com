@@ -38,7 +38,8 @@
             name="description"
             content="Human-friendly XML sitemap for timgabaree.com, including public pages and associated images."/>
 
-        <!-- Favicons -->
+<!-- Favicons -->
+
         <link
             rel="icon"
             type="image/png"
@@ -683,7 +684,7 @@
 
           <div class="sitemap-container">
 
-            <!-- Sitemap Introduction -->
+<!-- Sitemap Introduction -->
 
             <section class="sitemap-intro">
 

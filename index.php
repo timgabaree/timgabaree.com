@@ -78,6 +78,10 @@ require __DIR__ .
           </p>
 
           <p>
+              Make complexity manageable. Make success repeatable.
+          </p>
+
+          <p>
               Converting strategy into execution by aligning technology,
               infrastructure and operations, investment, and risk with business priorities. Improving
               performance, reducing complexity, strengthening governance, and enabling sustainable growth.
