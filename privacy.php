@@ -59,7 +59,7 @@ require __DIR__ .
 
     <div class="privacy-container">
 
-        <!-- Privacy Policy Introduction -->
+<!-- Privacy Policy Introduction -->
 
         <section
             class="privacy-card privacy-intro"

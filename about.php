@@ -71,6 +71,14 @@ require __DIR__ .
         </p>
 
         <p>
+          Tim has always been drawn to complex problems and unfamiliar territory.
+          That curiosity has shaped an approach centered on breaking complexity
+          into manageable components, learning quickly, bringing the right people
+          and ideas together, and creating solutions that endure. Making complexity
+          manageable. Making success repeatable.
+       </p>
+
+          <p>
           Outside of work, Tim's greatest investment is his family. Alongside
           his wife Carrie and their sons, Clint and Finn, he enjoys creating
           experiences that combine learning, curiosity, adventure, and plenty

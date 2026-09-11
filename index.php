@@ -77,11 +77,11 @@ require __DIR__ .
             </strong>
           </p>
 
-          <p>
+          <p class="home-intro-cta-text">
               Make complexity manageable. Make success repeatable.
           </p>
 
-          <p>
+         <p class="home-intro-cta-text">
               Converting strategy into execution by aligning technology,
               infrastructure and operations, investment, and risk with business priorities. Improving
               performance, reducing complexity, strengthening governance, and enabling sustainable growth.
