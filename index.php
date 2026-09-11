@@ -78,7 +78,7 @@ require __DIR__ .
           </p>
 
           <p class="home-intro-cta-text">
-              Make complexity manageable. Make success repeatable.
+              Making complexity manageable. Making success repeatable.
           </p>
 
          <p class="home-intro-cta-text">
