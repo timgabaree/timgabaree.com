@@ -28,5 +28,5 @@ echo "==> Starting production deployment"
 
 ssh -T \
     -i ~/.ssh/timgabaree_com \
-    ma81y7v45nyj@timgabaree.com \
+    ma81y7v45nyj@ssh.timgabaree.com \
     "cd ~/repositories/timgabaree.com && ./scripts/deploy-production.sh"
