@@ -112,56 +112,83 @@ $homePrefix =
           Operating Leadership
         </button>
 
-        <div
-          class="dropdown-menu"
-          id="operating-leadership-menu">
+          <div
+              class="dropdown-menu"
+              id="operating-leadership-menu">
 
-          <a
-            class="dropdown-item"
-            href="<?= e(
-                $homePrefix .
-                '#operating-results'
-            ) ?>">
-            Operating Results
-          </a>
+              <a
+                  class="dropdown-item"
+                  href="<?= e(SITE_TECHNOLOGY_LEADERSHIP_PATH) ?>"
+                  <?php if ($currentPage === 'technology-leadership'): ?>
+                      aria-current="page"
+                  <?php endif; ?>>
+                  Technology Leadership
+              </a>
 
-          <a
-            class="dropdown-item"
-            href="<?= e(
-                $homePrefix .
-                '#board'
-            ) ?>">
-            Board and Advisory
-          </a>
+              <a
+                  class="dropdown-item"
+                  href="<?= e(SITE_VALUE_CREATION_PATH) ?>"
+                  <?php if ($currentPage === 'value-creation'): ?>
+                      aria-current="page"
+                  <?php endif; ?>>
+                  Technology Value Creation
+              </a>
 
-          <a
-            class="dropdown-item"
-            href="<?= e(
-                $homePrefix .
-                '#results'
-            ) ?>">
-            Strategic Impact
-          </a>
+              <a
+                  class="dropdown-item"
+                  href="<?= e(SITE_GOVERNANCE_PATH) ?>"
+                  <?php if ($currentPage === 'governance'): ?>
+                      aria-current="page"
+                  <?php endif; ?>>
+                  Technology Governance
+              </a>
 
-          <a
-            class="dropdown-item"
-            href="<?= e(
-                $homePrefix .
-                '#expertise'
-            ) ?>">
-            Expertise
-          </a>
+              <a
+                  class="dropdown-item"
+                  href="<?= e(
+                      $homePrefix .
+                      '#operating-results'
+                  ) ?>">
+                  Operating Results
+              </a>
 
-          <a
-            class="dropdown-item"
-            href="<?= e(
-                $homePrefix .
-                '#education'
-            ) ?>">
-            Education
-          </a>
+              <a
+                  class="dropdown-item"
+                  href="<?= e(
+                      $homePrefix .
+                      '#board'
+                  ) ?>">
+                  Board and Advisory
+              </a>
 
-        </div>
+              <a
+                  class="dropdown-item"
+                  href="<?= e(
+                      $homePrefix .
+                      '#results'
+                  ) ?>">
+                  Strategic Impact
+              </a>
+
+              <a
+                  class="dropdown-item"
+                  href="<?= e(
+                      $homePrefix .
+                      '#expertise'
+                  ) ?>">
+                  Expertise
+              </a>
+
+              <a
+                  class="dropdown-item"
+                  href="<?= e(
+                      $homePrefix .
+                      '#education'
+                  ) ?>">
+                  Education
+              </a>
+
+          </div>
 
       </li>
 

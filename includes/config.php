@@ -139,6 +139,15 @@ const SITE_FORM_SENDER_NAME =
 const SITE_HOME_PATH =
     '/';
 
+const SITE_TECHNOLOGY_LEADERSHIP_PATH =
+'/technology-leadership';
+
+const SITE_VALUE_CREATION_PATH =
+'/value-creation';
+
+const SITE_GOVERNANCE_PATH =
+'/governance';
+
 const SITE_ABOUT_PATH =
     '/about';
 
@@ -169,6 +178,18 @@ const SITE_VCARD_PATH =
 const SITE_HOME_URL =
     SITE_URL .
     SITE_HOME_PATH;
+
+const SITE_TECHNOLOGY_LEADERSHIP_URL =
+    SITE_URL .
+    SITE_TECHNOLOGY_LEADERSHIP_PATH;
+
+const SITE_VALUE_CREATION_URL =
+    SITE_URL .
+    SITE_VALUE_CREATION_PATH;
+
+const SITE_GOVERNANCE_URL =
+    SITE_URL .
+    SITE_GOVERNANCE_PATH;
 
 const SITE_ABOUT_URL =
     SITE_URL .
@@ -225,6 +246,90 @@ const PAGE_CONFIG = [
         'scripts' => [
             '/js/results-carousel.js',
         ],
+    ],
+
+    'technology-leadership' => [
+        'published' => '2026-09-18T00:00:00-05:00',
+
+        'modified' => '2026-09-18T00:00:00-05:00',
+
+        'title' => 'Enterprise Technology Leadership | Tim Gabaree',
+
+        'description' =>
+            'Tim Gabaree shares a CIO perspective on enterprise technology leadership, infrastructure, operations, modernization, cybersecurity, governance, and technology investment.',
+
+        'canonical_url' => SITE_TECHNOLOGY_LEADERSHIP_URL,
+
+        'og_type' => 'website',
+
+        'og_title' => 'Enterprise Technology Leadership | Tim Gabaree',
+
+        'og_description' =>
+            'A CIO perspective on connecting technology strategy, operations, investment, governance, and execution to enterprise performance.',
+
+        'twitter_card' => 'summary_large_image',
+
+        'image' => 'profile',
+
+        'preload_image' => 'background',
+
+        'schema' => 'schema-technology-leadership.php',
+    ],
+
+    'value-creation' => [
+        'published' => '2026-09-18T00:00:00-05:00',
+
+        'modified' => '2026-09-18T00:00:00-05:00',
+
+        'title' => 'Technology Value Creation | Tim Gabaree',
+
+        'description' =>
+            'Tim Gabaree shares a CIO perspective on technology value creation, operating performance, cost discipline, modernization, vendor performance, and acquisition integration.',
+
+        'canonical_url' => SITE_VALUE_CREATION_URL,
+
+        'og_type' => 'website',
+
+        'og_title' => 'Technology Value Creation | Tim Gabaree',
+
+        'og_description' =>
+            'A CIO perspective on connecting technology investment to operating performance, cost, risk, modernization, and enterprise value.',
+
+        'twitter_card' => 'summary_large_image',
+
+        'image' => 'profile',
+
+        'preload_image' => 'background',
+
+        'schema' => 'schema-value-creation.php',
+    ],
+
+    'governance' => [
+        'published' => '2026-09-18T00:00:00-05:00',
+
+        'modified' => '2026-09-18T00:00:00-05:00',
+
+        'title' => 'Technology Governance | Tim Gabaree',
+
+        'description' =>
+            'Tim Gabaree shares a CIO perspective on technology governance, decision rights, investment priorities, cybersecurity, architecture, vendor performance, and accountability.',
+
+        'canonical_url' => SITE_GOVERNANCE_URL,
+
+        'og_type' => 'website',
+
+        'og_title' => 'Technology Governance | Tim Gabaree',
+
+        'og_description' =>
+            'A CIO perspective on practical technology governance connecting decisions, investment, risk, standards, performance, and accountability.',
+
+        'twitter_card' => 'summary_large_image',
+
+        'image' => 'profile',
+
+        'preload_image' => 'background',
+
+        'schema' => 'schema-governance.php',
     ],
 
     'about' => [

@@ -1555,6 +1555,182 @@ a.contactLink:hover {
 }
 
 /* =====================================================
+   Technology Leadership: Page
+===================================================== */
+
+.technology-leadership-page {
+  position: relative;
+  isolation: isolate;
+  padding: 58px 20px 20px;
+}
+
+.technology-leadership-page > :not(.page-background-image) {
+  position: relative;
+  z-index: 1;
+}
+
+.technology-leadership-hero,
+.technology-leadership-section,
+.technology-leadership-connect {
+  max-width: 980px;
+  margin: 0 auto 28px;
+  padding: 28px;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-standard);
+  box-shadow: 0 2px 5px var(--shadow-soft);
+}
+
+.technology-leadership-hero {
+  padding: 36px 32px;
+}
+
+.technology-leadership-hero-content,
+.technology-leadership-content {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.technology-leadership-eyebrow {
+  margin: 0 0 8px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.technology-leadership-hero h1 {
+  margin: 0 0 18px;
+  color: var(--primary-color);
+  font-size: 36px;
+  line-height: 1.15;
+}
+
+.technology-leadership-intro {
+  margin: 0 0 18px;
+  color: var(--text-color);
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+.technology-leadership-hero p:not(.technology-leadership-eyebrow):not(.technology-leadership-intro),
+.technology-leadership-section p,
+.technology-leadership-connect p {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.technology-leadership-hero p:last-child,
+.technology-leadership-section p:last-child,
+.technology-leadership-connect p:last-child {
+  margin-bottom: 0;
+}
+
+.technology-leadership-section h2,
+.technology-leadership-connect h2 {
+  margin: 0 0 18px;
+  color: var(--primary-color);
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.technology-leadership-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.technology-leadership-focus {
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-standard);
+}
+
+.technology-leadership-focus h3 {
+  margin: 0 0 10px;
+  color: var(--primary-color);
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.technology-leadership-focus p {
+  margin: 0;
+}
+
+.technology-leadership-evidence {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.technology-leadership-evidence p {
+  margin: 0;
+  padding: 18px 20px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.technology-leadership-connect {
+  text-align: center;
+}
+
+.technology-leadership-link {
+  display: inline-block;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+
+  .technology-leadership-page {
+    padding: 42px 14px 16px;
+  }
+
+  .technology-leadership-hero,
+  .technology-leadership-section,
+  .technology-leadership-connect {
+    margin-bottom: 18px;
+    padding: 22px;
+  }
+
+  .technology-leadership-hero {
+    padding: 26px 22px;
+  }
+
+  .technology-leadership-hero h1 {
+    font-size: 30px;
+  }
+
+  .technology-leadership-intro {
+    font-size: 19px;
+  }
+
+  .technology-leadership-section h2,
+  .technology-leadership-connect h2 {
+    font-size: 23px;
+  }
+
+  .technology-leadership-focus-grid,
+  .technology-leadership-evidence {
+    grid-template-columns: 1fr;
+  }
+
+  .technology-leadership-focus {
+    padding: 18px;
+  }
+
+  .technology-leadership-evidence {
+    gap: 14px;
+  }
+
+  .technology-leadership-evidence p {
+    padding: 14px 16px;
+  }
+
+}
+
+/* =====================================================
    23. Contact: Page
 ===================================================== */
 

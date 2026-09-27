@@ -5,8 +5,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-<!-- Home -->
-
+  <!-- Home -->
   <url>
     <loc>https://timgabaree.com/</loc>
     <lastmod>2026-08-19</lastmod>
@@ -60,8 +59,37 @@
     </image:image>
   </url>
 
-<!-- About -->
+  <!-- Technology leadership -->
+  <url>
+    <loc>https://timgabaree.com/technology-leadership</loc>
+    <lastmod>2026-09-18</lastmod>
 
+    <image:image>
+      <image:loc>https://timgabaree.com/media/background-pic-architecture-1920x942.webp</image:loc>
+    </image:image>
+  </url>
+
+  <!-- Value creation -->
+  <url>
+    <loc>https://timgabaree.com/value-creation</loc>
+    <lastmod>2026-09-18</lastmod>
+
+    <image:image>
+      <image:loc>https://timgabaree.com/media/background-pic-architecture-1920x942.webp</image:loc>
+    </image:image>
+  </url>
+
+  <!-- Governance -->
+  <url>
+    <loc>https://timgabaree.com/governance</loc>
+    <lastmod>2026-09-18</lastmod>
+
+    <image:image>
+      <image:loc>https://timgabaree.com/media/background-pic-architecture-1920x942.webp</image:loc>
+    </image:image>
+  </url>
+
+  <!-- About -->
   <url>
     <loc>https://timgabaree.com/about</loc>
     <lastmod>2026-08-19</lastmod>
@@ -107,8 +135,7 @@
     </image:image>
   </url>
 
-<!-- Contact -->
-
+  <!-- Contact -->
   <url>
     <loc>https://timgabaree.com/contact</loc>
     <lastmod>2026-08-19</lastmod>
@@ -126,8 +153,7 @@
     </image:image>
   </url>
 
-<!-- Privacy -->
-
+  <!-- Privacy -->
   <url>
     <loc>https://timgabaree.com/privacy</loc>
     <lastmod>2026-08-20</lastmod>

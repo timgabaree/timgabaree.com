@@ -144,15 +144,19 @@ foreach (
             $pageKey
         );
 
-    if (
-        preg_match(
-            '/^\d{4}-\d{2}-\d{2}$/',
-            $pageModified
-        ) !== 1
-    ) {
+    try {
+        $pageModifiedDate =
+            (new DateTimeImmutable(
+                $pageModified
+            ))->format(
+                'Y-m-d'
+            );
+    } catch (Throwable $exception) {
         throw new RuntimeException(
             'Invalid modification date for sitemap page: ' .
-            $pageKey
+            $pageKey,
+            0,
+            $exception
         );
     }
 
@@ -194,7 +198,7 @@ foreach (
     $lines[] =
         '    <lastmod>' .
         sitemapXmlEscape(
-            $pageModified
+            $pageModifiedDate
         ) .
         '</lastmod>';
 

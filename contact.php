@@ -126,11 +126,11 @@ require __DIR__ .
           <span class="contact-headline-line">
 
             <span class="contact-headline-item">
-              Portfolio CIO
+              CIO &amp; Technology Executive
             </span>
 
             <span class="contact-headline-item">
-              Technology Value Creation
+              AI Strategy &amp; Enablement
             </span>
 
           </span>
@@ -138,7 +138,7 @@ require __DIR__ .
           <span class="contact-headline-line">
 
             <span class="contact-headline-item contact-headline-item-secondary">
-              Enterprise Performance
+              Cybersecurity &middot; Technology Value Creation
             </span>
 
           </span>
@@ -146,9 +146,9 @@ require __DIR__ .
         </p>
 
         <p class="contact-summary">
-          Technology and operations executive helping organizations improve
-          performance through stronger governance, technology strategy,
-          operating model transformation, AI strategy, and execution.
+          Aligning technology investment with business priorities to improve
+          performance, strengthen resilience, manage risk, and create
+          enterprise value across complex organizations.
         </p>
 
         <div class="contact-actions">
@@ -291,7 +291,7 @@ require __DIR__ .
 
     <p class="contact-resources-description">
       Executive and board materials highlighting my leadership experience,
-      governance philosophy, and enterprise technology strategy.
+      enterprise technology strategy, cybersecurity, and value creation.
     </p>
 
     <div class="contact-resource-grid">

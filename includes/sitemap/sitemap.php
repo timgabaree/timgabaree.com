@@ -33,6 +33,18 @@ const SITEMAP_IMAGES = [
         'qr_code',
     ],
 
+    'technology-leadership' => [
+        'background',
+    ],
+
+    'value-creation' => [
+        'background',
+    ],
+
+    'governance' => [
+        'background',
+    ],
+
     'about' => [
         'about_family',
         'about_liberty_family',

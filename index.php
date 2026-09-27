@@ -56,10 +56,12 @@ require __DIR__ .
           </h1>
 
           <p class="home-intro-subtitle">
-            Portfolio CIO
-            <span aria-hidden="true"> | </span>
-              Infrastructure & Operations Strategy
-            <span aria-hidden="true"> | </span>
+            CIO & Technology Executive
+            <span aria-hidden="true"> · </span>
+              AI Strategy & Enablement
+            <span aria-hidden="true"> · </span>
+              Cybersecurity
+            <span aria-hidden="true"> · </span>
               Technology Value Creation
           </p>
 
@@ -69,28 +71,28 @@ require __DIR__ .
 
           <p>
             <strong>
-              Governance
-              <span aria-hidden="true"> | </span>
-              Operating Model Transformation
-              <span aria-hidden="true"> | </span>
-              Scalable Growth
+              Enterprise Technology Strategy
+              <span aria-hidden="true"> · </span>
+              Enterprise Modernization
+              <span aria-hidden="true"> · </span>
+              Technology & Operations Leadership
             </strong>
           </p>
 
           <p class="home-intro-cta-text">
-              Making complexity manageable. Making success repeatable.
+              Translating technology complexity into clear business decisions.
           </p>
 
          <p class="home-intro-cta-text">
-              Converting strategy into execution by aligning technology,
-              infrastructure and operations, investment, and risk with business priorities. Improving
-              performance, reducing complexity, strengthening governance, and enabling sustainable growth.
+              Aligning technology investment with business priorities to improve performance,
+              strengthen resilience, manage risk, and create enterprise value. Leading modernization
+              and operational recovery across complex organizations, with experience spanning AI strategy,
+              cybersecurity, infrastructure and operations, and operating model improvement.
           </p>
 
           <p class="home-intro-cta-text">
-              Whether you're exploring executive leadership, board
-              opportunities, advisory work, or technology transformation,
-              I'd welcome the opportunity to connect.
+              I work with executives and boards navigating technology strategy,
+              transformation, risk, and enterprise performance.
           </p>
 
           <a
@@ -114,7 +116,7 @@ require __DIR__ .
 
           <p class="home-intro-links-description">
             Executive and board materials highlighting my leadership experience,
-            governance philosophy, and enterprise technology strategy.
+            enterprise technology strategy, cybersecurity, and value creation.
           </p>
 
           <ul class="home-intro-links-list">
@@ -283,7 +285,7 @@ require __DIR__ .
           </p>
 
           <p class="home-results-detail">
-            Operational recovery | Stakeholder alignment | Continuity
+            Operational recovery · Stakeholder alignment · Continuity
           </p>
 
         </div>
@@ -302,15 +304,15 @@ require __DIR__ .
           </p>
 
           <p class="home-results-number">
-            $25M+
+            $25M
           </p>
 
           <p class="home-results-label">
-            Savings Delivered
+            Projected Savings Identified
           </p>
 
           <p class="home-results-detail">
-            Modernization | Governance | Cost discipline
+            Modernization · Analytics · Financial controls
           </p>
 
         </div>
@@ -337,7 +339,7 @@ require __DIR__ .
           </p>
 
           <p class="home-results-detail">
-            Security | Compliance | Execution risk reduction
+            Security · Compliance · Execution risk reduction
           </p>
 
         </div>
@@ -364,7 +366,7 @@ require __DIR__ .
           </p>
 
           <p class="home-results-detail">
-            Organizational redesign | Leadership development | Performance
+            Organizational redesign · Leadership development · Performance
           </p>
 
         </div>
@@ -379,19 +381,19 @@ require __DIR__ .
           ) ?>
 
           <p class="home-results-kicker">
-            Positioning
+            Executive Leadership
           </p>
 
           <p class="home-results-number">
-            Portfolio CIO
+            CIO & Technology Executive
           </p>
 
           <p class="home-results-label">
-            Governance | Technology Value Creation | Enterprise Performance
+            AI Strategy · Cybersecurity · Technology Value Creation
           </p>
 
           <p class="home-results-detail">
-            Aligning technology, operations, investment, and risk management.
+            Aligning technology investment, operations, and risk with business priorities.
           </p>
 
         </div>
@@ -447,16 +449,16 @@ require __DIR__ .
         <div class="home-expertise-text-block">
 
           <ul class="home-expertise-list">
+            <li>AI Strategy &amp; Enablement</li>
+            <li>Cybersecurity &amp; Enterprise Risk</li>
             <li>Technology Value Creation</li>
+            <li>Enterprise Technology Strategy</li>
+            <li>Infrastructure &amp; Cloud Strategy</li>
+            <li>Enterprise Modernization</li>
             <li>Technology &amp; Operations Leadership</li>
-            <li>Enterprise Performance</li>
-            <li>Private Equity Portfolio Operations</li>
-            <li>Operating Model Transformation</li>
+            <li>IT Operating Models</li>
+            <li>Vendor &amp; Service Performance</li>
             <li>Post-Acquisition Integration</li>
-            <li>Governance &amp; Risk Management</li>
-            <li>AI &amp; Data Strategy</li>
-            <li>Vendor Rationalization</li>
-            <li>Infrastructure &amp; Cloud Operations</li>
           </ul>
 
         </div>
@@ -502,20 +504,20 @@ require __DIR__ .
       'Selected Operating Results';
 
   $sectionIntro =
-      'Enterprise leadership across private equity-backed, government, healthcare, defense, and mid-market organizations. These selected results reflect recovery, savings, modernization, integration, and operational scale.';
+      'Enterprise leadership across private equity-backed, government, healthcare, defense, and mid-market organizations. These selected results reflect operational recovery, modernization, financial discipline, technology value creation, and organizational performance.';
 
   $sectionItems = [
       [
-          'title' => 'Delivered more than $25 million in savings',
-          'description' => 'Achieved through vendor rationalization, analytics, and cost discipline.',
+          'title' => 'Identified $25 million in projected savings',
+          'description' => 'Identified through modernization, analytics, and financial controls.',
       ],
       [
           'title' => 'Stabilized a $115 million at-risk federal program',
           'description' => 'Restored performance through operational recovery and stakeholder alignment.',
       ],
       [
-          'title' => 'Led modernization across environments valued at more than $100 million',
-          'description' => 'Directed initiatives spanning technology, cybersecurity, compliance, and data strategy.',
+          'title' => 'Directed a $170 million technology portfolio',
+          'description' => 'Spanned infrastructure, applications, enterprise risk, and technology operations across a complex government environment.',
       ],
       [
           'title' => 'Increased billable utilization from 60% to 93%',
@@ -523,19 +525,19 @@ require __DIR__ .
       ],
       [
           'title' => 'Raised workforce retention to 96%',
-          'description' => 'Strengthened organizational performance through redesign and leadership development.',
+          'description' => 'Improved workforce stability while strengthening service delivery and organizational performance.',
       ],
       [
           'title' => 'Delivered an $80 million mission-critical federal program',
-          'description' => 'Improved margins while reducing delivery and execution risk.',
+          'description' => 'Delivered a secure federal facility while improving margins.',
       ],
       [
-          'title' => 'Reduced operating costs across Department of Defense programs',
-          'description' => 'Achieved efficiencies through consolidation and modernization.',
+          'title' => 'Reduced data center operating costs by $250,000 annually',
+          'description' => 'Consolidated Department of Defense R&D data centers into a private cloud environment.',
       ],
       [
-          'title' => 'Aligned capital allocation and technology investment priorities',
-          'description' => 'Connected investment decisions with broader enterprise objectives.',
+          'title' => 'Identified $1.5 million in duplicate vendor spend',
+          'description' => 'Assessed vendor portfolios across multiple businesses to identify duplication and rationalization opportunities.',
       ],
   ];
 
@@ -560,26 +562,26 @@ require __DIR__ .
   $sectionId = 'board';
 
   $sectionTitle =
-      'Board & Advisory Experience';
+      'Board & Advisory';
 
   $sectionIntro =
-      'Board and advisory experience supporting governance, strategy, organizational performance, and sustainable growth across nonprofit, consulting, and international business environments.';
+      'Board and advisory service bringing an operator’s perspective to technology, enterprise risk, organizational performance, strategic priorities, and long-term value creation.';
 
   $sectionItems = [
       [
           'title' => 'Independent Board Director | EMAXIQ',
           'description' =>
-              'Advises leadership on corporate strategy, platform direction, governance, and international expansion for a digital consultancy and executive collaboration platform.',
+              'Strategic oversight supporting technology, AI, international growth, and enterprise risk.',
       ],
       [
           'title' => 'Independent Board Director | Marian Homes',
           'description' =>
-              'Supported financial stewardship, fundraising, governance, and long-term planning for a nonprofit serving adults with intellectual disabilities.',
+              'Strategic oversight supporting mission, accountability, and financial stewardship.',
       ],
       [
           'title' => 'Board Advisor | Chicago House Athletic Club',
           'description' =>
-              'Advised organizational leadership on strategy, operating priorities, governance, and stakeholder engagement supporting continued growth.',
+              'Strategic advice on organizational priorities, performance, and sustainable growth.',
       ],
   ];
 

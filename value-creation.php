@@ -1,0 +1,292 @@
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ .
+    '/includes/bootstrap.php';
+
+/*
+|--------------------------------------------------------------------------
+| Page
+|--------------------------------------------------------------------------
+*/
+
+$page =
+    'value-creation';
+
+/*
+|--------------------------------------------------------------------------
+| Page Start
+|--------------------------------------------------------------------------
+*/
+
+require __DIR__ .
+    '/includes/components/component-page-start.php';
+
+?>
+
+    <main
+        id="main-content"
+        class="technology-leadership-page value-creation-page">
+
+        <!-- Value Creation Hero -->
+
+        <?= siteImage(
+            'background',
+            [
+                'class' => 'page-background-image',
+            ]
+        ) ?>
+
+        <section
+            class="technology-leadership-hero"
+            aria-labelledby="value-creation-title">
+
+            <div class="technology-leadership-hero-content">
+
+                <p class="technology-leadership-eyebrow">
+                    CIO Perspective
+                </p>
+
+                <h1 id="value-creation-title">
+                    Technology Value Creation
+                </h1>
+
+                <p class="technology-leadership-intro">
+                    Technology investment should improve performance, reduce
+                    unnecessary cost or risk, and strengthen the organization's
+                    ability to execute.
+                </p>
+
+                <p>
+                    Tim Gabaree approaches technology as both an operating
+                    capability and an investment, connecting technology decisions
+                    to business priorities, performance, cost, risk, and long-term
+                    value.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- End Value Creation Hero -->
+
+        <!-- Value Perspective -->
+
+        <section
+            class="technology-leadership-section"
+            aria-labelledby="value-perspective-title">
+
+            <div class="technology-leadership-content">
+
+                <h2 id="value-perspective-title">
+                    Value Perspective
+                </h2>
+
+                <p>
+                    Technology value is not created by spending more or modernizing
+                    everything. It comes from understanding where technology
+                    materially improves the organization and making deliberate
+                    choices about where to invest, simplify, standardize, or stop.
+                </p>
+
+                <p>
+                    That means looking beyond project delivery to operating cost,
+                    service performance, vendor economics, risk, architecture, and
+                    the organization's ability to sustain the change after the
+                    implementation is complete.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- End Value Perspective -->
+
+        <!-- Where Value Is Created -->
+
+        <section
+            class="technology-leadership-section"
+            aria-labelledby="value-focus-title">
+
+            <div class="technology-leadership-content">
+
+                <h2 id="value-focus-title">
+                    Where Value Is Created
+                </h2>
+
+                <div class="technology-leadership-focus-grid">
+
+                    <article class="technology-leadership-focus">
+
+                        <h3>
+                            Operating Performance
+                        </h3>
+
+                        <p>
+                            Improve reliability, service delivery, capacity, and
+                            execution while reducing operational friction.
+                        </p>
+
+                    </article>
+
+                    <article class="technology-leadership-focus">
+
+                        <h3>
+                            Cost Discipline
+                        </h3>
+
+                        <p>
+                            Understand technology cost, eliminate unnecessary
+                            duplication, and direct spending toward higher-value
+                            priorities.
+                        </p>
+
+                    </article>
+
+                    <article class="technology-leadership-focus">
+
+                        <h3>
+                            Modernization Economics
+                        </h3>
+
+                        <p>
+                            Evaluate modernization against business need, lifecycle
+                            cost, risk, architecture, and expected operating benefit.
+                        </p>
+
+                    </article>
+
+                    <article class="technology-leadership-focus">
+
+                        <h3>
+                            Vendor Performance
+                        </h3>
+
+                        <p>
+                            Strengthen commercial discipline, service expectations,
+                            accountability, and the value received from external
+                            partners.
+                        </p>
+
+                    </article>
+
+                    <article class="technology-leadership-focus">
+
+                        <h3>
+                            Acquisition &amp; Integration
+                        </h3>
+
+                        <p>
+                            Assess technology risk, cost, capabilities, and
+                            dependencies before the transaction and turn findings
+                            into practical integration priorities.
+                        </p>
+
+                    </article>
+
+                    <article class="technology-leadership-focus">
+
+                        <h3>
+                            Portfolio Technology
+                        </h3>
+
+                        <p>
+                            Establish standards and shared priorities while
+                            preserving the operating flexibility individual
+                            businesses need.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- End Where Value Is Created -->
+
+        <!-- Selected Results -->
+
+        <section
+            class="technology-leadership-section"
+            aria-labelledby="value-results-title">
+
+            <div class="technology-leadership-content">
+
+                <h2 id="value-results-title">
+                    Selected Results
+                </h2>
+
+                <div class="technology-leadership-evidence">
+
+                    <p>
+                        Identified and rationalized $1.5M in duplicate vendor spend
+                        across portfolio businesses while strengthening governance
+                        and acquisition integration criteria.
+                    </p>
+
+                    <p>
+                        Established cloud technology guardrails supporting $25M in
+                        projected three-year savings while rationalizing 436
+                        on-premises applications to Azure.
+                    </p>
+
+                    <p>
+                        Improved engineering utilization from 60% to 93%, supporting
+                        $5M in annual savings and $2M in additional revenue.
+                    </p>
+
+                    <p>
+                        Reduced operating overhead by $200K and recruiting costs by
+                        $120K while supporting technology modernization and
+                        operational improvement.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- End Selected Results -->
+
+        <!-- Connect -->
+
+        <section
+            class="technology-leadership-connect"
+            aria-labelledby="value-connect-title">
+
+            <div class="technology-leadership-content">
+
+                <h2 id="value-connect-title">
+                    Continue the Conversation
+                </h2>
+
+                <p>
+                    Explore Tim's executive experience, selected results, and
+                    approach to technology value creation, or connect directly.
+                </p>
+
+                <p>
+                    <a
+                        class="technology-leadership-link"
+                        href="<?= e(SITE_CONTACT_PATH) ?>">
+                        Connect with Tim
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- End Connect -->
+
+    </main>
+
+<?php
+
+require __DIR__ . '/includes/components/component-footer.php';
+
+?>
