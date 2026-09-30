@@ -291,7 +291,7 @@ require __DIR__ .
 
     <p class="contact-resources-description">
       Executive and board materials highlighting my leadership experience,
-      enterprise technology strategy, cybersecurity, and value creation.
+      AI strategy, enterprise technology, cybersecurity, and value creation.
     </p>
 
     <div class="contact-resource-grid">
@@ -406,9 +406,9 @@ require __DIR__ .
         </p>
 
         <p>
-          Share a little about the opportunity, challenge, or conversation
-          you would like to continue. I review each message personally and
-          will respond as promptly as possible.
+          Share a little about the opportunity, challenge, or topic you would
+          like to discuss. I review each message personally and will respond
+          as promptly as possible.
         </p>
 
       </div>
@@ -578,7 +578,7 @@ require __DIR__ .
               name="message"
               rows="7"
               maxlength="5000"
-              placeholder="Share a few details about the opportunity, challenge, timeline, or conversation you would like to continue."
+              placeholder="Share a few details about the opportunity, challenge, timeline, or topic you would like to discuss."
               required
               aria-required="true"></textarea>
 

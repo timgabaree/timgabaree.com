@@ -54,13 +54,14 @@ require __DIR__ .
 
                 <p class="technology-leadership-intro">
                     Technology creates value when strategy, operations, investment,
-                    governance, and execution work together.
+                    risk, and execution work together.
                 </p>
 
                 <p>
-                    Tim Gabaree is a CIO and technology executive who has led technology
-                    strategy, infrastructure, operations, cybersecurity, modernization, and
-                    governance across complex and regulated organizations.
+                    Tim Gabaree is a CIO and technology executive who has led AI strategy,
+                    enterprise technology, infrastructure and operations, cybersecurity,
+                    modernization, and technology investment across complex and regulated
+                    organizations.
                 </p>
 
             </div>
@@ -168,12 +169,12 @@ require __DIR__ .
                     <article class="technology-leadership-focus">
 
                         <h3>
-                            Governance
+                            AI Strategy &amp; Enablement
                         </h3>
 
                         <p>
-                            Clear decision rights, accountability, standards, and oversight
-                            connecting technology decisions to enterprise priorities.
+                            Practical AI strategy, governance, adoption, and enablement
+                            aligned with business priorities, risk, and organizational readiness.
                         </p>
 
                     </article>
@@ -229,8 +230,8 @@ require __DIR__ .
                     </p>
 
                     <p>
-                        Identified and rationalized $1.5M in duplicate vendor spend across
-                        portfolio businesses while strengthening governance and acquisition
+                        Identified $1.5M in duplicate vendor spend across portfolio businesses
+                        while establishing stronger vendor expectations and acquisition
                         integration criteria.
                     </p>
 

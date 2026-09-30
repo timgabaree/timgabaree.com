@@ -120,7 +120,7 @@ function buildPrimaryImageSchema(
         'encodingFormat' => $image['type'] ??
             '',
 
-        'caption' => 'Tim Gabaree, Portfolio CIO and technology executive',
+        'caption' => 'Tim Gabaree, CIO and technology executive',
     ];
 
     if ($representativeOfPage) {
@@ -156,10 +156,10 @@ function buildPersonSchema(): array
             '@id' => SITE_PRIMARY_IMAGE_ID,
         ],
 
-        'jobTitle' => 'Portfolio CIO',
+        'jobTitle' => 'CIO and Technology Executive',
 
         'description' =>
-            'Portfolio CIO and technology executive focused on technology value creation, governance, operating model transformation, and enterprise performance.',
+            'CIO and technology executive focused on AI strategy and enablement, cybersecurity, enterprise technology, infrastructure and operations, and technology value creation.',
 
         'email' => 'mailto:' .
             SITE_EMAIL,
@@ -257,24 +257,23 @@ function buildPersonSchema(): array
         ],
 
         'knowsAbout' => [
+            'AI Strategy and Enablement',
+            'Artificial Intelligence',
+            'Cybersecurity',
+            'Enterprise Technology',
+            'Infrastructure and Operations',
             'Technology Value Creation',
             'Enterprise Performance',
-            'Technology Governance',
-            'Corporate Governance',
-            'Operating Model Transformation',
-            'Technology Advisory',
-            'Private Equity Portfolio Operations',
-            'Post-Acquisition Integration',
-            'Cybersecurity',
-            'Enterprise Infrastructure',
-            'Cloud Computing',
-            'Artificial Intelligence',
-            'AI Strategy',
-            'Vendor Rationalization',
-            'Program Recovery',
-            'Digital Transformation',
             'Technology Strategy',
+            'Technology Investment',
+            'Technology Modernization',
             'Enterprise Architecture',
+            'Cloud Computing',
+            'Vendor Rationalization',
+            'Post-Acquisition Integration',
+            'Program Recovery',
+            'Operating Model Improvement',
+            'Digital Transformation',
         ],
 
         'knowsLanguage' => [

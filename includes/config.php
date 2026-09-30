@@ -116,7 +116,7 @@ const DOCSEND_BOARD_BIO =
 */
 
 const SITE_DESCRIPTION =
-    'Executive technology leadership, enterprise transformation, infrastructure modernization, cybersecurity, AI enablement, and technology value creation.';
+    'CIO and technology executive focused on AI strategy and enablement, cybersecurity, enterprise technology, infrastructure and operations, and technology value creation.';
 
 /*
 |--------------------------------------------------------------------------
@@ -221,21 +221,21 @@ const PAGE_CONFIG = [
     'home' => [
         'published' => '2026-08-07T00:00:00-05:00',
 
-        'modified' => '2026-08-19T00:00:00-05:00',
+        'modified' => '2026-09-30T00:00:00-05:00',
 
-        'title' => 'Tim Gabaree | Portfolio CIO | Technology Value Creation | Enterprise Performance',
+        'title' => 'Tim Gabaree | CIO & Technology Executive | AI, Cybersecurity & Value Creation',
 
         'description' =>
-            'Tim Gabaree is a Portfolio CIO and technology executive helping organizations improve performance through technology value creation, governance, operating model transformation, and enterprise leadership.',
+            'Tim Gabaree is a CIO and technology executive leading AI strategy, cybersecurity, enterprise technology, infrastructure and operations, and technology value creation.',
 
         'canonical_url' => SITE_HOME_URL,
 
         'og_type' => 'profile',
 
-        'og_title' => 'Tim Gabaree | Portfolio CIO | Technology Value Creation',
+        'og_title' => 'Tim Gabaree | CIO & Technology Executive',
 
         'og_description' =>
-            'Tim Gabaree is a Portfolio CIO and technology executive helping organizations improve performance through governance, technology value creation, and operating model transformation.',
+            'CIO and technology executive focused on AI strategy, cybersecurity, enterprise technology, operational performance, and technology value creation.',
 
         'image' => 'profile',
 
@@ -251,12 +251,12 @@ const PAGE_CONFIG = [
     'technology-leadership' => [
         'published' => '2026-09-18T00:00:00-05:00',
 
-        'modified' => '2026-09-18T00:00:00-05:00',
+        'modified' => '2026-09-30T00:00:00-05:00',
 
         'title' => 'Enterprise Technology Leadership | Tim Gabaree',
 
         'description' =>
-            'Tim Gabaree shares a CIO perspective on enterprise technology leadership, infrastructure, operations, modernization, cybersecurity, governance, and technology investment.',
+            'Tim Gabaree shares a CIO perspective on enterprise technology leadership, AI strategy, cybersecurity, infrastructure and operations, modernization, and technology investment.',
 
         'canonical_url' => SITE_TECHNOLOGY_LEADERSHIP_URL,
 
@@ -265,7 +265,7 @@ const PAGE_CONFIG = [
         'og_title' => 'Enterprise Technology Leadership | Tim Gabaree',
 
         'og_description' =>
-            'A CIO perspective on connecting technology strategy, operations, investment, governance, and execution to enterprise performance.',
+            'A CIO perspective on connecting AI, cybersecurity, technology strategy, operations, investment, risk, and execution to enterprise performance.',
 
         'twitter_card' => 'summary_large_image',
 
@@ -279,7 +279,7 @@ const PAGE_CONFIG = [
     'value-creation' => [
         'published' => '2026-09-18T00:00:00-05:00',
 
-        'modified' => '2026-09-18T00:00:00-05:00',
+        'modified' => '2026-09-30T00:00:00-05:00',
 
         'title' => 'Technology Value Creation | Tim Gabaree',
 
@@ -307,12 +307,12 @@ const PAGE_CONFIG = [
     'governance' => [
         'published' => '2026-09-18T00:00:00-05:00',
 
-        'modified' => '2026-09-18T00:00:00-05:00',
+        'modified' => '2026-09-30T00:00:00-05:00',
 
-        'title' => 'Technology Governance | Tim Gabaree',
+        'title' => 'Technology Governance | Executive & Board Perspective | Tim Gabaree',
 
         'description' =>
-            'Tim Gabaree shares a CIO perspective on technology governance, decision rights, investment priorities, cybersecurity, architecture, vendor performance, and accountability.',
+            'Tim Gabaree shares an executive and board perspective on technology governance, AI, cybersecurity, investment, risk, performance, and accountability.',
 
         'canonical_url' => SITE_GOVERNANCE_URL,
 
@@ -321,7 +321,7 @@ const PAGE_CONFIG = [
         'og_title' => 'Technology Governance | Tim Gabaree',
 
         'og_description' =>
-            'A CIO perspective on practical technology governance connecting decisions, investment, risk, standards, performance, and accountability.',
+            'An executive and board perspective on practical governance for technology, AI, cybersecurity, investment, risk, performance, and accountability.',
 
         'twitter_card' => 'summary_large_image',
 
@@ -335,25 +335,25 @@ const PAGE_CONFIG = [
     'about' => [
         'published' => '2026-08-07T00:00:00-05:00',
 
-        'modified' => '2026-08-19T00:00:00-05:00',
+        'modified' => '2026-09-30T00:00:00-05:00',
 
-        'title' => 'About Tim Gabaree | Portfolio CIO | Technology Value Creation',
+        'title' => 'About Tim Gabaree | CIO & Technology Executive',
 
         'description' =>
-            'About Tim Gabaree, Portfolio CIO and technology executive focused on governance, technology value creation, operating model transformation, and enterprise performance.',
+            'About Tim Gabaree, CIO and technology executive, independent board director, veteran, husband, father, and lifelong learner.',
 
         'canonical_url' => SITE_ABOUT_URL,
 
         'og_type' => 'profile',
 
-        'og_title' => 'About Tim Gabaree | Portfolio CIO',
+        'og_title' => 'About Tim Gabaree | CIO & Technology Executive',
 
         'og_description' =>
-            'About Tim Gabaree, Portfolio CIO, technology executive, board advisor, veteran, husband, father, and lifelong learner.',
+            'About Tim Gabaree, CIO and technology executive, independent board director, veteran, husband, father, and lifelong learner.',
 
         'twitter_card' => 'summary_large_image',
 
-        'twitter_description' => 'Technology executive, board advisor, veteran, husband, father, and lifelong learner.',
+        'twitter_description' => 'CIO and technology executive, independent board director, veteran, husband, father, and lifelong learner.',
 
         'image' => 'about_family',
 
@@ -365,14 +365,14 @@ const PAGE_CONFIG = [
     'contact' => [
         'published' => '2026-08-07T00:00:00-05:00',
 
-        'modified' => '2026-08-19T00:00:00-05:00',
+        'modified' => '2026-09-30T00:00:00-05:00',
 
         'body_class' => 'contact-body',
 
-        'title' => 'Connect with Tim Gabaree | Executive Contact',
+        'title' => 'Connect with Tim Gabaree | CIO & Technology Executive',
 
         'description' =>
-            'Connect with Tim Gabaree, Portfolio CIO and technology executive focused on technology value creation, governance, and enterprise performance.',
+            'Connect with Tim Gabaree, a CIO and technology executive focused on AI strategy, cybersecurity, enterprise technology, and technology value creation.',
 
         'canonical_url' => SITE_CONTACT_URL,
 
@@ -383,7 +383,7 @@ const PAGE_CONFIG = [
         'og_description' =>
             'Save Tim’s contact information, connect on LinkedIn, schedule a meeting, or review executive materials.',
 
-        'twitter_description' => 'Portfolio CIO | Technology Value Creation | Enterprise Performance',
+        'twitter_description' => 'CIO & Technology Executive | AI Strategy & Enablement | Cybersecurity | Technology Value Creation',
 
         'image' => 'profile',
 

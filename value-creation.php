@@ -222,20 +222,23 @@ require __DIR__ .
                 <div class="technology-leadership-evidence">
 
                     <p>
-                        Identified and rationalized $1.5M in duplicate vendor spend
-                        across portfolio businesses while strengthening governance
+                        Identified $1.5M in duplicate vendor spend across portfolio
+                        businesses while establishing stronger vendor expectations
                         and acquisition integration criteria.
                     </p>
 
                     <p>
-                        Established cloud technology guardrails supporting $25M in
-                        projected three-year savings while rationalizing 436
-                        on-premises applications to Azure.
+                        Developed analytics, modernization plans, financial controls,
+                        and technology guardrails supporting $25M in projected
+                        three-year savings while rationalizing 436 on-premises
+                        applications to Azure.
                     </p>
 
                     <p>
-                        Improved engineering utilization from 60% to 93%, supporting
-                        $5M in annual savings and $2M in additional revenue.
+                        Improved engineering billable utilization from 60% to 93%,
+                        generating $2M in additional revenue, while procurement
+                        optimization and operating alignment contributed $5M in
+                        annual savings.
                     </p>
 
                     <p>

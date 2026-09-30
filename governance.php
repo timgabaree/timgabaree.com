@@ -45,7 +45,7 @@ require __DIR__ .
             <div class="technology-leadership-hero-content">
 
                 <p class="technology-leadership-eyebrow">
-                    CIO Perspective
+                    Executive &amp; Board Perspective
                 </p>
 
                 <h1 id="governance-title">
@@ -53,15 +53,15 @@ require __DIR__ .
                 </h1>
 
                 <p class="technology-leadership-intro">
-                    Good governance makes it clear how technology decisions are
-                    made, who is accountable, and how investment, risk, and
-                    performance are evaluated.
+                    Good governance creates clarity by connecting technology,
+                    cybersecurity, AI, investment, risk, and performance to the
+                    decisions executives and boards need to make.
                 </p>
 
                 <p>
-                    Tim Gabaree approaches governance as a practical operating
-                    discipline that helps executives make better technology
-                    decisions without creating unnecessary bureaucracy.
+                    Tim Gabaree brings an operator's perspective to governance:
+                    practical oversight that helps leaders understand tradeoffs,
+                    assign accountability, and act without unnecessary bureaucracy.
                 </p>
 
             </div>
@@ -83,17 +83,18 @@ require __DIR__ .
                 </h2>
 
                 <p>
-                    Technology governance works when decision rights, priorities,
-                    standards, risk, and accountability are understood across the
-                    organization. It should make decisions easier to make and
-                    easier to evaluate.
+                    Governance works when decision rights, priorities, risk, and
+                    accountability are understood across the organization and at
+                    the board level. It should make important decisions easier to
+                    frame, make, and evaluate.
                 </p>
 
                 <p>
-                    The objective is not more process. It is enough structure to
-                    make investment choices deliberately, manage risk consistently,
-                    establish clear expectations, and know whether technology is
-                    delivering what the organization needs.
+                    For technology, cybersecurity, and AI, the objective is not more
+                    process. It is enough structure to make investment choices
+                    deliberately, manage risk consistently, establish clear
+                    expectations, and understand whether the organization is
+                    achieving the intended outcome.
                 </p>
 
             </div>
@@ -158,13 +159,13 @@ require __DIR__ .
                     <article class="technology-leadership-focus">
 
                         <h3>
-                            Architecture &amp; Standards
+                            AI &amp; Emerging Technology
                         </h3>
 
                         <p>
-                            Establish practical standards that reduce unnecessary
-                            complexity while supporting security, interoperability,
-                            and business requirements.
+                            Apply clear oversight to AI and emerging technology,
+                            including value, risk, data, security, responsible use,
+                            and organizational readiness.
                         </p>
 
                     </article>
@@ -218,9 +219,9 @@ require __DIR__ .
                 <div class="technology-leadership-evidence">
 
                     <p>
-                        Strengthened technology governance, vendor performance,
-                        cybersecurity standards, and acquisition integration
-                        criteria across portfolio businesses.
+                        Established technology and cybersecurity standards, vendor
+                        expectations, and acquisition integration criteria across
+                        portfolio businesses.
                     </p>
 
                     <p>
@@ -260,8 +261,9 @@ require __DIR__ .
                 </h2>
 
                 <p>
-                    Explore Tim's executive experience, selected results, and
-                    approach to technology governance, or connect directly.
+                    Explore Tim's executive and board perspective on technology,
+                    cybersecurity, AI, investment, risk, and performance, or
+                    connect directly.
                 </p>
 
                 <p>

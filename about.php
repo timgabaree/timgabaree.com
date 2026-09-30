@@ -61,20 +61,19 @@ require __DIR__ .
         </h1>
 
         <p>
-          Tim Gabaree is a technology executive, board advisor, veteran,
-          husband, father, and lifelong learner who believes leadership is
-          ultimately about people. Throughout his career, he has helped
-          organizations navigate change, improve performance, strengthen
-          governance, and create lasting value. While technology has often
-          been the vehicle, his focus has always been on helping people and
-          organizations succeed.
+          Tim Gabaree is a CIO and technology executive, independent board
+          director, veteran, husband, father, and lifelong learner who believes
+          leadership is ultimately about people. Throughout his career, he has
+          helped organizations navigate complexity, improve performance, manage
+          risk, and create lasting value by connecting technology decisions to
+          business priorities.
         </p>
 
         <p>
           Tim has always been drawn to complex problems and unfamiliar territory.
-          That curiosity has shaped an approach centered on breaking complexity
-          into manageable components, learning quickly, bringing the right people
-          and ideas together, and creating solutions that endure. Making complexity
+          That curiosity has shaped an approach centered on translating complexity
+          into clear decisions, learning quickly, bringing the right people and
+          ideas together, and creating solutions that endure. Making complexity
           manageable. Making success repeatable.
        </p>
 
