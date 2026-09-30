@@ -57,7 +57,7 @@
 
         <link
             rel="stylesheet"
-            href="/css/style.css?v=20260821.17"/>
+            href="/css/style.css?v=20260930.01"/>
 
         <style>
 
